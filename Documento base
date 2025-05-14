@@ -1,0 +1,66 @@
+💼 Título del Proyecto: "Simulador de Bolsa e Inteligencia de Inversión para Acciones Colombianas"
+🎯 Objetivo General
+Desarrollar un sistema en C++ que simule una plataforma de inversión bursátil que permita a los usuarios crear portafolios, consultar y ordenar acciones, y tomar decisiones de compra/venta con base en eventos aleatorios del mercado (noticias, tendencias). El sistema debe usar estructuras complejas como árboles, grafos, multilistas, pilas, colas, vectores y aplicar algoritmos de búsqueda, ordenamiento y recomendación.
+
+🧱 Componentes del Proyecto
+Componente	Estructura de Datos	Descripción
+Mercado de acciones	Árbol AVL o ABB	Almacena empresas por nombre o código bursátil
+Histórico de precios	Multilista	Guarda por acción una lista enlazada de precios por día
+Noticias del mercado	Cola de prioridad	Ordenadas por impacto estimado en el mercado
+Portafolio del usuario	Vector	Contiene acciones compradas y cantidad
+Recomendaciones	Grafo ponderado	Modela relaciones entre sectores o empresas (correlación o influencia)
+Simulación de órdenes	Pila	Para deshacer la última acción de compra/venta
+
+🔍 Algoritmos a Incluir
+Tipo	Algoritmos
+Búsqueda	Búsqueda binaria, BFS en grafo de recomendaciones
+Ordenamiento	Merge Sort para portafolio por ganancia, Quick Sort por precio actual
+Análisis	Cálculo de variación de precios, promedio móvil, recomendación por correlación
+Codificación	Codificador simple para convertir tickers o nombres en códigos únicos (hash propio)
+
+🛠️ Funciones del Programa
+Carga de datos aleatorios (acciones, precios históricos, noticias).
+
+Interfaz de usuario para consultar acciones, ordenarlas y comprarlas.
+
+Simulación del tiempo: avance diario de mercado, lectura de nuevas noticias.
+
+Impacto de noticias: ajusta precios según eventos (positivo/negativo).
+
+Cálculo del rendimiento del portafolio.
+
+Recomendación de compra con base en similitud de comportamiento entre acciones (grafo).
+
+Deshacer última operación con pila.
+
+📄 Entregables esperados
+Código completamente documentado.
+
+Documento explicativo con:
+
+Diseño detallado de estructuras.
+
+Lógica de simulación.
+
+Evaluación de eficiencia de ordenamientos y búsquedas.
+
+Resultados de escenarios de prueba.
+
+Diagrama UML opcional (puedo ayudarte a generarlo).
+
+Presentación de 15–20 minutos.
+
+💡 Extras para un toque profesional
+Usa datos reales del COLCAP si deseas sofisticarlo (pero simula precios).
+
+Agrega análisis financiero simple (beta, volatilidad).
+
+Muestra rendimiento acumulado por tipo de industria (opcional, usando multilistas agrupadas).
+
+¿Te gustaría que empecemos con este proyecto? Puedo ayudarte a generar desde ya:
+
+El diseño de las estructuras de datos,
+
+Una base del código en C++ con la arquitectura general,
+
+Y el documento explicativo con las secciones listas para completar.
