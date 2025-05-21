@@ -28,7 +28,7 @@ struct Noticia {
     Noticia* siguiente;
 };
 
-[7:50 am, 14/5/2025] Samuel Blanco: struct AccionComprada {
+struct AccionComprada {
     string ticker;
     int cantidad;
     float precioCompra;
@@ -51,7 +51,7 @@ struct Portafolio {
     void ordenarPorGanancia();
 };
 
-[7:53 am, 14/5/2025] Samuel Blanco: struct NodoGrafo {
+struct NodoGrafo {
     string ticker;
     vector<pair<NodoGrafo*, float>> conexiones; // conexión y peso (correlación)
 };
@@ -61,7 +61,8 @@ struct Grafo {
     void agregarRelacion(string t1, string t2, float peso);
     vector<string> recomendarAcciones(string ticker);
 };
-[7:56 am, 14/5/2025] Samuel Blanco: struct Operacion {
+
+struct Operacion {
     string tipo; // "compra" o "venta"
     string ticker;
     int cantidad;
