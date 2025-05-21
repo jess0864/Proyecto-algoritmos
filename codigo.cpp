@@ -1,3 +1,4 @@
+// Código base para un sistema de gestión de acciones y noticias financieras
 
 struct Empresa {
     string ticker;
@@ -39,7 +40,8 @@ struct Portafolio {
     void agregar(string ticker, int cantidad, float precio);
     void ordenarPorGanancia();
 };
-[7:51 am, 14/5/2025] Samuel Blanco: struct AccionComprada {
+
+struct AccionComprada {
     string ticker;
     int cantidad;
     float precioCompra;
