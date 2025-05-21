@@ -1,3 +1,4 @@
+///Samuel Blanco
 
 struct Empresa {
     string ticker;
