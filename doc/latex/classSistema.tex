@@ -1,0 +1,114 @@
+\hypertarget{classSistema}{}\doxysection{Referencia de la Clase Sistema}
+\label{classSistema}\index{Sistema@{Sistema}}
+
+
+Diagrama de colaboración para Sistema\+:
+% FIG 0
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSistema_a899504811ac3d6a17e95a56395390c7f}\label{classSistema_a899504811ac3d6a17e95a56395390c7f}} 
+bool {\bfseries registrar\+Vehiculo} (const string \&nombre\+Ciudad, const string \&nombre\+Parqueadero, const string \&nombre\+Zona, const string \&placa, bool desde\+Atender=false)
+\item 
+\mbox{\Hypertarget{classSistema_a24c0db25f87592921adb518061433af7}\label{classSistema_a24c0db25f87592921adb518061433af7}} 
+void {\bfseries deshacer\+Registro} (const string \&nombre\+Ciudad, const string \&nombre\+Parqueadero, const string \&nombre\+Zona)
+\item 
+\mbox{\Hypertarget{classSistema_af8563436122fe87b6d13e26437a596bb}\label{classSistema_af8563436122fe87b6d13e26437a596bb}} 
+void {\bfseries atender\+Vehiculo} (const string \&nombre\+Ciudad, const string \&nombre\+Parqueadero, const string \&nombre\+Zona)
+\item 
+\mbox{\Hypertarget{classSistema_a732f28e9b5a5b7648af1bace31ddab0c}\label{classSistema_a732f28e9b5a5b7648af1bace31ddab0c}} 
+void {\bfseries mostrar\+Estructura} ()
+\item 
+\mbox{\Hypertarget{classSistema_ac4e0136a2dc657e0d3c14139ba754b56}\label{classSistema_ac4e0136a2dc657e0d3c14139ba754b56}} 
+void {\bfseries agregar\+Ciudad} (const string \&nombre)
+\item 
+\mbox{\Hypertarget{classSistema_a1f7804b3fd8979073b7f9b82de9b95ac}\label{classSistema_a1f7804b3fd8979073b7f9b82de9b95ac}} 
+void {\bfseries agregar\+Parqueadero} (const string \&nombre\+Ciudad, const string \&nombre\+Parqueadero)
+\item 
+\mbox{\Hypertarget{classSistema_a9bd2e368dd21260c6583f2fd8ea0975a}\label{classSistema_a9bd2e368dd21260c6583f2fd8ea0975a}} 
+void {\bfseries agregar\+Zona} (const string \&nombre\+Ciudad, const string \&nombre\+Parqueadero, const string \&nombre\+Zona)
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSistema_a9371d06d6ac95ed7e4529193fc3f4daf}\label{classSistema_a9371d06d6ac95ed7e4529193fc3f4daf}} 
+void {\bfseries liberar\+Vehiculos} (\mbox{\hyperlink{structVehiculo}{Vehiculo}} $\ast$v)
+\item 
+\mbox{\Hypertarget{classSistema_ab5e4ce2a5b7421d55bf2ea53b2327703}\label{classSistema_ab5e4ce2a5b7421d55bf2ea53b2327703}} 
+void {\bfseries liberar\+Zonas} (\mbox{\hyperlink{structZona}{Zona}} $\ast$z)
+\item 
+\mbox{\Hypertarget{classSistema_a1be54583ec133110914fe929252dfeb6}\label{classSistema_a1be54583ec133110914fe929252dfeb6}} 
+void {\bfseries liberar\+Parqueaderos} (\mbox{\hyperlink{structParqueadero}{Parqueadero}} $\ast$p)
+\item 
+\mbox{\Hypertarget{classSistema_a3c3e6e024382d6cd0afd57259516d31d}\label{classSistema_a3c3e6e024382d6cd0afd57259516d31d}} 
+void {\bfseries liberar\+Ciudades} (\mbox{\hyperlink{structCiudad}{Ciudad}} $\ast$c)
+\item 
+\mbox{\Hypertarget{classSistema_a1c66f05c6cb614fe232cfb0d6ed573c3}\label{classSistema_a1c66f05c6cb614fe232cfb0d6ed573c3}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries intercambiar} (T \&a, T \&b)
+\item 
+\mbox{\Hypertarget{classSistema_ab4738c1b3c896fa5d15d21bffff94319}\label{classSistema_ab4738c1b3c896fa5d15d21bffff94319}} 
+{\footnotesize template$<$typename T $>$ }\\int {\bfseries particionar} (vector$<$ T $>$ \&lista, int bajo, int alto, bool(Sistema\+::$\ast$comparar)(T, T))
+\item 
+\mbox{\Hypertarget{classSistema_a2ec97684d1941d22c9c83cbcde7eac06}\label{classSistema_a2ec97684d1941d22c9c83cbcde7eac06}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries quick\+Sort} (vector$<$ T $>$ \&lista, int bajo, int alto, bool(Sistema\+::$\ast$comparar)(T, T))
+\item 
+\mbox{\Hypertarget{classSistema_ab3fe82d68b4a5dbdd658a553cf572fae}\label{classSistema_ab3fe82d68b4a5dbdd658a553cf572fae}} 
+{\footnotesize template$<$typename T $>$ }\\int {\bfseries busqueda\+Binaria} (const vector$<$ T $>$ \&arreglo, const string \&valor)
+\item 
+\mbox{\Hypertarget{classSistema_ac8716fb093f04649a4ccc9c85c2c8ada}\label{classSistema_ac8716fb093f04649a4ccc9c85c2c8ada}} 
+bool {\bfseries comparar\+Ciudades} (\mbox{\hyperlink{structCiudad}{Ciudad}} $\ast$a, \mbox{\hyperlink{structCiudad}{Ciudad}} $\ast$b)
+\item 
+\mbox{\Hypertarget{classSistema_ab9eec2123cb29d6a60aac36bda69e199}\label{classSistema_ab9eec2123cb29d6a60aac36bda69e199}} 
+bool {\bfseries comparar\+Parqueaderos} (\mbox{\hyperlink{structParqueadero}{Parqueadero}} $\ast$a, \mbox{\hyperlink{structParqueadero}{Parqueadero}} $\ast$b)
+\item 
+\mbox{\Hypertarget{classSistema_a7e85765a694e8e9c0f6eac6d04df0e74}\label{classSistema_a7e85765a694e8e9c0f6eac6d04df0e74}} 
+bool {\bfseries comparar\+Zonas} (\mbox{\hyperlink{structZona}{Zona}} $\ast$a, \mbox{\hyperlink{structZona}{Zona}} $\ast$b)
+\item 
+\mbox{\Hypertarget{classSistema_a112c3d97f9031770955bdbae0e41cbc3}\label{classSistema_a112c3d97f9031770955bdbae0e41cbc3}} 
+vector$<$ \mbox{\hyperlink{structCiudad}{Ciudad}} $\ast$ $>$ {\bfseries obtener\+Ciudades\+Ordenadas} ()
+\item 
+\mbox{\Hypertarget{classSistema_a825cd944de2b2ea59d1ef90316b2431b}\label{classSistema_a825cd944de2b2ea59d1ef90316b2431b}} 
+vector$<$ \mbox{\hyperlink{structParqueadero}{Parqueadero}} $\ast$ $>$ {\bfseries obtener\+Parqueaderos\+Ordenados} (\mbox{\hyperlink{structParqueadero}{Parqueadero}} $\ast$parqueaderos)
+\item 
+\mbox{\Hypertarget{classSistema_ad68432d96805748d2837dd4a27e98ae3}\label{classSistema_ad68432d96805748d2837dd4a27e98ae3}} 
+vector$<$ \mbox{\hyperlink{structZona}{Zona}} $\ast$ $>$ {\bfseries obtener\+Zonas\+Ordenadas} (\mbox{\hyperlink{structZona}{Zona}} $\ast$zonas)
+\item 
+\mbox{\Hypertarget{classSistema_a205026c590ac5adec0febc4d7a3472c7}\label{classSistema_a205026c590ac5adec0febc4d7a3472c7}} 
+\mbox{\hyperlink{structCiudad}{Ciudad}} $\ast$ {\bfseries buscar\+Ciudad} (const string \&nombre\+Ciudad)
+\item 
+\mbox{\Hypertarget{classSistema_a2f30678ebd4b888778fb08ede5cc3f93}\label{classSistema_a2f30678ebd4b888778fb08ede5cc3f93}} 
+\mbox{\hyperlink{structParqueadero}{Parqueadero}} $\ast$ {\bfseries buscar\+Parqueadero} (\mbox{\hyperlink{structCiudad}{Ciudad}} $\ast$ciudad, const string \&nombre\+Parqueadero)
+\item 
+\mbox{\Hypertarget{classSistema_aab33bedfb1525fbcb9745fc81be7a23f}\label{classSistema_aab33bedfb1525fbcb9745fc81be7a23f}} 
+\mbox{\hyperlink{structZona}{Zona}} $\ast$ {\bfseries buscar\+Zona} (const string \&nombre\+Ciudad, const string \&nombre\+Parqueadero, const string \&nombre\+Zona)
+\item 
+\mbox{\Hypertarget{classSistema_a63e3f47302fb9e4e751d25f9da6318c2}\label{classSistema_a63e3f47302fb9e4e751d25f9da6318c2}} 
+bool {\bfseries existe\+Ciudad} (const string \&nombre)
+\item 
+\mbox{\Hypertarget{classSistema_ad5b62c9a951b5081bd77a0f48bf3dc31}\label{classSistema_ad5b62c9a951b5081bd77a0f48bf3dc31}} 
+bool {\bfseries existe\+Parqueadero} (const string \&nombre\+Ciudad, const string \&nombre\+Parqueadero)
+\item 
+\mbox{\Hypertarget{classSistema_a53d3428f95d8ac5c03639577f2f2b917}\label{classSistema_a53d3428f95d8ac5c03639577f2f2b917}} 
+bool {\bfseries existe\+Zona} (const string \&nombre\+Ciudad, const string \&nombre\+Parqueadero, const string \&nombre\+Zona)
+\item 
+\mbox{\Hypertarget{classSistema_a661a0bdc00681ddb807b37189dd93437}\label{classSistema_a661a0bdc00681ddb807b37189dd93437}} 
+bool {\bfseries validar\+Nombre} (const string \&nombre)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSistema_adf6197b104961b375052de6f8bc25b70}\label{classSistema_adf6197b104961b375052de6f8bc25b70}} 
+\mbox{\hyperlink{structCiudad}{Ciudad}} $\ast$ {\bfseries ciudades}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+
+
+Definición en la línea 188 del archivo multilista.\+cpp.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+multilista.\+cpp\end{DoxyCompactItemize}

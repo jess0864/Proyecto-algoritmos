@@ -1,0 +1,21 @@
+digraph "Zona"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Zona",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" vehiculos" ];
+  Node2 [label="Vehiculo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structVehiculo.html",tooltip=" "];
+  Node2 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" siguiente" ];
+  Node1 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" sigZona" ];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pila" ];
+  Node3 [label="Pila",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPila.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" cima" ];
+  Node4 [label="NodoPila",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structNodoPila.html",tooltip=" "];
+  Node4 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" siguiente" ];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" cola" ];
+  Node5 [label="Cola",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCola.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" frente\nfinal" ];
+  Node6 [label="NodoCola",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structNodoCola.html",tooltip=" "];
+  Node6 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" siguiente" ];
+}
