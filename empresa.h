@@ -211,17 +211,42 @@ private:
             string sector = sectores[rand() % 8];
             insertarEmpresa(tickers[i], nombres[i], sector, precio);
 
-            // Agregar precios históricos aleatorios (5 a 10 precios)
+            // Generar historial de precios desde 2025-01-01 hasta 2025-05-21
             Empresa* emp = buscarEmpresa(tickers[i]);
-            int nPrecios = 5 + rand() % 6;
+            int year = 2025, month = 1, day = 1;
             float precioHist = precio;
-            for (int j = 0; j < nPrecios; ++j) {
-                // Fecha ficticia: "2024-06-(día)"
-                string fecha = "2024-06-" + to_string(10 + j);
+            while (!(year == 2025 && month == 5 && day == 22)) {
+                // Construir la fecha manualmente sin sprintf
+                string fecha = "";
+                // Año
+                fecha += "2025-";
+                // Mes
+                if (month < 10) fecha += "0";
+                fecha += to_string(month) + "-";
+                // Día
+                if (day < 10) fecha += "0";
+                fecha += to_string(day);
+
                 // Variar el precio histórico aleatoriamente
                 float variacion = ((rand() % 2001) - 1000) / 100.0f; // -10.00 a +10.00
                 precioHist = max(1.0f, precioHist + variacion);
                 emp->historialPrecios.agregarPrecio(fecha, precioHist);
+
+                // Avanzar al siguiente día
+                day++;
+                int diasMes;
+                if (month == 2) diasMes = 28;
+                else if (month == 4 || month == 6 || month == 9 || month == 11) diasMes = 30;
+                else diasMes = 31;
+                if (day > diasMes) {
+                    day = 1;
+                    month++;
+                }
+                if (month > 12) {
+                    month = 1;
+                    year++;
+                }
+                if (year == 2025 && month == 5 && day == 22) break;
             }
             // Actualizar precio actual al último histórico
             if (emp->historialPrecios.cabeza)
@@ -433,6 +458,118 @@ public:
             }
         }
         return (cuenta > 0) ? (suma / cuenta) : 0;
+    }
+
+    /**
+     * @brief Devuelve la empresa con el precio actual más bajo.
+     * @return Puntero a la empresa con el precio más bajo, o nullptr si no hay empresas.
+     */
+    Empresa* obtenerEmpresaMasBarata() {
+        vector<Empresa*> lista = obtenerEmpresasOrdenadas();
+        if (lista.empty()) return nullptr;
+        Empresa* minEmp = lista[0];
+        for (size_t i = 1; i < lista.size(); ++i) {
+            if (lista[i]->precioActual < minEmp->precioActual)
+                minEmp = lista[i];
+        }
+        return minEmp;
+    }
+
+    /**
+     * @brief Devuelve la empresa con el precio actual más alto.
+     * @return Puntero a la empresa con el precio más alto, o nullptr si no hay empresas.
+     */
+    Empresa* obtenerEmpresaMasCara() {
+        vector<Empresa*> lista = obtenerEmpresasOrdenadas();
+        if (lista.empty()) return nullptr;
+        Empresa* maxEmp = lista[0];
+        for (size_t i = 1; i < lista.size(); ++i) {
+            if (lista[i]->precioActual > maxEmp->precioActual)
+                maxEmp = lista[i];
+        }
+        return maxEmp;
+    }
+
+    /**
+     * @brief Devuelve una lista de empresas cuyo precio actual está en el rango [minPrecio, maxPrecio].
+     * @param minPrecio Precio mínimo.
+     * @param maxPrecio Precio máximo.
+     * @return Vector de punteros a empresas dentro del rango.
+     */
+    vector<Empresa*> buscarEmpresasPorRangoPrecio(float minPrecio, float maxPrecio) {
+        vector<Empresa*> lista = obtenerEmpresasOrdenadas();
+        vector<Empresa*> resultado;
+        for (auto e : lista) {
+            if (e->precioActual >= minPrecio && e->precioActual <= maxPrecio)
+                resultado.push_back(e);
+        }
+        return resultado;
+    }
+
+    /**
+     * @brief Imprime la información de una empresa en formato de tabla.
+     * @param emp Puntero a la empresa a imprimir.
+     * Si el puntero es nulo, imprime un mensaje de empresa no encontrada.
+     */
+    void imprimirEmpresa(const Empresa* emp) {
+        if (!emp) {
+            cout << "Empresa no encontrada.\n";
+            return;
+        }
+        cout << "---------------------------------------------------------------\n";
+        cout << " Ticker   | Empresa                  | Sector         | Precio actual\n";
+        cout << "---------------------------------------------------------------\n";
+        // Ticker (máx 8)
+        cout << " ";
+        int t = 0;
+        for (; t < 8 && emp->ticker[t] != '\0'; ++t) cout << emp->ticker[t];
+        for (; t < 8; ++t) cout << " ";
+        cout << " | ";
+        // Nombre (máx 24)
+        int n = 0;
+        for (; n < 24 && emp->nombre[n] != '\0'; ++n) cout << emp->nombre[n];
+        for (; n < 24; ++n) cout << " ";
+        cout << " | ";
+        // Sector (máx 14)
+        int s = 0;
+        for (; s < 14 && emp->sector[s] != '\0'; ++s) cout << emp->sector[s];
+        for (; s < 14; ++s) cout << " ";
+        cout << " | " << emp->precioActual << endl;
+        cout << "---------------------------------------------------------------\n";
+    }
+
+    /**
+     * @brief Imprime una lista de empresas en formato de tabla.
+     * @param empresas Vector de punteros a empresas a imprimir.
+     * Si el vector está vacío, muestra un mensaje adecuado.
+     */
+    void imprimirEmpresas(const vector<Empresa*>& empresas) {
+        if (empresas.empty()) {
+            cout << "No hay empresas en el rango especificado.\n";
+            return;
+        }
+        cout << "---------------------------------------------------------------\n";
+        cout << " Ticker   | Empresa                  | Sector         | Precio actual\n";
+        cout << "---------------------------------------------------------------\n";
+        for (auto e : empresas) {
+            // Ticker (máx 8)
+            cout << " ";
+            int t = 0;
+            for (; t < 8 && e->ticker[t] != '\0'; ++t) cout << e->ticker[t];
+            for (; t < 8; ++t) cout << " ";
+            cout << " | ";
+            // Nombre (máx 24)
+            int n = 0;
+            for (; n < 24 && e->nombre[n] != '\0'; ++n) cout << e->nombre[n];
+            for (; n < 24; ++n) cout << " ";
+            cout << " | ";
+            // Sector (máx 14)
+            int s = 0;
+            for (; s < 14 && e->sector[s] != '\0'; ++s) cout << e->sector[s];
+            for (; s < 14; ++s) cout << " ";
+            cout << " | " << e->precioActual << endl;
+        }
+        cout << "---------------------------------------------------------------\n";
     }
 };
 
