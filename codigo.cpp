@@ -31,8 +31,6 @@ struct Noticia {
 };
 
 struct AccionComprada {
-<<<<<<< HEAD
-=======
     string ticker;
     int cantidad;
     float precioCompra;
@@ -43,20 +41,6 @@ struct Portafolio {
     void agregar(string ticker, int cantidad, float precio);
     void ordenarPorGanancia();
 };
-[7:51 am, 14/5/2025] Samuel Blanco: struct AccionComprada {
->>>>>>> 95bd61bf699c41b8e7017e753dc91246d1cedbb3
-    string ticker;
-    int cantidad;
-    float precioCompra;
-};
-
-struct Portafolio {
-    vector<AccionComprada> acciones;
-    void agregar(string ticker, int cantidad, float precio);
-    void ordenarPorGanancia();
-};
-
-<<<<<<< HEAD
 struct AccionComprada {
     string ticker;
     int cantidad;
@@ -69,8 +53,19 @@ struct Portafolio {
     void ordenarPorGanancia();
 };
 
-=======
->>>>>>> 95bd61bf699c41b8e7017e753dc91246d1cedbb3
+struct AccionComprada {
+    string ticker;
+    int cantidad;
+    float precioCompra;
+};
+
+struct Portafolio {
+    vector<AccionComprada> acciones;
+    void agregar(string ticker, int cantidad, float precio);
+    void ordenarPorGanancia();
+};
+
+
 struct NodoGrafo {
     string ticker;
     vector<pair<NodoGrafo*, float>> conexiones; // conexión y peso (correlación)
@@ -81,10 +76,7 @@ struct Grafo {
     void agregarRelacion(string t1, string t2, float peso);
     vector<string> recomendarAcciones(string ticker);
 };
-<<<<<<< HEAD
 
-=======
->>>>>>> 95bd61bf699c41b8e7017e753dc91246d1cedbb3
 struct Operacion {
     string tipo; // "compra" o "venta"
     string ticker;
