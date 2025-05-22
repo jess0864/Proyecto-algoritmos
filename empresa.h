@@ -294,10 +294,28 @@ public:
      */
     void imprimirEmpresas() {
         vector<Empresa*> lista = obtenerEmpresasOrdenadas();
+        cout << "---------------------------------------------------------------\n";
+        cout << " Ticker   | Empresa                  | Sector         | Precio actual\n";
+        cout << "---------------------------------------------------------------\n";
         for (auto e : lista) {
-            cout << e->ticker << " | " << e->nombre << " | " << e->sector
-                 << " | Precio actual: " << e->precioActual << endl;
+            // Ticker (máx 8)
+            cout << " ";
+            int t = 0;
+            for (; t < 8 && e->ticker[t] != '\0'; ++t) cout << e->ticker[t];
+            for (; t < 8; ++t) cout << " ";
+            cout << " | ";
+            // Nombre (máx 24)
+            int n = 0;
+            for (; n < 24 && e->nombre[n] != '\0'; ++n) cout << e->nombre[n];
+            for (; n < 24; ++n) cout << " ";
+            cout << " | ";
+            // Sector (máx 14)
+            int s = 0;
+            for (; s < 14 && e->sector[s] != '\0'; ++s) cout << e->sector[s];
+            for (; s < 14; ++s) cout << " ";
+            cout << " | " << e->precioActual << endl;
         }
+        cout << "---------------------------------------------------------------\n";
     }
 
     /**
@@ -343,10 +361,78 @@ public:
     void imprimirPorPrecio() {
         vector<Empresa*> lista = obtenerEmpresasOrdenadas();
         mergeSort(lista, 0, lista.size() - 1);
+        cout << "---------------------------------------------------------------\n";
+        cout << " Ticker   | Empresa                  | Sector         | Precio actual\n";
+        cout << "---------------------------------------------------------------\n";
         for (auto e : lista) {
-            cout << e->ticker << " | " << e->nombre << " | " << e->sector
-                 << " | Precio actual: " << e->precioActual << endl;
+            // Ticker (máx 8)
+            cout << " ";
+            int t = 0;
+            for (; t < 8 && e->ticker[t] != '\0'; ++t) cout << e->ticker[t];
+            for (; t < 8; ++t) cout << " ";
+            cout << " | ";
+            // Nombre (máx 24)
+            int n = 0;
+            for (; n < 24 && e->nombre[n] != '\0'; ++n) cout << e->nombre[n];
+            for (; n < 24; ++n) cout << " ";
+            cout << " | ";
+            // Sector (máx 14)
+            int s = 0;
+            for (; s < 14 && e->sector[s] != '\0'; ++s) cout << e->sector[s];
+            for (; s < 14; ++s) cout << " ";
+            cout << " | " << e->precioActual << endl;
         }
+        cout << "---------------------------------------------------------------\n";
+    }
+
+    /**
+     * @brief Imprime todas las empresas de un sector específico.
+     * @param sector Nombre del sector a filtrar.
+     */
+    void imprimirEmpresasPorSector(const string& sector) {
+        vector<Empresa*> lista = obtenerEmpresasOrdenadas();
+        cout << "---------------------------------------------------------------\n";
+        cout << " Ticker   | Empresa                  | Sector         | Precio actual\n";
+        cout << "---------------------------------------------------------------\n";
+        for (auto e : lista) {
+            if (e->sector == sector) {
+                // Ticker (máx 8)
+                cout << " ";
+                int t = 0;
+                for (; t < 8 && e->ticker[t] != '\0'; ++t) cout << e->ticker[t];
+                for (; t < 8; ++t) cout << " ";
+                cout << " | ";
+                // Nombre (máx 24)
+                int n = 0;
+                for (; n < 24 && e->nombre[n] != '\0'; ++n) cout << e->nombre[n];
+                for (; n < 24; ++n) cout << " ";
+                cout << " | ";
+                // Sector (máx 14)
+                int s = 0;
+                for (; s < 14 && e->sector[s] != '\0'; ++s) cout << e->sector[s];
+                for (; s < 14; ++s) cout << " ";
+                cout << " | " << e->precioActual << endl;
+            }
+        }
+        cout << "---------------------------------------------------------------\n";
+    }
+
+    /**
+     * @brief Calcula el promedio del precio actual de las empresas de un sector.
+     * @param sector Nombre del sector.
+     * @return Promedio del precio actual de las empresas del sector, o 0 si no hay empresas.
+     */
+    float promedioPrecioPorSector(const string& sector) {
+        vector<Empresa*> lista = obtenerEmpresasOrdenadas();
+        float suma = 0;
+        int cuenta = 0;
+        for (auto e : lista) {
+            if (e->sector == sector) {
+                suma += e->precioActual;
+                cuenta++;
+            }
+        }
+        return (cuenta > 0) ? (suma / cuenta) : 0;
     }
 };
 
