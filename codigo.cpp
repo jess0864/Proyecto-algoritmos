@@ -2,6 +2,9 @@
 
 #include "empresa.h"
 
+/**
+ * @brief Muestra el menú principal de opciones por consola.
+ */
 void mostrarMenu() {
     cout << "\n--- Sistema de Gestión de Acciones ---\n";
     cout << "1. Buscar empresa por ticker\n";
@@ -13,6 +16,12 @@ void mostrarMenu() {
     cout << "Seleccione una opción: ";
 }
 
+/**
+ * @brief Función principal del programa.
+ * 
+ * Permite gestionar empresas, consultar precios y calcular promedios móviles.
+ * @return 0 al finalizar correctamente.
+ */
 int main() {
     ABBEmpresas arbol;
     int opcion;

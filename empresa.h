@@ -8,28 +8,54 @@
 #include <ctime>
 using namespace std;
 
-// Nodo para la multilista de precios históricos
+/**
+ * @brief Nodo para la multilista de precios históricos de una acción.
+ */
 struct NodoPrecio {
+    /// Fecha del precio histórico (formato AAAA-MM-DD)
     string fecha;
+    /// Precio de cierre en la fecha dada
     float precioCierre;
+    /// Puntero al siguiente nodo en la lista
     NodoPrecio* siguiente;
+
+    /**
+     * @brief Constructor de NodoPrecio.
+     * @param f Fecha del precio.
+     * @param p Precio de cierre.
+     */
     NodoPrecio(string f, float p) : fecha(f), precioCierre(p), siguiente(nullptr) {}
 };
 
-// Multilista para historial de precios de una acción
+/**
+ * @brief Multilista para historial de precios de una acción.
+ */
 class MultilistaPrecio {
 public:
+    /// Puntero al primer nodo de la lista de precios
     NodoPrecio* cabeza;
+
+    /**
+     * @brief Constructor de MultilistaPrecio.
+     */
     MultilistaPrecio() : cabeza(nullptr) {}
 
-    // Agrega un precio al historial (al inicio)
+    /**
+     * @brief Agrega un precio al historial (al inicio de la lista).
+     * @param fecha Fecha del precio.
+     * @param precio Precio de cierre.
+     */
     void agregarPrecio(const string& fecha, float precio) {
         NodoPrecio* nuevo = new NodoPrecio(fecha, precio);
         nuevo->siguiente = cabeza;
         cabeza = nuevo;
     }
 
-    // Calcula el promedio móvil de los últimos 'dias' precios
+    /**
+     * @brief Calcula el promedio móvil de los últimos 'dias' precios.
+     * @param dias Número de días a considerar.
+     * @return Promedio móvil calculado.
+     */
     float promedioMovil(int dias) {
         float suma = 0;
         int cont = 0;
@@ -42,7 +68,9 @@ public:
         return (cont > 0) ? suma / cont : 0;
     }
 
-    // Imprime el historial de precios
+    /**
+     * @brief Imprime el historial de precios por consola.
+     */
     void imprimir() {
         NodoPrecio* actual = cabeza;
         while (actual) {
@@ -53,27 +81,51 @@ public:
     }
 };
 
-// Nodo de ABB para empresa
+/**
+ * @brief Nodo de ABB que representa una empresa.
+ */
 struct Empresa {
+    /// Ticker de la empresa (clave única)
     string ticker;
+    /// Nombre de la empresa
     string nombre;
+    /// Sector al que pertenece la empresa
     string sector;
+    /// Precio actual de la acción
     float precioActual;
+    /// Historial de precios de la acción
     MultilistaPrecio historialPrecios;
+    /// Puntero al hijo izquierdo en el ABB
     Empresa* izquierda;
+    /// Puntero al hijo derecho en el ABB
     Empresa* derecha;
 
+    /**
+     * @brief Constructor de Empresa.
+     * @param t Ticker.
+     * @param n Nombre.
+     * @param s Sector.
+     * @param p Precio actual.
+     */
     Empresa(string t, string n, string s, float p)
         : ticker(t), nombre(n), sector(s), precioActual(p),
           izquierda(nullptr), derecha(nullptr) {}
 };
 
-// Árbol binario de búsqueda para empresas
+/**
+ * @brief Árbol binario de búsqueda (ABB) para gestionar empresas.
+ */
 class ABBEmpresas {
 private:
+    /// Puntero a la raíz del ABB
     Empresa* raiz;
 
-    // Inserta una empresa en el ABB (por ticker)
+    /**
+     * @brief Inserta una empresa en el ABB (por ticker).
+     * @param nodo Nodo actual.
+     * @param nueva Nueva empresa a insertar.
+     * @return Puntero al nodo actualizado.
+     */
     Empresa* insertar(Empresa* nodo, Empresa* nueva) {
         if (!nodo) return nueva;
         if (nueva->ticker < nodo->ticker)
@@ -84,7 +136,12 @@ private:
         return nodo;
     }
 
-    // Búsqueda binaria por ticker
+    /**
+     * @brief Busca una empresa por ticker en el ABB.
+     * @param nodo Nodo actual.
+     * @param ticker Ticker a buscar.
+     * @return Puntero a la empresa encontrada o nullptr.
+     */
     Empresa* buscar(Empresa* nodo, const string& ticker) {
         if (!nodo) return nullptr;
         if (ticker < nodo->ticker)
@@ -95,7 +152,11 @@ private:
             return nodo;
     }
 
-    // Recorrido inorden (orden alfabético por ticker)
+    /**
+     * @brief Recorrido inorden para obtener empresas ordenadas alfabéticamente.
+     * @param nodo Nodo actual.
+     * @param lista Vector donde se almacenan las empresas.
+     */
     void inorden(Empresa* nodo, vector<Empresa*>& lista) {
         if (!nodo) return;
         inorden(nodo->izquierda, lista);
@@ -103,7 +164,10 @@ private:
         inorden(nodo->derecha, lista);
     }
 
-    // Liberar memoria
+    /**
+     * @brief Libera la memoria de todos los nodos del ABB y sus listas de precios.
+     * @param nodo Nodo actual.
+     */
     void destruir(Empresa* nodo) {
         if (!nodo) return;
         destruir(nodo->izquierda);
@@ -118,7 +182,9 @@ private:
         delete nodo;
     }
 
-    // Inicializa automáticamente empresas reales con datos aleatorios
+    /**
+     * @brief Inicializa automáticamente el ABB con empresas reales y datos aleatorios.
+     */
     void inicializarEmpresas() {
         // Arrays de tickers, nombres y sectores reales (ejemplo S&P 500)
         const string tickers[50] = {
@@ -164,13 +230,25 @@ private:
     }
 
 public:
+    /**
+     * @brief Constructor de ABBEmpresas. Inicializa el árbol con empresas de ejemplo.
+     */
     ABBEmpresas() : raiz(nullptr) {
         inicializarEmpresas();
     }
 
+    /**
+     * @brief Destructor de ABBEmpresas. Libera toda la memoria utilizada.
+     */
     ~ABBEmpresas() { destruir(raiz); }
 
-    // Inserta una empresa (si no existe)
+    /**
+     * @brief Inserta una empresa (si no existe ya en el ABB).
+     * @param ticker Ticker de la empresa.
+     * @param nombre Nombre de la empresa.
+     * @param sector Sector de la empresa.
+     * @param precio Precio actual de la acción.
+     */
     void insertarEmpresa(const string& ticker, const string& nombre, const string& sector, float precio) {
         if (!buscarEmpresa(ticker)) {
             Empresa* nueva = new Empresa(ticker, nombre, sector, precio);
@@ -178,12 +256,21 @@ public:
         }
     }
 
-    // Busca una empresa por ticker
+    /**
+     * @brief Busca una empresa por ticker.
+     * @param ticker Ticker a buscar.
+     * @return Puntero a la empresa encontrada o nullptr.
+     */
     Empresa* buscarEmpresa(const string& ticker) {
         return buscar(raiz, ticker);
     }
 
-    // Agrega precio histórico a una empresa
+    /**
+     * @brief Agrega un precio histórico a una empresa.
+     * @param ticker Ticker de la empresa.
+     * @param fecha Fecha del precio.
+     * @param precio Precio de cierre.
+     */
     void agregarPrecio(const string& ticker, const string& fecha, float precio) {
         Empresa* emp = buscarEmpresa(ticker);
         if (emp) {
@@ -192,14 +279,19 @@ public:
         }
     }
 
-    // Devuelve lista ordenada de empresas (inorden)
+    /**
+     * @brief Devuelve una lista ordenada de empresas (inorden).
+     * @return Vector de punteros a empresas ordenadas alfabéticamente.
+     */
     vector<Empresa*> obtenerEmpresasOrdenadas() {
         vector<Empresa*> lista;
         inorden(raiz, lista);
         return lista;
     }
 
-    // Imprime todas las empresas y su precio actual
+    /**
+     * @brief Imprime todas las empresas y su precio actual por consola.
+     */
     void imprimirEmpresas() {
         vector<Empresa*> lista = obtenerEmpresasOrdenadas();
         for (auto e : lista) {
@@ -208,7 +300,13 @@ public:
         }
     }
 
-    // Ordena empresas por precio actual usando Merge Sort (de mayor a menor)
+    /**
+     * @brief Función auxiliar para Merge Sort: combina dos subarreglos.
+     * @param arr Vector de empresas.
+     * @param left Índice izquierdo.
+     * @param mid Índice medio.
+     * @param right Índice derecho.
+     */
     static void merge(vector<Empresa*>& arr, int left, int mid, int right) {
         int n1 = mid - left + 1;
         int n2 = right - mid;
@@ -224,6 +322,12 @@ public:
         while (j < n2) arr[k++] = R[j++];
     }
 
+    /**
+     * @brief Ordena empresas por precio actual usando Merge Sort (de mayor a menor).
+     * @param arr Vector de empresas.
+     * @param left Índice izquierdo.
+     * @param right Índice derecho.
+     */
     static void mergeSort(vector<Empresa*>& arr, int left, int right) {
         if (left < right) {
             int mid = left + (right - left) / 2;
@@ -233,7 +337,9 @@ public:
         }
     }
 
-    // Imprime empresas ordenadas por precio actual (de mayor a menor)
+    /**
+     * @brief Imprime empresas ordenadas por precio actual (de mayor a menor).
+     */
     void imprimirPorPrecio() {
         vector<Empresa*> lista = obtenerEmpresasOrdenadas();
         mergeSort(lista, 0, lista.size() - 1);
