@@ -1,92 +1,64 @@
-
 // Código base para un sistema de gestión de acciones y noticias financieras
 
-struct Empresa {
-    string ticker;
-    string nombre;
-    string sector;
-    float precioActual;
-    MultilistaPrecio* historialPrecios;
-    Empresa* izquierda;
-    Empresa* derecha;
-};
+#include "empresa.h"
 
-struct NodoPrecio {
-    string fecha;
-    float precioCierre;
-    NodoPrecio* siguiente;
-};
+void mostrarMenu() {
+    cout << "\n--- Sistema de Gestión de Acciones ---\n";
+    cout << "1. Buscar empresa por ticker\n";
+    cout << "2. Imprimir empresas (orden alfabético)\n";
+    cout << "3. Imprimir empresas (por precio actual descendente)\n";
+    cout << "4. Mostrar historial de precios de una empresa\n";
+    cout << "5. Calcular promedio móvil de una empresa\n";
+    cout << "0. Salir\n";
+    cout << "Seleccione una opción: ";
+}
 
-struct MultilistaPrecio {
-    NodoPrecio* cabeza;
-    void agregarPrecio(string fecha, float precio);
-    float promedioMovil(int dias);
-};
-
-struct Noticia {
-    int impacto; // Mayor impacto = mayor prioridad
-    string titulo;
-    string sectorAfectado;
-    Noticia* siguiente;
-};
-
-struct AccionComprada {
-    string ticker;
-    int cantidad;
-    float precioCompra;
-};
-
-struct Portafolio {
-    vector<AccionComprada> acciones;
-    void agregar(string ticker, int cantidad, float precio);
-    void ordenarPorGanancia();
-};
-struct AccionComprada {
-    string ticker;
-    int cantidad;
-    float precioCompra;
-};
-
-struct Portafolio {
-    vector<AccionComprada> acciones;
-    void agregar(string ticker, int cantidad, float precio);
-    void ordenarPorGanancia();
-};
-
-struct AccionComprada {
-    string ticker;
-    int cantidad;
-    float precioCompra;
-};
-
-struct Portafolio {
-    vector<AccionComprada> acciones;
-    void agregar(string ticker, int cantidad, float precio);
-    void ordenarPorGanancia();
-};
-
-
-struct NodoGrafo {
-    string ticker;
-    vector<pair<NodoGrafo*, float>> conexiones; // conexión y peso (correlación)
-};
-
-struct Grafo {
-    vector<NodoGrafo*> empresas;
-    void agregarRelacion(string t1, string t2, float peso);
-    vector<string> recomendarAcciones(string ticker);
-};
-
-struct Operacion {
-    string tipo; // "compra" o "venta"
-    string ticker;
-    int cantidad;
-    float precio;
-    Operacion* siguiente;
-};
-
-struct PilaOperaciones {
-    Operacion* tope;
-    void push(string tipo, string ticker, int cantidad, float precio);
-    Operacion pop();
-};
+int main() {
+    ABBEmpresas arbol;
+    int opcion;
+    do {
+        mostrarMenu();
+        cin >> opcion;
+        cin.ignore();
+        if (opcion == 1) { // Buscar empresa por ticker
+            string ticker;
+            cout << "Ticker: "; getline(cin, ticker);
+            Empresa* emp = arbol.buscarEmpresa(ticker);
+            if (emp) {
+                cout << emp->ticker << " | " << emp->nombre << " | " << emp->sector
+                     << " | Precio actual: " << emp->precioActual << endl;
+            } else {
+                cout << "Empresa no encontrada.\n";
+            }
+        } else if (opcion == 2) { // Imprimir empresas (orden alfabético)
+            arbol.imprimirEmpresas();
+        } else if (opcion == 3) { // Imprimir empresas (por precio actual descendente)
+            arbol.imprimirPorPrecio();
+        } else if (opcion == 4) { // Mostrar historial de precios de una empresa
+            string ticker;
+            cout << "Ticker: "; getline(cin, ticker);
+            Empresa* emp = arbol.buscarEmpresa(ticker);
+            if (emp) {
+                cout << "Historial de precios de " << emp->ticker << ": ";
+                emp->historialPrecios.imprimir();
+            } else {
+                cout << "Empresa no encontrada.\n";
+            }
+        } else if (opcion == 5) { // Calcular promedio móvil de una empresa
+            string ticker;
+            int dias;
+            cout << "Ticker: "; getline(cin, ticker);
+            cout << "Número de días para promedio móvil: "; cin >> dias;
+            Empresa* emp = arbol.buscarEmpresa(ticker);
+            if (emp) {
+                float prom = emp->historialPrecios.promedioMovil(dias);
+                cout << "Promedio móvil de " << dias << " días: " << prom << endl;
+            } else {
+                cout << "Empresa no encontrada.\n";
+            }
+            cin.ignore();
+        }
+    } while (opcion != 0);
+    cout << "Saliendo...\n";
+    return 0;
+}

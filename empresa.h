@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 // Nodo para la multilista de precios históricos
@@ -116,8 +118,56 @@ private:
         delete nodo;
     }
 
+    // Inicializa automáticamente empresas reales con datos aleatorios
+    void inicializarEmpresas() {
+        // Arrays de tickers, nombres y sectores reales (ejemplo S&P 500)
+        const string tickers[50] = {
+            "AAPL","MSFT","GOOGL","AMZN","META","TSLA","NVDA","BRK.B","JPM","V",
+            "UNH","HD","PG","MA","LLY","XOM","MRK","ABBV","AVGO","CVX",
+            "PEP","KO","COST","WMT","BAC","MCD","DIS","ADBE","CSCO","PFE",
+            "TMO","ABT","CRM","ACN","DHR","NKE","LIN","WFC","TXN","NEE",
+            "VZ","INTC","CMCSA","HON","ORCL","AMGN","QCOM","MDT","UNP","LOW"
+        };
+        const string nombres[50] = {
+            "Apple","Microsoft","Alphabet","Amazon","Meta Platforms","Tesla","Nvidia","Berkshire Hathaway","JPMorgan Chase","Visa",
+            "UnitedHealth","Home Depot","Procter & Gamble","Mastercard","Eli Lilly","Exxon Mobil","Merck","AbbVie","Broadcom","Chevron",
+            "PepsiCo","Coca-Cola","Costco","Walmart","Bank of America","McDonald's","Disney","Adobe","Cisco","Pfizer",
+            "Thermo Fisher","Abbott","Salesforce","Accenture","Danaher","Nike","Linde","Wells Fargo","Texas Instruments","NextEra Energy",
+            "Verizon","Intel","Comcast","Honeywell","Oracle","Amgen","Qualcomm","Medtronic","Union Pacific","Lowe's"
+        };
+        const string sectores[8] = {
+            "Tecnología","Finanzas","Salud","Consumo","Energía","Industrial","Telecomunicaciones","Materiales"
+        };
+
+        srand(time(nullptr));
+        for (int i = 0; i < 50; ++i) {
+            float precio = 50 + rand() % 450 + (rand() % 1000) / 1000.0f; // Precio entre 50 y 500 aprox
+            string sector = sectores[rand() % 8];
+            insertarEmpresa(tickers[i], nombres[i], sector, precio);
+
+            // Agregar precios históricos aleatorios (5 a 10 precios)
+            Empresa* emp = buscarEmpresa(tickers[i]);
+            int nPrecios = 5 + rand() % 6;
+            float precioHist = precio;
+            for (int j = 0; j < nPrecios; ++j) {
+                // Fecha ficticia: "2024-06-(día)"
+                string fecha = "2024-06-" + to_string(10 + j);
+                // Variar el precio histórico aleatoriamente
+                float variacion = ((rand() % 2001) - 1000) / 100.0f; // -10.00 a +10.00
+                precioHist = max(1.0f, precioHist + variacion);
+                emp->historialPrecios.agregarPrecio(fecha, precioHist);
+            }
+            // Actualizar precio actual al último histórico
+            if (emp->historialPrecios.cabeza)
+                emp->precioActual = emp->historialPrecios.cabeza->precioCierre;
+        }
+    }
+
 public:
-    ABBEmpresas() : raiz(nullptr) {}
+    ABBEmpresas() : raiz(nullptr) {
+        inicializarEmpresas();
+    }
+
     ~ABBEmpresas() { destruir(raiz); }
 
     // Inserta una empresa (si no existe)
