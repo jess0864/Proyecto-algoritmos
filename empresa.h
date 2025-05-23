@@ -8,6 +8,11 @@
 #include <ctime>
 using namespace std;
 
+// Lista global de sectores consistente para todo el sistema
+const vector<string> SECTORES_EMPRESA = {
+    "Tecnología", "Finanzas", "Salud", "Consumo", "Energía", "Industrial", "Telecomunicaciones", "Materiales"
+};
+
 /**
  * @brief Nodo para la multilista de precios históricos de una acción.
  */
@@ -201,14 +206,11 @@ private:
             "Thermo Fisher","Abbott","Salesforce","Accenture","Danaher","Nike","Linde","Wells Fargo","Texas Instruments","NextEra Energy",
             "Verizon","Intel","Comcast","Honeywell","Oracle","Amgen","Qualcomm","Medtronic","Union Pacific","Lowe's"
         };
-        const string sectores[8] = {
-            "Tecnología","Finanzas","Salud","Consumo","Energía","Industrial","Telecomunicaciones","Materiales"
-        };
 
         srand(time(nullptr));
         for (int i = 0; i < 50; ++i) {
             float precio = 50 + rand() % 450 + (rand() % 1000) / 1000.0f; // Precio entre 50 y 500 aprox
-            string sector = sectores[rand() % 8];
+            string sector = SECTORES_EMPRESA[rand() % SECTORES_EMPRESA.size()];
             insertarEmpresa(tickers[i], nombres[i], sector, precio);
 
             // Generar historial de precios desde 2025-01-01 hasta 2025-05-21
