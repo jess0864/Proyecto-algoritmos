@@ -573,6 +573,27 @@ public:
         }
         cout << "---------------------------------------------------------------\n";
     }
+
+    /**
+     * @brief Ajusta los precios de las empresas de un sector según el impacto de una noticia.
+     * @param sector Sector afectado.
+     * @param impacto Impacto de la noticia (1-10).
+     */
+    void ajustarPreciosPorNoticia(const string& sector, int impacto) {
+        vector<Empresa*> empresas = obtenerEmpresasOrdenadas();
+        float porcentaje = 0.0;
+        if (impacto > 5) {
+            porcentaje = (impacto - 5) * 0.01;
+        } else {
+            porcentaje = -(6 - impacto) * 0.01;
+        }
+        for (auto e : empresas) {
+            if (e->sector == sector) {
+                e->precioActual += e->precioActual * porcentaje;
+                if (e->precioActual < 1.0) e->precioActual = 1.0;
+            }
+        }
+    }
 };
 
 #endif

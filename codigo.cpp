@@ -240,7 +240,8 @@ int main() {
                     cout << "Sector: "; getline(cin, sector);
                     cout << "Fecha (YYYY-MM-DD): "; getline(cin, fecha);
                     colaNoticias.insertar(impacto, titulo, descripcion, sector, fecha);
-                    cout << "Noticia insertada.\n";
+                    arbol.ajustarPreciosPorNoticia(sector, impacto);
+                    cout << "Noticia insertada y precios ajustados para el sector '" << sector << "'.\n";
                 } else if (opcionNoticia == 2) {
                     // Mostrar noticias por prioridad
                     cout << "🔺 Noticias ordenadas por PRIORIDAD (impacto):\n";
