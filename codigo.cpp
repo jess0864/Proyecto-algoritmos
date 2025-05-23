@@ -10,11 +10,12 @@ extern const vector<string> SECTORES_EMPRESA;
  * @brief Muestra el menú principal para elegir entre opciones por empresa, sector o noticias.
  */
 void mostrarMenuPrincipal() {
-    cout << "\n--- Sistema de Gestión de Acciones ---\n";
-    cout << "1. Opciones por empresa\n";
-    cout << "2. Opciones por sector\n";
-    cout << "3. Opciones de noticias financieras\n";
-    cout << "0. Salir\n";
+    cout << "\n================ MENÚ PRINCIPAL ================\n";
+    cout << " 1. Consultas de empresas\n";
+    cout << " 2. Consultas por sector\n";
+    cout << " 3. Simulación y noticias\n";
+    cout << " 0. Salir\n";
+    cout << "-----------------------------------------------\n";
     cout << "Seleccione una opción: ";
 }
 
@@ -24,16 +25,15 @@ void mostrarMenuPrincipal() {
  * Permite al usuario buscar empresas, imprimir listados, ver historial, calcular promedios y buscar por rango de precio.
  */
 void mostrarMenuEmpresa() {
-    cout << "\n--- Opciones por empresa ---\n";
+    cout << "\n------ CONSULTAS DE EMPRESAS ------\n";
     cout << " 1. Buscar empresa por ticker\n";
-    cout << " 2. Imprimir empresas (orden alfabético)\n";
-    cout << " 3. Imprimir empresas (por precio actual descendente)\n";
-    cout << " 4. Mostrar historial de precios de una empresa\n";
-    cout << " 5. Calcular promedio móvil de una empresa\n";
-    cout << " 6. Buscar empresas por rango de precio actual\n";
-    cout << " 7. Empresa con acción más barata\n";
-    cout << " 8. Empresa con acción más cara\n";
+    cout << " 2. Listar empresas (alfabético)\n";
+    cout << " 3. Listar empresas (por precio descendente)\n";
+    cout << " 4. Historial y promedio móvil de precios\n";
+    cout << " 5. Buscar empresas por rango de precio\n";
+    cout << " 6. Empresa con acción más barata/cara\n";
     cout << " 0. Volver al menú principal\n";
+    cout << "-----------------------------------\n";
     cout << "Seleccione una opción: ";
 }
 
@@ -43,29 +43,28 @@ void mostrarMenuEmpresa() {
  * Permite al usuario imprimir empresas por sector y ver promedios de precios por sector.
  */
 void mostrarMenuSector() {
-    cout << "\n--- Opciones por sector ---\n";
-    cout << " 1. Imprimir empresas por sector\n";
-    cout << " 2. Promedio del precio de acciones por sector\n";
+    cout << "\n------ CONSULTAS POR SECTOR ------\n";
+    cout << " 1. Listar empresas por sector\n";
+    cout << " 2. Promedio de precios por sector\n";
     cout << " 0. Volver al menú principal\n";
+    cout << "----------------------------------\n";
     cout << "Seleccione una opción: ";
 }
 
 /**
- * @brief Muestra el submenú de opciones relacionadas con noticias financieras.
+ * @brief Muestra el submenú de opciones relacionadas con simulación y noticias financieras.
  * 
  * Permite al usuario gestionar noticias financieras, incluyendo inserción, búsqueda, ordenamiento y análisis.
  */
-void mostrarMenuNoticias() {
-    cout << "\n--- Opciones de noticias financieras ---\n";
-    cout << " 1. Insertar noticia\n";
-    cout << " 2. Mostrar noticias por prioridad (impacto)\n";
-    cout << " 3. Ordenar y mostrar noticias por fecha\n";
-    cout << " 4. Buscar noticias por sector\n";
-    cout << " 5. Buscar noticias por palabra clave\n";
-    cout << " 6. Detectar alerta de crisis\n";
-    cout << " 7. Calcular promedio de impacto\n";
-    cout << " 8. Generar noticias aleatorias\n";
+void mostrarMenuSimulacion() {
+    cout << "\n------ SIMULACIÓN Y NOTICIAS ------\n";
+    cout << " 1. Insertar noticia manualmente y ajustar precios\n";
+    cout << " 2. Generar noticias aleatorias y simular mercado\n";
+    cout << " 3. Mostrar noticias (por prioridad o fecha)\n";
+    cout << " 4. Buscar noticias (por sector o palabra clave)\n";
+    cout << " 5. Estadísticas y alertas de noticias\n";
     cout << " 0. Volver al menú principal\n";
+    cout << "-----------------------------------\n";
     cout << "Seleccione una opción: ";
 }
 
@@ -136,7 +135,7 @@ int main() {
                     /// Imprimir empresas ordenadas por precio actual descendente
                     arbol.imprimirPorPrecio();
                 } else if (opcionEmpresa == 4) { 
-                    /// Mostrar historial de precios de una empresa específica
+                    /// Mostrar historial de precios de una empresa específica y calcular promedio móvil
                     string ticker;
                     cout << "Ticker: "; getline(cin, ticker);
                     Empresa* emp = arbol.buscarEmpresa(ticker);
@@ -158,24 +157,18 @@ int main() {
                             cout << "| " << historial[i]->precioCierre << endl;
                         }
                         cout << "------------------------------------------\n";
+                        int dias;
+                        cout << "¿Calcular promedio móvil? (Ingrese días o 0 para omitir): ";
+                        cin >> dias;
+                        cin.ignore();
+                        if (dias > 0) {
+                            float prom = emp->historialPrecios.promedioMovil(dias);
+                            cout << "Promedio móvil de " << dias << " días: " << prom << endl;
+                        }
                     } else {
                         cout << "Empresa no encontrada.\n";
                     }
                 } else if (opcionEmpresa == 5) { 
-                    /// Calcular el promedio móvil de una empresa
-                    string ticker;
-                    int dias;
-                    cout << "Ticker: "; getline(cin, ticker);
-                    cout << "Número de días para promedio móvil: "; cin >> dias;
-                    Empresa* emp = arbol.buscarEmpresa(ticker);
-                    if (emp) {
-                        float prom = emp->historialPrecios.promedioMovil(dias);
-                        cout << "Promedio móvil de " << dias << " días: " << prom << endl;
-                    } else {
-                        cout << "Empresa no encontrada.\n";
-                    }
-                    cin.ignore();
-                } else if (opcionEmpresa == 6) { 
                     /// Buscar empresas cuyo precio actual está en un rango dado
                     float minPrecio, maxPrecio;
                     cout << "Ingrese el precio mínimo: "; cin >> minPrecio;
@@ -183,13 +176,13 @@ int main() {
                     cin.ignore();
                     vector<Empresa*> resultado = arbol.buscarEmpresasPorRangoPrecio(minPrecio, maxPrecio);
                     arbol.imprimirEmpresas(resultado);
-                } else if (opcionEmpresa == 7) { 
-                    /// Mostrar la empresa con la acción más barata
+                } else if (opcionEmpresa == 6) { 
+                    /// Mostrar la empresa con la acción más barata y más cara
                     Empresa* minEmp = arbol.obtenerEmpresaMasBarata();
-                    arbol.imprimirEmpresa(minEmp);
-                } else if (opcionEmpresa == 8) { 
-                    /// Mostrar la empresa con la acción más cara
                     Empresa* maxEmp = arbol.obtenerEmpresaMasCara();
+                    cout << "\nEmpresa con acción más barata:\n";
+                    arbol.imprimirEmpresa(minEmp);
+                    cout << "\nEmpresa con acción más cara:\n";
                     arbol.imprimirEmpresa(maxEmp);
                 }
             } while (opcionEmpresa != 0);
@@ -246,20 +239,19 @@ int main() {
                 }
             } while (opcionSector != 0);
         } else if (opcionPrincipal == 3) {
-            /// Opciones relacionadas con noticias financieras
-            int opcionNoticia;
+            /// Opciones relacionadas con simulación y noticias financieras
+            int opcionSim;
             do {
-                mostrarMenuNoticias();
-                cin >> opcionNoticia;
+                mostrarMenuSimulacion();
+                cin >> opcionSim;
                 cin.ignore();
-                if (opcionNoticia == 1) {
-                    // Insertar noticia manualmente y mostrar ajuste
+                if (opcionSim == 1) {
+                    // Insertar noticia manualmente y ajustar precios
                     int impacto;
                     string titulo, descripcion, sector, fecha;
                     cout << "Impacto (1-10): "; cin >> impacto; cin.ignore();
                     cout << "Título: "; getline(cin, titulo);
                     cout << "Descripción: "; getline(cin, descripcion);
-                    // Mostrar sectores disponibles desde empresa.h
                     cout << "Sectores disponibles:\n";
                     for (const auto& s : SECTORES_EMPRESA) {
                         cout << "  - " << s << endl;
@@ -268,42 +260,9 @@ int main() {
                     cout << "Fecha (YYYY-MM-DD): "; getline(cin, fecha);
                     colaNoticias.insertar(impacto, titulo, descripcion, sector, fecha);
                     arbol.ajustarPreciosPorNoticia(sector, impacto, fecha);
-                    cout << "\nNoticia generada:\n";
-                    cout << "  [" << fecha << "] (Impacto: " << impacto << ") " << titulo << " - " << sector << endl;
-                    mostrarAjusteSector(sector, calcularPorcentajeAjuste(impacto));
-                    cout << "Noticia insertada y precios ajustados para el sector '" << sector << "'.\n";
-                } else if (opcionNoticia == 2) {
-                    // Mostrar noticias por prioridad
-                    cout << "🔺 Noticias ordenadas por PRIORIDAD (impacto):\n";
-                    colaNoticias.mostrar();
-                } else if (opcionNoticia == 3) {
-                    // Ordenar y mostrar noticias por fecha
-                    colaNoticias.ordenarPorFecha();
-                    cout << "\n📆 Noticias ordenadas por FECHA:\n";
-                    colaNoticias.mostrar();
-                } else if (opcionNoticia == 4) {
-                    // Buscar por sector
-                    string sector;
-                    cout << "Sector: "; getline(cin, sector);
-                    colaNoticias.buscarPorSector(sector);
-                } else if (opcionNoticia == 5) {
-                    // Buscar por palabra clave
-                    string palabra;
-                    cout << "Palabra clave: "; getline(cin, palabra);
-                    colaNoticias.buscarPorPalabraClave(palabra);
-                } else if (opcionNoticia == 6) {
-                    // Detectar alerta de crisis
-                    if (colaNoticias.hayAlertaDeCrisis()) {
-                        cout << "\n🚨 ALERTA: Se detecta posible crisis. Hay múltiples noticias de alto impacto.\n";
-                    } else {
-                        cout << "\n✅ No hay señales de crisis por ahora.\n";
-                    }
-                } else if (opcionNoticia == 7) {
-                    // Calcular promedio de impacto
-                    float promedio = colaNoticias.promedioImpacto();
-                    cout << "\n📊 Impacto promedio de las noticias: " << promedio << endl;
-                } else if (opcionNoticia == 8) {
-                    // Generar noticias aleatorias, mostrar cada una y el ajuste aplicado
+                    cout << "\nNoticia generada y precios ajustados.\n";
+                } else if (opcionSim == 2) {
+                    // Generar noticias aleatorias y simular mercado
                     int cantidad;
                     cout << "Cantidad de noticias aleatorias a generar: ";
                     cin >> cantidad;
@@ -333,8 +292,42 @@ int main() {
                         mostrarAjusteSector(sector, calcularPorcentajeAjuste(impacto));
                     }
                     cout << "Noticias aleatorias generadas y precios ajustados.\n";
+                } else if (opcionSim == 3) {
+                    // Mostrar noticias (elige orden)
+                    int subop;
+                    cout << "1. Por prioridad (impacto)\n2. Por fecha\nSeleccione: ";
+                    cin >> subop; cin.ignore();
+                    if (subop == 1) {
+                        colaNoticias.mostrar();
+                    } else if (subop == 2) {
+                        colaNoticias.ordenarPorFecha();
+                        colaNoticias.mostrar();
+                    }
+                } else if (opcionSim == 4) {
+                    // Buscar noticias
+                    int subop;
+                    cout << "1. Por sector\n2. Por palabra clave\nSeleccione: ";
+                    cin >> subop; cin.ignore();
+                    if (subop == 1) {
+                        string sector;
+                        cout << "Sector: "; getline(cin, sector);
+                        colaNoticias.buscarPorSector(sector);
+                    } else if (subop == 2) {
+                        string palabra;
+                        cout << "Palabra clave: "; getline(cin, palabra);
+                        colaNoticias.buscarPorPalabraClave(palabra);
+                    }
+                } else if (opcionSim == 5) {
+                    // Estadísticas y alertas
+                    float promedio = colaNoticias.promedioImpacto();
+                    cout << "Impacto promedio de las noticias: " << promedio << endl;
+                    if (colaNoticias.hayAlertaDeCrisis()) {
+                        cout << "ALERTA: Se detecta posible crisis. Hay múltiples noticias de alto impacto.\n";
+                    } else {
+                        cout << "No hay señales de crisis por ahora.\n";
+                    }
                 }
-            } while (opcionNoticia != 0);
+            } while (opcionSim != 0);
         }
     } while (opcionPrincipal != 0);
     cout << "Saliendo...\n";
