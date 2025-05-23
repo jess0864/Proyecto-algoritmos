@@ -594,6 +594,31 @@ public:
             }
         }
     }
+
+    /**
+     * @brief Ajusta los precios de las empresas de un sector según el impacto de una noticia.
+     *        Agrega el nuevo precio al historial con la fecha de la noticia y actualiza el precio actual.
+     * @param sector Sector afectado.
+     * @param impacto Impacto de la noticia (1-10).
+     * @param fecha Fecha de la noticia.
+     */
+    void ajustarPreciosPorNoticia(const string& sector, int impacto, const string& fecha) {
+        vector<Empresa*> empresas = obtenerEmpresasOrdenadas();
+        float porcentaje = 0.0;
+        if (impacto > 5) {
+            porcentaje = (impacto - 5) * 0.01;
+        } else {
+            porcentaje = -(6 - impacto) * 0.01;
+        }
+        for (auto e : empresas) {
+            if (e->sector == sector) {
+                float nuevoPrecio = e->precioActual + e->precioActual * porcentaje;
+                if (nuevoPrecio < 1.0) nuevoPrecio = 1.0;
+                e->precioActual = nuevoPrecio;
+                e->historialPrecios.agregarPrecio(fecha, nuevoPrecio);
+            }
+        }
+    }
 };
 
 #endif

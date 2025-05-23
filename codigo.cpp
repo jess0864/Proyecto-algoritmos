@@ -70,6 +70,33 @@ void mostrarMenuNoticias() {
 }
 
 /**
+ * @brief Muestra el ajuste aplicado a los precios de un sector.
+ * @param sector Sector afectado.
+ * @param porcentaje Porcentaje aplicado.
+ */
+void mostrarAjusteSector(const string& sector, float porcentaje) {
+    cout << "  > Ajuste aplicado al sector '" << sector << "': ";
+    if (porcentaje > 0)
+        cout << "+" << porcentaje * 100 << "%\n";
+    else if (porcentaje < 0)
+        cout << porcentaje * 100 << "%\n";
+    else
+        cout << "Sin cambio\n";
+}
+
+/**
+ * @brief Calcula el porcentaje de ajuste según el impacto.
+ * @param impacto Impacto de la noticia (1-10).
+ * @return Porcentaje como valor decimal.
+ */
+float calcularPorcentajeAjuste(int impacto) {
+    if (impacto > 5)
+        return (impacto - 5) * 0.01;
+    else
+        return -(6 - impacto) * 0.01;
+}
+
+/**
  * @brief Función principal del programa.
  * 
  * Controla el flujo del sistema de gestión de acciones, mostrando menús y ejecutando las opciones seleccionadas por el usuario.
@@ -226,7 +253,7 @@ int main() {
                 cin >> opcionNoticia;
                 cin.ignore();
                 if (opcionNoticia == 1) {
-                    // Insertar noticia
+                    // Insertar noticia manualmente y mostrar ajuste
                     int impacto;
                     string titulo, descripcion, sector, fecha;
                     cout << "Impacto (1-10): "; cin >> impacto; cin.ignore();
@@ -240,7 +267,10 @@ int main() {
                     cout << "Sector: "; getline(cin, sector);
                     cout << "Fecha (YYYY-MM-DD): "; getline(cin, fecha);
                     colaNoticias.insertar(impacto, titulo, descripcion, sector, fecha);
-                    arbol.ajustarPreciosPorNoticia(sector, impacto);
+                    arbol.ajustarPreciosPorNoticia(sector, impacto, fecha);
+                    cout << "\nNoticia generada:\n";
+                    cout << "  [" << fecha << "] (Impacto: " << impacto << ") " << titulo << " - " << sector << endl;
+                    mostrarAjusteSector(sector, calcularPorcentajeAjuste(impacto));
                     cout << "Noticia insertada y precios ajustados para el sector '" << sector << "'.\n";
                 } else if (opcionNoticia == 2) {
                     // Mostrar noticias por prioridad
@@ -273,13 +303,36 @@ int main() {
                     float promedio = colaNoticias.promedioImpacto();
                     cout << "\n📊 Impacto promedio de las noticias: " << promedio << endl;
                 } else if (opcionNoticia == 8) {
-                    // Generar noticias aleatorias
+                    // Generar noticias aleatorias, mostrar cada una y el ajuste aplicado
                     int cantidad;
                     cout << "Cantidad de noticias aleatorias a generar: ";
                     cin >> cantidad;
                     cin.ignore();
-                    generarNoticiasAleatorias(colaNoticias, cantidad);
-                    cout << "Noticias aleatorias generadas.\n";
+                    vector<string> titulos = {
+                        "Caída del dólar", "Nuevo impuesto", "Reforma pensional", "Crisis energética",
+                        "Inversión extranjera", "Caída de acciones tecnológicas", "Sube el petróleo",
+                        "Aumento del salario mínimo", "Devaluación del peso", "Acuerdo comercial firmado"
+                    };
+                    vector<string> descripciones = {
+                        "Los mercados reaccionan ante la noticia.",
+                        "Expertos prevén cambios importantes en el comportamiento bursátil.",
+                        "Los sectores económicos muestran señales de volatilidad.",
+                        "Los analistas recomiendan cautela a los inversionistas.",
+                        "Impacto inmediato esperado en el mercado accionario."
+                    };
+                    cout << "\nNoticias generadas y ajustes aplicados:\n";
+                    for (int i = 0; i < cantidad; ++i) {
+                        int impacto = rand() % 10 + 1;
+                        string titulo = titulos[rand() % titulos.size()];
+                        string descripcion = descripciones[rand() % descripciones.size()];
+                        string sector = SECTORES_EMPRESA[rand() % SECTORES_EMPRESA.size()];
+                        string fecha = generarFecha(i);
+                        colaNoticias.insertar(impacto, titulo, descripcion, sector, fecha);
+                        arbol.ajustarPreciosPorNoticia(sector, impacto, fecha);
+                        cout << "  [" << fecha << "] (Impacto: " << impacto << ") " << titulo << " - " << sector << endl;
+                        mostrarAjusteSector(sector, calcularPorcentajeAjuste(impacto));
+                    }
+                    cout << "Noticias aleatorias generadas y precios ajustados.\n";
                 }
             } while (opcionNoticia != 0);
         }
