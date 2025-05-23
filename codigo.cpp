@@ -63,36 +63,11 @@ void mostrarMenuSimulacion() {
     cout << " 3. Mostrar noticias (por prioridad o fecha)\n";
     cout << " 4. Buscar noticias (por sector o palabra clave)\n";
     cout << " 5. Estadísticas y alertas de noticias\n";
+    cout << " 6. Ver cambios de todas las empresas dadas las noticias\n";
+    cout << " 7. Ver cambios de una empresa en específico dadas las noticias\n";
     cout << " 0. Volver al menú principal\n";
     cout << "-----------------------------------\n";
     cout << "Seleccione una opción: ";
-}
-
-/**
- * @brief Muestra el ajuste aplicado a los precios de un sector.
- * @param sector Sector afectado.
- * @param porcentaje Porcentaje aplicado.
- */
-void mostrarAjusteSector(const string& sector, float porcentaje) {
-    cout << "  > Ajuste aplicado al sector '" << sector << "': ";
-    if (porcentaje > 0)
-        cout << "+" << porcentaje * 100 << "%\n";
-    else if (porcentaje < 0)
-        cout << porcentaje * 100 << "%\n";
-    else
-        cout << "Sin cambio\n";
-}
-
-/**
- * @brief Calcula el porcentaje de ajuste según el impacto.
- * @param impacto Impacto de la noticia (1-10).
- * @return Porcentaje como valor decimal.
- */
-float calcularPorcentajeAjuste(int impacto) {
-    if (impacto > 5)
-        return (impacto - 5) * 0.01;
-    else
-        return -(6 - impacto) * 0.01;
 }
 
 /**
@@ -326,6 +301,12 @@ int main() {
                     } else {
                         cout << "No hay señales de crisis por ahora.\n";
                     }
+                } else if (opcionSim == 6) {
+                    // Mostrar cambios de acciones por noticias (todas las empresas)
+                    mostrarImpactoNoticiasEnAcciones(arbol, colaNoticias);
+                } else if (opcionSim == 7) {
+                    // Mostrar cambios de una empresa por noticias
+                    mostrarCambiosPorNoticiasEmpresa(arbol, colaNoticias);
                 }
             } while (opcionSim != 0);
         }
