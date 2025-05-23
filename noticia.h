@@ -3,18 +3,32 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include "empresa.h"
 using namespace std;
 
-// ======== ESTRUCTURA DE LA NOTICIA ========
+/// @brief Estructura que representa una noticia con impacto, título, descripción, sector afectado, fecha y puntero al siguiente nodo.
+/**
+ * Estructura utilizada para almacenar la información de una noticia en la cola de prioridad.
+ */
 struct Noticia {
-    int impacto;             // Nivel de impacto de 1 a 10
-    string titulo;
-    string descripcion;
-    string sectorAfectado;
-    string fecha;            // NUEVO: fecha en formato "YYYY-MM-DD"
-    Noticia* siguiente;
+    int impacto;             ///< Nivel de impacto de 1 a 10
+    string titulo;           ///< Título de la noticia
+    string descripcion;      ///< Descripción de la noticia
+    string sectorAfectado;   ///< Sector afectado por la noticia
+    string fecha;            ///< Fecha en formato "YYYY-MM-DD"
+    Noticia* siguiente;      ///< Puntero a la siguiente noticia en la lista
 
-    // Constructor actualizado
+    /**
+     * @brief Constructor de la estructura Noticia.
+     * @param imp Nivel de impacto de la noticia.
+     * @param t Título de la noticia.
+     * @param d Descripción de la noticia.
+     * @param s Sector afectado.
+     * @param f Fecha de la noticia.
+     */
     Noticia(int imp, string t, string d, string s, string f) {
         impacto = imp;
         titulo = t;
@@ -25,21 +39,34 @@ struct Noticia {
     }
 };
 
-// ======== CLASE DE COLA DE PRIORIDAD ========
+/// @brief Clase que implementa una cola de prioridad para noticias, ordenadas por impacto.
+/**
+ * Permite insertar, mostrar, buscar, extraer y ordenar noticias, así como calcular estadísticas.
+ */
 class ColaPrioridadNoticias {
 private:
-    Noticia* frente;
+    Noticia* frente; ///< Puntero al primer elemento de la cola
 
 public:
+    /// @brief Constructor de la cola de prioridad.
     ColaPrioridadNoticias() {
         frente = nullptr;
     }
 
+    /// @brief Verifica si la cola está vacía.
+    /// @return true si la cola está vacía, false en caso contrario.
     bool estaVacia() {
         return frente == nullptr;
     }
 
-    // MÉTODO INSERTAR ACTUALIZADO: incluye fecha
+    /**
+     * @brief Inserta una noticia en la cola de prioridad según su impacto.
+     * @param impacto Nivel de impacto de la noticia.
+     * @param titulo Título de la noticia.
+     * @param descripcion Descripción de la noticia.
+     * @param sector Sector afectado.
+     * @param fecha Fecha de la noticia.
+     */
     void insertar(int impacto, string titulo, string descripcion, string sector, string fecha) {
         Noticia* nueva = new Noticia(impacto, titulo, descripcion, sector, fecha);
 
@@ -56,7 +83,7 @@ public:
         }
     }
 
-    // Muestra las noticias
+    /// @brief Muestra todas las noticias en la cola, en orden de prioridad.
     void mostrar() {
         Noticia* actual = frente;
         while (actual != nullptr) {
@@ -67,7 +94,10 @@ public:
         }
     }
 
-    // Buscar por sector
+    /**
+     * @brief Busca y muestra noticias que pertenecen a un sector específico.
+     * @param sectorClave Nombre del sector a buscar.
+     */
     void buscarPorSector(string sectorClave) {
         Noticia* actual = frente;
         cout << "\n🔍 Noticias en el sector '" << sectorClave << "':\n";
@@ -79,7 +109,10 @@ public:
         }
     }
 
-    // Buscar por palabra clave en el título
+    /**
+     * @brief Busca y muestra noticias cuyo título contiene una palabra clave.
+     * @param palabra Palabra clave a buscar en los títulos.
+     */
     void buscarPorPalabraClave(string palabra) {
         Noticia* actual = frente;
         cout << "\n🔍 Noticias con '" << palabra << "' en el título:\n";
@@ -91,7 +124,8 @@ public:
         }
     }
 
-    // Detectar crisis (3 o más noticias de impacto >= 8)
+    /// @brief Detecta si hay una alerta de crisis (3 o más noticias con impacto >= 8).
+    /// @return true si hay alerta de crisis, false en caso contrario.
     bool hayAlertaDeCrisis() {
         Noticia* actual = frente;
         int contador = 0;
@@ -105,7 +139,8 @@ public:
         return false;
     }
 
-    // Calcular promedio del impacto
+    /// @brief Calcula el promedio del impacto de todas las noticias en la cola.
+    /// @return Promedio del impacto (float).
     float promedioImpacto() {
         if (estaVacia()) return 0;
 
@@ -120,7 +155,8 @@ public:
         return suma / total;
     }
 
-    // Extraer la noticia con mayor prioridad
+    /// @brief Extrae y retorna la noticia con mayor prioridad (mayor impacto).
+    /// @return Puntero a la noticia extraída, o nullptr si la cola está vacía.
     Noticia* extraer() {
         if (estaVacia()) return nullptr;
 
@@ -132,7 +168,11 @@ public:
 
     // ======= ORDENAMIENTO POR FECHA (MERGE SORT) =======
 
-    // Divide la lista en dos mitades
+    /**
+     * @brief Divide la lista enlazada de noticias en dos mitades.
+     * @param cabeza Puntero al inicio de la lista.
+     * @return Puntero al inicio de la segunda mitad.
+     */
     Noticia* dividir(Noticia* cabeza) {
         if (!cabeza || !cabeza->siguiente) return nullptr;
 
@@ -149,7 +189,12 @@ public:
         return mitad;
     }
 
-    // Une dos listas ordenadas por fecha
+    /**
+     * @brief Fusiona dos listas enlazadas de noticias ordenadas por fecha.
+     * @param a Puntero al inicio de la primera lista.
+     * @param b Puntero al inicio de la segunda lista.
+     * @return Puntero al inicio de la lista fusionada.
+     */
     Noticia* fusionar(Noticia* a, Noticia* b) {
         if (!a) return b;
         if (!b) return a;
@@ -163,7 +208,11 @@ public:
         }
     }
 
-    // Aplica Merge Sort recursivamente
+    /**
+     * @brief Aplica el algoritmo Merge Sort recursivamente para ordenar por fecha.
+     * @param cabeza Puntero al inicio de la lista a ordenar.
+     * @return Puntero al inicio de la lista ordenada.
+     */
     Noticia* mergeSort(Noticia* cabeza) {
         if (!cabeza || !cabeza->siguiente) return cabeza;
 
@@ -174,13 +223,13 @@ public:
         return fusionar(izquierda, derecha);
     }
 
-    // Ordena toda la cola cronológicamente
+    /// @brief Ordena toda la cola de noticias cronológicamente por fecha.
     void ordenarPorFecha() {
         frente = mergeSort(frente);
         cout << "\n📆 Noticias ordenadas por fecha.\n";
     }
 
-    // Destructor para liberar memoria
+    /// @brief Destructor. Libera la memoria de todas las noticias en la cola.
     ~ColaPrioridadNoticias() {
         while (!estaVacia()) {
             Noticia* temp = extraer();
@@ -190,29 +239,50 @@ public:
 };
 
 // ======== GENERADOR DE NOTICIAS ALEATORIAS ========
-#ifndef GENERADOR_NOTICIAS_H
-#define GENERADOR_NOTICIAS_H
 
-#include <vector>
-#include <cstdlib>
-#include <ctime>
-#include <sstream>
-#include <iomanip>
-
-// Genera un string de fecha con formato "YYYY-MM-DD" a partir de un número
+/**
+ * @brief Genera un string de fecha con formato "YYYY-MM-DD" a partir de un número de días desde el inicio.
+ * @param diasDesdeInicio Número de días a sumar al día base (1 de mayo de 2025).
+ * @return Fecha en formato "YYYY-MM-DD".
+ */
 string generarFecha(int diasDesdeInicio = 0) {
-    int baseYear = 2025;
-    int baseMonth = 5;
-    int baseDay = 1 + diasDesdeInicio;
+    int year = 2025;
+    int month = 5;
+    int day = 1 + diasDesdeInicio;
 
-    stringstream ss;
-    ss << baseYear << "-";
-    ss << setw(2) << setfill('0') << baseMonth << "-";
-    ss << setw(2) << setfill('0') << baseDay;
-    return ss.str();
+    // Ajustar el día y el mes si se pasa del final del mes
+    while (true) {
+        int diasMes;
+        if (month == 2) diasMes = 28;
+        else if (month == 4 || month == 6 || month == 9 || month == 11) diasMes = 30;
+        else diasMes = 31;
+        if (day > diasMes) {
+            day -= diasMes;
+            month++;
+            if (month > 12) {
+                month = 1;
+                year++;
+            }
+        } else {
+            break;
+        }
+    }
+
+    string fecha = "";
+    fecha += to_string(year) + "-";
+    if (month < 10) fecha += "0";
+    fecha += to_string(month) + "-";
+    if (day < 10) fecha += "0";
+    fecha += to_string(day);
+    return fecha;
 }
 
-// Generador aleatorio de noticias con semilla
+/**
+ * @brief Genera noticias aleatorias y las inserta en la cola de prioridad.
+ * @param cola Referencia a la cola de prioridad de noticias.
+ * @param cantidad Número de noticias a generar.
+ * @param semilla Semilla para el generador aleatorio (por defecto 1234).
+ */
 void generarNoticiasAleatorias(ColaPrioridadNoticias& cola, int cantidad, int semilla = 1234) {
     srand(semilla);  // Semilla reproducible
 
@@ -230,21 +300,16 @@ void generarNoticiasAleatorias(ColaPrioridadNoticias& cola, int cantidad, int se
         "Impacto inmediato esperado en el mercado accionario."
     };
 
-    vector<string> sectores = {
-        "Financiero", "Tecnología", "Energía", "Industrial", "Laboral", "Salud", "Consumo"
-    };
-
+    // Usa los sectores globales de empresa.h
     for (int i = 0; i < cantidad; ++i) {
         int impacto = rand() % 10 + 1;
         string titulo = titulos[rand() % titulos.size()];
         string descripcion = descripciones[rand() % descripciones.size()];
-        string sector = sectores[rand() % sectores.size()];
+        string sector = SECTORES_EMPRESA[rand() % SECTORES_EMPRESA.size()];
         string fecha = generarFecha(i);  // Avanza un día por noticia
 
         cola.insertar(impacto, titulo, descripcion, sector, fecha);
     }
 }
-
-#endif
 
 #endif
