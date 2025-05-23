@@ -189,4 +189,62 @@ public:
     }
 };
 
+// ======== GENERADOR DE NOTICIAS ALEATORIAS ========
+#ifndef GENERADOR_NOTICIAS_H
+#define GENERADOR_NOTICIAS_H
+
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <sstream>
+#include <iomanip>
+
+// Genera un string de fecha con formato "YYYY-MM-DD" a partir de un número
+string generarFecha(int diasDesdeInicio = 0) {
+    int baseYear = 2025;
+    int baseMonth = 5;
+    int baseDay = 1 + diasDesdeInicio;
+
+    stringstream ss;
+    ss << baseYear << "-";
+    ss << setw(2) << setfill('0') << baseMonth << "-";
+    ss << setw(2) << setfill('0') << baseDay;
+    return ss.str();
+}
+
+// Generador aleatorio de noticias con semilla
+void generarNoticiasAleatorias(ColaPrioridadNoticias& cola, int cantidad, int semilla = 1234) {
+    srand(semilla);  // Semilla reproducible
+
+    vector<string> titulos = {
+        "Caída del dólar", "Nuevo impuesto", "Reforma pensional", "Crisis energética",
+        "Inversión extranjera", "Caída de acciones tecnológicas", "Sube el petróleo",
+        "Aumento del salario mínimo", "Devaluación del peso", "Acuerdo comercial firmado"
+    };
+
+    vector<string> descripciones = {
+        "Los mercados reaccionan ante la noticia.",
+        "Expertos prevén cambios importantes en el comportamiento bursátil.",
+        "Los sectores económicos muestran señales de volatilidad.",
+        "Los analistas recomiendan cautela a los inversionistas.",
+        "Impacto inmediato esperado en el mercado accionario."
+    };
+
+    vector<string> sectores = {
+        "Financiero", "Tecnología", "Energía", "Industrial", "Laboral", "Salud", "Consumo"
+    };
+
+    for (int i = 0; i < cantidad; ++i) {
+        int impacto = rand() % 10 + 1;
+        string titulo = titulos[rand() % titulos.size()];
+        string descripcion = descripciones[rand() % descripciones.size()];
+        string sector = sectores[rand() % sectores.size()];
+        string fecha = generarFecha(i);  // Avanza un día por noticia
+
+        cola.insertar(impacto, titulo, descripcion, sector, fecha);
+    }
+}
+
+#endif
+
 #endif
