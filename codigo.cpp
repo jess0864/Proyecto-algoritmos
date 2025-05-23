@@ -1,14 +1,19 @@
 // Código base para un sistema de gestión de acciones y noticias financieras
 
 #include "empresa.h"
+#include "noticia.h"
+
+// Añade declaración externa para los sectores de empresa.h
+extern const vector<string> SECTORES_EMPRESA;
 
 /**
- * @brief Muestra el menú principal para elegir entre opciones por empresa o por sector.
+ * @brief Muestra el menú principal para elegir entre opciones por empresa, sector o noticias.
  */
 void mostrarMenuPrincipal() {
     cout << "\n--- Sistema de Gestión de Acciones ---\n";
     cout << "1. Opciones por empresa\n";
     cout << "2. Opciones por sector\n";
+    cout << "3. Opciones de noticias financieras\n";
     cout << "0. Salir\n";
     cout << "Seleccione una opción: ";
 }
@@ -46,6 +51,25 @@ void mostrarMenuSector() {
 }
 
 /**
+ * @brief Muestra el submenú de opciones relacionadas con noticias financieras.
+ * 
+ * Permite al usuario gestionar noticias financieras, incluyendo inserción, búsqueda, ordenamiento y análisis.
+ */
+void mostrarMenuNoticias() {
+    cout << "\n--- Opciones de noticias financieras ---\n";
+    cout << " 1. Insertar noticia\n";
+    cout << " 2. Mostrar noticias por prioridad (impacto)\n";
+    cout << " 3. Ordenar y mostrar noticias por fecha\n";
+    cout << " 4. Buscar noticias por sector\n";
+    cout << " 5. Buscar noticias por palabra clave\n";
+    cout << " 6. Detectar alerta de crisis\n";
+    cout << " 7. Calcular promedio de impacto\n";
+    cout << " 8. Generar noticias aleatorias\n";
+    cout << " 0. Volver al menú principal\n";
+    cout << "Seleccione una opción: ";
+}
+
+/**
  * @brief Función principal del programa.
  * 
  * Controla el flujo del sistema de gestión de acciones, mostrando menús y ejecutando las opciones seleccionadas por el usuario.
@@ -54,6 +78,7 @@ void mostrarMenuSector() {
  */
 int main() {
     ABBEmpresas arbol; ///< Árbol binario de búsqueda que almacena todas las empresas.
+    ColaPrioridadNoticias colaNoticias; ///< Cola de prioridad para noticias financieras.
     int opcionPrincipal;
     do {
         mostrarMenuPrincipal();
@@ -193,6 +218,69 @@ int main() {
                     cout << "-----------------------------------------------\n";
                 }
             } while (opcionSector != 0);
+        } else if (opcionPrincipal == 3) {
+            /// Opciones relacionadas con noticias financieras
+            int opcionNoticia;
+            do {
+                mostrarMenuNoticias();
+                cin >> opcionNoticia;
+                cin.ignore();
+                if (opcionNoticia == 1) {
+                    // Insertar noticia
+                    int impacto;
+                    string titulo, descripcion, sector, fecha;
+                    cout << "Impacto (1-10): "; cin >> impacto; cin.ignore();
+                    cout << "Título: "; getline(cin, titulo);
+                    cout << "Descripción: "; getline(cin, descripcion);
+                    // Mostrar sectores disponibles desde empresa.h
+                    cout << "Sectores disponibles:\n";
+                    for (const auto& s : SECTORES_EMPRESA) {
+                        cout << "  - " << s << endl;
+                    }
+                    cout << "Sector: "; getline(cin, sector);
+                    cout << "Fecha (YYYY-MM-DD): "; getline(cin, fecha);
+                    colaNoticias.insertar(impacto, titulo, descripcion, sector, fecha);
+                    cout << "Noticia insertada.\n";
+                } else if (opcionNoticia == 2) {
+                    // Mostrar noticias por prioridad
+                    cout << "🔺 Noticias ordenadas por PRIORIDAD (impacto):\n";
+                    colaNoticias.mostrar();
+                } else if (opcionNoticia == 3) {
+                    // Ordenar y mostrar noticias por fecha
+                    colaNoticias.ordenarPorFecha();
+                    cout << "\n📆 Noticias ordenadas por FECHA:\n";
+                    colaNoticias.mostrar();
+                } else if (opcionNoticia == 4) {
+                    // Buscar por sector
+                    string sector;
+                    cout << "Sector: "; getline(cin, sector);
+                    colaNoticias.buscarPorSector(sector);
+                } else if (opcionNoticia == 5) {
+                    // Buscar por palabra clave
+                    string palabra;
+                    cout << "Palabra clave: "; getline(cin, palabra);
+                    colaNoticias.buscarPorPalabraClave(palabra);
+                } else if (opcionNoticia == 6) {
+                    // Detectar alerta de crisis
+                    if (colaNoticias.hayAlertaDeCrisis()) {
+                        cout << "\n🚨 ALERTA: Se detecta posible crisis. Hay múltiples noticias de alto impacto.\n";
+                    } else {
+                        cout << "\n✅ No hay señales de crisis por ahora.\n";
+                    }
+                } else if (opcionNoticia == 7) {
+                    // Calcular promedio de impacto
+                    float promedio = colaNoticias.promedioImpacto();
+                    cout << "\n📊 Impacto promedio de las noticias: " << promedio << endl;
+                } else if (opcionNoticia == 8) {
+                    // Generar noticias aleatorias
+                    int cantidad;
+                    cout << "Cantidad de noticias aleatorias a generar: ";
+                    cin >> cantidad;
+                    cin.ignore();
+                    generarNoticiasAleatorias(colaNoticias, cantidad);
+                    cout << "Noticias aleatorias generadas.\n";
+                }
+            } while (opcionNoticia != 0);
         }
     } while (opcionPrincipal != 0);
     cout << "Saliendo...\n";
