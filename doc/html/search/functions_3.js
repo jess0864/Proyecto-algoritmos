@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['empresa_49',['Empresa',['../structEmpresa.html#a1a133a0eca382652cdca4e428e3a4ac6',1,'Empresa']]]
+  ['destruir_97',['destruir',['../classABBEmpresas.html#ac2bae5647d4950ec4a50c64a598e54b7',1,'ABBEmpresas']]],
+  ['dividir_98',['dividir',['../classColaPrioridadNoticias.html#a4c4f7acab244598a0ffe276520164e07',1,'ColaPrioridadNoticias']]]
 ];

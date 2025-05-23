@@ -1,0 +1,5 @@
+<map id="ABBEmpresas::buscarEmpresa" name="ABBEmpresas::buscarEmpresa">
+<area shape="rect" id="node1" title="Busca una empresa por ticker." alt="" coords="360,5,581,32"/>
+<area shape="rect" id="node2" href="$codigo_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Función principal del programa." alt="" coords="5,5,60,32"/>
+<area shape="rect" id="node3" href="$noticia_8h.html#a80268dccce1ece0cbb6406c81d50baed" title="Muestra los cambios de precio de una empresa por cada noticia que la afectó, mostrando el precio ante..." alt="" coords="108,27,312,69"/>
+</map>

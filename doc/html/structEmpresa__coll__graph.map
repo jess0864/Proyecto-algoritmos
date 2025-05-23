@@ -1,0 +1,5 @@
+<map id="Empresa" name="Empresa">
+<area shape="rect" id="node1" title="Nodo de ABB que representa una empresa." alt="" coords="27,185,106,212"/>
+<area shape="rect" id="node2" href="$classMultilistaPrecio.html" title="Multilista para historial de precios de una acción." alt="" coords="5,95,128,121"/>
+<area shape="rect" id="node3" href="$structNodoPrecio.html" title="Nodo para la multilista de precios históricos de una acción." alt="" coords="19,5,115,32"/>
+</map>

@@ -98,7 +98,11 @@ $(document).ready(function(){initNavTree('structEmpresa.html',''); initResizable
 Diagrama de colaboración para Empresa:</div>
 <div class="dyncontent">
 <div class="center"><img src="structEmpresa__coll__graph.png" border="0" usemap="#Empresa_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
+<map name="Empresa_coll__map" id="Empresa_coll__map">
+<area shape="rect" title="Nodo de ABB que representa una empresa." alt="" coords="27,185,106,212"/>
+<area shape="rect" href="classMultilistaPrecio.html" title="Multilista para historial de precios de una acción." alt="" coords="5,95,128,121"/>
+<area shape="rect" href="structNodoPrecio.html" title="Nodo para la multilista de precios históricos de una acción." alt="" coords="19,5,115,32"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">significado de colores y flechas</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -109,39 +113,32 @@ Métodos públicos</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Atributos públicos</h2></td></tr>
-<tr class="memitem:a913af3d925c9dcf18bb762ef8df46c70"><td class="memItemLeft" align="right" valign="top"><a id="a913af3d925c9dcf18bb762ef8df46c70"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">ticker</a></td></tr>
-<tr class="memdesc:a913af3d925c9dcf18bb762ef8df46c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ticker de la empresa (clave única) <br /></td></tr>
+<tr class="memitem:a913af3d925c9dcf18bb762ef8df46c70"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">ticker</a></td></tr>
+<tr class="memdesc:a913af3d925c9dcf18bb762ef8df46c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ticker de la empresa (clave única)  <a href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">Más...</a><br /></td></tr>
 <tr class="separator:a913af3d925c9dcf18bb762ef8df46c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dad5e57aee0b7e04844564418ceea06"><td class="memItemLeft" align="right" valign="top"><a id="a5dad5e57aee0b7e04844564418ceea06"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">nombre</a></td></tr>
-<tr class="memdesc:a5dad5e57aee0b7e04844564418ceea06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de la empresa. <br /></td></tr>
+<tr class="memitem:a5dad5e57aee0b7e04844564418ceea06"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">nombre</a></td></tr>
+<tr class="memdesc:a5dad5e57aee0b7e04844564418ceea06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de la empresa.  <a href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">Más...</a><br /></td></tr>
 <tr class="separator:a5dad5e57aee0b7e04844564418ceea06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3272a72f778485c20dab09320f94b86"><td class="memItemLeft" align="right" valign="top"><a id="ae3272a72f778485c20dab09320f94b86"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">sector</a></td></tr>
-<tr class="memdesc:ae3272a72f778485c20dab09320f94b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sector al que pertenece la empresa. <br /></td></tr>
+<tr class="memitem:ae3272a72f778485c20dab09320f94b86"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">sector</a></td></tr>
+<tr class="memdesc:ae3272a72f778485c20dab09320f94b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sector al que pertenece la empresa.  <a href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">Más...</a><br /></td></tr>
 <tr class="separator:ae3272a72f778485c20dab09320f94b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c9b36929b5a7fde45c9b5cf87f7f3a4"><td class="memItemLeft" align="right" valign="top"><a id="a8c9b36929b5a7fde45c9b5cf87f7f3a4"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4">precioActual</a></td></tr>
-<tr class="memdesc:a8c9b36929b5a7fde45c9b5cf87f7f3a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precio actual de la acción. <br /></td></tr>
+<tr class="memitem:a8c9b36929b5a7fde45c9b5cf87f7f3a4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4">precioActual</a></td></tr>
+<tr class="memdesc:a8c9b36929b5a7fde45c9b5cf87f7f3a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precio actual de la acción.  <a href="structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4">Más...</a><br /></td></tr>
 <tr class="separator:a8c9b36929b5a7fde45c9b5cf87f7f3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b6b2e8d6da267313d12d1a53c8794f7"><td class="memItemLeft" align="right" valign="top"><a id="a4b6b2e8d6da267313d12d1a53c8794f7"></a>
-<a class="el" href="classMultilistaPrecio.html">MultilistaPrecio</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#a4b6b2e8d6da267313d12d1a53c8794f7">historialPrecios</a></td></tr>
-<tr class="memdesc:a4b6b2e8d6da267313d12d1a53c8794f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Historial de precios de la acción. <br /></td></tr>
+<tr class="memitem:a4b6b2e8d6da267313d12d1a53c8794f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMultilistaPrecio.html">MultilistaPrecio</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#a4b6b2e8d6da267313d12d1a53c8794f7">historialPrecios</a></td></tr>
+<tr class="memdesc:a4b6b2e8d6da267313d12d1a53c8794f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Historial de precios de la acción.  <a href="structEmpresa.html#a4b6b2e8d6da267313d12d1a53c8794f7">Más...</a><br /></td></tr>
 <tr class="separator:a4b6b2e8d6da267313d12d1a53c8794f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48ab557576b7f6d7a8e5bb70933b3cfd"><td class="memItemLeft" align="right" valign="top"><a id="a48ab557576b7f6d7a8e5bb70933b3cfd"></a>
-<a class="el" href="structEmpresa.html">Empresa</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#a48ab557576b7f6d7a8e5bb70933b3cfd">izquierda</a></td></tr>
-<tr class="memdesc:a48ab557576b7f6d7a8e5bb70933b3cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puntero al hijo izquierdo en el ABB. <br /></td></tr>
+<tr class="memitem:a48ab557576b7f6d7a8e5bb70933b3cfd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEmpresa.html">Empresa</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#a48ab557576b7f6d7a8e5bb70933b3cfd">izquierda</a></td></tr>
+<tr class="memdesc:a48ab557576b7f6d7a8e5bb70933b3cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puntero al hijo izquierdo en el ABB.  <a href="structEmpresa.html#a48ab557576b7f6d7a8e5bb70933b3cfd">Más...</a><br /></td></tr>
 <tr class="separator:a48ab557576b7f6d7a8e5bb70933b3cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1821208ba636f7c14e02da48c9f73d3"><td class="memItemLeft" align="right" valign="top"><a id="ac1821208ba636f7c14e02da48c9f73d3"></a>
-<a class="el" href="structEmpresa.html">Empresa</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#ac1821208ba636f7c14e02da48c9f73d3">derecha</a></td></tr>
-<tr class="memdesc:ac1821208ba636f7c14e02da48c9f73d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puntero al hijo derecho en el ABB. <br /></td></tr>
+<tr class="memitem:ac1821208ba636f7c14e02da48c9f73d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEmpresa.html">Empresa</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmpresa.html#ac1821208ba636f7c14e02da48c9f73d3">derecha</a></td></tr>
+<tr class="memdesc:ac1821208ba636f7c14e02da48c9f73d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puntero al hijo derecho en el ABB.  <a href="structEmpresa.html#ac1821208ba636f7c14e02da48c9f73d3">Más...</a><br /></td></tr>
 <tr class="separator:ac1821208ba636f7c14e02da48c9f73d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Nodo de ABB que representa una empresa. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00087">87</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00092">92</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 </div><h2 class="groupheader">Documentación del constructor y destructor</h2>
 <a id="a1a133a0eca382652cdca4e428e3a4ac6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a133a0eca382652cdca4e428e3a4ac6">&#9670;&nbsp;</a></span>Empresa()</h2>
@@ -200,10 +197,137 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00110">110</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        : <a class="code" href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">ticker</a>(t), <a class="code" href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">nombre</a>(n), <a class="code" href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">sector</a>(s), <a class="code" href="structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4">precioActual</a>(p),</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;          <a class="code" href="structEmpresa.html#a48ab557576b7f6d7a8e5bb70933b3cfd">izquierda</a>(<span class="keyword">nullptr</span>), <a class="code" href="structEmpresa.html#ac1821208ba636f7c14e02da48c9f73d3">derecha</a>(<span class="keyword">nullptr</span>) {}</div>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00115">115</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        : <a class="code" href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">ticker</a>(t), <a class="code" href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">nombre</a>(n), <a class="code" href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">sector</a>(s), <a class="code" href="structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4">precioActual</a>(p),</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;          <a class="code" href="structEmpresa.html#a48ab557576b7f6d7a8e5bb70933b3cfd">izquierda</a>(<span class="keyword">nullptr</span>), <a class="code" href="structEmpresa.html#ac1821208ba636f7c14e02da48c9f73d3">derecha</a>(<span class="keyword">nullptr</span>) {}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a id="ac1821208ba636f7c14e02da48c9f73d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1821208ba636f7c14e02da48c9f73d3">&#9670;&nbsp;</a></span>derecha</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEmpresa.html">Empresa</a>* Empresa::derecha</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Puntero al hijo derecho en el ABB. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00106">106</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+
+</div>
+</div>
+<a id="a4b6b2e8d6da267313d12d1a53c8794f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b6b2e8d6da267313d12d1a53c8794f7">&#9670;&nbsp;</a></span>historialPrecios</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMultilistaPrecio.html">MultilistaPrecio</a> Empresa::historialPrecios</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Historial de precios de la acción. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00102">102</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+
+</div>
+</div>
+<a id="a48ab557576b7f6d7a8e5bb70933b3cfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ab557576b7f6d7a8e5bb70933b3cfd">&#9670;&nbsp;</a></span>izquierda</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEmpresa.html">Empresa</a>* Empresa::izquierda</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Puntero al hijo izquierdo en el ABB. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00104">104</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+
+</div>
+</div>
+<a id="a5dad5e57aee0b7e04844564418ceea06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dad5e57aee0b7e04844564418ceea06">&#9670;&nbsp;</a></span>nombre</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Empresa::nombre</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nombre de la empresa. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00096">96</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+
+</div>
+</div>
+<a id="a8c9b36929b5a7fde45c9b5cf87f7f3a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c9b36929b5a7fde45c9b5cf87f7f3a4">&#9670;&nbsp;</a></span>precioActual</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Empresa::precioActual</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Precio actual de la acción. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00100">100</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+
+</div>
+</div>
+<a id="ae3272a72f778485c20dab09320f94b86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3272a72f778485c20dab09320f94b86">&#9670;&nbsp;</a></span>sector</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Empresa::sector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sector al que pertenece la empresa. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00098">98</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+
+</div>
+</div>
+<a id="a913af3d925c9dcf18bb762ef8df46c70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a913af3d925c9dcf18bb762ef8df46c70">&#9670;&nbsp;</a></span>ticker</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Empresa::ticker</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ticker de la empresa (clave única) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00094">94</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+
 </div>
 </div>
 <hr/>La documentación para esta estructura fue generada a partir del siguiente fichero:<ul>
@@ -211,12 +335,12 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructEmpresa_html_ae3272a72f778485c20dab09320f94b86"><div class="ttname"><a href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">Empresa::sector</a></div><div class="ttdeci">string sector</div><div class="ttdoc">Sector al que pertenece la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00093">empresa.h:93</a></div></div>
-<div class="ttc" id="astructEmpresa_html_ac1821208ba636f7c14e02da48c9f73d3"><div class="ttname"><a href="structEmpresa.html#ac1821208ba636f7c14e02da48c9f73d3">Empresa::derecha</a></div><div class="ttdeci">Empresa * derecha</div><div class="ttdoc">Puntero al hijo derecho en el ABB.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00101">empresa.h:101</a></div></div>
-<div class="ttc" id="astructEmpresa_html_a913af3d925c9dcf18bb762ef8df46c70"><div class="ttname"><a href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">Empresa::ticker</a></div><div class="ttdeci">string ticker</div><div class="ttdoc">Ticker de la empresa (clave única)</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00089">empresa.h:89</a></div></div>
-<div class="ttc" id="astructEmpresa_html_a48ab557576b7f6d7a8e5bb70933b3cfd"><div class="ttname"><a href="structEmpresa.html#a48ab557576b7f6d7a8e5bb70933b3cfd">Empresa::izquierda</a></div><div class="ttdeci">Empresa * izquierda</div><div class="ttdoc">Puntero al hijo izquierdo en el ABB.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00099">empresa.h:99</a></div></div>
-<div class="ttc" id="astructEmpresa_html_a8c9b36929b5a7fde45c9b5cf87f7f3a4"><div class="ttname"><a href="structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4">Empresa::precioActual</a></div><div class="ttdeci">float precioActual</div><div class="ttdoc">Precio actual de la acción.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00095">empresa.h:95</a></div></div>
-<div class="ttc" id="astructEmpresa_html_a5dad5e57aee0b7e04844564418ceea06"><div class="ttname"><a href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">Empresa::nombre</a></div><div class="ttdeci">string nombre</div><div class="ttdoc">Nombre de la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00091">empresa.h:91</a></div></div>
+<div class="ttc" id="astructEmpresa_html_ae3272a72f778485c20dab09320f94b86"><div class="ttname"><a href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">Empresa::sector</a></div><div class="ttdeci">string sector</div><div class="ttdoc">Sector al que pertenece la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00098">empresa.h:98</a></div></div>
+<div class="ttc" id="astructEmpresa_html_ac1821208ba636f7c14e02da48c9f73d3"><div class="ttname"><a href="structEmpresa.html#ac1821208ba636f7c14e02da48c9f73d3">Empresa::derecha</a></div><div class="ttdeci">Empresa * derecha</div><div class="ttdoc">Puntero al hijo derecho en el ABB.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00106">empresa.h:106</a></div></div>
+<div class="ttc" id="astructEmpresa_html_a913af3d925c9dcf18bb762ef8df46c70"><div class="ttname"><a href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">Empresa::ticker</a></div><div class="ttdeci">string ticker</div><div class="ttdoc">Ticker de la empresa (clave única)</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00094">empresa.h:94</a></div></div>
+<div class="ttc" id="astructEmpresa_html_a48ab557576b7f6d7a8e5bb70933b3cfd"><div class="ttname"><a href="structEmpresa.html#a48ab557576b7f6d7a8e5bb70933b3cfd">Empresa::izquierda</a></div><div class="ttdeci">Empresa * izquierda</div><div class="ttdoc">Puntero al hijo izquierdo en el ABB.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00104">empresa.h:104</a></div></div>
+<div class="ttc" id="astructEmpresa_html_a8c9b36929b5a7fde45c9b5cf87f7f3a4"><div class="ttname"><a href="structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4">Empresa::precioActual</a></div><div class="ttdeci">float precioActual</div><div class="ttdoc">Precio actual de la acción.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00100">empresa.h:100</a></div></div>
+<div class="ttc" id="astructEmpresa_html_a5dad5e57aee0b7e04844564418ceea06"><div class="ttname"><a href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">Empresa::nombre</a></div><div class="ttdeci">string nombre</div><div class="ttdoc">Nombre de la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00096">empresa.h:96</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

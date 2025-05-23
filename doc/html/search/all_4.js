@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['empresa_8',['Empresa',['../structEmpresa.html',1,'Empresa'],['../structEmpresa.html#a1a133a0eca382652cdca4e428e3a4ac6',1,'Empresa::Empresa()']]]
+  ['empresa_16',['Empresa',['../structEmpresa.html',1,'Empresa'],['../structEmpresa.html#a1a133a0eca382652cdca4e428e3a4ac6',1,'Empresa::Empresa()']]],
+  ['empresa_2eh_17',['empresa.h',['../empresa_8h.html',1,'']]],
+  ['estavacia_18',['estaVacia',['../classColaPrioridadNoticias.html#af21d5932ffb47b52e30862f756274fc6',1,'ColaPrioridadNoticias']]],
+  ['extraer_19',['extraer',['../classColaPrioridadNoticias.html#a48b8045f042a69f61a1356b3876281c8',1,'ColaPrioridadNoticias']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nodoprecio_42',['NodoPrecio',['../structNodoPrecio.html',1,'']]]
+  ['multilistaprecio_79',['MultilistaPrecio',['../classMultilistaPrecio.html',1,'']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['obtenerempresamasbarata_63',['obtenerEmpresaMasBarata',['../classABBEmpresas.html#a77be3c43461441d10f9dd6f03d24604d',1,'ABBEmpresas']]],
-  ['obtenerempresamascara_64',['obtenerEmpresaMasCara',['../classABBEmpresas.html#a9773e3023fbdf2197242337670da6941',1,'ABBEmpresas']]],
-  ['obtenerempresasordenadas_65',['obtenerEmpresasOrdenadas',['../classABBEmpresas.html#a6ccc64afaf894799cf66b3e46db34674',1,'ABBEmpresas']]]
+  ['hayalertadecrisis_105',['hayAlertaDeCrisis',['../classColaPrioridadNoticias.html#afccedcf2a79e14243c3d685f2fcf9e5a',1,'ColaPrioridadNoticias']]]
 ];

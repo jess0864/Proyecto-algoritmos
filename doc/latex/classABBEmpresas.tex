@@ -12,3 +12,1135 @@
 
 
 Diagrama de colaboración para A\+B\+B\+Empresas\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classABBEmpresas__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classABBEmpresas_a61ef7deebafbcbc9007b45dac4e7cc2e}{A\+B\+B\+Empresas}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classABBEmpresas}{A\+B\+B\+Empresas}}. Inicializa el árbol con empresas de ejemplo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classABBEmpresas_a2cd102614a252770db134521282f2d8c}{$\sim$\+A\+B\+B\+Empresas}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de \mbox{\hyperlink{classABBEmpresas}{A\+B\+B\+Empresas}}. Libera toda la memoria utilizada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_a283bfceb063a5b3ebaca35ba0b7a6c99}{insertar\+Empresa}} (const string \&ticker, const string \&nombre, const string \&sector, float precio)
+\begin{DoxyCompactList}\small\item\em Inserta una empresa (si no existe ya en el A\+BB). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ \mbox{\hyperlink{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}{buscar\+Empresa}} (const string \&ticker)
+\begin{DoxyCompactList}\small\item\em Busca una empresa por ticker. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_a7c2d2222bff46899a03bfac025a94d7d}{agregar\+Precio}} (const string \&ticker, const string \&fecha, float precio)
+\begin{DoxyCompactList}\small\item\em Agrega un precio histórico a una empresa. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ $>$ \mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtener\+Empresas\+Ordenadas}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve una lista ordenada de empresas (inorden). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_a66382212802e5ab39724152cb88a0912}{imprimir\+Empresas}} ()
+\begin{DoxyCompactList}\small\item\em Imprime todas las empresas y su precio actual por consola. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_a5475778344348be4a823d4f35da3ab9d}{imprimir\+Por\+Precio}} ()
+\begin{DoxyCompactList}\small\item\em Imprime empresas ordenadas por precio actual (de mayor a menor). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_af19e68352e97995e93431e69aec215b5}{imprimir\+Empresas\+Por\+Sector}} (const string \&sector)
+\begin{DoxyCompactList}\small\item\em Imprime todas las empresas de un sector específico. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classABBEmpresas_a0c1aa570634d14b5cebac4cbb4ddd184}{promedio\+Precio\+Por\+Sector}} (const string \&sector)
+\begin{DoxyCompactList}\small\item\em Calcula el promedio del precio actual de las empresas de un sector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ \mbox{\hyperlink{classABBEmpresas_a77be3c43461441d10f9dd6f03d24604d}{obtener\+Empresa\+Mas\+Barata}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve la empresa con el precio actual más bajo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ \mbox{\hyperlink{classABBEmpresas_a9773e3023fbdf2197242337670da6941}{obtener\+Empresa\+Mas\+Cara}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve la empresa con el precio actual más alto. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ $>$ \mbox{\hyperlink{classABBEmpresas_a69e48005487af9a9c02acb869e0a8e56}{buscar\+Empresas\+Por\+Rango\+Precio}} (float min\+Precio, float max\+Precio)
+\begin{DoxyCompactList}\small\item\em Devuelve una lista de empresas cuyo precio actual está en el rango \mbox{[}min\+Precio, max\+Precio\mbox{]}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_ae66f600b3457f3e6aeb09840d9188dcc}{imprimir\+Empresa}} (const \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$emp)
+\begin{DoxyCompactList}\small\item\em Imprime la información de una empresa en formato de tabla. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_af1c6468bd09761a9894ce043a2b3c96b}{imprimir\+Empresas}} (const vector$<$ \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ $>$ \&empresas)
+\begin{DoxyCompactList}\small\item\em Imprime una lista de empresas en formato de tabla. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_ae84bb76dc229040e7e343cafabb76383}{ajustar\+Precios\+Por\+Noticia}} (const string \&sector, int impacto)
+\begin{DoxyCompactList}\small\item\em Ajusta los precios de las empresas de un sector según el impacto de una noticia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_a807a2477be7fd0983d7554b9e08cb279}{ajustar\+Precios\+Por\+Noticia}} (const string \&sector, int impacto, const string \&fecha)
+\begin{DoxyCompactList}\small\item\em Ajusta los precios de las empresas de un sector según el impacto de una noticia. Agrega el nuevo precio al historial con la fecha de la noticia y actualiza el precio actual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classABBEmpresas_a7c12a3613d8d1fcf62f6ffbfdf3f8e34}{merge}} (vector$<$ \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ $>$ \&arr, int left, int mid, int right)
+\begin{DoxyCompactList}\small\item\em Función auxiliar para Merge Sort\+: combina dos subarreglos. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classABBEmpresas_a621cdfa8750593b48715423250814680}{merge\+Sort}} (vector$<$ \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ $>$ \&arr, int left, int right)
+\begin{DoxyCompactList}\small\item\em Ordena empresas por precio actual usando Merge Sort (de mayor a menor). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ \mbox{\hyperlink{classABBEmpresas_a74f4512e83b5afff8dfd1d8ad4aaa5ea}{insertar}} (\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$nodo, \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$nueva)
+\begin{DoxyCompactList}\small\item\em Inserta una empresa en el A\+BB (por ticker). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ \mbox{\hyperlink{classABBEmpresas_a123c883f4ffbd1fa7686cc0762e5a3ba}{buscar}} (\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$nodo, const string \&ticker)
+\begin{DoxyCompactList}\small\item\em Busca una empresa por ticker en el A\+BB. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_ac7724805520aece00f226f92f0e3a391}{inorden}} (\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$nodo, vector$<$ \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ $>$ \&lista)
+\begin{DoxyCompactList}\small\item\em Recorrido inorden para obtener empresas ordenadas alfabéticamente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_ac2bae5647d4950ec4a50c64a598e54b7}{destruir}} (\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$nodo)
+\begin{DoxyCompactList}\small\item\em Libera la memoria de todos los nodos del A\+BB y sus listas de precios. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classABBEmpresas_aa2e8d0775af6901d7ad59454a4c90136}{inicializar\+Empresas}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa automáticamente el A\+BB con empresas reales y datos aleatorios. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ \mbox{\hyperlink{classABBEmpresas_a295a84faf39d6b7b61597a46efd06132}{raiz}}
+\begin{DoxyCompactList}\small\item\em Puntero a la raíz del A\+BB. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Árbol binario de búsqueda (A\+BB) para gestionar empresas. 
+
+Definición en la línea 123 del archivo empresa.\+h.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classABBEmpresas_a61ef7deebafbcbc9007b45dac4e7cc2e}\label{classABBEmpresas_a61ef7deebafbcbc9007b45dac4e7cc2e}} 
+\index{ABBEmpresas@{ABBEmpresas}!ABBEmpresas@{ABBEmpresas}}
+\index{ABBEmpresas@{ABBEmpresas}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{ABBEmpresas()}{ABBEmpresas()}}
+{\footnotesize\ttfamily A\+B\+B\+Empresas\+::\+A\+B\+B\+Empresas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de \mbox{\hyperlink{classABBEmpresas}{A\+B\+B\+Empresas}}. Inicializa el árbol con empresas de ejemplo. 
+
+
+
+Definición en la línea 263 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{263                   : \mbox{\hyperlink{classABBEmpresas_a295a84faf39d6b7b61597a46efd06132}{raiz}}(\textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{264         \mbox{\hyperlink{classABBEmpresas_aa2e8d0775af6901d7ad59454a4c90136}{inicializarEmpresas}}();}
+\DoxyCodeLine{265     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classABBEmpresas_a2cd102614a252770db134521282f2d8c}\label{classABBEmpresas_a2cd102614a252770db134521282f2d8c}} 
+\index{ABBEmpresas@{ABBEmpresas}!````~ABBEmpresas@{$\sim$ABBEmpresas}}
+\index{````~ABBEmpresas@{$\sim$ABBEmpresas}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{$\sim$ABBEmpresas()}{~ABBEmpresas()}}
+{\footnotesize\ttfamily A\+B\+B\+Empresas\+::$\sim$\+A\+B\+B\+Empresas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor de \mbox{\hyperlink{classABBEmpresas}{A\+B\+B\+Empresas}}. Libera toda la memoria utilizada. 
+
+
+
+Definición en la línea 270 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{270 \{ \mbox{\hyperlink{classABBEmpresas_ac2bae5647d4950ec4a50c64a598e54b7}{destruir}}(\mbox{\hyperlink{classABBEmpresas_a295a84faf39d6b7b61597a46efd06132}{raiz}}); \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classABBEmpresas_a7c2d2222bff46899a03bfac025a94d7d}\label{classABBEmpresas_a7c2d2222bff46899a03bfac025a94d7d}} 
+\index{ABBEmpresas@{ABBEmpresas}!agregarPrecio@{agregarPrecio}}
+\index{agregarPrecio@{agregarPrecio}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{agregarPrecio()}{agregarPrecio()}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::agregar\+Precio (\begin{DoxyParamCaption}\item[{const string \&}]{ticker,  }\item[{const string \&}]{fecha,  }\item[{float}]{precio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Agrega un precio histórico a una empresa. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em ticker} & Ticker de la empresa. \\
+\hline
+{\em fecha} & Fecha del precio. \\
+\hline
+{\em precio} & Precio de cierre. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 301 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{301                                                                                 \{}
+\DoxyCodeLine{302         \mbox{\hyperlink{structEmpresa}{Empresa}}* emp = \mbox{\hyperlink{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}{buscarEmpresa}}(ticker);}
+\DoxyCodeLine{303         \textcolor{keywordflow}{if} (emp) \{}
+\DoxyCodeLine{304             emp-\/>\mbox{\hyperlink{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}{historialPrecios}}.\mbox{\hyperlink{classMultilistaPrecio_a90ab8a61ae12056cda60c3dbd35762af}{agregarPrecio}}(fecha, precio);}
+\DoxyCodeLine{305             emp-\/>\mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precioActual}} = precio;}
+\DoxyCodeLine{306         \}}
+\DoxyCodeLine{307     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classABBEmpresas_a7c2d2222bff46899a03bfac025a94d7d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_ae84bb76dc229040e7e343cafabb76383}\label{classABBEmpresas_ae84bb76dc229040e7e343cafabb76383}} 
+\index{ABBEmpresas@{ABBEmpresas}!ajustarPreciosPorNoticia@{ajustarPreciosPorNoticia}}
+\index{ajustarPreciosPorNoticia@{ajustarPreciosPorNoticia}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{ajustarPreciosPorNoticia()}{ajustarPreciosPorNoticia()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::ajustar\+Precios\+Por\+Noticia (\begin{DoxyParamCaption}\item[{const string \&}]{sector,  }\item[{int}]{impacto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ajusta los precios de las empresas de un sector según el impacto de una noticia. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sector} & Sector afectado. \\
+\hline
+{\em impacto} & Impacto de la noticia (1-\/10). \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 582 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{582                                                                      \{}
+\DoxyCodeLine{583         vector<Empresa*> empresas = \mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{584         \textcolor{keywordtype}{float} porcentaje = 0.0;}
+\DoxyCodeLine{585         \textcolor{keywordflow}{if} (impacto > 5) \{}
+\DoxyCodeLine{586             porcentaje = (impacto -\/ 5) * 0.01;}
+\DoxyCodeLine{587         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{588             porcentaje = -\/(6 -\/ impacto) * 0.01;}
+\DoxyCodeLine{589         \}}
+\DoxyCodeLine{590         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : empresas) \{}
+\DoxyCodeLine{591             \textcolor{keywordflow}{if} (e-\/>sector == sector) \{}
+\DoxyCodeLine{592                 e-\/>precioActual += e-\/>precioActual * porcentaje;}
+\DoxyCodeLine{593                 \textcolor{keywordflow}{if} (e-\/>precioActual < 1.0) e-\/>precioActual = 1.0;}
+\DoxyCodeLine{594             \}}
+\DoxyCodeLine{595         \}}
+\DoxyCodeLine{596     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classABBEmpresas_ae84bb76dc229040e7e343cafabb76383_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_a807a2477be7fd0983d7554b9e08cb279}\label{classABBEmpresas_a807a2477be7fd0983d7554b9e08cb279}} 
+\index{ABBEmpresas@{ABBEmpresas}!ajustarPreciosPorNoticia@{ajustarPreciosPorNoticia}}
+\index{ajustarPreciosPorNoticia@{ajustarPreciosPorNoticia}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{ajustarPreciosPorNoticia()}{ajustarPreciosPorNoticia()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::ajustar\+Precios\+Por\+Noticia (\begin{DoxyParamCaption}\item[{const string \&}]{sector,  }\item[{int}]{impacto,  }\item[{const string \&}]{fecha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ajusta los precios de las empresas de un sector según el impacto de una noticia. Agrega el nuevo precio al historial con la fecha de la noticia y actualiza el precio actual. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sector} & Sector afectado. \\
+\hline
+{\em impacto} & Impacto de la noticia (1-\/10). \\
+\hline
+{\em fecha} & Fecha de la noticia. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 605 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{605                                                                                           \{}
+\DoxyCodeLine{606         vector<Empresa*> empresas = \mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{607         \textcolor{keywordtype}{float} porcentaje = 0.0;}
+\DoxyCodeLine{608         \textcolor{keywordflow}{if} (impacto > 5) \{}
+\DoxyCodeLine{609             porcentaje = (impacto -\/ 5) * 0.01;}
+\DoxyCodeLine{610         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{611             porcentaje = -\/(6 -\/ impacto) * 0.01;}
+\DoxyCodeLine{612         \}}
+\DoxyCodeLine{613         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : empresas) \{}
+\DoxyCodeLine{614             \textcolor{keywordflow}{if} (e-\/>sector == sector) \{}
+\DoxyCodeLine{615                 \textcolor{keywordtype}{float} nuevoPrecio = e-\/>precioActual + e-\/>precioActual * porcentaje;}
+\DoxyCodeLine{616                 \textcolor{keywordflow}{if} (nuevoPrecio < 1.0) nuevoPrecio = 1.0;}
+\DoxyCodeLine{617                 e-\/>precioActual = nuevoPrecio;}
+\DoxyCodeLine{618                 e-\/>historialPrecios.agregarPrecio(fecha, nuevoPrecio);}
+\DoxyCodeLine{619             \}}
+\DoxyCodeLine{620         \}}
+\DoxyCodeLine{621     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classABBEmpresas_a123c883f4ffbd1fa7686cc0762e5a3ba}\label{classABBEmpresas_a123c883f4ffbd1fa7686cc0762e5a3ba}} 
+\index{ABBEmpresas@{ABBEmpresas}!buscar@{buscar}}
+\index{buscar@{buscar}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{buscar()}{buscar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structEmpresa}{Empresa}}$\ast$ A\+B\+B\+Empresas\+::buscar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$}]{nodo,  }\item[{const string \&}]{ticker }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Busca una empresa por ticker en el A\+BB. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nodo} & Nodo actual. \\
+\hline
+{\em ticker} & Ticker a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero a la empresa encontrada o nullptr. 
+\end{DoxyReturn}
+
+
+Definición en la línea 150 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{150                                                          \{}
+\DoxyCodeLine{151         \textcolor{keywordflow}{if} (!nodo) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{152         \textcolor{keywordflow}{if} (ticker < nodo-\/>ticker)}
+\DoxyCodeLine{153             \textcolor{keywordflow}{return} \mbox{\hyperlink{classABBEmpresas_a123c883f4ffbd1fa7686cc0762e5a3ba}{buscar}}(nodo-\/>\mbox{\hyperlink{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}{izquierda}}, ticker);}
+\DoxyCodeLine{154         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ticker > nodo-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}})}
+\DoxyCodeLine{155             \textcolor{keywordflow}{return} \mbox{\hyperlink{classABBEmpresas_a123c883f4ffbd1fa7686cc0762e5a3ba}{buscar}}(nodo-\/>\mbox{\hyperlink{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}{derecha}}, ticker);}
+\DoxyCodeLine{156         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{157             \textcolor{keywordflow}{return} nodo;}
+\DoxyCodeLine{158     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}\label{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}} 
+\index{ABBEmpresas@{ABBEmpresas}!buscarEmpresa@{buscarEmpresa}}
+\index{buscarEmpresa@{buscarEmpresa}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{buscarEmpresa()}{buscarEmpresa()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structEmpresa}{Empresa}}$\ast$ A\+B\+B\+Empresas\+::buscar\+Empresa (\begin{DoxyParamCaption}\item[{const string \&}]{ticker }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Busca una empresa por ticker. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em ticker} & Ticker a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero a la empresa encontrada o nullptr. 
+\end{DoxyReturn}
+
+
+Definición en la línea 291 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{291                                                  \{}
+\DoxyCodeLine{292         \textcolor{keywordflow}{return} \mbox{\hyperlink{classABBEmpresas_a123c883f4ffbd1fa7686cc0762e5a3ba}{buscar}}(\mbox{\hyperlink{classABBEmpresas_a295a84faf39d6b7b61597a46efd06132}{raiz}}, ticker);}
+\DoxyCodeLine{293     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_a69e48005487af9a9c02acb869e0a8e56}\label{classABBEmpresas_a69e48005487af9a9c02acb869e0a8e56}} 
+\index{ABBEmpresas@{ABBEmpresas}!buscarEmpresasPorRangoPrecio@{buscarEmpresasPorRangoPrecio}}
+\index{buscarEmpresasPorRangoPrecio@{buscarEmpresasPorRangoPrecio}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{buscarEmpresasPorRangoPrecio()}{buscarEmpresasPorRangoPrecio()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{structEmpresa}{Empresa}}$\ast$$>$ A\+B\+B\+Empresas\+::buscar\+Empresas\+Por\+Rango\+Precio (\begin{DoxyParamCaption}\item[{float}]{min\+Precio,  }\item[{float}]{max\+Precio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve una lista de empresas cuyo precio actual está en el rango \mbox{[}min\+Precio, max\+Precio\mbox{]}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em min\+Precio} & Precio mínimo. \\
+\hline
+{\em max\+Precio} & Precio máximo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Vector de punteros a empresas dentro del rango. 
+\end{DoxyReturn}
+
+
+Definición en la línea 501 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{501                                                                                     \{}
+\DoxyCodeLine{502         vector<Empresa*> lista = \mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{503         vector<Empresa*> resultado;}
+\DoxyCodeLine{504         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : lista) \{}
+\DoxyCodeLine{505             \textcolor{keywordflow}{if} (e-\/>precioActual >= minPrecio \&\& e-\/>precioActual <= maxPrecio)}
+\DoxyCodeLine{506                 resultado.push\_back(e);}
+\DoxyCodeLine{507         \}}
+\DoxyCodeLine{508         \textcolor{keywordflow}{return} resultado;}
+\DoxyCodeLine{509     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classABBEmpresas_a69e48005487af9a9c02acb869e0a8e56_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_ac2bae5647d4950ec4a50c64a598e54b7}\label{classABBEmpresas_ac2bae5647d4950ec4a50c64a598e54b7}} 
+\index{ABBEmpresas@{ABBEmpresas}!destruir@{destruir}}
+\index{destruir@{destruir}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{destruir()}{destruir()}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::destruir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$}]{nodo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Libera la memoria de todos los nodos del A\+BB y sus listas de precios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nodo} & Nodo actual. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 176 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{176                                  \{}
+\DoxyCodeLine{177         \textcolor{keywordflow}{if} (!nodo) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{178         \mbox{\hyperlink{classABBEmpresas_ac2bae5647d4950ec4a50c64a598e54b7}{destruir}}(nodo-\/>\mbox{\hyperlink{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}{izquierda}});}
+\DoxyCodeLine{179         \mbox{\hyperlink{classABBEmpresas_ac2bae5647d4950ec4a50c64a598e54b7}{destruir}}(nodo-\/>\mbox{\hyperlink{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}{derecha}});}
+\DoxyCodeLine{180         \textcolor{comment}{// Liberar multilista de precios}}
+\DoxyCodeLine{181         \mbox{\hyperlink{structNodoPrecio}{NodoPrecio}}* p = nodo-\/>\mbox{\hyperlink{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}{historialPrecios}}.\mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}};}
+\DoxyCodeLine{182         \textcolor{keywordflow}{while} (p) \{}
+\DoxyCodeLine{183             \mbox{\hyperlink{structNodoPrecio}{NodoPrecio}}* temp = p;}
+\DoxyCodeLine{184             p = p-\/>\mbox{\hyperlink{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}{siguiente}};}
+\DoxyCodeLine{185             \textcolor{keyword}{delete} temp;}
+\DoxyCodeLine{186         \}}
+\DoxyCodeLine{187         \textcolor{keyword}{delete} nodo;}
+\DoxyCodeLine{188     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classABBEmpresas_ae66f600b3457f3e6aeb09840d9188dcc}\label{classABBEmpresas_ae66f600b3457f3e6aeb09840d9188dcc}} 
+\index{ABBEmpresas@{ABBEmpresas}!imprimirEmpresa@{imprimirEmpresa}}
+\index{imprimirEmpresa@{imprimirEmpresa}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{imprimirEmpresa()}{imprimirEmpresa()}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::imprimir\+Empresa (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$}]{emp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprime la información de una empresa en formato de tabla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em emp} & Puntero a la empresa a imprimir. Si el puntero es nulo, imprime un mensaje de empresa no encontrada. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 516 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{516                                              \{}
+\DoxyCodeLine{517         \textcolor{keywordflow}{if} (!emp) \{}
+\DoxyCodeLine{518             cout << \textcolor{stringliteral}{"Empresa no encontrada.\(\backslash\)n"};}
+\DoxyCodeLine{519             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{520         \}}
+\DoxyCodeLine{521         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{522         cout << \textcolor{stringliteral}{" Ticker   | Empresa                  | Sector         | Precio actual\(\backslash\)n"};}
+\DoxyCodeLine{523         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{524         \textcolor{comment}{// Ticker (máx 8)}}
+\DoxyCodeLine{525         cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{526         \textcolor{keywordtype}{int} t = 0;}
+\DoxyCodeLine{527         \textcolor{keywordflow}{for} (; t < 8 \&\& emp-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}}[t] != \textcolor{charliteral}{'\(\backslash\)0'}; ++t) cout << emp-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}}[t];}
+\DoxyCodeLine{528         for (; t < 8; ++t) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{529         cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{530         \textcolor{comment}{// Nombre (máx 24)}}
+\DoxyCodeLine{531         \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{532         \textcolor{keywordflow}{for} (; n < 24 \&\& emp-\/>\mbox{\hyperlink{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}{nombre}}[n] != \textcolor{charliteral}{'\(\backslash\)0'}; ++n) cout << emp-\/>\mbox{\hyperlink{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}{nombre}}[n];}
+\DoxyCodeLine{533         for (; n < 24; ++n) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{534         cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{535         \textcolor{comment}{// Sector (máx 14)}}
+\DoxyCodeLine{536         \textcolor{keywordtype}{int} s = 0;}
+\DoxyCodeLine{537         \textcolor{keywordflow}{for} (; s < 14 \&\& emp-\/>\mbox{\hyperlink{structEmpresa_ae3272a72f778485c20dab09320f94b86}{sector}}[s] != \textcolor{charliteral}{'\(\backslash\)0'}; ++s) cout << emp-\/>\mbox{\hyperlink{structEmpresa_ae3272a72f778485c20dab09320f94b86}{sector}}[s];}
+\DoxyCodeLine{538         for (; s < 14; ++s) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{539         cout << \textcolor{stringliteral}{" | "} << emp-\/>\mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precioActual}} << endl;}
+\DoxyCodeLine{540         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{541     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classABBEmpresas_ae66f600b3457f3e6aeb09840d9188dcc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_a66382212802e5ab39724152cb88a0912}\label{classABBEmpresas_a66382212802e5ab39724152cb88a0912}} 
+\index{ABBEmpresas@{ABBEmpresas}!imprimirEmpresas@{imprimirEmpresas}}
+\index{imprimirEmpresas@{imprimirEmpresas}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{imprimirEmpresas()}{imprimirEmpresas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::imprimir\+Empresas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprime todas las empresas y su precio actual por consola. 
+
+
+
+Definición en la línea 322 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{322                             \{}
+\DoxyCodeLine{323         vector<Empresa*> lista = \mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{324         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{325         cout << \textcolor{stringliteral}{" Ticker   | Empresa                  | Sector         | Precio actual\(\backslash\)n"};}
+\DoxyCodeLine{326         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{327         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : lista) \{}
+\DoxyCodeLine{328             \textcolor{comment}{// Ticker (máx 8)}}
+\DoxyCodeLine{329             cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{330             \textcolor{keywordtype}{int} t = 0;}
+\DoxyCodeLine{331             \textcolor{keywordflow}{for} (; t < 8 \&\& e-\/>ticker[t] != \textcolor{charliteral}{'\(\backslash\)0'}; ++t) cout << e-\/>ticker[t];}
+\DoxyCodeLine{332             for (; t < 8; ++t) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{333             cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{334             \textcolor{comment}{// Nombre (máx 24)}}
+\DoxyCodeLine{335             \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{336             \textcolor{keywordflow}{for} (; n < 24 \&\& e-\/>nombre[n] != \textcolor{charliteral}{'\(\backslash\)0'}; ++n) cout << e-\/>nombre[n];}
+\DoxyCodeLine{337             for (; n < 24; ++n) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{338             cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{339             \textcolor{comment}{// Sector (máx 14)}}
+\DoxyCodeLine{340             \textcolor{keywordtype}{int} s = 0;}
+\DoxyCodeLine{341             \textcolor{keywordflow}{for} (; s < 14 \&\& e-\/>sector[s] != \textcolor{charliteral}{'\(\backslash\)0'}; ++s) cout << e-\/>sector[s];}
+\DoxyCodeLine{342             for (; s < 14; ++s) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{343             cout << \textcolor{stringliteral}{" | "} << e-\/>precioActual << endl;}
+\DoxyCodeLine{344         \}}
+\DoxyCodeLine{345         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{346     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classABBEmpresas_a66382212802e5ab39724152cb88a0912_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_af1c6468bd09761a9894ce043a2b3c96b}\label{classABBEmpresas_af1c6468bd09761a9894ce043a2b3c96b}} 
+\index{ABBEmpresas@{ABBEmpresas}!imprimirEmpresas@{imprimirEmpresas}}
+\index{imprimirEmpresas@{imprimirEmpresas}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{imprimirEmpresas()}{imprimirEmpresas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::imprimir\+Empresas (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ $>$ \&}]{empresas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprime una lista de empresas en formato de tabla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em empresas} & Vector de punteros a empresas a imprimir. Si el vector está vacío, muestra un mensaje adecuado. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 548 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{548                                                             \{}
+\DoxyCodeLine{549         \textcolor{keywordflow}{if} (empresas.empty()) \{}
+\DoxyCodeLine{550             cout << \textcolor{stringliteral}{"No hay empresas en el rango especificado.\(\backslash\)n"};}
+\DoxyCodeLine{551             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{552         \}}
+\DoxyCodeLine{553         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{554         cout << \textcolor{stringliteral}{" Ticker   | Empresa                  | Sector         | Precio actual\(\backslash\)n"};}
+\DoxyCodeLine{555         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{556         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : empresas) \{}
+\DoxyCodeLine{557             \textcolor{comment}{// Ticker (máx 8)}}
+\DoxyCodeLine{558             cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{559             \textcolor{keywordtype}{int} t = 0;}
+\DoxyCodeLine{560             \textcolor{keywordflow}{for} (; t < 8 \&\& e-\/>ticker[t] != \textcolor{charliteral}{'\(\backslash\)0'}; ++t) cout << e-\/>ticker[t];}
+\DoxyCodeLine{561             for (; t < 8; ++t) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{562             cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{563             \textcolor{comment}{// Nombre (máx 24)}}
+\DoxyCodeLine{564             \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{565             \textcolor{keywordflow}{for} (; n < 24 \&\& e-\/>nombre[n] != \textcolor{charliteral}{'\(\backslash\)0'}; ++n) cout << e-\/>nombre[n];}
+\DoxyCodeLine{566             for (; n < 24; ++n) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{567             cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{568             \textcolor{comment}{// Sector (máx 14)}}
+\DoxyCodeLine{569             \textcolor{keywordtype}{int} s = 0;}
+\DoxyCodeLine{570             \textcolor{keywordflow}{for} (; s < 14 \&\& e-\/>sector[s] != \textcolor{charliteral}{'\(\backslash\)0'}; ++s) cout << e-\/>sector[s];}
+\DoxyCodeLine{571             for (; s < 14; ++s) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{572             cout << \textcolor{stringliteral}{" | "} << e-\/>precioActual << endl;}
+\DoxyCodeLine{573         \}}
+\DoxyCodeLine{574         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{575     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classABBEmpresas_af19e68352e97995e93431e69aec215b5}\label{classABBEmpresas_af19e68352e97995e93431e69aec215b5}} 
+\index{ABBEmpresas@{ABBEmpresas}!imprimirEmpresasPorSector@{imprimirEmpresasPorSector}}
+\index{imprimirEmpresasPorSector@{imprimirEmpresasPorSector}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{imprimirEmpresasPorSector()}{imprimirEmpresasPorSector()}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::imprimir\+Empresas\+Por\+Sector (\begin{DoxyParamCaption}\item[{const string \&}]{sector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprime todas las empresas de un sector específico. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sector} & Nombre del sector a filtrar. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 419 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{419                                                          \{}
+\DoxyCodeLine{420         vector<Empresa*> lista = \mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{421         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{422         cout << \textcolor{stringliteral}{" Ticker   | Empresa                  | Sector         | Precio actual\(\backslash\)n"};}
+\DoxyCodeLine{423         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{424         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : lista) \{}
+\DoxyCodeLine{425             \textcolor{keywordflow}{if} (e-\/>sector == sector) \{}
+\DoxyCodeLine{426                 \textcolor{comment}{// Ticker (máx 8)}}
+\DoxyCodeLine{427                 cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{428                 \textcolor{keywordtype}{int} t = 0;}
+\DoxyCodeLine{429                 \textcolor{keywordflow}{for} (; t < 8 \&\& e-\/>ticker[t] != \textcolor{charliteral}{'\(\backslash\)0'}; ++t) cout << e-\/>ticker[t];}
+\DoxyCodeLine{430                 for (; t < 8; ++t) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{431                 cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{432                 \textcolor{comment}{// Nombre (máx 24)}}
+\DoxyCodeLine{433                 \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{434                 \textcolor{keywordflow}{for} (; n < 24 \&\& e-\/>nombre[n] != \textcolor{charliteral}{'\(\backslash\)0'}; ++n) cout << e-\/>nombre[n];}
+\DoxyCodeLine{435                 for (; n < 24; ++n) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{436                 cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{437                 \textcolor{comment}{// Sector (máx 14)}}
+\DoxyCodeLine{438                 \textcolor{keywordtype}{int} s = 0;}
+\DoxyCodeLine{439                 \textcolor{keywordflow}{for} (; s < 14 \&\& e-\/>sector[s] != \textcolor{charliteral}{'\(\backslash\)0'}; ++s) cout << e-\/>sector[s];}
+\DoxyCodeLine{440                 for (; s < 14; ++s) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{441                 cout << \textcolor{stringliteral}{" | "} << e-\/>precioActual << endl;}
+\DoxyCodeLine{442             \}}
+\DoxyCodeLine{443         \}}
+\DoxyCodeLine{444         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{445     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classABBEmpresas_af19e68352e97995e93431e69aec215b5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_a5475778344348be4a823d4f35da3ab9d}\label{classABBEmpresas_a5475778344348be4a823d4f35da3ab9d}} 
+\index{ABBEmpresas@{ABBEmpresas}!imprimirPorPrecio@{imprimirPorPrecio}}
+\index{imprimirPorPrecio@{imprimirPorPrecio}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{imprimirPorPrecio()}{imprimirPorPrecio()}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::imprimir\+Por\+Precio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprime empresas ordenadas por precio actual (de mayor a menor). 
+
+
+
+Definición en la línea 388 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{388                              \{}
+\DoxyCodeLine{389         vector<Empresa*> lista = \mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{390         \mbox{\hyperlink{classABBEmpresas_a621cdfa8750593b48715423250814680}{mergeSort}}(lista, 0, lista.size() -\/ 1);}
+\DoxyCodeLine{391         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{392         cout << \textcolor{stringliteral}{" Ticker   | Empresa                  | Sector         | Precio actual\(\backslash\)n"};}
+\DoxyCodeLine{393         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{394         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : lista) \{}
+\DoxyCodeLine{395             \textcolor{comment}{// Ticker (máx 8)}}
+\DoxyCodeLine{396             cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{397             \textcolor{keywordtype}{int} t = 0;}
+\DoxyCodeLine{398             \textcolor{keywordflow}{for} (; t < 8 \&\& e-\/>ticker[t] != \textcolor{charliteral}{'\(\backslash\)0'}; ++t) cout << e-\/>ticker[t];}
+\DoxyCodeLine{399             for (; t < 8; ++t) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{400             cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{401             \textcolor{comment}{// Nombre (máx 24)}}
+\DoxyCodeLine{402             \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{403             \textcolor{keywordflow}{for} (; n < 24 \&\& e-\/>nombre[n] != \textcolor{charliteral}{'\(\backslash\)0'}; ++n) cout << e-\/>nombre[n];}
+\DoxyCodeLine{404             for (; n < 24; ++n) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{405             cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{406             \textcolor{comment}{// Sector (máx 14)}}
+\DoxyCodeLine{407             \textcolor{keywordtype}{int} s = 0;}
+\DoxyCodeLine{408             \textcolor{keywordflow}{for} (; s < 14 \&\& e-\/>sector[s] != \textcolor{charliteral}{'\(\backslash\)0'}; ++s) cout << e-\/>sector[s];}
+\DoxyCodeLine{409             for (; s < 14; ++s) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{410             cout << \textcolor{stringliteral}{" | "} << e-\/>precioActual << endl;}
+\DoxyCodeLine{411         \}}
+\DoxyCodeLine{412         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{413     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classABBEmpresas_a5475778344348be4a823d4f35da3ab9d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_aa2e8d0775af6901d7ad59454a4c90136}\label{classABBEmpresas_aa2e8d0775af6901d7ad59454a4c90136}} 
+\index{ABBEmpresas@{ABBEmpresas}!inicializarEmpresas@{inicializarEmpresas}}
+\index{inicializarEmpresas@{inicializarEmpresas}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{inicializarEmpresas()}{inicializarEmpresas()}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::inicializar\+Empresas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Inicializa automáticamente el A\+BB con empresas reales y datos aleatorios. 
+
+
+
+Definición en la línea 193 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{193                                \{}
+\DoxyCodeLine{194         \textcolor{comment}{// Arrays de tickers, nombres y sectores reales (ejemplo S\&P 500)}}
+\DoxyCodeLine{195         \textcolor{keyword}{const} \textcolor{keywordtype}{string} tickers[50] = \{}
+\DoxyCodeLine{196             \textcolor{stringliteral}{"AAPL"},\textcolor{stringliteral}{"MSFT"},\textcolor{stringliteral}{"GOOGL"},\textcolor{stringliteral}{"AMZN"},\textcolor{stringliteral}{"META"},\textcolor{stringliteral}{"TSLA"},\textcolor{stringliteral}{"NVDA"},\textcolor{stringliteral}{"BRK.B"},\textcolor{stringliteral}{"JPM"},\textcolor{stringliteral}{"V"},}
+\DoxyCodeLine{197             \textcolor{stringliteral}{"UNH"},\textcolor{stringliteral}{"HD"},\textcolor{stringliteral}{"PG"},\textcolor{stringliteral}{"MA"},\textcolor{stringliteral}{"LLY"},\textcolor{stringliteral}{"XOM"},\textcolor{stringliteral}{"MRK"},\textcolor{stringliteral}{"ABBV"},\textcolor{stringliteral}{"AVGO"},\textcolor{stringliteral}{"CVX"},}
+\DoxyCodeLine{198             \textcolor{stringliteral}{"PEP"},\textcolor{stringliteral}{"KO"},\textcolor{stringliteral}{"COST"},\textcolor{stringliteral}{"WMT"},\textcolor{stringliteral}{"BAC"},\textcolor{stringliteral}{"MCD"},\textcolor{stringliteral}{"DIS"},\textcolor{stringliteral}{"ADBE"},\textcolor{stringliteral}{"CSCO"},\textcolor{stringliteral}{"PFE"},}
+\DoxyCodeLine{199             \textcolor{stringliteral}{"TMO"},\textcolor{stringliteral}{"ABT"},\textcolor{stringliteral}{"CRM"},\textcolor{stringliteral}{"ACN"},\textcolor{stringliteral}{"DHR"},\textcolor{stringliteral}{"NKE"},\textcolor{stringliteral}{"LIN"},\textcolor{stringliteral}{"WFC"},\textcolor{stringliteral}{"TXN"},\textcolor{stringliteral}{"NEE"},}
+\DoxyCodeLine{200             \textcolor{stringliteral}{"VZ"},\textcolor{stringliteral}{"INTC"},\textcolor{stringliteral}{"CMCSA"},\textcolor{stringliteral}{"HON"},\textcolor{stringliteral}{"ORCL"},\textcolor{stringliteral}{"AMGN"},\textcolor{stringliteral}{"QCOM"},\textcolor{stringliteral}{"MDT"},\textcolor{stringliteral}{"UNP"},\textcolor{stringliteral}{"LOW"}}
+\DoxyCodeLine{201         \};}
+\DoxyCodeLine{202         \textcolor{keyword}{const} \textcolor{keywordtype}{string} nombres[50] = \{}
+\DoxyCodeLine{203             \textcolor{stringliteral}{"Apple"},\textcolor{stringliteral}{"Microsoft"},\textcolor{stringliteral}{"Alphabet"},\textcolor{stringliteral}{"Amazon"},\textcolor{stringliteral}{"Meta Platforms"},\textcolor{stringliteral}{"Tesla"},\textcolor{stringliteral}{"Nvidia"},\textcolor{stringliteral}{"Berkshire Hathaway"},\textcolor{stringliteral}{"JPMorgan Chase"},\textcolor{stringliteral}{"Visa"},}
+\DoxyCodeLine{204             \textcolor{stringliteral}{"UnitedHealth"},\textcolor{stringliteral}{"Home Depot"},\textcolor{stringliteral}{"Procter \& Gamble"},\textcolor{stringliteral}{"Mastercard"},\textcolor{stringliteral}{"Eli Lilly"},\textcolor{stringliteral}{"Exxon Mobil"},\textcolor{stringliteral}{"Merck"},\textcolor{stringliteral}{"AbbVie"},\textcolor{stringliteral}{"Broadcom"},\textcolor{stringliteral}{"Chevron"},}
+\DoxyCodeLine{205             \textcolor{stringliteral}{"PepsiCo"},\textcolor{stringliteral}{"Coca-\/Cola"},\textcolor{stringliteral}{"Costco"},\textcolor{stringliteral}{"Walmart"},\textcolor{stringliteral}{"Bank of America"},\textcolor{stringliteral}{"McDonald's"},\textcolor{stringliteral}{"Disney"},\textcolor{stringliteral}{"Adobe"},\textcolor{stringliteral}{"Cisco"},\textcolor{stringliteral}{"Pfizer"},}
+\DoxyCodeLine{206             \textcolor{stringliteral}{"Thermo Fisher"},\textcolor{stringliteral}{"Abbott"},\textcolor{stringliteral}{"Salesforce"},\textcolor{stringliteral}{"Accenture"},\textcolor{stringliteral}{"Danaher"},\textcolor{stringliteral}{"Nike"},\textcolor{stringliteral}{"Linde"},\textcolor{stringliteral}{"Wells Fargo"},\textcolor{stringliteral}{"Texas Instruments"},\textcolor{stringliteral}{"NextEra Energy"},}
+\DoxyCodeLine{207             \textcolor{stringliteral}{"Verizon"},\textcolor{stringliteral}{"Intel"},\textcolor{stringliteral}{"Comcast"},\textcolor{stringliteral}{"Honeywell"},\textcolor{stringliteral}{"Oracle"},\textcolor{stringliteral}{"Amgen"},\textcolor{stringliteral}{"Qualcomm"},\textcolor{stringliteral}{"Medtronic"},\textcolor{stringliteral}{"Union Pacific"},\textcolor{stringliteral}{"Lowe's"}}
+\DoxyCodeLine{208         \};}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210         srand(time(\textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{211         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 50; ++i) \{}
+\DoxyCodeLine{212             \textcolor{keywordtype}{float} precio = 50 + rand() \% 450 + (rand() \% 1000) / 1000.0f; \textcolor{comment}{// Precio entre 50 y 500 aprox}}
+\DoxyCodeLine{213             \textcolor{keywordtype}{string} sector = \mbox{\hyperlink{empresa_8h_aea5748407935beef97b8efa9a40fd3ef}{SECTORES\_EMPRESA}}[rand() \% \mbox{\hyperlink{empresa_8h_aea5748407935beef97b8efa9a40fd3ef}{SECTORES\_EMPRESA}}.size()];}
+\DoxyCodeLine{214             \mbox{\hyperlink{classABBEmpresas_a283bfceb063a5b3ebaca35ba0b7a6c99}{insertarEmpresa}}(tickers[i], nombres[i], sector, precio);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216             \textcolor{comment}{// Generar historial de precios desde 2025-\/01-\/01 hasta 2025-\/05-\/21}}
+\DoxyCodeLine{217             \mbox{\hyperlink{structEmpresa}{Empresa}}* emp = \mbox{\hyperlink{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}{buscarEmpresa}}(tickers[i]);}
+\DoxyCodeLine{218             \textcolor{keywordtype}{int} year = 2025, month = 1, day = 1;}
+\DoxyCodeLine{219             \textcolor{keywordtype}{float} precioHist = precio;}
+\DoxyCodeLine{220             \textcolor{keywordflow}{while} (!(year == 2025 \&\& month == 5 \&\& day == 22)) \{}
+\DoxyCodeLine{221                 \textcolor{comment}{// Construir la fecha manualmente sin sprintf}}
+\DoxyCodeLine{222                 \textcolor{keywordtype}{string} fecha = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{223                 \textcolor{comment}{// Año}}
+\DoxyCodeLine{224                 fecha += \textcolor{stringliteral}{"2025-\/"};}
+\DoxyCodeLine{225                 \textcolor{comment}{// Mes}}
+\DoxyCodeLine{226                 \textcolor{keywordflow}{if} (month < 10) fecha += \textcolor{stringliteral}{"0"};}
+\DoxyCodeLine{227                 fecha += to\_string(month) + \textcolor{stringliteral}{"-\/"};}
+\DoxyCodeLine{228                 \textcolor{comment}{// Día}}
+\DoxyCodeLine{229                 \textcolor{keywordflow}{if} (day < 10) fecha += \textcolor{stringliteral}{"0"};}
+\DoxyCodeLine{230                 fecha += to\_string(day);}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232                 \textcolor{comment}{// Variar el precio histórico aleatoriamente}}
+\DoxyCodeLine{233                 \textcolor{keywordtype}{float} variacion = ((rand() \% 2001) -\/ 1000) / 100.0f; \textcolor{comment}{// -\/10.00 a +10.00}}
+\DoxyCodeLine{234                 precioHist = max(1.0f, precioHist + variacion);}
+\DoxyCodeLine{235                 emp-\/>\mbox{\hyperlink{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}{historialPrecios}}.\mbox{\hyperlink{classMultilistaPrecio_a90ab8a61ae12056cda60c3dbd35762af}{agregarPrecio}}(fecha, precioHist);}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237                 \textcolor{comment}{// Avanzar al siguiente día}}
+\DoxyCodeLine{238                 day++;}
+\DoxyCodeLine{239                 \textcolor{keywordtype}{int} diasMes;}
+\DoxyCodeLine{240                 \textcolor{keywordflow}{if} (month == 2) diasMes = 28;}
+\DoxyCodeLine{241                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (month == 4 || month == 6 || month == 9 || month == 11) diasMes = 30;}
+\DoxyCodeLine{242                 \textcolor{keywordflow}{else} diasMes = 31;}
+\DoxyCodeLine{243                 \textcolor{keywordflow}{if} (day > diasMes) \{}
+\DoxyCodeLine{244                     day = 1;}
+\DoxyCodeLine{245                     month++;}
+\DoxyCodeLine{246                 \}}
+\DoxyCodeLine{247                 \textcolor{keywordflow}{if} (month > 12) \{}
+\DoxyCodeLine{248                     month = 1;}
+\DoxyCodeLine{249                     year++;}
+\DoxyCodeLine{250                 \}}
+\DoxyCodeLine{251                 \textcolor{keywordflow}{if} (year == 2025 \&\& month == 5 \&\& day == 22) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{252             \}}
+\DoxyCodeLine{253             \textcolor{comment}{// Actualizar precio actual al último histórico}}
+\DoxyCodeLine{254             \textcolor{keywordflow}{if} (emp-\/>\mbox{\hyperlink{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}{historialPrecios}}.\mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}})}
+\DoxyCodeLine{255                 emp-\/>\mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precioActual}} = emp-\/>\mbox{\hyperlink{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}{historialPrecios}}.\mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}}-\/>\mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precioCierre}};}
+\DoxyCodeLine{256         \}}
+\DoxyCodeLine{257     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classABBEmpresas_aa2e8d0775af6901d7ad59454a4c90136_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_ac7724805520aece00f226f92f0e3a391}\label{classABBEmpresas_ac7724805520aece00f226f92f0e3a391}} 
+\index{ABBEmpresas@{ABBEmpresas}!inorden@{inorden}}
+\index{inorden@{inorden}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{inorden()}{inorden()}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::inorden (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$}]{nodo,  }\item[{vector$<$ \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ $>$ \&}]{lista }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Recorrido inorden para obtener empresas ordenadas alfabéticamente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nodo} & Nodo actual. \\
+\hline
+{\em lista} & Vector donde se almacenan las empresas. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 165 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{165                                                          \{}
+\DoxyCodeLine{166         \textcolor{keywordflow}{if} (!nodo) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{167         \mbox{\hyperlink{classABBEmpresas_ac7724805520aece00f226f92f0e3a391}{inorden}}(nodo-\/>\mbox{\hyperlink{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}{izquierda}}, lista);}
+\DoxyCodeLine{168         lista.push\_back(nodo);}
+\DoxyCodeLine{169         \mbox{\hyperlink{classABBEmpresas_ac7724805520aece00f226f92f0e3a391}{inorden}}(nodo-\/>\mbox{\hyperlink{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}{derecha}}, lista);}
+\DoxyCodeLine{170     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classABBEmpresas_a74f4512e83b5afff8dfd1d8ad4aaa5ea}\label{classABBEmpresas_a74f4512e83b5afff8dfd1d8ad4aaa5ea}} 
+\index{ABBEmpresas@{ABBEmpresas}!insertar@{insertar}}
+\index{insertar@{insertar}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{insertar()}{insertar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structEmpresa}{Empresa}}$\ast$ A\+B\+B\+Empresas\+::insertar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$}]{nodo,  }\item[{\mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$}]{nueva }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Inserta una empresa en el A\+BB (por ticker). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nodo} & Nodo actual. \\
+\hline
+{\em nueva} & Nueva empresa a insertar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero al nodo actualizado. 
+\end{DoxyReturn}
+
+
+Definición en la línea 134 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{134                                                      \{}
+\DoxyCodeLine{135         \textcolor{keywordflow}{if} (!nodo) \textcolor{keywordflow}{return} nueva;}
+\DoxyCodeLine{136         \textcolor{keywordflow}{if} (nueva-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}} < nodo-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}})}
+\DoxyCodeLine{137             nodo-\/>\mbox{\hyperlink{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}{izquierda}} = \mbox{\hyperlink{classABBEmpresas_a74f4512e83b5afff8dfd1d8ad4aaa5ea}{insertar}}(nodo-\/>\mbox{\hyperlink{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}{izquierda}}, nueva);}
+\DoxyCodeLine{138         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (nueva-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}} > nodo-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}})}
+\DoxyCodeLine{139             nodo-\/>\mbox{\hyperlink{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}{derecha}} = \mbox{\hyperlink{classABBEmpresas_a74f4512e83b5afff8dfd1d8ad4aaa5ea}{insertar}}(nodo-\/>\mbox{\hyperlink{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}{derecha}}, nueva);}
+\DoxyCodeLine{140         \textcolor{comment}{// Si es igual, no inserta duplicados}}
+\DoxyCodeLine{141         \textcolor{keywordflow}{return} nodo;}
+\DoxyCodeLine{142     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classABBEmpresas_a283bfceb063a5b3ebaca35ba0b7a6c99}\label{classABBEmpresas_a283bfceb063a5b3ebaca35ba0b7a6c99}} 
+\index{ABBEmpresas@{ABBEmpresas}!insertarEmpresa@{insertarEmpresa}}
+\index{insertarEmpresa@{insertarEmpresa}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{insertarEmpresa()}{insertarEmpresa()}}
+{\footnotesize\ttfamily void A\+B\+B\+Empresas\+::insertar\+Empresa (\begin{DoxyParamCaption}\item[{const string \&}]{ticker,  }\item[{const string \&}]{nombre,  }\item[{const string \&}]{sector,  }\item[{float}]{precio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserta una empresa (si no existe ya en el A\+BB). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em ticker} & Ticker de la empresa. \\
+\hline
+{\em nombre} & Nombre de la empresa. \\
+\hline
+{\em sector} & Sector de la empresa. \\
+\hline
+{\em precio} & Precio actual de la acción. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 279 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{279                                                                                                          \{}
+\DoxyCodeLine{280         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}{buscarEmpresa}}(ticker)) \{}
+\DoxyCodeLine{281             \mbox{\hyperlink{structEmpresa}{Empresa}}* nueva = \textcolor{keyword}{new} \mbox{\hyperlink{structEmpresa}{Empresa}}(ticker, nombre, sector, precio);}
+\DoxyCodeLine{282             \mbox{\hyperlink{classABBEmpresas_a295a84faf39d6b7b61597a46efd06132}{raiz}} = \mbox{\hyperlink{classABBEmpresas_a74f4512e83b5afff8dfd1d8ad4aaa5ea}{insertar}}(\mbox{\hyperlink{classABBEmpresas_a295a84faf39d6b7b61597a46efd06132}{raiz}}, nueva);}
+\DoxyCodeLine{283         \}}
+\DoxyCodeLine{284     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classABBEmpresas_a7c12a3613d8d1fcf62f6ffbfdf3f8e34}\label{classABBEmpresas_a7c12a3613d8d1fcf62f6ffbfdf3f8e34}} 
+\index{ABBEmpresas@{ABBEmpresas}!merge@{merge}}
+\index{merge@{merge}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily static void A\+B\+B\+Empresas\+::merge (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ $>$ \&}]{arr,  }\item[{int}]{left,  }\item[{int}]{mid,  }\item[{int}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Función auxiliar para Merge Sort\+: combina dos subarreglos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em arr} & Vector de empresas. \\
+\hline
+{\em left} & Índice izquierdo. \\
+\hline
+{\em mid} & Índice medio. \\
+\hline
+{\em right} & Índice derecho. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 355 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{355                                                                            \{}
+\DoxyCodeLine{356         \textcolor{keywordtype}{int} n1 = mid -\/ left + 1;}
+\DoxyCodeLine{357         \textcolor{keywordtype}{int} n2 = right -\/ mid;}
+\DoxyCodeLine{358         vector<Empresa*> L(n1), R(n2);}
+\DoxyCodeLine{359         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n1; i++) L[i] = arr[left + i];}
+\DoxyCodeLine{360         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < n2; j++) R[j] = arr[mid + 1 + j];}
+\DoxyCodeLine{361         \textcolor{keywordtype}{int} i = 0, j = 0, k = left;}
+\DoxyCodeLine{362         \textcolor{keywordflow}{while} (i < n1 \&\& j < n2) \{}
+\DoxyCodeLine{363             \textcolor{keywordflow}{if} (L[i]-\/>precioActual > R[j]-\/>precioActual) arr[k++] = L[i++];}
+\DoxyCodeLine{364             \textcolor{keywordflow}{else} arr[k++] = R[j++];}
+\DoxyCodeLine{365         \}}
+\DoxyCodeLine{366         \textcolor{keywordflow}{while} (i < n1) arr[k++] = L[i++];}
+\DoxyCodeLine{367         \textcolor{keywordflow}{while} (j < n2) arr[k++] = R[j++];}
+\DoxyCodeLine{368     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classABBEmpresas_a621cdfa8750593b48715423250814680}\label{classABBEmpresas_a621cdfa8750593b48715423250814680}} 
+\index{ABBEmpresas@{ABBEmpresas}!mergeSort@{mergeSort}}
+\index{mergeSort@{mergeSort}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{mergeSort()}{mergeSort()}}
+{\footnotesize\ttfamily static void A\+B\+B\+Empresas\+::merge\+Sort (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ $>$ \&}]{arr,  }\item[{int}]{left,  }\item[{int}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Ordena empresas por precio actual usando Merge Sort (de mayor a menor). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em arr} & Vector de empresas. \\
+\hline
+{\em left} & Índice izquierdo. \\
+\hline
+{\em right} & Índice derecho. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 376 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{376                                                                       \{}
+\DoxyCodeLine{377         \textcolor{keywordflow}{if} (left < right) \{}
+\DoxyCodeLine{378             \textcolor{keywordtype}{int} mid = left + (right -\/ left) / 2;}
+\DoxyCodeLine{379             \mbox{\hyperlink{classABBEmpresas_a621cdfa8750593b48715423250814680}{mergeSort}}(arr, left, mid);}
+\DoxyCodeLine{380             \mbox{\hyperlink{classABBEmpresas_a621cdfa8750593b48715423250814680}{mergeSort}}(arr, mid + 1, right);}
+\DoxyCodeLine{381             \mbox{\hyperlink{classABBEmpresas_a7c12a3613d8d1fcf62f6ffbfdf3f8e34}{merge}}(arr, left, mid, right);}
+\DoxyCodeLine{382         \}}
+\DoxyCodeLine{383     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classABBEmpresas_a77be3c43461441d10f9dd6f03d24604d}\label{classABBEmpresas_a77be3c43461441d10f9dd6f03d24604d}} 
+\index{ABBEmpresas@{ABBEmpresas}!obtenerEmpresaMasBarata@{obtenerEmpresaMasBarata}}
+\index{obtenerEmpresaMasBarata@{obtenerEmpresaMasBarata}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{obtenerEmpresaMasBarata()}{obtenerEmpresaMasBarata()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structEmpresa}{Empresa}}$\ast$ A\+B\+B\+Empresas\+::obtener\+Empresa\+Mas\+Barata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la empresa con el precio actual más bajo. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero a la empresa con el precio más bajo, o nullptr si no hay empresas. 
+\end{DoxyReturn}
+
+
+Definición en la línea 469 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{469                                        \{}
+\DoxyCodeLine{470         vector<Empresa*> lista = \mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{471         \textcolor{keywordflow}{if} (lista.empty()) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{472         \mbox{\hyperlink{structEmpresa}{Empresa}}* minEmp = lista[0];}
+\DoxyCodeLine{473         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 1; i < lista.size(); ++i) \{}
+\DoxyCodeLine{474             \textcolor{keywordflow}{if} (lista[i]-\/>precioActual < minEmp-\/>precioActual)}
+\DoxyCodeLine{475                 minEmp = lista[i];}
+\DoxyCodeLine{476         \}}
+\DoxyCodeLine{477         \textcolor{keywordflow}{return} minEmp;}
+\DoxyCodeLine{478     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classABBEmpresas_a77be3c43461441d10f9dd6f03d24604d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_a9773e3023fbdf2197242337670da6941}\label{classABBEmpresas_a9773e3023fbdf2197242337670da6941}} 
+\index{ABBEmpresas@{ABBEmpresas}!obtenerEmpresaMasCara@{obtenerEmpresaMasCara}}
+\index{obtenerEmpresaMasCara@{obtenerEmpresaMasCara}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{obtenerEmpresaMasCara()}{obtenerEmpresaMasCara()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structEmpresa}{Empresa}}$\ast$ A\+B\+B\+Empresas\+::obtener\+Empresa\+Mas\+Cara (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la empresa con el precio actual más alto. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero a la empresa con el precio más alto, o nullptr si no hay empresas. 
+\end{DoxyReturn}
+
+
+Definición en la línea 484 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{484                                      \{}
+\DoxyCodeLine{485         vector<Empresa*> lista = \mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{486         \textcolor{keywordflow}{if} (lista.empty()) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{487         \mbox{\hyperlink{structEmpresa}{Empresa}}* maxEmp = lista[0];}
+\DoxyCodeLine{488         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 1; i < lista.size(); ++i) \{}
+\DoxyCodeLine{489             \textcolor{keywordflow}{if} (lista[i]-\/>precioActual > maxEmp-\/>\mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precioActual}})}
+\DoxyCodeLine{490                 maxEmp = lista[i];}
+\DoxyCodeLine{491         \}}
+\DoxyCodeLine{492         \textcolor{keywordflow}{return} maxEmp;}
+\DoxyCodeLine{493     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classABBEmpresas_a9773e3023fbdf2197242337670da6941_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}\label{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}} 
+\index{ABBEmpresas@{ABBEmpresas}!obtenerEmpresasOrdenadas@{obtenerEmpresasOrdenadas}}
+\index{obtenerEmpresasOrdenadas@{obtenerEmpresasOrdenadas}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{obtenerEmpresasOrdenadas()}{obtenerEmpresasOrdenadas()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{structEmpresa}{Empresa}}$\ast$$>$ A\+B\+B\+Empresas\+::obtener\+Empresas\+Ordenadas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve una lista ordenada de empresas (inorden). 
+
+\begin{DoxyReturn}{Devuelve}
+Vector de punteros a empresas ordenadas alfabéticamente. 
+\end{DoxyReturn}
+
+
+Definición en la línea 313 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{313                                                 \{}
+\DoxyCodeLine{314         vector<Empresa*> lista;}
+\DoxyCodeLine{315         \mbox{\hyperlink{classABBEmpresas_ac7724805520aece00f226f92f0e3a391}{inorden}}(\mbox{\hyperlink{classABBEmpresas_a295a84faf39d6b7b61597a46efd06132}{raiz}}, lista);}
+\DoxyCodeLine{316         \textcolor{keywordflow}{return} lista;}
+\DoxyCodeLine{317     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classABBEmpresas_a0c1aa570634d14b5cebac4cbb4ddd184}\label{classABBEmpresas_a0c1aa570634d14b5cebac4cbb4ddd184}} 
+\index{ABBEmpresas@{ABBEmpresas}!promedioPrecioPorSector@{promedioPrecioPorSector}}
+\index{promedioPrecioPorSector@{promedioPrecioPorSector}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{promedioPrecioPorSector()}{promedioPrecioPorSector()}}
+{\footnotesize\ttfamily float A\+B\+B\+Empresas\+::promedio\+Precio\+Por\+Sector (\begin{DoxyParamCaption}\item[{const string \&}]{sector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula el promedio del precio actual de las empresas de un sector. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sector} & Nombre del sector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Promedio del precio actual de las empresas del sector, o 0 si no hay empresas. 
+\end{DoxyReturn}
+
+
+Definición en la línea 452 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{452                                                         \{}
+\DoxyCodeLine{453         vector<Empresa*> lista = \mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{454         \textcolor{keywordtype}{float} suma = 0;}
+\DoxyCodeLine{455         \textcolor{keywordtype}{int} cuenta = 0;}
+\DoxyCodeLine{456         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : lista) \{}
+\DoxyCodeLine{457             \textcolor{keywordflow}{if} (e-\/>sector == sector) \{}
+\DoxyCodeLine{458                 suma += e-\/>precioActual;}
+\DoxyCodeLine{459                 cuenta++;}
+\DoxyCodeLine{460             \}}
+\DoxyCodeLine{461         \}}
+\DoxyCodeLine{462         \textcolor{keywordflow}{return} (cuenta > 0) ? (suma / cuenta) : 0;}
+\DoxyCodeLine{463     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classABBEmpresas_a0c1aa570634d14b5cebac4cbb4ddd184_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classABBEmpresas_a295a84faf39d6b7b61597a46efd06132}\label{classABBEmpresas_a295a84faf39d6b7b61597a46efd06132}} 
+\index{ABBEmpresas@{ABBEmpresas}!raiz@{raiz}}
+\index{raiz@{raiz}!ABBEmpresas@{ABBEmpresas}}
+\doxysubsubsection{\texorpdfstring{raiz}{raiz}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structEmpresa}{Empresa}}$\ast$ A\+B\+B\+Empresas\+::raiz\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Puntero a la raíz del A\+BB. 
+
+
+
+Definición en la línea 126 del archivo empresa.\+h.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{empresa_8h}{empresa.\+h}}\end{DoxyCompactItemize}

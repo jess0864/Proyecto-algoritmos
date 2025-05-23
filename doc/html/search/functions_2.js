@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['destruir_48',['destruir',['../classABBEmpresas.html#ac2bae5647d4950ec4a50c64a598e54b7',1,'ABBEmpresas']]]
+  ['calcularporcentajeajuste_95',['calcularPorcentajeAjuste',['../noticia_8h.html#af24bef6e352d3ace928987de260bb7e6',1,'noticia.h']]],
+  ['colaprioridadnoticias_96',['ColaPrioridadNoticias',['../classColaPrioridadNoticias.html#a083e76af8c58c0b51739d8605dd3f8e8',1,'ColaPrioridadNoticias']]]
 ];

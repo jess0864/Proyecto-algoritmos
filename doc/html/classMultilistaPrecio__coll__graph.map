@@ -1,0 +1,4 @@
+<map id="MultilistaPrecio" name="MultilistaPrecio">
+<area shape="rect" id="node1" title="Multilista para historial de precios de una acción." alt="" coords="5,95,128,121"/>
+<area shape="rect" id="node2" href="$structNodoPrecio.html" title="Nodo para la multilista de precios históricos de una acción." alt="" coords="19,5,115,32"/>
+</map>

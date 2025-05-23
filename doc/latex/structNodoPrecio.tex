@@ -12,7 +12,13 @@ Nodo para la multilista de precios históricos de una acción.
 
 
 Diagrama de colaboración para Nodo\+Precio\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{structNodoPrecio__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,13 +27,10 @@ Diagrama de colaboración para Nodo\+Precio\+:
 \doxysubsection*{Atributos públicos}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}\label{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}} 
 string \mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}}
 \begin{DoxyCompactList}\small\item\em Fecha del precio histórico (formato A\+A\+A\+A-\/\+M\+M-\/\+DD) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structNodoPrecio_abda288453e6025dea732783b7b86f129}\label{structNodoPrecio_abda288453e6025dea732783b7b86f129}} 
 float \mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precio\+Cierre}}
 \begin{DoxyCompactList}\small\item\em Precio de cierre en la fecha dada. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}\label{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}} 
 \mbox{\hyperlink{structNodoPrecio}{Nodo\+Precio}} $\ast$ \mbox{\hyperlink{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}{siguiente}}
 \begin{DoxyCompactList}\small\item\em Puntero al siguiente nodo en la lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -35,7 +38,7 @@ float \mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{preci
 \doxysubsection{Descripción detallada}
 Nodo para la multilista de precios históricos de una acción. 
 
-Definición en la línea 14 del archivo empresa.\+h.
+Definición en la línea 19 del archivo empresa.\+h.
 
 
 
@@ -59,15 +62,60 @@ Constructor de \mbox{\hyperlink{structNodoPrecio}{Nodo\+Precio}}.
 \end{DoxyParams}
 
 
-Definición en la línea 27 del archivo empresa.\+h.
+Definición en la línea 32 del archivo empresa.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{27 : \mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}}(f), \mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precioCierre}}(p), \mbox{\hyperlink{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}{siguiente}}(\textcolor{keyword}{nullptr}) \{\}}
+\DoxyCodeLine{32 : \mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}}(f), \mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precioCierre}}(p), \mbox{\hyperlink{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}{siguiente}}(\textcolor{keyword}{nullptr}) \{\}}
 
 \end{DoxyCode}
 
 
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}\label{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}} 
+\index{NodoPrecio@{NodoPrecio}!fecha@{fecha}}
+\index{fecha@{fecha}!NodoPrecio@{NodoPrecio}}
+\doxysubsubsection{\texorpdfstring{fecha}{fecha}}
+{\footnotesize\ttfamily string Nodo\+Precio\+::fecha}
+
+
+
+Fecha del precio histórico (formato A\+A\+A\+A-\/\+M\+M-\/\+DD) 
+
+
+
+Definición en la línea 21 del archivo empresa.\+h.
+
+\mbox{\Hypertarget{structNodoPrecio_abda288453e6025dea732783b7b86f129}\label{structNodoPrecio_abda288453e6025dea732783b7b86f129}} 
+\index{NodoPrecio@{NodoPrecio}!precioCierre@{precioCierre}}
+\index{precioCierre@{precioCierre}!NodoPrecio@{NodoPrecio}}
+\doxysubsubsection{\texorpdfstring{precioCierre}{precioCierre}}
+{\footnotesize\ttfamily float Nodo\+Precio\+::precio\+Cierre}
+
+
+
+Precio de cierre en la fecha dada. 
+
+
+
+Definición en la línea 23 del archivo empresa.\+h.
+
+\mbox{\Hypertarget{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}\label{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}} 
+\index{NodoPrecio@{NodoPrecio}!siguiente@{siguiente}}
+\index{siguiente@{siguiente}!NodoPrecio@{NodoPrecio}}
+\doxysubsubsection{\texorpdfstring{siguiente}{siguiente}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNodoPrecio}{Nodo\+Precio}}$\ast$ Nodo\+Precio\+::siguiente}
+
+
+
+Puntero al siguiente nodo en la lista. 
+
+
+
+Definición en la línea 25 del archivo empresa.\+h.
+
+
+
 La documentación para esta estructura fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
 \item 
-empresa.\+h\end{DoxyCompactItemize}
+\mbox{\hyperlink{empresa_8h}{empresa.\+h}}\end{DoxyCompactItemize}

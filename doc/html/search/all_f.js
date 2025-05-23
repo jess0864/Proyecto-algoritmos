@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7eabbempresas_38',['~ABBEmpresas',['../classABBEmpresas.html#a2cd102614a252770db134521282f2d8c',1,'ABBEmpresas']]]
+  ['ticker_72',['ticker',['../structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70',1,'Empresa']]],
+  ['titulo_73',['titulo',['../structNoticia.html#ad16f6edde856e5a87ffcd9ae8cf8bb25',1,'Noticia']]]
 ];

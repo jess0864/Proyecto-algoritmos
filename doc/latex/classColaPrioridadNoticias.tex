@@ -1,0 +1,627 @@
+\hypertarget{classColaPrioridadNoticias}{}\doxysection{Referencia de la Clase Cola\+Prioridad\+Noticias}
+\label{classColaPrioridadNoticias}\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+
+
+Clase que implementa una cola de prioridad para noticias, ordenadas por impacto.  
+
+
+
+
+{\ttfamily \#include $<$noticia.\+h$>$}
+
+
+
+Diagrama de colaboración para Cola\+Prioridad\+Noticias\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classColaPrioridadNoticias__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColaPrioridadNoticias_a083e76af8c58c0b51739d8605dd3f8e8}{Cola\+Prioridad\+Noticias}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la cola de prioridad. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classColaPrioridadNoticias_af21d5932ffb47b52e30862f756274fc6}{esta\+Vacia}} ()
+\begin{DoxyCompactList}\small\item\em Verifica si la cola está vacía. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classColaPrioridadNoticias_ac7aedfac4289f61343f4f28bf6b1cc35}{insertar}} (int impacto, string titulo, string descripcion, string sector, string fecha)
+\begin{DoxyCompactList}\small\item\em Inserta una noticia en la cola de prioridad según su impacto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classColaPrioridadNoticias_acf945e1aec8cf586d6b87382a1a9a9e2}{mostrar}} ()
+\begin{DoxyCompactList}\small\item\em Muestra todas las noticias en la cola, en orden de prioridad. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classColaPrioridadNoticias_ab0f4086eabcc4d2f9935f9f64527aa7c}{buscar\+Por\+Sector}} (string sector\+Clave)
+\begin{DoxyCompactList}\small\item\em Busca y muestra noticias que pertenecen a un sector específico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classColaPrioridadNoticias_ab833342c4584745a79424087c99eb1e9}{buscar\+Por\+Palabra\+Clave}} (string palabra)
+\begin{DoxyCompactList}\small\item\em Busca y muestra noticias cuyo título contiene una palabra clave. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classColaPrioridadNoticias_afccedcf2a79e14243c3d685f2fcf9e5a}{hay\+Alerta\+De\+Crisis}} ()
+\begin{DoxyCompactList}\small\item\em Detecta si hay una alerta de crisis (3 o más noticias con impacto $>$= 8). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classColaPrioridadNoticias_a3db4934bf16a4b593a39f23876a3f158}{promedio\+Impacto}} ()
+\begin{DoxyCompactList}\small\item\em Calcula el promedio del impacto de todas las noticias en la cola. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$ \mbox{\hyperlink{classColaPrioridadNoticias_a48b8045f042a69f61a1356b3876281c8}{extraer}} ()
+\begin{DoxyCompactList}\small\item\em Extrae y retorna la noticia con mayor prioridad (mayor impacto). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classColaPrioridadNoticias_a9c3a7f5944aa0f85f3ebf69c1db5eaf7}{obtener\+Noticias}} (vector$<$ \mbox{\hyperlink{structNoticia}{Noticia}} $\ast$ $>$ \&noticias)
+\begin{DoxyCompactList}\small\item\em Llena un vector con punteros a todas las noticias en la cola (en orden actual). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$ \mbox{\hyperlink{classColaPrioridadNoticias_a4c4f7acab244598a0ffe276520164e07}{dividir}} (\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$cabeza)
+\begin{DoxyCompactList}\small\item\em Divide la lista enlazada de noticias en dos mitades. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$ \mbox{\hyperlink{classColaPrioridadNoticias_a1f1552a21a0d4c8edc4bcd29991fcb3c}{fusionar}} (\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$a, \mbox{\hyperlink{structNoticia}{Noticia}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Fusiona dos listas enlazadas de noticias ordenadas por fecha. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$ \mbox{\hyperlink{classColaPrioridadNoticias_a716c3cd8cdf15e9907b72d0705ecd3b2}{merge\+Sort}} (\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$cabeza)
+\begin{DoxyCompactList}\small\item\em Aplica el algoritmo Merge Sort recursivamente para ordenar por fecha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classColaPrioridadNoticias_a3811c333f31595938a583b600b35bad8}{ordenar\+Por\+Fecha}} ()
+\begin{DoxyCompactList}\small\item\em Ordena toda la cola de noticias cronológicamente por fecha. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColaPrioridadNoticias_a7f4b07efb58d7828c913927514c9b16b}{$\sim$\+Cola\+Prioridad\+Noticias}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Libera la memoria de todas las noticias en la cola. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$ \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}}
+\begin{DoxyCompactList}\small\item\em Puntero al primer elemento de la cola. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que implementa una cola de prioridad para noticias, ordenadas por impacto. 
+
+Permite insertar, mostrar, buscar, extraer y ordenar noticias, así como calcular estadísticas. 
+
+Definición en la línea 46 del archivo noticia.\+h.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classColaPrioridadNoticias_a083e76af8c58c0b51739d8605dd3f8e8}\label{classColaPrioridadNoticias_a083e76af8c58c0b51739d8605dd3f8e8}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{ColaPrioridadNoticias()}{ColaPrioridadNoticias()}}
+{\footnotesize\ttfamily Cola\+Prioridad\+Noticias\+::\+Cola\+Prioridad\+Noticias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la cola de prioridad. 
+
+
+
+Definición en la línea 52 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52                             \{}
+\DoxyCodeLine{53         \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{54     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classColaPrioridadNoticias_a7f4b07efb58d7828c913927514c9b16b}\label{classColaPrioridadNoticias_a7f4b07efb58d7828c913927514c9b16b}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!````~ColaPrioridadNoticias@{$\sim$ColaPrioridadNoticias}}
+\index{````~ColaPrioridadNoticias@{$\sim$ColaPrioridadNoticias}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{$\sim$ColaPrioridadNoticias()}{~ColaPrioridadNoticias()}}
+{\footnotesize\ttfamily Cola\+Prioridad\+Noticias\+::$\sim$\+Cola\+Prioridad\+Noticias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. Libera la memoria de todas las noticias en la cola. 
+
+
+
+Definición en la línea 242 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{242                              \{}
+\DoxyCodeLine{243         \textcolor{keywordflow}{while} (!\mbox{\hyperlink{classColaPrioridadNoticias_af21d5932ffb47b52e30862f756274fc6}{estaVacia}}()) \{}
+\DoxyCodeLine{244             \mbox{\hyperlink{structNoticia}{Noticia}}* temp = \mbox{\hyperlink{classColaPrioridadNoticias_a48b8045f042a69f61a1356b3876281c8}{extraer}}();}
+\DoxyCodeLine{245             \textcolor{keyword}{delete} temp;}
+\DoxyCodeLine{246         \}}
+\DoxyCodeLine{247     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classColaPrioridadNoticias_ab833342c4584745a79424087c99eb1e9}\label{classColaPrioridadNoticias_ab833342c4584745a79424087c99eb1e9}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!buscarPorPalabraClave@{buscarPorPalabraClave}}
+\index{buscarPorPalabraClave@{buscarPorPalabraClave}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{buscarPorPalabraClave()}{buscarPorPalabraClave()}}
+{\footnotesize\ttfamily void Cola\+Prioridad\+Noticias\+::buscar\+Por\+Palabra\+Clave (\begin{DoxyParamCaption}\item[{string}]{palabra }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Busca y muestra noticias cuyo título contiene una palabra clave. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em palabra} & Palabra clave a buscar en los títulos. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 116 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{116                                                \{}
+\DoxyCodeLine{117         \mbox{\hyperlink{structNoticia}{Noticia}}* actual = \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}};}
+\DoxyCodeLine{118         cout << \textcolor{stringliteral}{"\(\backslash\)n🔍 Noticias con '"} << palabra << \textcolor{stringliteral}{"' en el título:\(\backslash\)n"};}
+\DoxyCodeLine{119         \textcolor{keywordflow}{while} (actual != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{120             \textcolor{keywordflow}{if} (actual-\/>\mbox{\hyperlink{structNoticia_ad16f6edde856e5a87ffcd9ae8cf8bb25}{titulo}}.find(palabra) != string::npos) \{}
+\DoxyCodeLine{121                 cout << \textcolor{stringliteral}{"-\/ "} << actual-\/>\mbox{\hyperlink{structNoticia_ad16f6edde856e5a87ffcd9ae8cf8bb25}{titulo}} << \textcolor{stringliteral}{" ("} << actual-\/>\mbox{\hyperlink{structNoticia_a20d721fb5360d21aec690b392889d73b}{sectorAfectado}} << \textcolor{stringliteral}{")\(\backslash\)n"};}
+\DoxyCodeLine{122             \}}
+\DoxyCodeLine{123             actual = actual-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{124         \}}
+\DoxyCodeLine{125     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classColaPrioridadNoticias_ab833342c4584745a79424087c99eb1e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classColaPrioridadNoticias_ab0f4086eabcc4d2f9935f9f64527aa7c}\label{classColaPrioridadNoticias_ab0f4086eabcc4d2f9935f9f64527aa7c}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!buscarPorSector@{buscarPorSector}}
+\index{buscarPorSector@{buscarPorSector}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{buscarPorSector()}{buscarPorSector()}}
+{\footnotesize\ttfamily void Cola\+Prioridad\+Noticias\+::buscar\+Por\+Sector (\begin{DoxyParamCaption}\item[{string}]{sector\+Clave }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Busca y muestra noticias que pertenecen a un sector específico. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sector\+Clave} & Nombre del sector a buscar. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 101 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101                                              \{}
+\DoxyCodeLine{102         \mbox{\hyperlink{structNoticia}{Noticia}}* actual = \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}};}
+\DoxyCodeLine{103         cout << \textcolor{stringliteral}{"\(\backslash\)n🔍 Noticias en el sector '"} << sectorClave << \textcolor{stringliteral}{"':\(\backslash\)n"};}
+\DoxyCodeLine{104         \textcolor{keywordflow}{while} (actual != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{105             \textcolor{keywordflow}{if} (actual-\/>\mbox{\hyperlink{structNoticia_a20d721fb5360d21aec690b392889d73b}{sectorAfectado}} == sectorClave) \{}
+\DoxyCodeLine{106                 cout << \textcolor{stringliteral}{"-\/ "} << actual-\/>\mbox{\hyperlink{structNoticia_ad16f6edde856e5a87ffcd9ae8cf8bb25}{titulo}} << \textcolor{stringliteral}{" (Impacto: "} << actual-\/>\mbox{\hyperlink{structNoticia_a8facfc9b897e0dea262c4290af7f7b27}{impacto}} << \textcolor{stringliteral}{")\(\backslash\)n"};}
+\DoxyCodeLine{107             \}}
+\DoxyCodeLine{108             actual = actual-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{109         \}}
+\DoxyCodeLine{110     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classColaPrioridadNoticias_ab0f4086eabcc4d2f9935f9f64527aa7c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classColaPrioridadNoticias_a4c4f7acab244598a0ffe276520164e07}\label{classColaPrioridadNoticias_a4c4f7acab244598a0ffe276520164e07}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!dividir@{dividir}}
+\index{dividir@{dividir}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{dividir()}{dividir()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNoticia}{Noticia}}$\ast$ Cola\+Prioridad\+Noticias\+::dividir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$}]{cabeza }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divide la lista enlazada de noticias en dos mitades. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cabeza} & Puntero al inicio de la lista. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero al inicio de la segunda mitad. 
+\end{DoxyReturn}
+
+
+Definición en la línea 185 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{185                                       \{}
+\DoxyCodeLine{186         \textcolor{keywordflow}{if} (!cabeza || !cabeza-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}}) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188         \mbox{\hyperlink{structNoticia}{Noticia}}* lenta = cabeza;}
+\DoxyCodeLine{189         \mbox{\hyperlink{structNoticia}{Noticia}}* rapida = cabeza-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191         \textcolor{keywordflow}{while} (rapida \&\& rapida-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}}) \{}
+\DoxyCodeLine{192             lenta = lenta-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{193             rapida = rapida-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}}-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{194         \}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196         \mbox{\hyperlink{structNoticia}{Noticia}}* mitad = lenta-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{197         lenta-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{198         \textcolor{keywordflow}{return} mitad;}
+\DoxyCodeLine{199     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classColaPrioridadNoticias_af21d5932ffb47b52e30862f756274fc6}\label{classColaPrioridadNoticias_af21d5932ffb47b52e30862f756274fc6}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!estaVacia@{estaVacia}}
+\index{estaVacia@{estaVacia}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{estaVacia()}{estaVacia()}}
+{\footnotesize\ttfamily bool Cola\+Prioridad\+Noticias\+::esta\+Vacia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica si la cola está vacía. 
+
+\begin{DoxyReturn}{Devuelve}
+true si la cola está vacía, false en caso contrario. 
+\end{DoxyReturn}
+
+
+Definición en la línea 58 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58                      \{}
+\DoxyCodeLine{59         \textcolor{keywordflow}{return} \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}} == \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{60     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classColaPrioridadNoticias_a48b8045f042a69f61a1356b3876281c8}\label{classColaPrioridadNoticias_a48b8045f042a69f61a1356b3876281c8}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!extraer@{extraer}}
+\index{extraer@{extraer}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{extraer()}{extraer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNoticia}{Noticia}}$\ast$ Cola\+Prioridad\+Noticias\+::extraer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Extrae y retorna la noticia con mayor prioridad (mayor impacto). 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero a la noticia extraída, o nullptr si la cola está vacía. 
+\end{DoxyReturn}
+
+
+Definición en la línea 160 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{160                        \{}
+\DoxyCodeLine{161         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classColaPrioridadNoticias_af21d5932ffb47b52e30862f756274fc6}{estaVacia}}()) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163         \mbox{\hyperlink{structNoticia}{Noticia}}* temp = \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}};}
+\DoxyCodeLine{164         \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}} = \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}}-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{165         temp-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{166         \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{167     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classColaPrioridadNoticias_a1f1552a21a0d4c8edc4bcd29991fcb3c}\label{classColaPrioridadNoticias_a1f1552a21a0d4c8edc4bcd29991fcb3c}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!fusionar@{fusionar}}
+\index{fusionar@{fusionar}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{fusionar()}{fusionar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNoticia}{Noticia}}$\ast$ Cola\+Prioridad\+Noticias\+::fusionar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Fusiona dos listas enlazadas de noticias ordenadas por fecha. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em a} & Puntero al inicio de la primera lista. \\
+\hline
+{\em b} & Puntero al inicio de la segunda lista. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero al inicio de la lista fusionada. 
+\end{DoxyReturn}
+
+
+Definición en la línea 207 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{207                                               \{}
+\DoxyCodeLine{208         \textcolor{keywordflow}{if} (!a) \textcolor{keywordflow}{return} b;}
+\DoxyCodeLine{209         \textcolor{keywordflow}{if} (!b) \textcolor{keywordflow}{return} a;}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211         \textcolor{keywordflow}{if} (a-\/>\mbox{\hyperlink{structNoticia_a615fd29fcff3eec9102a3fb3cff6b776}{fecha}} < b-\/>\mbox{\hyperlink{structNoticia_a615fd29fcff3eec9102a3fb3cff6b776}{fecha}}) \{}
+\DoxyCodeLine{212             a-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}} = \mbox{\hyperlink{classColaPrioridadNoticias_a1f1552a21a0d4c8edc4bcd29991fcb3c}{fusionar}}(a-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}}, b);}
+\DoxyCodeLine{213             \textcolor{keywordflow}{return} a;}
+\DoxyCodeLine{214         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{215             b-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}} = \mbox{\hyperlink{classColaPrioridadNoticias_a1f1552a21a0d4c8edc4bcd29991fcb3c}{fusionar}}(a, b-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}});}
+\DoxyCodeLine{216             \textcolor{keywordflow}{return} b;}
+\DoxyCodeLine{217         \}}
+\DoxyCodeLine{218     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classColaPrioridadNoticias_afccedcf2a79e14243c3d685f2fcf9e5a}\label{classColaPrioridadNoticias_afccedcf2a79e14243c3d685f2fcf9e5a}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!hayAlertaDeCrisis@{hayAlertaDeCrisis}}
+\index{hayAlertaDeCrisis@{hayAlertaDeCrisis}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{hayAlertaDeCrisis()}{hayAlertaDeCrisis()}}
+{\footnotesize\ttfamily bool Cola\+Prioridad\+Noticias\+::hay\+Alerta\+De\+Crisis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Detecta si hay una alerta de crisis (3 o más noticias con impacto $>$= 8). 
+
+\begin{DoxyReturn}{Devuelve}
+true si hay alerta de crisis, false en caso contrario. 
+\end{DoxyReturn}
+
+
+Definición en la línea 129 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{129                              \{}
+\DoxyCodeLine{130         \mbox{\hyperlink{structNoticia}{Noticia}}* actual = \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}};}
+\DoxyCodeLine{131         \textcolor{keywordtype}{int} contador = 0;}
+\DoxyCodeLine{132         \textcolor{keywordflow}{while} (actual != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{133             \textcolor{keywordflow}{if} (actual-\/>\mbox{\hyperlink{structNoticia_a8facfc9b897e0dea262c4290af7f7b27}{impacto}} >= 8) \{}
+\DoxyCodeLine{134                 contador++;}
+\DoxyCodeLine{135                 \textcolor{keywordflow}{if} (contador >= 3) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{136             \}}
+\DoxyCodeLine{137             actual = actual-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{138         \}}
+\DoxyCodeLine{139         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{140     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classColaPrioridadNoticias_afccedcf2a79e14243c3d685f2fcf9e5a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classColaPrioridadNoticias_ac7aedfac4289f61343f4f28bf6b1cc35}\label{classColaPrioridadNoticias_ac7aedfac4289f61343f4f28bf6b1cc35}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!insertar@{insertar}}
+\index{insertar@{insertar}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{insertar()}{insertar()}}
+{\footnotesize\ttfamily void Cola\+Prioridad\+Noticias\+::insertar (\begin{DoxyParamCaption}\item[{int}]{impacto,  }\item[{string}]{titulo,  }\item[{string}]{descripcion,  }\item[{string}]{sector,  }\item[{string}]{fecha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserta una noticia en la cola de prioridad según su impacto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em impacto} & Nivel de impacto de la noticia. \\
+\hline
+{\em titulo} & Título de la noticia. \\
+\hline
+{\em descripcion} & Descripción de la noticia. \\
+\hline
+{\em sector} & Sector afectado. \\
+\hline
+{\em fecha} & Fecha de la noticia. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 70 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70                                                                                                \{}
+\DoxyCodeLine{71         \mbox{\hyperlink{structNoticia}{Noticia}}* nueva = \textcolor{keyword}{new} \mbox{\hyperlink{structNoticia}{Noticia}}(impacto, titulo, descripcion, sector, fecha);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}} == \textcolor{keyword}{nullptr} || impacto > \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}}-\/>\mbox{\hyperlink{structNoticia_a8facfc9b897e0dea262c4290af7f7b27}{impacto}}) \{}
+\DoxyCodeLine{74             nueva-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}} = \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}};}
+\DoxyCodeLine{75             \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}} = nueva;}
+\DoxyCodeLine{76         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{77             \mbox{\hyperlink{structNoticia}{Noticia}}* actual = \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}};}
+\DoxyCodeLine{78             \textcolor{keywordflow}{while} (actual-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}} != \textcolor{keyword}{nullptr} \&\& actual-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}}-\/>\mbox{\hyperlink{structNoticia_a8facfc9b897e0dea262c4290af7f7b27}{impacto}} >= impacto) \{}
+\DoxyCodeLine{79                 actual = actual-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{80             \}}
+\DoxyCodeLine{81             nueva-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}} = actual-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{82             actual-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}} = nueva;}
+\DoxyCodeLine{83         \}}
+\DoxyCodeLine{84     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColaPrioridadNoticias_ac7aedfac4289f61343f4f28bf6b1cc35_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classColaPrioridadNoticias_a716c3cd8cdf15e9907b72d0705ecd3b2}\label{classColaPrioridadNoticias_a716c3cd8cdf15e9907b72d0705ecd3b2}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!mergeSort@{mergeSort}}
+\index{mergeSort@{mergeSort}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{mergeSort()}{mergeSort()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNoticia}{Noticia}}$\ast$ Cola\+Prioridad\+Noticias\+::merge\+Sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$}]{cabeza }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Aplica el algoritmo Merge Sort recursivamente para ordenar por fecha. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cabeza} & Puntero al inicio de la lista a ordenar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero al inicio de la lista ordenada. 
+\end{DoxyReturn}
+
+
+Definición en la línea 225 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{225                                         \{}
+\DoxyCodeLine{226         \textcolor{keywordflow}{if} (!cabeza || !cabeza-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}}) \textcolor{keywordflow}{return} cabeza;}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228         \mbox{\hyperlink{structNoticia}{Noticia}}* mitad = \mbox{\hyperlink{classColaPrioridadNoticias_a4c4f7acab244598a0ffe276520164e07}{dividir}}(cabeza);}
+\DoxyCodeLine{229         \mbox{\hyperlink{structNoticia}{Noticia}}* izquierda = \mbox{\hyperlink{classColaPrioridadNoticias_a716c3cd8cdf15e9907b72d0705ecd3b2}{mergeSort}}(cabeza);}
+\DoxyCodeLine{230         \mbox{\hyperlink{structNoticia}{Noticia}}* derecha = \mbox{\hyperlink{classColaPrioridadNoticias_a716c3cd8cdf15e9907b72d0705ecd3b2}{mergeSort}}(mitad);}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232         \textcolor{keywordflow}{return} \mbox{\hyperlink{classColaPrioridadNoticias_a1f1552a21a0d4c8edc4bcd29991fcb3c}{fusionar}}(izquierda, derecha);}
+\DoxyCodeLine{233     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classColaPrioridadNoticias_acf945e1aec8cf586d6b87382a1a9a9e2}\label{classColaPrioridadNoticias_acf945e1aec8cf586d6b87382a1a9a9e2}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!mostrar@{mostrar}}
+\index{mostrar@{mostrar}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{mostrar()}{mostrar()}}
+{\footnotesize\ttfamily void Cola\+Prioridad\+Noticias\+::mostrar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muestra todas las noticias en la cola, en orden de prioridad. 
+
+
+
+Definición en la línea 87 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87                    \{}
+\DoxyCodeLine{88         \mbox{\hyperlink{structNoticia}{Noticia}}* actual = \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}};}
+\DoxyCodeLine{89         \textcolor{keywordflow}{while} (actual != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{90             cout << \textcolor{stringliteral}{"["} << actual-\/>\mbox{\hyperlink{structNoticia_a615fd29fcff3eec9102a3fb3cff6b776}{fecha}} << \textcolor{stringliteral}{"] "}}
+\DoxyCodeLine{91                  << \textcolor{stringliteral}{"(Impacto: "} << actual-\/>\mbox{\hyperlink{structNoticia_a8facfc9b897e0dea262c4290af7f7b27}{impacto}} << \textcolor{stringliteral}{") "}}
+\DoxyCodeLine{92                  << actual-\/>\mbox{\hyperlink{structNoticia_ad16f6edde856e5a87ffcd9ae8cf8bb25}{titulo}} << \textcolor{stringliteral}{" -\/ "} << actual-\/>\mbox{\hyperlink{structNoticia_a20d721fb5360d21aec690b392889d73b}{sectorAfectado}} << endl;}
+\DoxyCodeLine{93             actual = actual-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classColaPrioridadNoticias_acf945e1aec8cf586d6b87382a1a9a9e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classColaPrioridadNoticias_a9c3a7f5944aa0f85f3ebf69c1db5eaf7}\label{classColaPrioridadNoticias_a9c3a7f5944aa0f85f3ebf69c1db5eaf7}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!obtenerNoticias@{obtenerNoticias}}
+\index{obtenerNoticias@{obtenerNoticias}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{obtenerNoticias()}{obtenerNoticias()}}
+{\footnotesize\ttfamily void Cola\+Prioridad\+Noticias\+::obtener\+Noticias (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structNoticia}{Noticia}} $\ast$ $>$ \&}]{noticias }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Llena un vector con punteros a todas las noticias en la cola (en orden actual). 
+
+
+
+Definición en la línea 170 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{170                                                      \{}
+\DoxyCodeLine{171         \mbox{\hyperlink{structNoticia}{Noticia}}* actual = \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}};}
+\DoxyCodeLine{172         \textcolor{keywordflow}{while} (actual) \{}
+\DoxyCodeLine{173             noticias.push\_back(actual);}
+\DoxyCodeLine{174             actual = actual-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{175         \}}
+\DoxyCodeLine{176     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColaPrioridadNoticias_a9c3a7f5944aa0f85f3ebf69c1db5eaf7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classColaPrioridadNoticias_a3811c333f31595938a583b600b35bad8}\label{classColaPrioridadNoticias_a3811c333f31595938a583b600b35bad8}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!ordenarPorFecha@{ordenarPorFecha}}
+\index{ordenarPorFecha@{ordenarPorFecha}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{ordenarPorFecha()}{ordenarPorFecha()}}
+{\footnotesize\ttfamily void Cola\+Prioridad\+Noticias\+::ordenar\+Por\+Fecha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ordena toda la cola de noticias cronológicamente por fecha. 
+
+
+
+Definición en la línea 236 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{236                            \{}
+\DoxyCodeLine{237         \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}} = \mbox{\hyperlink{classColaPrioridadNoticias_a716c3cd8cdf15e9907b72d0705ecd3b2}{mergeSort}}(\mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}});}
+\DoxyCodeLine{238         cout << \textcolor{stringliteral}{"\(\backslash\)n📆 Noticias ordenadas por fecha.\(\backslash\)n"};}
+\DoxyCodeLine{239     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classColaPrioridadNoticias_a3811c333f31595938a583b600b35bad8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classColaPrioridadNoticias_a3db4934bf16a4b593a39f23876a3f158}\label{classColaPrioridadNoticias_a3db4934bf16a4b593a39f23876a3f158}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!promedioImpacto@{promedioImpacto}}
+\index{promedioImpacto@{promedioImpacto}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{promedioImpacto()}{promedioImpacto()}}
+{\footnotesize\ttfamily float Cola\+Prioridad\+Noticias\+::promedio\+Impacto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula el promedio del impacto de todas las noticias en la cola. 
+
+\begin{DoxyReturn}{Devuelve}
+Promedio del impacto (float). 
+\end{DoxyReturn}
+
+
+Definición en la línea 144 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{144                             \{}
+\DoxyCodeLine{145         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classColaPrioridadNoticias_af21d5932ffb47b52e30862f756274fc6}{estaVacia}}()) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147         \mbox{\hyperlink{structNoticia}{Noticia}}* actual = \mbox{\hyperlink{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}{frente}};}
+\DoxyCodeLine{148         \textcolor{keywordtype}{float} suma = 0;}
+\DoxyCodeLine{149         \textcolor{keywordtype}{int} total = 0;}
+\DoxyCodeLine{150         \textcolor{keywordflow}{while} (actual != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{151             suma += actual-\/>\mbox{\hyperlink{structNoticia_a8facfc9b897e0dea262c4290af7f7b27}{impacto}};}
+\DoxyCodeLine{152             total++;}
+\DoxyCodeLine{153             actual = actual-\/>\mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}};}
+\DoxyCodeLine{154         \}}
+\DoxyCodeLine{155         \textcolor{keywordflow}{return} suma / total;}
+\DoxyCodeLine{156     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classColaPrioridadNoticias_a3db4934bf16a4b593a39f23876a3f158_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}\label{classColaPrioridadNoticias_a28161cb36029f48d33fb00c233fea154}} 
+\index{ColaPrioridadNoticias@{ColaPrioridadNoticias}!frente@{frente}}
+\index{frente@{frente}!ColaPrioridadNoticias@{ColaPrioridadNoticias}}
+\doxysubsubsection{\texorpdfstring{frente}{frente}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNoticia}{Noticia}}$\ast$ Cola\+Prioridad\+Noticias\+::frente\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Puntero al primer elemento de la cola. 
+
+
+
+Definición en la línea 48 del archivo noticia.\+h.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{noticia_8h}{noticia.\+h}}\end{DoxyCompactItemize}

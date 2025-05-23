@@ -12,7 +12,13 @@ Nodo de A\+BB que representa una empresa.
 
 
 Diagrama de colaboración para Empresa\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{structEmpresa__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,25 +27,18 @@ Diagrama de colaboración para Empresa\+:
 \doxysubsection*{Atributos públicos}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}\label{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}} 
 string \mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}}
 \begin{DoxyCompactList}\small\item\em Ticker de la empresa (clave única) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}\label{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}} 
 string \mbox{\hyperlink{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}{nombre}}
 \begin{DoxyCompactList}\small\item\em Nombre de la empresa. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structEmpresa_ae3272a72f778485c20dab09320f94b86}\label{structEmpresa_ae3272a72f778485c20dab09320f94b86}} 
 string \mbox{\hyperlink{structEmpresa_ae3272a72f778485c20dab09320f94b86}{sector}}
 \begin{DoxyCompactList}\small\item\em Sector al que pertenece la empresa. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}\label{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}} 
 float \mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precio\+Actual}}
 \begin{DoxyCompactList}\small\item\em Precio actual de la acción. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}\label{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}} 
 \mbox{\hyperlink{classMultilistaPrecio}{Multilista\+Precio}} \mbox{\hyperlink{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}{historial\+Precios}}
 \begin{DoxyCompactList}\small\item\em Historial de precios de la acción. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}\label{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}} 
 \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ \mbox{\hyperlink{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}{izquierda}}
 \begin{DoxyCompactList}\small\item\em Puntero al hijo izquierdo en el A\+BB. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}\label{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}} 
 \mbox{\hyperlink{structEmpresa}{Empresa}} $\ast$ \mbox{\hyperlink{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}{derecha}}
 \begin{DoxyCompactList}\small\item\em Puntero al hijo derecho en el A\+BB. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -47,7 +46,7 @@ float \mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precio\+
 \doxysubsection{Descripción detallada}
 Nodo de A\+BB que representa una empresa. 
 
-Definición en la línea 87 del archivo empresa.\+h.
+Definición en la línea 92 del archivo empresa.\+h.
 
 
 
@@ -75,16 +74,117 @@ Constructor de \mbox{\hyperlink{structEmpresa}{Empresa}}.
 \end{DoxyParams}
 
 
-Definición en la línea 110 del archivo empresa.\+h.
+Definición en la línea 115 del archivo empresa.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{111         : \mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}}(t), \mbox{\hyperlink{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}{nombre}}(n), \mbox{\hyperlink{structEmpresa_ae3272a72f778485c20dab09320f94b86}{sector}}(s), \mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precioActual}}(p),}
-\DoxyCodeLine{112           \mbox{\hyperlink{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}{izquierda}}(\textcolor{keyword}{nullptr}), \mbox{\hyperlink{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}{derecha}}(\textcolor{keyword}{nullptr}) \{\}}
+\DoxyCodeLine{116         : \mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}}(t), \mbox{\hyperlink{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}{nombre}}(n), \mbox{\hyperlink{structEmpresa_ae3272a72f778485c20dab09320f94b86}{sector}}(s), \mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precioActual}}(p),}
+\DoxyCodeLine{117           \mbox{\hyperlink{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}{izquierda}}(\textcolor{keyword}{nullptr}), \mbox{\hyperlink{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}{derecha}}(\textcolor{keyword}{nullptr}) \{\}}
 
 \end{DoxyCode}
 
 
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}\label{structEmpresa_ac1821208ba636f7c14e02da48c9f73d3}} 
+\index{Empresa@{Empresa}!derecha@{derecha}}
+\index{derecha@{derecha}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{derecha}{derecha}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structEmpresa}{Empresa}}$\ast$ Empresa\+::derecha}
+
+
+
+Puntero al hijo derecho en el A\+BB. 
+
+
+
+Definición en la línea 106 del archivo empresa.\+h.
+
+\mbox{\Hypertarget{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}\label{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}} 
+\index{Empresa@{Empresa}!historialPrecios@{historialPrecios}}
+\index{historialPrecios@{historialPrecios}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{historialPrecios}{historialPrecios}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMultilistaPrecio}{Multilista\+Precio}} Empresa\+::historial\+Precios}
+
+
+
+Historial de precios de la acción. 
+
+
+
+Definición en la línea 102 del archivo empresa.\+h.
+
+\mbox{\Hypertarget{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}\label{structEmpresa_a48ab557576b7f6d7a8e5bb70933b3cfd}} 
+\index{Empresa@{Empresa}!izquierda@{izquierda}}
+\index{izquierda@{izquierda}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{izquierda}{izquierda}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structEmpresa}{Empresa}}$\ast$ Empresa\+::izquierda}
+
+
+
+Puntero al hijo izquierdo en el A\+BB. 
+
+
+
+Definición en la línea 104 del archivo empresa.\+h.
+
+\mbox{\Hypertarget{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}\label{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}} 
+\index{Empresa@{Empresa}!nombre@{nombre}}
+\index{nombre@{nombre}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{nombre}{nombre}}
+{\footnotesize\ttfamily string Empresa\+::nombre}
+
+
+
+Nombre de la empresa. 
+
+
+
+Definición en la línea 96 del archivo empresa.\+h.
+
+\mbox{\Hypertarget{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}\label{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}} 
+\index{Empresa@{Empresa}!precioActual@{precioActual}}
+\index{precioActual@{precioActual}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{precioActual}{precioActual}}
+{\footnotesize\ttfamily float Empresa\+::precio\+Actual}
+
+
+
+Precio actual de la acción. 
+
+
+
+Definición en la línea 100 del archivo empresa.\+h.
+
+\mbox{\Hypertarget{structEmpresa_ae3272a72f778485c20dab09320f94b86}\label{structEmpresa_ae3272a72f778485c20dab09320f94b86}} 
+\index{Empresa@{Empresa}!sector@{sector}}
+\index{sector@{sector}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{sector}{sector}}
+{\footnotesize\ttfamily string Empresa\+::sector}
+
+
+
+Sector al que pertenece la empresa. 
+
+
+
+Definición en la línea 98 del archivo empresa.\+h.
+
+\mbox{\Hypertarget{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}\label{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}} 
+\index{Empresa@{Empresa}!ticker@{ticker}}
+\index{ticker@{ticker}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{ticker}{ticker}}
+{\footnotesize\ttfamily string Empresa\+::ticker}
+
+
+
+Ticker de la empresa (clave única) 
+
+
+
+Definición en la línea 94 del archivo empresa.\+h.
+
+
+
 La documentación para esta estructura fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
 \item 
-empresa.\+h\end{DoxyCompactItemize}
+\mbox{\hyperlink{empresa_8h}{empresa.\+h}}\end{DoxyCompactItemize}

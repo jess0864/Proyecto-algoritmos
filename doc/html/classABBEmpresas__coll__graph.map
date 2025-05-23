@@ -1,0 +1,6 @@
+<map id="ABBEmpresas" name="ABBEmpresas">
+<area shape="rect" id="node1" title="Árbol binario de búsqueda (ABB) para gestionar empresas." alt="" coords="10,276,123,303"/>
+<area shape="rect" id="node2" href="$structEmpresa.html" title="Nodo de ABB que representa una empresa." alt="" coords="27,185,106,212"/>
+<area shape="rect" id="node3" href="$classMultilistaPrecio.html" title="Multilista para historial de precios de una acción." alt="" coords="5,95,128,121"/>
+<area shape="rect" id="node4" href="$structNodoPrecio.html" title="Nodo para la multilista de precios históricos de una acción." alt="" coords="19,5,115,32"/>
+</map>

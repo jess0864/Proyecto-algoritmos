@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nodoprecio_62',['NodoPrecio',['../structNodoPrecio.html#abe8d2234060868de750a115e3f3d34d5',1,'NodoPrecio']]]
+  ['generarfecha_103',['generarFecha',['../noticia_8h.html#a6370066b96779b15f4c092365be9553b',1,'noticia.h']]],
+  ['generarnoticiasaleatorias_104',['generarNoticiasAleatorias',['../noticia_8h.html#a6c49f38b28eecbaf12c518bb9a53553b',1,'noticia.h']]]
 ];

@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['proyecto_2dalgoritmos_29',['Proyecto-algoritmos',['../md_README.html',1,'']]],
-  ['precioactual_30',['precioActual',['../structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4',1,'Empresa']]],
-  ['preciocierre_31',['precioCierre',['../structNodoPrecio.html#abda288453e6025dea732783b7b86f129',1,'NodoPrecio']]],
-  ['promediomovil_32',['promedioMovil',['../classMultilistaPrecio.html#aab95a547304a1d3168a6c1916ea3b757',1,'MultilistaPrecio']]],
-  ['promedioprecioporsector_33',['promedioPrecioPorSector',['../classABBEmpresas.html#a0c1aa570634d14b5cebac4cbb4ddd184',1,'ABBEmpresas']]]
+  ['obtenerempresamasbarata_54',['obtenerEmpresaMasBarata',['../classABBEmpresas.html#a77be3c43461441d10f9dd6f03d24604d',1,'ABBEmpresas']]],
+  ['obtenerempresamascara_55',['obtenerEmpresaMasCara',['../classABBEmpresas.html#a9773e3023fbdf2197242337670da6941',1,'ABBEmpresas']]],
+  ['obtenerempresasordenadas_56',['obtenerEmpresasOrdenadas',['../classABBEmpresas.html#a6ccc64afaf894799cf66b3e46db34674',1,'ABBEmpresas']]],
+  ['obtenernoticias_57',['obtenerNoticias',['../classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7',1,'ColaPrioridadNoticias']]],
+  ['operacion_2eh_58',['operacion.h',['../operacion_8h.html',1,'']]],
+  ['ordenarporfecha_59',['ordenarPorFecha',['../classColaPrioridadNoticias.html#a3811c333f31595938a583b600b35bad8',1,'ColaPrioridadNoticias']]]
 ];

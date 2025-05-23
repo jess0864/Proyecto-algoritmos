@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sector_35',['sector',['../structEmpresa.html#ae3272a72f778485c20dab09320f94b86',1,'Empresa']]],
-  ['siguiente_36',['siguiente',['../structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84',1,'NodoPrecio']]]
+  ['raiz_66',['raiz',['../classABBEmpresas.html#a295a84faf39d6b7b61597a46efd06132',1,'ABBEmpresas']]],
+  ['readme_2emd_67',['README.md',['../README_8md.html',1,'']]]
 ];

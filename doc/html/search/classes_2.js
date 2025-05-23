@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['multilistaprecio_41',['MultilistaPrecio',['../classMultilistaPrecio.html',1,'']]]
+  ['empresa_78',['Empresa',['../structEmpresa.html',1,'']]]
 ];

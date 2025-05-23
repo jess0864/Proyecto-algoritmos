@@ -3,6 +3,8 @@ var classABBEmpresas =
     [ "ABBEmpresas", "classABBEmpresas.html#a61ef7deebafbcbc9007b45dac4e7cc2e", null ],
     [ "~ABBEmpresas", "classABBEmpresas.html#a2cd102614a252770db134521282f2d8c", null ],
     [ "agregarPrecio", "classABBEmpresas.html#a7c2d2222bff46899a03bfac025a94d7d", null ],
+    [ "ajustarPreciosPorNoticia", "classABBEmpresas.html#ae84bb76dc229040e7e343cafabb76383", null ],
+    [ "ajustarPreciosPorNoticia", "classABBEmpresas.html#a807a2477be7fd0983d7554b9e08cb279", null ],
     [ "buscar", "classABBEmpresas.html#a123c883f4ffbd1fa7686cc0762e5a3ba", null ],
     [ "buscarEmpresa", "classABBEmpresas.html#a705d67b6d795dffea3edf70150e0288d", null ],
     [ "buscarEmpresasPorRangoPrecio", "classABBEmpresas.html#a69e48005487af9a9c02acb869e0a8e56", null ],

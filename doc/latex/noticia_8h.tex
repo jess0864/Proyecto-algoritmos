@@ -1,0 +1,466 @@
+\hypertarget{noticia_8h}{}\doxysection{Referencia del Archivo noticia.\+h}
+\label{noticia_8h}\index{noticia.h@{noticia.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include \char`\"{}empresa.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para noticia.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{noticia_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{noticia_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structNoticia}{Noticia}}
+\begin{DoxyCompactList}\small\item\em Estructura que representa una noticia con impacto, título, descripción, sector afectado, fecha y puntero al siguiente nodo. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classColaPrioridadNoticias}{Cola\+Prioridad\+Noticias}}
+\begin{DoxyCompactList}\small\item\em Clase que implementa una cola de prioridad para noticias, ordenadas por impacto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{noticia_8h_a6370066b96779b15f4c092365be9553b}{generar\+Fecha}} (int dias\+Desde\+Inicio=0)
+\begin{DoxyCompactList}\small\item\em Genera un string de fecha con formato \char`\"{}\+Y\+Y\+Y\+Y-\/\+M\+M-\/\+D\+D\char`\"{} a partir de un número de días desde el inicio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{noticia_8h_a6c49f38b28eecbaf12c518bb9a53553b}{generar\+Noticias\+Aleatorias}} (\mbox{\hyperlink{classColaPrioridadNoticias}{Cola\+Prioridad\+Noticias}} \&cola, int cantidad, int semilla=1234)
+\begin{DoxyCompactList}\small\item\em Genera noticias aleatorias y las inserta en la cola de prioridad. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{noticia_8h_af7db67c9b2b44a23312346ae3cf2a20f}{mostrar\+Ajuste\+Sector}} (const string \&sector, float porcentaje)
+\begin{DoxyCompactList}\small\item\em Muestra el ajuste aplicado a los precios de un sector. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{noticia_8h_af24bef6e352d3ace928987de260bb7e6}{calcular\+Porcentaje\+Ajuste}} (int impacto)
+\begin{DoxyCompactList}\small\item\em Calcula el porcentaje de ajuste según el impacto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{noticia_8h_a80268dccce1ece0cbb6406c81d50baed}{mostrar\+Cambios\+Por\+Noticias\+Empresa}} (\mbox{\hyperlink{classABBEmpresas}{A\+B\+B\+Empresas}} \&arbol, \mbox{\hyperlink{classColaPrioridadNoticias}{Cola\+Prioridad\+Noticias}} \&cola\+Noticias)
+\begin{DoxyCompactList}\small\item\em Muestra los cambios de precio de una empresa por cada noticia que la afectó, mostrando el precio antes y después para cada fecha de noticia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{noticia_8h_a7242f8be6bf0222aa3c0397c220cd251}{mostrar\+Impacto\+Noticias\+En\+Acciones}} (\mbox{\hyperlink{classABBEmpresas}{A\+B\+B\+Empresas}} \&arbol, \mbox{\hyperlink{classColaPrioridadNoticias}{Cola\+Prioridad\+Noticias}} \&cola\+Noticias)
+\begin{DoxyCompactList}\small\item\em Muestra el impacto de las noticias en las acciones de las empresas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{noticia_8h_af24bef6e352d3ace928987de260bb7e6}\label{noticia_8h_af24bef6e352d3ace928987de260bb7e6}} 
+\index{noticia.h@{noticia.h}!calcularPorcentajeAjuste@{calcularPorcentajeAjuste}}
+\index{calcularPorcentajeAjuste@{calcularPorcentajeAjuste}!noticia.h@{noticia.h}}
+\doxysubsubsection{\texorpdfstring{calcularPorcentajeAjuste()}{calcularPorcentajeAjuste()}}
+{\footnotesize\ttfamily float calcular\+Porcentaje\+Ajuste (\begin{DoxyParamCaption}\item[{int}]{impacto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula el porcentaje de ajuste según el impacto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em impacto} & Impacto de la noticia (1-\/10). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Porcentaje como valor decimal. 
+\end{DoxyReturn}
+
+
+Definición en la línea 344 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{344                                                    \{}
+\DoxyCodeLine{345     \textcolor{keywordflow}{if} (impacto > 5)}
+\DoxyCodeLine{346         \textcolor{keywordflow}{return} (impacto -\/ 5) * 0.01;}
+\DoxyCodeLine{347     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{348         \textcolor{keywordflow}{return} -\/(6 -\/ impacto) * 0.01;}
+\DoxyCodeLine{349 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{noticia_8h_af24bef6e352d3ace928987de260bb7e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{noticia_8h_a6370066b96779b15f4c092365be9553b}\label{noticia_8h_a6370066b96779b15f4c092365be9553b}} 
+\index{noticia.h@{noticia.h}!generarFecha@{generarFecha}}
+\index{generarFecha@{generarFecha}!noticia.h@{noticia.h}}
+\doxysubsubsection{\texorpdfstring{generarFecha()}{generarFecha()}}
+{\footnotesize\ttfamily string generar\+Fecha (\begin{DoxyParamCaption}\item[{int}]{dias\+Desde\+Inicio = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Genera un string de fecha con formato \char`\"{}\+Y\+Y\+Y\+Y-\/\+M\+M-\/\+D\+D\char`\"{} a partir de un número de días desde el inicio. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em dias\+Desde\+Inicio} & Número de días a sumar al día base (1 de mayo de 2025). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Fecha en formato \char`\"{}\+Y\+Y\+Y\+Y-\/\+M\+M-\/\+D\+D\char`\"{}. 
+\end{DoxyReturn}
+
+
+Definición en la línea 257 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{257                                              \{}
+\DoxyCodeLine{258     \textcolor{keywordtype}{int} year = 2025;}
+\DoxyCodeLine{259     \textcolor{keywordtype}{int} month = 5;}
+\DoxyCodeLine{260     \textcolor{keywordtype}{int} day = 1 + diasDesdeInicio;}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262     \textcolor{comment}{// Ajustar el día y el mes si se pasa del final del mes}}
+\DoxyCodeLine{263     \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{264         \textcolor{keywordtype}{int} diasMes;}
+\DoxyCodeLine{265         \textcolor{keywordflow}{if} (month == 2) diasMes = 28;}
+\DoxyCodeLine{266         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (month == 4 || month == 6 || month == 9 || month == 11) diasMes = 30;}
+\DoxyCodeLine{267         \textcolor{keywordflow}{else} diasMes = 31;}
+\DoxyCodeLine{268         \textcolor{keywordflow}{if} (day > diasMes) \{}
+\DoxyCodeLine{269             day -\/= diasMes;}
+\DoxyCodeLine{270             month++;}
+\DoxyCodeLine{271             \textcolor{keywordflow}{if} (month > 12) \{}
+\DoxyCodeLine{272                 month = 1;}
+\DoxyCodeLine{273                 year++;}
+\DoxyCodeLine{274             \}}
+\DoxyCodeLine{275         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{276             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{277         \}}
+\DoxyCodeLine{278     \}}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280     \textcolor{keywordtype}{string} fecha = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{281     fecha += to\_string(year) + \textcolor{stringliteral}{"-\/"};}
+\DoxyCodeLine{282     \textcolor{keywordflow}{if} (month < 10) fecha += \textcolor{stringliteral}{"0"};}
+\DoxyCodeLine{283     fecha += to\_string(month) + \textcolor{stringliteral}{"-\/"};}
+\DoxyCodeLine{284     \textcolor{keywordflow}{if} (day < 10) fecha += \textcolor{stringliteral}{"0"};}
+\DoxyCodeLine{285     fecha += to\_string(day);}
+\DoxyCodeLine{286     \textcolor{keywordflow}{return} fecha;}
+\DoxyCodeLine{287 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{noticia_8h_a6370066b96779b15f4c092365be9553b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{noticia_8h_a6c49f38b28eecbaf12c518bb9a53553b}\label{noticia_8h_a6c49f38b28eecbaf12c518bb9a53553b}} 
+\index{noticia.h@{noticia.h}!generarNoticiasAleatorias@{generarNoticiasAleatorias}}
+\index{generarNoticiasAleatorias@{generarNoticiasAleatorias}!noticia.h@{noticia.h}}
+\doxysubsubsection{\texorpdfstring{generarNoticiasAleatorias()}{generarNoticiasAleatorias()}}
+{\footnotesize\ttfamily void generar\+Noticias\+Aleatorias (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classColaPrioridadNoticias}{Cola\+Prioridad\+Noticias}} \&}]{cola,  }\item[{int}]{cantidad,  }\item[{int}]{semilla = {\ttfamily 1234} }\end{DoxyParamCaption})}
+
+
+
+Genera noticias aleatorias y las inserta en la cola de prioridad. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cola} & Referencia a la cola de prioridad de noticias. \\
+\hline
+{\em cantidad} & Número de noticias a generar. \\
+\hline
+{\em semilla} & Semilla para el generador aleatorio (por defecto 1234). \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 295 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{295                                                                                               \{}
+\DoxyCodeLine{296     srand(semilla);  \textcolor{comment}{// Semilla reproducible}}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298     vector<string> titulos = \{}
+\DoxyCodeLine{299         \textcolor{stringliteral}{"Caída del dólar"}, \textcolor{stringliteral}{"Nuevo impuesto"}, \textcolor{stringliteral}{"Reforma pensional"}, \textcolor{stringliteral}{"Crisis energética"},}
+\DoxyCodeLine{300         \textcolor{stringliteral}{"Inversión extranjera"}, \textcolor{stringliteral}{"Caída de acciones tecnológicas"}, \textcolor{stringliteral}{"Sube el petróleo"},}
+\DoxyCodeLine{301         \textcolor{stringliteral}{"Aumento del salario mínimo"}, \textcolor{stringliteral}{"Devaluación del peso"}, \textcolor{stringliteral}{"Acuerdo comercial firmado"}}
+\DoxyCodeLine{302     \};}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304     vector<string> descripciones = \{}
+\DoxyCodeLine{305         \textcolor{stringliteral}{"Los mercados reaccionan ante la noticia."},}
+\DoxyCodeLine{306         \textcolor{stringliteral}{"Expertos prevén cambios importantes en el comportamiento bursátil."},}
+\DoxyCodeLine{307         \textcolor{stringliteral}{"Los sectores económicos muestran señales de volatilidad."},}
+\DoxyCodeLine{308         \textcolor{stringliteral}{"Los analistas recomiendan cautela a los inversionistas."},}
+\DoxyCodeLine{309         \textcolor{stringliteral}{"Impacto inmediato esperado en el mercado accionario."}}
+\DoxyCodeLine{310     \};}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312     \textcolor{comment}{// Usa los sectores globales de empresa.h}}
+\DoxyCodeLine{313     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < cantidad; ++i) \{}
+\DoxyCodeLine{314         \textcolor{keywordtype}{int} impacto = rand() \% 10 + 1;}
+\DoxyCodeLine{315         \textcolor{keywordtype}{string} titulo = titulos[rand() \% titulos.size()];}
+\DoxyCodeLine{316         \textcolor{keywordtype}{string} descripcion = descripciones[rand() \% descripciones.size()];}
+\DoxyCodeLine{317         \textcolor{keywordtype}{string} sector = \mbox{\hyperlink{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}{SECTORES\_EMPRESA}}[rand() \% \mbox{\hyperlink{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}{SECTORES\_EMPRESA}}.size()];}
+\DoxyCodeLine{318         \textcolor{keywordtype}{string} fecha = \mbox{\hyperlink{noticia_8h_a6370066b96779b15f4c092365be9553b}{generarFecha}}(i);  \textcolor{comment}{// Avanza un día por noticia}}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320         cola.\mbox{\hyperlink{classColaPrioridadNoticias_ac7aedfac4289f61343f4f28bf6b1cc35}{insertar}}(impacto, titulo, descripcion, sector, fecha);}
+\DoxyCodeLine{321     \}}
+\DoxyCodeLine{322 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{noticia_8h_a6c49f38b28eecbaf12c518bb9a53553b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{noticia_8h_af7db67c9b2b44a23312346ae3cf2a20f}\label{noticia_8h_af7db67c9b2b44a23312346ae3cf2a20f}} 
+\index{noticia.h@{noticia.h}!mostrarAjusteSector@{mostrarAjusteSector}}
+\index{mostrarAjusteSector@{mostrarAjusteSector}!noticia.h@{noticia.h}}
+\doxysubsubsection{\texorpdfstring{mostrarAjusteSector()}{mostrarAjusteSector()}}
+{\footnotesize\ttfamily void mostrar\+Ajuste\+Sector (\begin{DoxyParamCaption}\item[{const string \&}]{sector,  }\item[{float}]{porcentaje }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muestra el ajuste aplicado a los precios de un sector. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sector} & Sector afectado. \\
+\hline
+{\em porcentaje} & Porcentaje aplicado. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 329 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{329                                                                         \{}
+\DoxyCodeLine{330     cout << \textcolor{stringliteral}{"  > Ajuste aplicado al sector '"} << sector << \textcolor{stringliteral}{"': "};}
+\DoxyCodeLine{331     \textcolor{keywordflow}{if} (porcentaje > 0)}
+\DoxyCodeLine{332         cout << \textcolor{stringliteral}{"+"} << porcentaje * 100 << \textcolor{stringliteral}{"\%\(\backslash\)n"};}
+\DoxyCodeLine{333     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (porcentaje < 0)}
+\DoxyCodeLine{334         cout << porcentaje * 100 << \textcolor{stringliteral}{"\%\(\backslash\)n"};}
+\DoxyCodeLine{335     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{336         cout << \textcolor{stringliteral}{"Sin cambio\(\backslash\)n"};}
+\DoxyCodeLine{337 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{noticia_8h_af7db67c9b2b44a23312346ae3cf2a20f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{noticia_8h_a80268dccce1ece0cbb6406c81d50baed}\label{noticia_8h_a80268dccce1ece0cbb6406c81d50baed}} 
+\index{noticia.h@{noticia.h}!mostrarCambiosPorNoticiasEmpresa@{mostrarCambiosPorNoticiasEmpresa}}
+\index{mostrarCambiosPorNoticiasEmpresa@{mostrarCambiosPorNoticiasEmpresa}!noticia.h@{noticia.h}}
+\doxysubsubsection{\texorpdfstring{mostrarCambiosPorNoticiasEmpresa()}{mostrarCambiosPorNoticiasEmpresa()}}
+{\footnotesize\ttfamily void mostrar\+Cambios\+Por\+Noticias\+Empresa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classABBEmpresas}{A\+B\+B\+Empresas}} \&}]{arbol,  }\item[{\mbox{\hyperlink{classColaPrioridadNoticias}{Cola\+Prioridad\+Noticias}} \&}]{cola\+Noticias }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muestra los cambios de precio de una empresa por cada noticia que la afectó, mostrando el precio antes y después para cada fecha de noticia. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em arbol} & Árbol de empresas. \\
+\hline
+{\em cola\+Noticias} & Cola de noticias. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 356 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{356                                                                                                       \{}
+\DoxyCodeLine{357     \textcolor{keywordtype}{string} ticker;}
+\DoxyCodeLine{358     cout << \textcolor{stringliteral}{"Ingrese el ticker de la empresa a consultar: "};}
+\DoxyCodeLine{359     getline(cin, ticker);}
+\DoxyCodeLine{360     \mbox{\hyperlink{structEmpresa}{Empresa}}* emp = arbol.\mbox{\hyperlink{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}{buscarEmpresa}}(ticker);}
+\DoxyCodeLine{361     \textcolor{keywordflow}{if} (!emp) \{}
+\DoxyCodeLine{362         cout << \textcolor{stringliteral}{"Empresa no encontrada.\(\backslash\)n"};}
+\DoxyCodeLine{363         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{364     \}}
+\DoxyCodeLine{365     vector<Noticia*> noticias;}
+\DoxyCodeLine{366     colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_a9c3a7f5944aa0f85f3ebf69c1db5eaf7}{obtenerNoticias}}(noticias);}
+\DoxyCodeLine{367     \textcolor{keywordtype}{bool} alguna = \textcolor{keyword}{false};}
+\DoxyCodeLine{368     cout << \textcolor{stringliteral}{"\(\backslash\)n================= CAMBIOS DE "} << emp-\/>\mbox{\hyperlink{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}{nombre}} << \textcolor{stringliteral}{" ("} << emp-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}} << \textcolor{stringliteral}{") POR NOTICIAS =================\(\backslash\)n"};}
+\DoxyCodeLine{369     cout << \textcolor{stringliteral}{" Fecha       | Título de la noticia                | Precio antes | Precio después | Cambio | Cambio (\%)\(\backslash\)n"};}
+\DoxyCodeLine{370     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{371     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} noticia : noticias) \{}
+\DoxyCodeLine{372         \textcolor{keywordflow}{if} (emp-\/>\mbox{\hyperlink{structEmpresa_ae3272a72f778485c20dab09320f94b86}{sector}} == noticia-\/>sectorAfectado) \{}
+\DoxyCodeLine{373             \mbox{\hyperlink{structNodoPrecio}{NodoPrecio}}* p = emp-\/>\mbox{\hyperlink{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}{historialPrecios}}.\mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}};}
+\DoxyCodeLine{374             \textcolor{keywordtype}{float} precioEnFecha = -\/1, precioAnterior = -\/1;}
+\DoxyCodeLine{375             \textcolor{keywordtype}{string} fechaAnterior = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{376             \textcolor{keywordflow}{while} (p) \{}
+\DoxyCodeLine{377                 \textcolor{keywordflow}{if} (p-\/>\mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}} == noticia-\/>fecha) \{}
+\DoxyCodeLine{378                     precioEnFecha = p-\/>\mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precioCierre}};}
+\DoxyCodeLine{379                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (p-\/>\mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}} < noticia-\/>fecha) \{}
+\DoxyCodeLine{380                     \textcolor{keywordflow}{if} (fechaAnterior == \textcolor{stringliteral}{""} || p-\/>\mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}} > fechaAnterior) \{}
+\DoxyCodeLine{381                         precioAnterior = p-\/>\mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precioCierre}};}
+\DoxyCodeLine{382                         fechaAnterior = p-\/>\mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}};}
+\DoxyCodeLine{383                     \}}
+\DoxyCodeLine{384                 \}}
+\DoxyCodeLine{385                 p = p-\/>\mbox{\hyperlink{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}{siguiente}};}
+\DoxyCodeLine{386             \}}
+\DoxyCodeLine{387             \textcolor{keywordflow}{if} (precioEnFecha >= 0 \&\& precioAnterior >= 0) \{}
+\DoxyCodeLine{388                 \textcolor{comment}{// Fecha}}
+\DoxyCodeLine{389                 cout << noticia-\/>\mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}} << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{390                 \textcolor{comment}{// Título (máx 32)}}
+\DoxyCodeLine{391                 \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{392                 \textcolor{keywordflow}{for} (; n < 32 \&\& noticia-\/>titulo[n] != \textcolor{charliteral}{'\(\backslash\)0'}; ++n) cout << noticia-\/>titulo[n];}
+\DoxyCodeLine{393                 for (; n < 32; ++n) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{394                 cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{395                 \textcolor{comment}{// Precio antes}}
+\DoxyCodeLine{396                 cout << precioAnterior << \textcolor{stringliteral}{"      | "};}
+\DoxyCodeLine{397                 \textcolor{comment}{// Precio después}}
+\DoxyCodeLine{398                 cout << precioEnFecha << \textcolor{stringliteral}{"        | "};}
+\DoxyCodeLine{399                 \textcolor{comment}{// Cambio absoluto}}
+\DoxyCodeLine{400                 \textcolor{keywordtype}{float} cambio = precioEnFecha -\/ precioAnterior;}
+\DoxyCodeLine{401                 \textcolor{keywordtype}{float} porcentaje = (precioAnterior != 0) ? (cambio / precioAnterior) * 100.0f : 0.0f;}
+\DoxyCodeLine{402                 \textcolor{keywordflow}{if} (cambio > 0) cout << \textcolor{stringliteral}{"+"};}
+\DoxyCodeLine{403                 cout << cambio << \textcolor{stringliteral}{"    | "};}
+\DoxyCodeLine{404                 \textcolor{keywordflow}{if} (porcentaje > 0) cout << \textcolor{stringliteral}{"+"};}
+\DoxyCodeLine{405                 cout << porcentaje << \textcolor{stringliteral}{"\%\(\backslash\)n"};}
+\DoxyCodeLine{406                 alguna = \textcolor{keyword}{true};}
+\DoxyCodeLine{407             \}}
+\DoxyCodeLine{408         \}}
+\DoxyCodeLine{409     \}}
+\DoxyCodeLine{410     \textcolor{keywordflow}{if} (!alguna) \{}
+\DoxyCodeLine{411         cout << \textcolor{stringliteral}{"No hay noticias que hayan afectado a esta empresa.\(\backslash\)n"};}
+\DoxyCodeLine{412     \}}
+\DoxyCodeLine{413     cout << \textcolor{stringliteral}{"========================================================================================================\(\backslash\)n"};}
+\DoxyCodeLine{414 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{noticia_8h_a80268dccce1ece0cbb6406c81d50baed_cgraph}
+\end{center}
+\end{figure}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{noticia_8h_a80268dccce1ece0cbb6406c81d50baed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{noticia_8h_a7242f8be6bf0222aa3c0397c220cd251}\label{noticia_8h_a7242f8be6bf0222aa3c0397c220cd251}} 
+\index{noticia.h@{noticia.h}!mostrarImpactoNoticiasEnAcciones@{mostrarImpactoNoticiasEnAcciones}}
+\index{mostrarImpactoNoticiasEnAcciones@{mostrarImpactoNoticiasEnAcciones}!noticia.h@{noticia.h}}
+\doxysubsubsection{\texorpdfstring{mostrarImpactoNoticiasEnAcciones()}{mostrarImpactoNoticiasEnAcciones()}}
+{\footnotesize\ttfamily void mostrar\+Impacto\+Noticias\+En\+Acciones (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classABBEmpresas}{A\+B\+B\+Empresas}} \&}]{arbol,  }\item[{\mbox{\hyperlink{classColaPrioridadNoticias}{Cola\+Prioridad\+Noticias}} \&}]{cola\+Noticias }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muestra el impacto de las noticias en las acciones de las empresas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em arbol} & Árbol binario de búsqueda de empresas. \\
+\hline
+{\em cola\+Noticias} & Cola de prioridad de noticias. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 421 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{421                                                                                                       \{}
+\DoxyCodeLine{422     vector<Noticia*> noticias;}
+\DoxyCodeLine{423     colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_a9c3a7f5944aa0f85f3ebf69c1db5eaf7}{obtenerNoticias}}(noticias);}
+\DoxyCodeLine{424     \textcolor{keywordflow}{if} (noticias.empty()) \{}
+\DoxyCodeLine{425         cout << \textcolor{stringliteral}{"No hay noticias registradas.\(\backslash\)n"};}
+\DoxyCodeLine{426         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{427     \}}
+\DoxyCodeLine{428     cout << \textcolor{stringliteral}{"\(\backslash\)n================= IMPACTO DE NOTICIAS EN EMPRESAS =================\(\backslash\)n"};}
+\DoxyCodeLine{429     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} actual : noticias) \{}
+\DoxyCodeLine{430         cout << \textcolor{stringliteral}{"\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{431         cout << \textcolor{stringliteral}{"["} << actual-\/>fecha << \textcolor{stringliteral}{"] "} << actual-\/>titulo << \textcolor{stringliteral}{" (Impacto: "} << actual-\/>impacto << \textcolor{stringliteral}{", Sector: "} << actual-\/>sectorAfectado << \textcolor{stringliteral}{")\(\backslash\)n"};}
+\DoxyCodeLine{432         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{433         cout << \textcolor{stringliteral}{" Ticker   | Precio antes | Precio después | Cambio absoluto | Cambio (\%)\(\backslash\)n"};}
+\DoxyCodeLine{434         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{435         vector<Empresa*> empresas = arbol.\mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{436         \textcolor{keywordtype}{bool} alguna = \textcolor{keyword}{false};}
+\DoxyCodeLine{437         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : empresas) \{}
+\DoxyCodeLine{438             \textcolor{keywordflow}{if} (e-\/>sector == actual-\/>sectorAfectado) \{}
+\DoxyCodeLine{439                 \mbox{\hyperlink{structNodoPrecio}{NodoPrecio}}* p = e-\/>historialPrecios.cabeza;}
+\DoxyCodeLine{440                 \textcolor{keywordtype}{float} precioEnFecha = -\/1, precioAnterior = -\/1;}
+\DoxyCodeLine{441                 \textcolor{keywordtype}{string} fechaAnterior = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{442                 \textcolor{keywordflow}{while} (p) \{}
+\DoxyCodeLine{443                     \textcolor{keywordflow}{if} (p-\/>\mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}} == actual-\/>fecha) \{}
+\DoxyCodeLine{444                         precioEnFecha = p-\/>\mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precioCierre}};}
+\DoxyCodeLine{445                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (p-\/>\mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}} < actual-\/>fecha) \{}
+\DoxyCodeLine{446                         \textcolor{keywordflow}{if} (fechaAnterior == \textcolor{stringliteral}{""} || p-\/>\mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}} > fechaAnterior) \{}
+\DoxyCodeLine{447                             precioAnterior = p-\/>\mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precioCierre}};}
+\DoxyCodeLine{448                             fechaAnterior = p-\/>\mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}};}
+\DoxyCodeLine{449                         \}}
+\DoxyCodeLine{450                     \}}
+\DoxyCodeLine{451                     p = p-\/>\mbox{\hyperlink{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}{siguiente}};}
+\DoxyCodeLine{452                 \}}
+\DoxyCodeLine{453                 \textcolor{keywordflow}{if} (precioEnFecha >= 0 \&\& precioAnterior >= 0) \{}
+\DoxyCodeLine{454                     \textcolor{keywordtype}{float} cambio = precioEnFecha -\/ precioAnterior;}
+\DoxyCodeLine{455                     \textcolor{keywordtype}{float} porcentaje = (precioAnterior != 0) ? (cambio / precioAnterior) * 100.0f : 0.0f;}
+\DoxyCodeLine{456                     \textcolor{comment}{// Ticker (máx 8)}}
+\DoxyCodeLine{457                     \textcolor{keywordtype}{int} t = 0;}
+\DoxyCodeLine{458                     cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{459                     \textcolor{keywordflow}{for} (; t < 8 \&\& e-\/>ticker[t] != \textcolor{charliteral}{'\(\backslash\)0'}; ++t) cout << e-\/>ticker[t];}
+\DoxyCodeLine{460                     for (; t < 8; ++t) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{461                     cout << \textcolor{stringliteral}{" | "};}
+\DoxyCodeLine{462                     \textcolor{comment}{// Precio antes}}
+\DoxyCodeLine{463                     cout << precioAnterior << \textcolor{stringliteral}{"      | "};}
+\DoxyCodeLine{464                     \textcolor{comment}{// Precio después}}
+\DoxyCodeLine{465                     cout << precioEnFecha << \textcolor{stringliteral}{"        | "};}
+\DoxyCodeLine{466                     \textcolor{comment}{// Cambio absoluto}}
+\DoxyCodeLine{467                     \textcolor{keywordflow}{if} (cambio > 0) cout << \textcolor{stringliteral}{"+"};}
+\DoxyCodeLine{468                     cout << cambio << \textcolor{stringliteral}{"         | "};}
+\DoxyCodeLine{469                     \textcolor{comment}{// Cambio porcentual}}
+\DoxyCodeLine{470                     \textcolor{keywordflow}{if} (porcentaje > 0) cout << \textcolor{stringliteral}{"+"};}
+\DoxyCodeLine{471                     cout << porcentaje << \textcolor{stringliteral}{"\%\(\backslash\)n"};}
+\DoxyCodeLine{472                     alguna = \textcolor{keyword}{true};}
+\DoxyCodeLine{473                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (precioEnFecha >= 0) \{}
+\DoxyCodeLine{474                     \textcolor{keywordtype}{int} t = 0;}
+\DoxyCodeLine{475                     cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{476                     \textcolor{keywordflow}{for} (; t < 8 \&\& e-\/>ticker[t] != \textcolor{charliteral}{'\(\backslash\)0'}; ++t) cout << e-\/>ticker[t];}
+\DoxyCodeLine{477                     for (; t < 8; ++t) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{478                     cout << \textcolor{stringliteral}{" | N/A         | "} << precioEnFecha << \textcolor{stringliteral}{"        | N/A           | N/A\(\backslash\)n"};}
+\DoxyCodeLine{479                     alguna = \textcolor{keyword}{true};}
+\DoxyCodeLine{480                 \}}
+\DoxyCodeLine{481             \}}
+\DoxyCodeLine{482         \}}
+\DoxyCodeLine{483         \textcolor{keywordflow}{if} (!alguna) cout << \textcolor{stringliteral}{"  No hubo empresas afectadas en ese sector.\(\backslash\)n"};}
+\DoxyCodeLine{484     \}}
+\DoxyCodeLine{485     cout << \textcolor{stringliteral}{"===================================================================\(\backslash\)n"};}
+\DoxyCodeLine{486 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{noticia_8h_a7242f8be6bf0222aa3c0397c220cd251_cgraph}
+\end{center}
+\end{figure}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{noticia_8h_a7242f8be6bf0222aa3c0397c220cd251_icgraph}
+\end{center}
+\end{figure}
