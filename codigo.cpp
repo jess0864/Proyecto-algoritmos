@@ -2,7 +2,7 @@
 
 #include "empresa.h"
 #include "noticia.h"
-#include "portafolio1.h"
+#include "portafolio.h"
 #include <set> // <-- Agrega esto para usar std::set
 
 // Añade declaración externa para los sectores de empresa.h
@@ -137,6 +137,8 @@ int main() {
                     }
                     string ticker;
                     cout << "Ticker: "; getline(cin, ticker);
+                    // Normalizar a mayúsculas
+                    for (auto& c : ticker) c = toupper(c);
                     Empresa* emp = arbol.buscarEmpresa(ticker);
                     arbol.imprimirEmpresa(emp);
                 } else if (opcionEmpresa == 2) { 

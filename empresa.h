@@ -213,42 +213,24 @@ private:
             string sector = SECTORES_EMPRESA[rand() % SECTORES_EMPRESA.size()];
             insertarEmpresa(tickers[i], nombres[i], sector, precio);
 
-            // Generar historial de precios desde 2025-01-01 hasta 2025-05-21
+            // Generar historial de precios solo para el último mes: 2025-05-01 a 2025-05-26
             Empresa* emp = buscarEmpresa(tickers[i]);
-            int year = 2025, month = 1, day = 1;
+            int year = 2025, month = 5, day = 1;
             float precioHist = precio;
-            while (!(year == 2025 && month == 5 && day == 22)) {
-                // Construir la fecha manualmente sin sprintf
+            while (!(year == 2025 && month == 5 && day == 27)) { // hasta el 26 inclusive
                 string fecha = "";
-                // Año
                 fecha += "2025-";
-                // Mes
                 if (month < 10) fecha += "0";
                 fecha += to_string(month) + "-";
-                // Día
                 if (day < 10) fecha += "0";
                 fecha += to_string(day);
 
-                // Variar el precio histórico aleatoriamente
                 float variacion = ((rand() % 2001) - 1000) / 100.0f; // -10.00 a +10.00
                 precioHist = max(1.0f, precioHist + variacion);
                 emp->historialPrecios.agregarPrecio(fecha, precioHist);
 
-                // Avanzar al siguiente día
                 day++;
-                int diasMes;
-                if (month == 2) diasMes = 28;
-                else if (month == 4 || month == 6 || month == 9 || month == 11) diasMes = 30;
-                else diasMes = 31;
-                if (day > diasMes) {
-                    day = 1;
-                    month++;
-                }
-                if (month > 12) {
-                    month = 1;
-                    year++;
-                }
-                if (year == 2025 && month == 5 && day == 22) break;
+                if (day > 26) break; // Solo hasta el 26 de mayo
             }
             // Actualizar precio actual al último histórico
             if (emp->historialPrecios.cabeza)
@@ -384,6 +366,9 @@ public:
 
     /**
      * @brief Imprime empresas ordenadas por precio actual (de mayor a menor).
+     * @param arr Vector de empresas.
+     * @param left Índice izquierdo.
+     * @param right Índice derecho.
      */
     void imprimirPorPrecio() {
         vector<Empresa*> lista = obtenerEmpresasOrdenadas();
