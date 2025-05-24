@@ -2,7 +2,7 @@
 
 #include "empresa.h"
 #include "noticia.h"
-#include "portafolio.h"
+#include "portafolio1.h"
 #include <set> // <-- Agrega esto para usar std::set
 
 // Añade declaración externa para los sectores de empresa.h
