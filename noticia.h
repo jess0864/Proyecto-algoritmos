@@ -19,6 +19,7 @@ struct Noticia {
     string descripcion;      ///< Descripción de la noticia
     string sectorAfectado;   ///< Sector afectado por la noticia
     string fecha;            ///< Fecha en formato "YYYY-MM-DD"
+    bool esPositiva;         ///< Indica si la noticia es positiva (true) o negativa (false)
     Noticia* siguiente;      ///< Puntero a la siguiente noticia en la lista
 
     /**
@@ -28,13 +29,15 @@ struct Noticia {
      * @param d Descripción de la noticia.
      * @param s Sector afectado.
      * @param f Fecha de la noticia.
+     * @param positiva true si la noticia es positiva, false si es negativa.
      */
-    Noticia(int imp, string t, string d, string s, string f) {
+    Noticia(int imp, string t, string d, string s, string f, bool positiva) {
         impacto = imp;
         titulo = t;
         descripcion = d;
         sectorAfectado = s;
         fecha = f;
+        esPositiva = positiva;
         siguiente = nullptr;
     }
 };
@@ -66,9 +69,10 @@ public:
      * @param descripcion Descripción de la noticia.
      * @param sector Sector afectado.
      * @param fecha Fecha de la noticia.
+     * @param esPositiva true si la noticia es positiva, false si es negativa.
      */
-    void insertar(int impacto, string titulo, string descripcion, string sector, string fecha) {
-        Noticia* nueva = new Noticia(impacto, titulo, descripcion, sector, fecha);
+    void insertar(int impacto, string titulo, string descripcion, string sector, string fecha, bool esPositiva = true) {
+        Noticia* nueva = new Noticia(impacto, titulo, descripcion, sector, fecha, esPositiva);
 
         if (frente == nullptr || impacto > frente->impacto) {
             nueva->siguiente = frente;
@@ -316,8 +320,9 @@ void generarNoticiasAleatorias(ColaPrioridadNoticias& cola, int cantidad, int se
         string descripcion = descripciones[rand() % descripciones.size()];
         string sector = SECTORES_EMPRESA[rand() % SECTORES_EMPRESA.size()];
         string fecha = generarFecha(i);  // Avanza un día por noticia
+        bool esPositiva = rand() % 2 == 0; // Aleatorio: true o false
 
-        cola.insertar(impacto, titulo, descripcion, sector, fecha);
+        cola.insertar(impacto, titulo, descripcion, sector, fecha, esPositiva);
     }
 }
 

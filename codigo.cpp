@@ -2,6 +2,8 @@
 
 #include "empresa.h"
 #include "noticia.h"
+#include "portafolio.h"
+#include <set> // <-- Agrega esto para usar std::set
 
 // Añade declaración externa para los sectores de empresa.h
 extern const vector<string> SECTORES_EMPRESA;
@@ -14,6 +16,7 @@ void mostrarMenuPrincipal() {
     cout << " 1. Consultas de empresas\n";
     cout << " 2. Consultas por sector\n";
     cout << " 3. Simulación y noticias\n";
+    cout << " 4. Gestión de portafolio\n"; // <-- Agregado
     cout << " 0. Salir\n";
     cout << "-----------------------------------------------\n";
     cout << "Seleccione una opción: ";
@@ -71,6 +74,20 @@ void mostrarMenuSimulacion() {
 }
 
 /**
+ * @brief Muestra el submenú de opciones relacionadas con el portafolio.
+ */
+void mostrarMenuPortafolio() {
+    cout << "\n------ GESTIÓN DE PORTAFOLIO ------\n";
+    cout << " 1. Comprar acción\n";
+    cout << " 2. Vender acción\n";
+    cout << " 3. Ver portafolio\n";
+    cout << " 4. Ver recomendaciones de inversión\n";
+    cout << " 0. Volver al menú principal\n";
+    cout << "-----------------------------------\n";
+    cout << "Seleccione una opción: ";
+}
+
+/**
  * @brief Función principal del programa.
  * 
  * Controla el flujo del sistema de gestión de acciones, mostrando menús y ejecutando las opciones seleccionadas por el usuario.
@@ -79,7 +96,26 @@ void mostrarMenuSimulacion() {
  */
 int main() {
     ABBEmpresas arbol; ///< Árbol binario de búsqueda que almacena todas las empresas.
-    ColaPrioridadNoticias colaNoticias; ///< Cola de prioridad para noticias financieras.
+    ColaPrioridadNoticias colaNoticias; ///< Cola de prioridad para noticias financieras
+
+    // Relaciones ejemplo para recomendaciones
+    // grafo.agregarRelacion("AAPL", "NVDA");
+    // grafo.agregarRelacion("AAPL", "ADBE");
+    // grafo.agregarRelacion("GOOG", "AMZN");
+    // grafo.agregarRelacion("MSFT", "MSFT_CLOUD_PARTNER");
+    // grafo.agregarRelacion("AMZN", "NFLX");
+    // grafo.agregarRelacion("NVDA", "TSLA");
+
+    // --- Portafolio interactivo ---
+    string nombreUsuario;
+    cout << "Ingrese su nombre: ";
+    getline(cin, nombreUsuario);
+    float presupuesto;
+    cout << "Ingrese su presupuesto inicial ($): ";
+    cin >> presupuesto;
+    cin.ignore();
+    Portafolio usuario(nombreUsuario);
+
     int opcionPrincipal;
     do {
         mostrarMenuPrincipal();
@@ -309,6 +345,145 @@ int main() {
                     mostrarCambiosPorNoticiasEmpresa(arbol, colaNoticias);
                 }
             } while (opcionSim != 0);
+        } else if (opcionPrincipal == 4) {
+            // --- Menú de portafolio interactivo ---
+            int opPort;
+            do {
+                mostrarMenuPortafolio();
+                cin >> opPort;
+                cin.ignore();
+                if (opPort == 1) {
+                    // Comprar acción
+                    arbol.imprimirEmpresas();
+                    string ticker;
+                    cout << "Ingrese el ticker de la empresa a comprar: ";
+                    getline(cin, ticker);
+                    Empresa* emp = arbol.buscarEmpresa(ticker);
+                    if (!emp) {
+                        cout << "Empresa no encontrada.\n";
+                        continue;
+                    }
+                    cout << "Precio actual de " << emp->nombre << " (" << emp->ticker << "): $" << emp->precioActual << endl;
+                    cout << "¿Cuántas acciones desea comprar?: ";
+                    int cantidad;
+                    cin >> cantidad;
+                    cin.ignore();
+                    float total = emp->precioActual * cantidad;
+                    if (cantidad <= 0) {
+                        cout << "Cantidad inválida.\n";
+                    } else if (total > presupuesto) {
+                        cout << "No tiene suficiente presupuesto. Total requerido: $" << total << ", disponible: $" << presupuesto << endl;
+                    } else {
+                        presupuesto -= total;
+                        for (int i = 0; i < cantidad; ++i)
+                            usuario.agregarActivo(emp->ticker);
+                        cout << "Compra realizada. Presupuesto restante: $" << presupuesto << endl;
+                    }
+                } else if (opPort == 2) {
+                    // Vender acción
+                    usuario.mostrar();
+                    string ticker;
+                    cout << "Ingrese el ticker de la acción a vender: ";
+                    getline(cin, ticker);
+                    Empresa* emp = arbol.buscarEmpresa(ticker);
+                    if (!emp) {
+                        cout << "Empresa no encontrada.\n";
+                        continue;
+                    }
+                    cout << "¿Cuántas acciones desea vender?: ";
+                    int cantidad;
+                    cin >> cantidad;
+                    cin.ignore();
+                    int enPortafolio = 0;
+                    vector<string> activos = usuario.obtenerActivos();
+                    for (const auto& act : activos)
+                        if (act == ticker) enPortafolio++;
+                    if (cantidad <= 0 || cantidad > enPortafolio) {
+                        cout << "Cantidad inválida. Usted posee " << enPortafolio << " acciones de " << ticker << ".\n";
+                    } else {
+                        for (int i = 0; i < cantidad; ++i)
+                            usuario.eliminarActivo(ticker);
+                        float total = emp->precioActual * cantidad;
+                        presupuesto += total;
+                        cout << "Venta realizada. Presupuesto actual: $" << presupuesto << endl;
+                    }
+                } else if (opPort == 3) {
+                    // Ver portafolio
+                    usuario.mostrar();
+                    cout << "Presupuesto disponible: $" << presupuesto << endl;
+                } else if (opPort == 4) {
+                    // Recomendaciones de inversión con opciones avanzadas
+                    int subop;
+                    cout << "\n=== Recomendaciones de inversión ===\n";
+                    cout << " 1. Ver todas las recomendaciones\n";
+                    cout << " 2. Ver recomendaciones por sector\n";
+                    cout << " 3. Ver recomendación para una acción específica\n";
+                    cout << "Seleccione una opción: ";
+                    cin >> subop;
+                    cin.ignore();
+
+                    vector<Empresa*> todas = arbol.obtenerEmpresasOrdenadas();
+                    vector<string> activos = usuario.obtenerActivos();
+                    set<string> yaPosee(activos.begin(), activos.end());
+
+                    if (subop == 1) {
+                        // Todas las recomendaciones
+                        bool alguna = false;
+                        for (auto e : todas) {
+                            if (yaPosee.find(e->ticker) == yaPosee.end()) {
+                                cout << "- " << e->ticker << " (" << e->nombre << ")\n";
+                                usuario.recomendarCompra(e->ticker, arbol, colaNoticias);
+                                alguna = true;
+                            }
+                        }
+                        if (!alguna) {
+                            cout << "(No hay nuevas recomendaciones basadas en el portafolio actual)\n";
+                        }
+                    } else if (subop == 2) {
+                        // Recomendaciones por sector
+                        cout << "Sectores disponibles:\n";
+                        for (size_t i = 0; i < SECTORES_EMPRESA.size(); ++i) {
+                            cout << "  " << (i+1) << ". " << SECTORES_EMPRESA[i] << endl;
+                        }
+                        cout << "Seleccione el número del sector: ";
+                        int idxSector;
+                        cin >> idxSector;
+                        cin.ignore();
+                        if (idxSector < 1 || idxSector > (int)SECTORES_EMPRESA.size()) {
+                            cout << "Sector inválido.\n";
+                        } else {
+                            string sectorSel = SECTORES_EMPRESA[idxSector-1];
+                            bool alguna = false;
+                            for (auto e : todas) {
+                                if (yaPosee.find(e->ticker) == yaPosee.end() && e->sector == sectorSel) {
+                                    cout << "- " << e->ticker << " (" << e->nombre << ")\n";
+                                    usuario.recomendarCompra(e->ticker, arbol, colaNoticias);
+                                    alguna = true;
+                                }
+                            }
+                            if (!alguna) {
+                                cout << "(No hay recomendaciones para ese sector o ya posee todas las acciones)\n";
+                            }
+                        }
+                    } else if (subop == 3) {
+                        // Recomendación para una acción específica
+                        cout << "Ingrese el ticker de la acción a analizar: ";
+                        string ticker;
+                        getline(cin, ticker);
+                        Empresa* emp = arbol.buscarEmpresa(ticker);
+                        if (!emp) {
+                            cout << "Empresa no encontrada.\n";
+                        } else if (yaPosee.find(ticker) != yaPosee.end()) {
+                            cout << "Ya posee esta acción en su portafolio.\n";
+                        } else {
+                            cout << "- " << emp->ticker << " (" << emp->nombre << ")\n";
+                            usuario.recomendarCompra(emp->ticker, arbol, colaNoticias);
+                        }
+                    } else {
+                        cout << "Opción inválida.\n";
+                    }
+                }
+            } while (opPort != 0);
         }
     } while (opcionPrincipal != 0);
     cout << "Saliendo...\n";
