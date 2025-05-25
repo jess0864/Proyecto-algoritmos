@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['colaprioridadnoticias_103',['ColaPrioridadNoticias',['../classColaPrioridadNoticias.html',1,'']]]
+  ['colaprioridadnoticias_101',['ColaPrioridadNoticias',['../classColaPrioridadNoticias.html',1,'']]]
 ];

@@ -23,15 +23,11 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "Simulador de Bolsa e Inteligencia de Inversión", "index.html", [
-    [ "Manual de Usuario", "index.html", [
-      [ "Menú Principal", "index.html#autotoc_md1", null ],
-      [ "Instrucciones Básicas", "index.html#autotoc_md2", null ]
-    ] ],
-    [ "📈 Simulador de Bolsa e Inteligencia de Inversión para Acciones", "md_README.html", [
-      [ "🎯 Objetivo", "md_README.html#autotoc_md6", null ],
-      [ "🧱 Componentes del Sistema", "md_README.html#autotoc_md8", null ],
-      [ "🔍 Algoritmos utilizados", "md_README.html#autotoc_md10", null ],
-      [ "🛠️ Funcionalidades del Menú", "md_README.html#autotoc_md12", null ]
+    [ "📈 Simulador de Bolsa e Inteligencia de Inversión para Acciones", "index.html", [
+      [ "🎯 Objetivo", "index.html#autotoc_md2", null ],
+      [ "🧱 Componentes del Sistema", "index.html#autotoc_md4", null ],
+      [ "🔍 Algoritmos utilizados", "index.html#autotoc_md6", null ],
+      [ "🛠️ Funcionalidades del Menú", "index.html#autotoc_md8", null ]
     ] ],
     [ "Clases", "annotated.html", [
       [ "Lista de clases", "annotated.html", "annotated_dup" ],

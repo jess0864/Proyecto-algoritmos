@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['_7eabbempresas_183',['~ABBEmpresas',['../classABBEmpresas.html#a2cd102614a252770db134521282f2d8c',1,'ABBEmpresas']]],
-  ['_7ecolaprioridadnoticias_184',['~ColaPrioridadNoticias',['../classColaPrioridadNoticias.html#a7f4b07efb58d7828c913927514c9b16b',1,'ColaPrioridadNoticias']]],
-  ['_7emivector_185',['~MiVector',['../classMiVector.html#a9eb5523faf66a64df66de47db442c34e',1,'MiVector']]]
+  ['_7eabbempresas_180',['~ABBEmpresas',['../classABBEmpresas.html#a2cd102614a252770db134521282f2d8c',1,'ABBEmpresas']]],
+  ['_7ecolaprioridadnoticias_181',['~ColaPrioridadNoticias',['../classColaPrioridadNoticias.html#a7f4b07efb58d7828c913927514c9b16b',1,'ColaPrioridadNoticias']]],
+  ['_7emivector_182',['~MiVector',['../classMiVector.html#a9eb5523faf66a64df66de47db442c34e',1,'MiVector']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['noticia_2eh_114',['noticia.h',['../noticia_8h.html',1,'']]]
+  ['portafolio_2eh_112',['portafolio.h',['../portafolio_8h.html',1,'']]]
 ];
