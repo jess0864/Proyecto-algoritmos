@@ -24,10 +24,12 @@ var NAVTREE =
 [
   [ "Simulador de Bolsa e Inteligencia de Inversión", "index.html", [
     [ "📈 Simulador de Bolsa e Inteligencia de Inversión para Acciones", "index.html", [
-      [ "🎯 Objetivo", "index.html#autotoc_md2", null ],
-      [ "🧱 Componentes del Sistema", "index.html#autotoc_md4", null ],
-      [ "🔍 Algoritmos utilizados", "index.html#autotoc_md6", null ],
-      [ "🛠️ Funcionalidades del Menú", "index.html#autotoc_md8", null ]
+      [ "📚 Documentación", "index.html#autotoc_md2", null ],
+      [ "👥 Autores", "index.html#autotoc_md4", null ],
+      [ "🎯 Objetivo", "index.html#autotoc_md6", null ],
+      [ "🧱 Componentes del Sistema", "index.html#autotoc_md8", null ],
+      [ "🔍 Algoritmos utilizados", "index.html#autotoc_md10", null ],
+      [ "🛠️ Funcionalidades del Menú", "index.html#autotoc_md12", null ]
     ] ],
     [ "Clases", "annotated.html", [
       [ "Lista de clases", "annotated.html", "annotated_dup" ],
