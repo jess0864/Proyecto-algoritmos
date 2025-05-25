@@ -1,3 +1,12 @@
+/**
+ * @file empresa.h
+ * @brief Definición de estructuras y clases para la gestión de empresas y sus precios históricos.
+ *
+ * Este archivo contiene la definición de la estructura Empresa, el árbol binario de búsqueda ABBEmpresas,
+ * y la multilista para el historial de precios de acciones. Permite gestionar empresas, consultar precios,
+ * y ajustar valores según noticias del mercado.
+ */
+
 #ifndef EMPRESA_H
 #define EMPRESA_H
 
@@ -8,13 +17,16 @@
 #include <ctime>
 using namespace std;
 
-// Lista global de sectores consistente para todo el sistema
+/// Lista global de sectores consistente para todo el sistema
 const vector<string> SECTORES_EMPRESA = {
     "Tecnología", "Finanzas", "Salud", "Consumo", "Energía", "Industrial", "Telecomunicaciones", "Materiales"
 };
 
 /**
+ * @struct NodoPrecio
  * @brief Nodo para la multilista de precios históricos de una acción.
+ *
+ * Cada nodo almacena la fecha y el precio de cierre de una acción, así como un puntero al siguiente nodo.
  */
 struct NodoPrecio {
     /// Fecha del precio histórico (formato AAAA-MM-DD)
@@ -33,7 +45,10 @@ struct NodoPrecio {
 };
 
 /**
+ * @class MultilistaPrecio
  * @brief Multilista para historial de precios de una acción.
+ *
+ * Permite agregar precios históricos, calcular promedios móviles y mostrar el historial.
  */
 class MultilistaPrecio {
 public:
@@ -87,7 +102,10 @@ public:
 };
 
 /**
+ * @struct Empresa
  * @brief Nodo de ABB que representa una empresa.
+ *
+ * Contiene información relevante de la empresa y enlaces para el árbol binario de búsqueda.
  */
 struct Empresa {
     /// Ticker de la empresa (clave única)
@@ -118,7 +136,10 @@ struct Empresa {
 };
 
 /**
+ * @class ABBEmpresas
  * @brief Árbol binario de búsqueda (ABB) para gestionar empresas.
+ *
+ * Permite insertar, buscar, listar y modificar empresas, así como ajustar precios por noticias.
  */
 class ABBEmpresas {
 private:

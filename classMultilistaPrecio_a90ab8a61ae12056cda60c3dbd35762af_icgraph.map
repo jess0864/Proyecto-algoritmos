@@ -1,5 +1,0 @@
-<map id="MultilistaPrecio::agregarPrecio" name="MultilistaPrecio::agregarPrecio">
-<area shape="rect" id="node1" title="Agrega un precio al historial (al inicio de la lista)." alt="" coords="264,27,445,69"/>
-<area shape="rect" id="node2" href="$classABBEmpresas.html#a7c2d2222bff46899a03bfac025a94d7d" title="Agrega un precio histórico a una empresa." alt="" coords="5,5,216,32"/>
-<area shape="rect" id="node3" href="$classABBEmpresas.html#aa2e8d0775af6901d7ad59454a4c90136" title="Inicializa automáticamente el ABB con empresas reales y datos aleatorios." alt="" coords="19,57,203,98"/>
-</map>

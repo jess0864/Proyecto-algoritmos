@@ -1,5 +1,0 @@
-<map id="generarFecha" name="generarFecha">
-<area shape="rect" id="node1" title="Genera un string de fecha con formato &quot;YYYY&#45;MM&#45;DD&quot; a partir de un número de días desde el inicio." alt="" coords="244,31,355,57"/>
-<area shape="rect" id="node2" href="$noticia_8h.html#a6c49f38b28eecbaf12c518bb9a53553b" title="Genera noticias aleatorias y las inserta en la cola de prioridad." alt="" coords="5,5,196,32"/>
-<area shape="rect" id="node3" href="$codigo_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Función principal del programa." alt="" coords="73,56,128,83"/>
-</map>

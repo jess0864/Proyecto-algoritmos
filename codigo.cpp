@@ -1,15 +1,21 @@
-// Código base para un sistema de gestión de acciones y noticias financieras
+/**
+ * @file codigo.cpp
+ * @brief Código base para un sistema de gestión de acciones y noticias financieras.
+ *
+ * Este archivo contiene la función principal y los menús interactivos para consultar empresas,
+ * sectores, noticias y gestionar un portafolio de inversiones.
+ */
 
 #include "empresa.h"
 #include "noticia.h"
 #include "portafolio.h"
-#include <set> // <-- Agrega esto para usar std::set
+#include <set> ///< Para usar std::set
 
-// Añade declaración externa para los sectores de empresa.h
+/// Declaración externa para los sectores definidos en empresa.h
 extern const vector<string> SECTORES_EMPRESA;
 
 /**
- * @brief Muestra el menú principal para elegir entre opciones por empresa, sector o noticias.
+ * @brief Muestra el menú principal para elegir entre opciones por empresa, sector, noticias o portafolio.
  */
 void mostrarMenuPrincipal() {
     cout << "\n================ MENÚ PRINCIPAL ================\n";
@@ -24,7 +30,7 @@ void mostrarMenuPrincipal() {
 
 /**
  * @brief Muestra el submenú de opciones relacionadas con empresas.
- * 
+ *
  * Permite al usuario buscar empresas, imprimir listados, ver historial, calcular promedios y buscar por rango de precio.
  */
 void mostrarMenuEmpresa() {
@@ -42,7 +48,7 @@ void mostrarMenuEmpresa() {
 
 /**
  * @brief Muestra el submenú de opciones relacionadas con sectores.
- * 
+ *
  * Permite al usuario imprimir empresas por sector y ver promedios de precios por sector.
  */
 void mostrarMenuSector() {
@@ -56,7 +62,7 @@ void mostrarMenuSector() {
 
 /**
  * @brief Muestra el submenú de opciones relacionadas con simulación y noticias financieras.
- * 
+ *
  * Permite al usuario gestionar noticias financieras, incluyendo inserción, búsqueda, ordenamiento y análisis.
  */
 void mostrarMenuSimulacion() {
@@ -89,9 +95,9 @@ void mostrarMenuPortafolio() {
 
 /**
  * @brief Función principal del programa.
- * 
+ *
  * Controla el flujo del sistema de gestión de acciones, mostrando menús y ejecutando las opciones seleccionadas por el usuario.
- * 
+ *
  * @return 0 al finalizar correctamente.
  */
 int main() {
@@ -121,14 +127,14 @@ int main() {
         mostrarMenuPrincipal();
         cin >> opcionPrincipal;
         cin.ignore();
-        if (opcionPrincipal == 1) { 
+        if (opcionPrincipal == 1) {
             /// Opciones relacionadas con empresas
             int opcionEmpresa;
             do {
                 mostrarMenuEmpresa();
                 cin >> opcionEmpresa;
                 cin.ignore();
-                if (opcionEmpresa == 1) { 
+                if (opcionEmpresa == 1) {
                     /// Buscar empresa por ticker y mostrar su información
                     vector<Empresa*> lista = arbol.obtenerEmpresasOrdenadas();
                     cout << "Empresas disponibles:\n";
@@ -139,13 +145,13 @@ int main() {
                     cout << "Ticker: "; getline(cin, ticker);
                     Empresa* emp = arbol.buscarEmpresa(ticker);
                     arbol.imprimirEmpresa(emp);
-                } else if (opcionEmpresa == 2) { 
+                } else if (opcionEmpresa == 2) {
                     /// Imprimir todas las empresas en orden alfabético
                     arbol.imprimirEmpresas();
-                } else if (opcionEmpresa == 3) { 
+                } else if (opcionEmpresa == 3) {
                     /// Imprimir empresas ordenadas por precio actual descendente
                     arbol.imprimirPorPrecio();
-                } else if (opcionEmpresa == 4) { 
+                } else if (opcionEmpresa == 4) {
                     /// Mostrar historial de precios de una empresa específica y calcular promedio móvil
                     string ticker;
                     cout << "Ticker: "; getline(cin, ticker);
@@ -179,7 +185,7 @@ int main() {
                     } else {
                         cout << "Empresa no encontrada.\n";
                     }
-                } else if (opcionEmpresa == 5) { 
+                } else if (opcionEmpresa == 5) {
                     /// Buscar empresas cuyo precio actual está en un rango dado
                     float minPrecio, maxPrecio;
                     cout << "Ingrese el precio mínimo: "; cin >> minPrecio;
@@ -187,7 +193,7 @@ int main() {
                     cin.ignore();
                     vector<Empresa*> resultado = arbol.buscarEmpresasPorRangoPrecio(minPrecio, maxPrecio);
                     arbol.imprimirEmpresas(resultado);
-                } else if (opcionEmpresa == 6) { 
+                } else if (opcionEmpresa == 6) {
                     /// Mostrar la empresa con la acción más barata y más cara
                     Empresa* minEmp = arbol.obtenerEmpresaMasBarata();
                     Empresa* maxEmp = arbol.obtenerEmpresaMasCara();
@@ -197,14 +203,14 @@ int main() {
                     arbol.imprimirEmpresa(maxEmp);
                 }
             } while (opcionEmpresa != 0);
-        } else if (opcionPrincipal == 2) { 
+        } else if (opcionPrincipal == 2) {
             /// Opciones relacionadas con sectores
             int opcionSector;
             do {
                 mostrarMenuSector();
                 cin >> opcionSector;
                 cin.ignore();
-                if (opcionSector == 1) { 
+                if (opcionSector == 1) {
                     /// Imprimir todas las empresas de un sector específico
                     vector<Empresa*> lista = arbol.obtenerEmpresasOrdenadas();
                     vector<string> sectores;
@@ -225,7 +231,7 @@ int main() {
                     string sector;
                     cout << "Sector: "; getline(cin, sector);
                     arbol.imprimirEmpresasPorSector(sector);
-                } else if (opcionSector == 2) { 
+                } else if (opcionSector == 2) {
                     /// Mostrar el promedio del precio actual de las acciones por sector
                     vector<Empresa*> lista = arbol.obtenerEmpresasOrdenadas();
                     vector<string> sectores;
@@ -257,7 +263,7 @@ int main() {
                 cin >> opcionSim;
                 cin.ignore();
                 if (opcionSim == 1) {
-                    // Insertar noticia manualmente y ajustar precios
+                    /// Insertar noticia manualmente y ajustar precios
                     int impacto;
                     string titulo, descripcion, sector, fecha;
                     cout << "Impacto (1-10): "; cin >> impacto; cin.ignore();
@@ -273,7 +279,7 @@ int main() {
                     arbol.ajustarPreciosPorNoticia(sector, impacto, fecha);
                     cout << "\nNoticia generada y precios ajustados.\n";
                 } else if (opcionSim == 2) {
-                    // Generar noticias aleatorias y simular mercado
+                    /// Generar noticias aleatorias y simular mercado
                     int cantidad;
                     cout << "Cantidad de noticias aleatorias a generar: ";
                     cin >> cantidad;
@@ -304,7 +310,7 @@ int main() {
                     }
                     cout << "Noticias aleatorias generadas y precios ajustados.\n";
                 } else if (opcionSim == 3) {
-                    // Mostrar noticias (elige orden)
+                    /// Mostrar noticias (elige orden)
                     int subop;
                     cout << "1. Por prioridad (impacto)\n2. Por fecha\nSeleccione: ";
                     cin >> subop; cin.ignore();
@@ -315,7 +321,7 @@ int main() {
                         colaNoticias.mostrar();
                     }
                 } else if (opcionSim == 4) {
-                    // Buscar noticias
+                    /// Buscar noticias
                     int subop;
                     cout << "1. Por sector\n2. Por palabra clave\nSeleccione: ";
                     cin >> subop; cin.ignore();
@@ -329,7 +335,7 @@ int main() {
                         colaNoticias.buscarPorPalabraClave(palabra);
                     }
                 } else if (opcionSim == 5) {
-                    // Estadísticas y alertas
+                    /// Estadísticas y alertas
                     float promedio = colaNoticias.promedioImpacto();
                     cout << "Impacto promedio de las noticias: " << promedio << endl;
                     if (colaNoticias.hayAlertaDeCrisis()) {
@@ -338,22 +344,22 @@ int main() {
                         cout << "No hay señales de crisis por ahora.\n";
                     }
                 } else if (opcionSim == 6) {
-                    // Mostrar cambios de acciones por noticias (todas las empresas)
+                    /// Mostrar cambios de acciones por noticias (todas las empresas)
                     mostrarImpactoNoticiasEnAcciones(arbol, colaNoticias);
                 } else if (opcionSim == 7) {
-                    // Mostrar cambios de una empresa por noticias
+                    /// Mostrar cambios de una empresa por noticias
                     mostrarCambiosPorNoticiasEmpresa(arbol, colaNoticias);
                 }
             } while (opcionSim != 0);
         } else if (opcionPrincipal == 4) {
-            // --- Menú de portafolio interactivo ---
+            /// Menú de portafolio interactivo
             int opPort;
             do {
                 mostrarMenuPortafolio();
                 cin >> opPort;
                 cin.ignore();
                 if (opPort == 1) {
-                    // Comprar acción
+                    /// Comprar acción
                     arbol.imprimirEmpresas();
                     string ticker;
                     cout << "Ingrese el ticker de la empresa a comprar: ";
@@ -380,7 +386,7 @@ int main() {
                         cout << "Compra realizada. Presupuesto restante: $" << presupuesto << endl;
                     }
                 } else if (opPort == 2) {
-                    // Vender acción
+                    /// Vender acción
                     usuario.mostrar();
                     string ticker;
                     cout << "Ingrese el ticker de la acción a vender: ";
@@ -408,11 +414,11 @@ int main() {
                         cout << "Venta realizada. Presupuesto actual: $" << presupuesto << endl;
                     }
                 } else if (opPort == 3) {
-                    // Ver portafolio
+                    /// Ver portafolio
                     usuario.mostrar();
                     cout << "Presupuesto disponible: $" << presupuesto << endl;
                 } else if (opPort == 4) {
-                    // Recomendaciones de inversión con opciones avanzadas
+                    /// Recomendaciones de inversión con opciones avanzadas
                     int subop;
                     cout << "\n=== Recomendaciones de inversión ===\n";
                     cout << " 1. Ver todas las recomendaciones\n";

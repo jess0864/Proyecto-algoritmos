@@ -1,3 +1,12 @@
+/**
+ * @file noticia.h
+ * @brief Definición de la estructura Noticia y la clase ColaPrioridadNoticias para gestión de noticias financieras.
+ *
+ * Este archivo contiene la estructura Noticia y la clase ColaPrioridadNoticias, que permite almacenar,
+ * buscar, ordenar y analizar noticias financieras con impacto en sectores y empresas. Incluye utilidades
+ * para generación de noticias aleatorias y funciones de análisis de impacto.
+ */
+
 #ifndef NOTICIA_H
 #define NOTICIA_H
 
@@ -9,8 +18,10 @@
 #include "empresa.h"
 using namespace std;
 
-/// @brief Estructura que representa una noticia con impacto, título, descripción, sector afectado, fecha y puntero al siguiente nodo.
 /**
+ * @struct Noticia
+ * @brief Estructura que representa una noticia con impacto, título, descripción, sector afectado, fecha y puntero al siguiente nodo.
+ *
  * Estructura utilizada para almacenar la información de una noticia en la cola de prioridad.
  */
 struct Noticia {
@@ -35,8 +46,10 @@ struct Noticia {
         : impacto(imp), titulo(t), descripcion(d), sectorAfectado(s), fecha(f), esPositiva(positiva), siguiente(nullptr) {}
 };
 
-/// @brief Clase que implementa una cola de prioridad para noticias, ordenadas por impacto.
 /**
+ * @class ColaPrioridadNoticias
+ * @brief Clase que implementa una cola de prioridad para noticias, ordenadas por impacto.
+ *
  * Permite insertar, mostrar, buscar, extraer y ordenar noticias, así como calcular estadísticas.
  */
 class ColaPrioridadNoticias {
@@ -44,11 +57,15 @@ private:
     Noticia* frente; ///< Puntero al primer elemento de la cola
 
 public:
-    /// @brief Constructor de la cola de prioridad.
+    /**
+     * @brief Constructor de la cola de prioridad.
+     */
     ColaPrioridadNoticias() : frente(nullptr) {}
 
-    /// @brief Verifica si la cola está vacía.
-    /// @return true si la cola está vacía, false en caso contrario.
+    /**
+     * @brief Verifica si la cola está vacía.
+     * @return true si la cola está vacía, false en caso contrario.
+     */
     bool estaVacia() { return frente == nullptr; }
 
     /**
@@ -76,7 +93,9 @@ public:
         }
     }
 
-    /// @brief Muestra todas las noticias en la cola, en orden de prioridad.
+    /**
+     * @brief Muestra todas las noticias en la cola, en orden de prioridad.
+     */
     void mostrar() {
         Noticia* actual = frente;
         while (actual != nullptr) {
@@ -117,8 +136,10 @@ public:
         }
     }
 
-    /// @brief Detecta si hay una alerta de crisis (3 o más noticias con impacto >= 8).
-    /// @return true si hay alerta de crisis, false en caso contrario.
+    /**
+     * @brief Detecta si hay una alerta de crisis (3 o más noticias con impacto >= 8).
+     * @return true si hay alerta de crisis, false en caso contrario.
+     */
     bool hayAlertaDeCrisis() {
         Noticia* actual = frente;
         int contador = 0;
@@ -132,8 +153,10 @@ public:
         return false;
     }
 
-    /// @brief Calcula el promedio del impacto de todas las noticias en la cola.
-    /// @return Promedio del impacto (float).
+    /**
+     * @brief Calcula el promedio del impacto de todas las noticias en la cola.
+     * @return Promedio del impacto (float).
+     */
     float promedioImpacto() {
         if (estaVacia()) return 0;
 
@@ -148,8 +171,10 @@ public:
         return suma / total;
     }
 
-    /// @brief Extrae y retorna la noticia con mayor prioridad (mayor impacto).
-    /// @return Puntero a la noticia extraída, o nullptr si la cola está vacía.
+    /**
+     * @brief Extrae y retorna la noticia con mayor prioridad (mayor impacto).
+     * @return Puntero a la noticia extraída, o nullptr si la cola está vacía.
+     */
     Noticia* extraer() {
         if (estaVacia()) return nullptr;
 
@@ -159,7 +184,10 @@ public:
         return temp;
     }
 
-    /// @brief Llena un vector con punteros a todas las noticias en la cola (en orden actual).
+    /**
+     * @brief Llena un vector con punteros a todas las noticias en la cola (en orden actual).
+     * @param noticias Vector de punteros a Noticia que se llenará.
+     */
     void obtenerNoticias(vector<Noticia*>& noticias) {
         Noticia* actual = frente;
         while (actual) {
@@ -225,13 +253,17 @@ public:
         return fusionar(izquierda, derecha);
     }
 
-    /// @brief Ordena toda la cola de noticias cronológicamente por fecha.
+    /**
+     * @brief Ordena toda la cola de noticias cronológicamente por fecha.
+     */
     void ordenarPorFecha() {
         frente = mergeSort(frente);
         cout << "\n📆 Noticias ordenadas por fecha.\n";
     }
 
-    /// @brief Destructor. Libera la memoria de todas las noticias en la cola.
+    /**
+     * @brief Destructor. Libera la memoria de todas las noticias en la cola.
+     */
     ~ColaPrioridadNoticias() {
         while (!estaVacia()) {
             Noticia* temp = extraer();

@@ -1,9 +1,18 @@
+/**
+ * @file portafolio.h
+ * @brief Definición de la clase Portafolio y del vector dinámico personalizado MiVector.
+ *
+ * Este archivo contiene la implementación de la clase Portafolio, que permite gestionar
+ * activos de un usuario, así como la clase plantilla MiVector para manejo de arreglos dinámicos.
+ * Incluye lógica para recomendaciones de compra de activos basada en tendencias y noticias.
+ */
+
 #ifndef PORTAFOLIO_H
 #define PORTAFOLIO_H
 
 #include <iostream>
 #include <string>
-#include <cmath> // <-- Agrega esto para usar sqrt
+#include <cmath> ///< Para usar sqrt en cálculos estadísticos
 #include "empresa.h"
 #include "noticia.h"
 using namespace std;
@@ -11,11 +20,15 @@ using namespace std;
 // ===============================
 // Clase MiVector integrada
 // ===============================
+
 /**
+ * @class MiVector
  * @brief Clase plantilla que implementa un vector dinámico personalizado.
  * 
  * Permite agregar, eliminar, ordenar y acceder a elementos de forma similar a std::vector,
  * pero con implementación propia para entender el funcionamiento interno de estructuras dinámicas.
+ * 
+ * @tparam T Tipo de dato de los elementos almacenados.
  */
 template <typename T>
 class MiVector {
@@ -46,23 +59,12 @@ public:
     }
     
     /**
-     * @brief Inserta y elimina elementos del vector personalizado.
-     *
-     * Estas funciones implementan operaciones personalizadas similares a push y pop
-     * en un vector dinámico. Permiten gestionar la inserción y eliminación de elementos
-     * para comprender y controlar directamente cómo se maneja la memoria y el crecimiento
-     * dinámico del arreglo.
-     *
-     * - miPush(const T& valor): Agrega un nuevo elemento al final del vector. Si el vector 
-     *   ha alcanzado su capacidad máxima, se duplica su tamaño para permitir más inserciones.
-     * - miPop(): Elimina el último elemento del vector si no está vacío. Si el vector está vacío,
-     *   se muestra un mensaje de error por consola.
-     *
-     * Estas funciones ayudan a profundizar en el funcionamiento interno de las estructuras
-     * dinámicas y a completar el código de forma educativa.
+     * @brief Inserta un elemento al final del vector.
+     * 
+     * Si el vector ha alcanzado su capacidad máxima, se duplica su tamaño.
+     * 
+     * @param valor Elemento a insertar.
      */
-
- 
     void miPush(const T& valor) {
         if (cantidad == capacidad) {
             capacidad *= 2;
@@ -75,7 +77,11 @@ public:
         datos[cantidad++] = valor;
     }
 
-    
+    /**
+     * @brief Elimina el último elemento del vector.
+     * 
+     * Si el vector está vacío, muestra un mensaje de error.
+     */
     void miPop() {
         if (cantidad > 0)
             cantidad--;
@@ -148,27 +154,50 @@ public:
 
 // ===============================
 // Clase Portafolio usando MiVector
-// Mi vector es donde se agregan y se eliminan elementos, inversiones
 // ===============================
+
+/**
+ * @class Portafolio
+ * @brief Clase que representa el portafolio de un usuario, permitiendo gestionar activos.
+ * 
+ * Utiliza la clase MiVector para almacenar los activos del usuario y provee métodos para
+ * agregar, eliminar, mostrar y ordenar activos, así como recomendaciones de compra.
+ */
 class Portafolio {
 private:
-    string nombreUsuario;
-    MiVector<string> activos;
+    string nombreUsuario;           ///< Nombre del usuario propietario del portafolio.
+    MiVector<string> activos;       ///< Vector personalizado de activos (por ejemplo, tickers).
 
 public:
+    /**
+     * @brief Constructor que inicializa el portafolio con el nombre del usuario.
+     * @param nombre Nombre del usuario.
+     */
     Portafolio(string nombre) : nombreUsuario(nombre) {}
 
+    /**
+     * @brief Agrega un activo al portafolio.
+     * @param activo Nombre o ticker del activo a agregar.
+     */
     void agregarActivo(const string& activo) {
         activos.miPush(activo);
         cout << "Activo '" << activo << "' agregado." << endl;
     }
 
+    /**
+     * @brief Verifica si el portafolio contiene un activo específico.
+     * @param activo Nombre o ticker del activo a buscar.
+     * @return true si el activo está presente, false en caso contrario.
+     */
     bool tieneActivo(const string& activo) const {
         for (int i = 0; i < activos.size(); ++i)
             if (activos[i] == activo) return true;
         return false;
     }
 
+    /**
+     * @brief Muestra todos los activos del portafolio por consola.
+     */
     void mostrar() const {
         cout << "Portafolio de " << nombreUsuario << ":\n";
         if (activos.empty()) cout << "(Vacío)\n";
@@ -177,6 +206,11 @@ public:
                 cout << "- " << activos[i] << '\n';
     }
 
+    /**
+     * @brief Elimina un activo del portafolio.
+     * @param activo Nombre o ticker del activo a eliminar.
+     * @return true si se eliminó exitosamente, false si no se encontró.
+     */
     bool eliminarActivo(const string& activo) {
         if (activos.eliminar(activo)) {
             cout << "Activo '" << activo << "' eliminado." << endl;
@@ -186,6 +220,9 @@ public:
         return false;
     }
 
+    /**
+     * @brief Ordena los activos del portafolio en orden ascendente.
+     */
     void ordenarActivos() {
         if (activos.empty()) cout << "Nada que ordenar.\n";
         else {
@@ -194,7 +231,10 @@ public:
         }
     }
 
-    // Nuevo método para obtener los activos como vector<string>
+    /**
+     * @brief Obtiene los activos del portafolio como un std::vector<string>.
+     * @return Vector de strings con los activos.
+     */
     vector<string> obtenerActivos() const {
         vector<string> v;
         for (int i = 0; i < activos.size(); ++i)
@@ -202,8 +242,15 @@ public:
         return v;
     }
 
-    // Árbol de decisión para recomendar compra de un activo
-    // Usa tendencia de precios históricos y noticias del sector
+    /**
+     * @brief Árbol de decisión para recomendar la compra de un activo.
+     * 
+     * Analiza la tendencia de precios históricos y noticias del sector para dar una recomendación.
+     * 
+     * @param ticker Ticker del activo a analizar.
+     * @param arbol Referencia al árbol binario de búsqueda de empresas.
+     * @param colaNoticias Referencia a la cola de prioridad de noticias.
+     */
     void recomendarCompra(const string& ticker, ABBEmpresas& arbol, ColaPrioridadNoticias& colaNoticias) {
         Empresa* emp = arbol.buscarEmpresa(ticker);
         if (!emp) {
