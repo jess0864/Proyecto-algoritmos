@@ -98,14 +98,6 @@ int main() {
     ABBEmpresas arbol; ///< Árbol binario de búsqueda que almacena todas las empresas.
     ColaPrioridadNoticias colaNoticias; ///< Cola de prioridad para noticias financieras
 
-    // Relaciones ejemplo para recomendaciones
-    // grafo.agregarRelacion("AAPL", "NVDA");
-    // grafo.agregarRelacion("AAPL", "ADBE");
-    // grafo.agregarRelacion("GOOG", "AMZN");
-    // grafo.agregarRelacion("MSFT", "MSFT_CLOUD_PARTNER");
-    // grafo.agregarRelacion("AMZN", "NFLX");
-    // grafo.agregarRelacion("NVDA", "TSLA");
-
     // --- Portafolio interactivo ---
     string nombreUsuario;
     cout << "Ingrese su nombre: ";
