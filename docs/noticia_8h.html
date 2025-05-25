@@ -88,6 +88,9 @@ $(document).ready(function(){initNavTree('noticia_8h.html',''); initResizable();
 <div class="title">Referencia del Archivo noticia.h</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Definición de la estructura <a class="el" href="structNoticia.html" title="Estructura que representa una noticia con impacto, título, descripción, sector afectado,...">Noticia</a> y la clase <a class="el" href="classColaPrioridadNoticias.html" title="Clase que implementa una cola de prioridad para noticias, ordenadas por impacto.">ColaPrioridadNoticias</a> para gestión de noticias financieras.  
+<a href="#details">Más...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -143,7 +146,12 @@ Funciones</h2></td></tr>
 <tr class="memdesc:a7242f8be6bf0222aa3c0397c220cd251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra el impacto de las noticias en las acciones de las empresas.  <a href="noticia_8h.html#a7242f8be6bf0222aa3c0397c220cd251">Más...</a><br /></td></tr>
 <tr class="separator:a7242f8be6bf0222aa3c0397c220cd251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentación de las funciones</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Definición de la estructura <a class="el" href="structNoticia.html" title="Estructura que representa una noticia con impacto, título, descripción, sector afectado,...">Noticia</a> y la clase <a class="el" href="classColaPrioridadNoticias.html" title="Clase que implementa una cola de prioridad para noticias, ordenadas por impacto.">ColaPrioridadNoticias</a> para gestión de noticias financieras. </p>
+<p>Este archivo contiene la estructura <a class="el" href="structNoticia.html" title="Estructura que representa una noticia con impacto, título, descripción, sector afectado,...">Noticia</a> y la clase <a class="el" href="classColaPrioridadNoticias.html" title="Clase que implementa una cola de prioridad para noticias, ordenadas por impacto.">ColaPrioridadNoticias</a>, que permite almacenar, buscar, ordenar y analizar noticias financieras con impacto en sectores y empresas. Incluye utilidades para generación de noticias aleatorias y funciones de análisis de impacto. </p>
+
+<p class="definition">Definición en el archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
+</div><h2 class="groupheader">Documentación de las funciones</h2>
 <a id="af24bef6e352d3ace928987de260bb7e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af24bef6e352d3ace928987de260bb7e6">&#9670;&nbsp;</a></span>calcularPorcentajeAjuste()</h2>
 
@@ -177,14 +185,14 @@ Funciones</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>Porcentaje como valor decimal. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00350">350</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                                                   {</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">if</span> (impacto &gt; 5) {</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">return</span> (impacto - 5) * 0.01f;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordflow">return</span> -(6 - impacto) * 0.01f;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    }</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00359">359</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                                                   {</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">if</span> (impacto &gt; 5) {</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordflow">return</span> (impacto - 5) * 0.01f;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">return</span> -(6 - impacto) * 0.01f;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenciado por <a class="el" href="codigo_8cpp_source.html#l00103">main()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -223,32 +231,32 @@ Funciones</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>Fecha en formato "YYYY-MM-DD". </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00273">273</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                                             {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordtype">int</span> year = 2025;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordtype">int</span> month = 5;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordtype">int</span> day = 1 + diasDesdeInicio;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">// Ajustar el día y el mes si se pasa del final del mes</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">while</span> (day &gt; 31) {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        day -= 30;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        month++;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">if</span> (month &gt; 12) {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            month = 1;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            year++;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordtype">string</span> fecha = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    fecha += to_string(year) + <span class="stringliteral">&quot;-&quot;</span>;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">if</span> (month &lt; 10) fecha += <span class="stringliteral">&quot;0&quot;</span>;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    fecha += to_string(month) + <span class="stringliteral">&quot;-&quot;</span>;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">if</span> (day &lt; 10) fecha += <span class="stringliteral">&quot;0&quot;</span>;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    fecha += to_string(day);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">return</span> fecha;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00282">282</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                                             {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">int</span> year = 2025;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordtype">int</span> month = 5;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordtype">int</span> day = 1 + diasDesdeInicio;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// Ajustar el día y el mes si se pasa del final del mes</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">while</span> (day &gt; 31) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        day -= 30;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        month++;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">if</span> (month &gt; 12) {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            month = 1;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            year++;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordtype">string</span> fecha = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    fecha += to_string(year) + <span class="stringliteral">&quot;-&quot;</span>;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span> (month &lt; 10) fecha += <span class="stringliteral">&quot;0&quot;</span>;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    fecha += to_string(month) + <span class="stringliteral">&quot;-&quot;</span>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">if</span> (day &lt; 10) fecha += <span class="stringliteral">&quot;0&quot;</span>;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    fecha += to_string(day);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">return</span> fecha;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenciado por <a class="el" href="noticia_8h_source.html#l00303">generarNoticiasAleatorias()</a> y <a class="el" href="codigo_8cpp_source.html#l00103">main()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="noticia_8h_source.html#l00312">generarNoticiasAleatorias()</a> y <a class="el" href="codigo_8cpp_source.html#l00103">main()</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Gráfico de llamadas a esta función:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -302,36 +310,36 @@ Funciones</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00303">303</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                                                                                              {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    srand(semilla);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    vector&lt;string&gt; titulos = {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="stringliteral">&quot;Caída del dólar&quot;</span>, <span class="stringliteral">&quot;Nuevo impuesto&quot;</span>, <span class="stringliteral">&quot;Reforma pensional&quot;</span>, <span class="stringliteral">&quot;Crisis energética&quot;</span>,</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="stringliteral">&quot;Inversión extranjera&quot;</span>, <span class="stringliteral">&quot;Caída de acciones tecnológicas&quot;</span>, <span class="stringliteral">&quot;Sube el petróleo&quot;</span>,</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="stringliteral">&quot;Aumento del salario mínimo&quot;</span>, <span class="stringliteral">&quot;Devaluación del peso&quot;</span>, <span class="stringliteral">&quot;Acuerdo comercial firmado&quot;</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    };</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    vector&lt;string&gt; descripciones = {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="stringliteral">&quot;Los mercados reaccionan ante la noticia.&quot;</span>,</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="stringliteral">&quot;Expertos prevén cambios importantes en el comportamiento bursátil.&quot;</span>,</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="stringliteral">&quot;Los sectores económicos muestran señales de volatilidad.&quot;</span>,</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="stringliteral">&quot;Los analistas recomiendan cautela a los inversionistas.&quot;</span>,</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="stringliteral">&quot;Impacto inmediato esperado en el mercado accionario.&quot;</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    };</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="comment">// Usa los sectores globales de empresa.h</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cantidad; ++i) {</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordtype">int</span> impacto = rand() % 10 + 1;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordtype">string</span> titulo = titulos[rand() % titulos.size()];</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordtype">string</span> descripcion = descripciones[rand() % descripciones.size()];</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordtype">string</span> sector = <a class="code" href="codigo_8cpp.html#aea5748407935beef97b8efa9a40fd3ef">SECTORES_EMPRESA</a>[rand() % <a class="code" href="codigo_8cpp.html#aea5748407935beef97b8efa9a40fd3ef">SECTORES_EMPRESA</a>.size()];</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordtype">string</span> fecha = <a class="code" href="noticia_8h.html#a6370066b96779b15f4c092365be9553b">generarFecha</a>(i);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordtype">bool</span> esPositiva = rand() % 2 == 0;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        cola.<a class="code" href="classColaPrioridadNoticias.html#a7512fe71c5e0220566c7d0d95be9862e">insertar</a>(impacto, titulo, descripcion, sector, fecha, esPositiva);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00312">312</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                                                                                              {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    srand(semilla);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    vector&lt;string&gt; titulos = {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="stringliteral">&quot;Caída del dólar&quot;</span>, <span class="stringliteral">&quot;Nuevo impuesto&quot;</span>, <span class="stringliteral">&quot;Reforma pensional&quot;</span>, <span class="stringliteral">&quot;Crisis energética&quot;</span>,</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="stringliteral">&quot;Inversión extranjera&quot;</span>, <span class="stringliteral">&quot;Caída de acciones tecnológicas&quot;</span>, <span class="stringliteral">&quot;Sube el petróleo&quot;</span>,</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="stringliteral">&quot;Aumento del salario mínimo&quot;</span>, <span class="stringliteral">&quot;Devaluación del peso&quot;</span>, <span class="stringliteral">&quot;Acuerdo comercial firmado&quot;</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    };</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    vector&lt;string&gt; descripciones = {</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="stringliteral">&quot;Los mercados reaccionan ante la noticia.&quot;</span>,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="stringliteral">&quot;Expertos prevén cambios importantes en el comportamiento bursátil.&quot;</span>,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="stringliteral">&quot;Los sectores económicos muestran señales de volatilidad.&quot;</span>,</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="stringliteral">&quot;Los analistas recomiendan cautela a los inversionistas.&quot;</span>,</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="stringliteral">&quot;Impacto inmediato esperado en el mercado accionario.&quot;</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    };</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="comment">// Usa los sectores globales de empresa.h</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cantidad; ++i) {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordtype">int</span> impacto = rand() % 10 + 1;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordtype">string</span> titulo = titulos[rand() % titulos.size()];</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordtype">string</span> descripcion = descripciones[rand() % descripciones.size()];</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordtype">string</span> sector = <a class="code" href="codigo_8cpp.html#aea5748407935beef97b8efa9a40fd3ef">SECTORES_EMPRESA</a>[rand() % <a class="code" href="codigo_8cpp.html#aea5748407935beef97b8efa9a40fd3ef">SECTORES_EMPRESA</a>.size()];</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordtype">string</span> fecha = <a class="code" href="noticia_8h.html#a6370066b96779b15f4c092365be9553b">generarFecha</a>(i);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordtype">bool</span> esPositiva = rand() % 2 == 0;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        cola.<a class="code" href="classColaPrioridadNoticias.html#a7512fe71c5e0220566c7d0d95be9862e">insertar</a>(impacto, titulo, descripcion, sector, fecha, esPositiva);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Hace referencia a <a class="el" href="noticia_8h_source.html#l00273">generarFecha()</a>, <a class="el" href="noticia_8h_source.html#l00071">ColaPrioridadNoticias::insertar()</a> y <a class="el" href="empresa_8h_source.html#l00012">SECTORES_EMPRESA</a>.</p>
+<p class="reference">Hace referencia a <a class="el" href="noticia_8h_source.html#l00282">generarFecha()</a>, <a class="el" href="noticia_8h_source.html#l00080">ColaPrioridadNoticias::insertar()</a> y <a class="el" href="empresa_8h_source.html#l00021">SECTORES_EMPRESA</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Gráfico de llamadas para esta función:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -386,15 +394,15 @@ Funciones</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00336">336</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                                                        {</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;  &gt; Ajuste aplicado al sector &#39;&quot;</span> &lt;&lt; sector &lt;&lt; <span class="stringliteral">&quot;&#39;: &quot;</span>;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">if</span> (porcentaje &gt; 0) {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;+&quot;</span> &lt;&lt; (porcentaje * 100) &lt;&lt; <span class="stringliteral">&quot;%\n&quot;</span>;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        cout &lt;&lt; (porcentaje * 100) &lt;&lt; <span class="stringliteral">&quot;%\n&quot;</span>;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00345">345</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                                                        {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;  &gt; Ajuste aplicado al sector &#39;&quot;</span> &lt;&lt; sector &lt;&lt; <span class="stringliteral">&quot;&#39;: &quot;</span>;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span> (porcentaje &gt; 0) {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;+&quot;</span> &lt;&lt; (porcentaje * 100) &lt;&lt; <span class="stringliteral">&quot;%\n&quot;</span>;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        cout &lt;&lt; (porcentaje * 100) &lt;&lt; <span class="stringliteral">&quot;%\n&quot;</span>;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    }</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenciado por <a class="el" href="codigo_8cpp_source.html#l00103">main()</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -451,35 +459,35 @@ Funciones</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00363">363</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                                                                                                      {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordtype">string</span> ticker;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Ingrese el ticker de la empresa a consultar: &quot;</span>;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    getline(cin, ticker);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <a class="code" href="structEmpresa.html">Empresa</a>* emp = arbol.<a class="code" href="classABBEmpresas.html#a705d67b6d795dffea3edf70150e0288d">buscarEmpresa</a>(ticker);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">if</span> (!emp) {</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Empresa no encontrada.\n&quot;</span>;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    }</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    vector&lt;Noticia*&gt; noticias;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    colaNoticias.<a class="code" href="classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7">obtenerNoticias</a>(noticias);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordtype">bool</span> alguna = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\n================= CAMBIOS DE &quot;</span> &lt;&lt; emp-&gt;<a class="code" href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">nombre</a> &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; emp-&gt;<a class="code" href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">ticker</a> &lt;&lt; <span class="stringliteral">&quot;) POR NOTICIAS =================\n&quot;</span>;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot; Fecha       | Título de la noticia                | Precio antes | Precio después | Cambio | Cambio (%)\n&quot;</span>;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;--------------------------------------------------------------------------------------------------------\n&quot;</span>;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> noticia : noticias) {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">if</span> (noticia-&gt;sectorAfectado == emp-&gt;<a class="code" href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">sector</a>) {</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="comment">// Mostrar cambios</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            alguna = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        }</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">if</span> (!alguna) {</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;No hay noticias que afecten a esta empresa.\n&quot;</span>;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    }</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;========================================================================================================\n&quot;</span>;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00372">372</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                                                                                                      {</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordtype">string</span> ticker;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Ingrese el ticker de la empresa a consultar: &quot;</span>;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    getline(cin, ticker);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <a class="code" href="structEmpresa.html">Empresa</a>* emp = arbol.<a class="code" href="classABBEmpresas.html#a705d67b6d795dffea3edf70150e0288d">buscarEmpresa</a>(ticker);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">if</span> (!emp) {</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Empresa no encontrada.\n&quot;</span>;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    }</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    vector&lt;Noticia*&gt; noticias;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    colaNoticias.<a class="code" href="classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7">obtenerNoticias</a>(noticias);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordtype">bool</span> alguna = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\n================= CAMBIOS DE &quot;</span> &lt;&lt; emp-&gt;<a class="code" href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">nombre</a> &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; emp-&gt;<a class="code" href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">ticker</a> &lt;&lt; <span class="stringliteral">&quot;) POR NOTICIAS =================\n&quot;</span>;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot; Fecha       | Título de la noticia                | Precio antes | Precio después | Cambio | Cambio (%)\n&quot;</span>;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;--------------------------------------------------------------------------------------------------------\n&quot;</span>;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> noticia : noticias) {</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordflow">if</span> (noticia-&gt;sectorAfectado == emp-&gt;<a class="code" href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">sector</a>) {</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="comment">// Mostrar cambios</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            alguna = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        }</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    }</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordflow">if</span> (!alguna) {</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;No hay noticias que afecten a esta empresa.\n&quot;</span>;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;========================================================================================================\n&quot;</span>;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Hace referencia a <a class="el" href="empresa_8h_source.html#l00303">ABBEmpresas::buscarEmpresa()</a>, <a class="el" href="empresa_8h_source.html#l00105">Empresa::nombre</a>, <a class="el" href="noticia_8h_source.html#l00182">ColaPrioridadNoticias::obtenerNoticias()</a>, <a class="el" href="empresa_8h_source.html#l00107">Empresa::sector</a> y <a class="el" href="empresa_8h_source.html#l00103">Empresa::ticker</a>.</p>
+<p class="reference">Hace referencia a <a class="el" href="empresa_8h_source.html#l00312">ABBEmpresas::buscarEmpresa()</a>, <a class="el" href="empresa_8h_source.html#l00114">Empresa::nombre</a>, <a class="el" href="noticia_8h_source.html#l00191">ColaPrioridadNoticias::obtenerNoticias()</a>, <a class="el" href="empresa_8h_source.html#l00116">Empresa::sector</a> y <a class="el" href="empresa_8h_source.html#l00112">Empresa::ticker</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="codigo_8cpp_source.html#l00103">main()</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -544,21 +552,21 @@ Funciones</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00395">395</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                                                                                                      {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    vector&lt;Noticia*&gt; noticias;</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    colaNoticias.<a class="code" href="classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7">obtenerNoticias</a>(noticias);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">if</span> (noticias.empty()) {</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;No hay noticias disponibles.\n&quot;</span>;</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    }</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\n================= IMPACTO DE NOTICIAS EN EMPRESAS =================\n&quot;</span>;</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> actual : noticias) {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Noticia: &quot;</span> &lt;&lt; actual-&gt;titulo &lt;&lt; <span class="stringliteral">&quot; - Sector: &quot;</span> &lt;&lt; actual-&gt;sectorAfectado &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    }</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="noticia_8h_source.html#l00404">404</a> del archivo <a class="el" href="noticia_8h_source.html">noticia.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                                                                                                      {</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    vector&lt;Noticia*&gt; noticias;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    colaNoticias.<a class="code" href="classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7">obtenerNoticias</a>(noticias);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">if</span> (noticias.empty()) {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;No hay noticias disponibles.\n&quot;</span>;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    }</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\n================= IMPACTO DE NOTICIAS EN EMPRESAS =================\n&quot;</span>;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> actual : noticias) {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Noticia: &quot;</span> &lt;&lt; actual-&gt;titulo &lt;&lt; <span class="stringliteral">&quot; - Sector: &quot;</span> &lt;&lt; actual-&gt;sectorAfectado &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Hace referencia a <a class="el" href="noticia_8h_source.html#l00182">ColaPrioridadNoticias::obtenerNoticias()</a>.</p>
+<p class="reference">Hace referencia a <a class="el" href="noticia_8h_source.html#l00191">ColaPrioridadNoticias::obtenerNoticias()</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="codigo_8cpp_source.html#l00103">main()</a>.</p>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -582,15 +590,15 @@ Funciones</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructEmpresa_html"><div class="ttname"><a href="structEmpresa.html">Empresa</a></div><div class="ttdoc">Nodo de ABB que representa una empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00101">empresa.h:101</a></div></div>
-<div class="ttc" id="astructEmpresa_html_ae3272a72f778485c20dab09320f94b86"><div class="ttname"><a href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">Empresa::sector</a></div><div class="ttdeci">string sector</div><div class="ttdoc">Sector al que pertenece la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00107">empresa.h:107</a></div></div>
-<div class="ttc" id="anoticia_8h_html_a6370066b96779b15f4c092365be9553b"><div class="ttname"><a href="noticia_8h.html#a6370066b96779b15f4c092365be9553b">generarFecha</a></div><div class="ttdeci">string generarFecha(int diasDesdeInicio=0)</div><div class="ttdoc">Genera un string de fecha con formato &quot;YYYY-MM-DD&quot; a partir de un número de días desde el inicio.</div><div class="ttdef"><b>Definition:</b> <a href="noticia_8h_source.html#l00273">noticia.h:273</a></div></div>
-<div class="ttc" id="acodigo_8cpp_html_aea5748407935beef97b8efa9a40fd3ef"><div class="ttname"><a href="codigo_8cpp.html#aea5748407935beef97b8efa9a40fd3ef">SECTORES_EMPRESA</a></div><div class="ttdeci">const vector&lt; string &gt; SECTORES_EMPRESA</div><div class="ttdoc">&lt; Para usar std::set</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00012">empresa.h:12</a></div></div>
-<div class="ttc" id="astructEmpresa_html_a913af3d925c9dcf18bb762ef8df46c70"><div class="ttname"><a href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">Empresa::ticker</a></div><div class="ttdeci">string ticker</div><div class="ttdoc">Ticker de la empresa (clave única)</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00103">empresa.h:103</a></div></div>
-<div class="ttc" id="aclassColaPrioridadNoticias_html_a9c3a7f5944aa0f85f3ebf69c1db5eaf7"><div class="ttname"><a href="classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7">ColaPrioridadNoticias::obtenerNoticias</a></div><div class="ttdeci">void obtenerNoticias(vector&lt; Noticia * &gt; &amp;noticias)</div><div class="ttdoc">Llena un vector con punteros a todas las noticias en la cola (en orden actual).</div><div class="ttdef"><b>Definition:</b> <a href="noticia_8h_source.html#l00182">noticia.h:182</a></div></div>
-<div class="ttc" id="aclassColaPrioridadNoticias_html_a7512fe71c5e0220566c7d0d95be9862e"><div class="ttname"><a href="classColaPrioridadNoticias.html#a7512fe71c5e0220566c7d0d95be9862e">ColaPrioridadNoticias::insertar</a></div><div class="ttdeci">void insertar(int impacto, string titulo, string descripcion, string sector, string fecha, bool esPositiva=true)</div><div class="ttdoc">Inserta una noticia en la cola de prioridad según su impacto.</div><div class="ttdef"><b>Definition:</b> <a href="noticia_8h_source.html#l00071">noticia.h:71</a></div></div>
-<div class="ttc" id="astructEmpresa_html_a5dad5e57aee0b7e04844564418ceea06"><div class="ttname"><a href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">Empresa::nombre</a></div><div class="ttdeci">string nombre</div><div class="ttdoc">Nombre de la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00105">empresa.h:105</a></div></div>
-<div class="ttc" id="aclassABBEmpresas_html_a705d67b6d795dffea3edf70150e0288d"><div class="ttname"><a href="classABBEmpresas.html#a705d67b6d795dffea3edf70150e0288d">ABBEmpresas::buscarEmpresa</a></div><div class="ttdeci">Empresa * buscarEmpresa(const string &amp;ticker)</div><div class="ttdoc">Busca una empresa por ticker.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00303">empresa.h:303</a></div></div>
+<div class="ttc" id="astructEmpresa_html"><div class="ttname"><a href="structEmpresa.html">Empresa</a></div><div class="ttdoc">Nodo de ABB que representa una empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00110">empresa.h:110</a></div></div>
+<div class="ttc" id="astructEmpresa_html_ae3272a72f778485c20dab09320f94b86"><div class="ttname"><a href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">Empresa::sector</a></div><div class="ttdeci">string sector</div><div class="ttdoc">Sector al que pertenece la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00116">empresa.h:116</a></div></div>
+<div class="ttc" id="anoticia_8h_html_a6370066b96779b15f4c092365be9553b"><div class="ttname"><a href="noticia_8h.html#a6370066b96779b15f4c092365be9553b">generarFecha</a></div><div class="ttdeci">string generarFecha(int diasDesdeInicio=0)</div><div class="ttdoc">Genera un string de fecha con formato &quot;YYYY-MM-DD&quot; a partir de un número de días desde el inicio.</div><div class="ttdef"><b>Definition:</b> <a href="noticia_8h_source.html#l00282">noticia.h:282</a></div></div>
+<div class="ttc" id="acodigo_8cpp_html_aea5748407935beef97b8efa9a40fd3ef"><div class="ttname"><a href="codigo_8cpp.html#aea5748407935beef97b8efa9a40fd3ef">SECTORES_EMPRESA</a></div><div class="ttdeci">const vector&lt; string &gt; SECTORES_EMPRESA</div><div class="ttdoc">&lt; Para usar std::set</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00021">empresa.h:21</a></div></div>
+<div class="ttc" id="astructEmpresa_html_a913af3d925c9dcf18bb762ef8df46c70"><div class="ttname"><a href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">Empresa::ticker</a></div><div class="ttdeci">string ticker</div><div class="ttdoc">Ticker de la empresa (clave única)</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00112">empresa.h:112</a></div></div>
+<div class="ttc" id="aclassColaPrioridadNoticias_html_a9c3a7f5944aa0f85f3ebf69c1db5eaf7"><div class="ttname"><a href="classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7">ColaPrioridadNoticias::obtenerNoticias</a></div><div class="ttdeci">void obtenerNoticias(vector&lt; Noticia * &gt; &amp;noticias)</div><div class="ttdoc">Llena un vector con punteros a todas las noticias en la cola (en orden actual).</div><div class="ttdef"><b>Definition:</b> <a href="noticia_8h_source.html#l00191">noticia.h:191</a></div></div>
+<div class="ttc" id="aclassColaPrioridadNoticias_html_a7512fe71c5e0220566c7d0d95be9862e"><div class="ttname"><a href="classColaPrioridadNoticias.html#a7512fe71c5e0220566c7d0d95be9862e">ColaPrioridadNoticias::insertar</a></div><div class="ttdeci">void insertar(int impacto, string titulo, string descripcion, string sector, string fecha, bool esPositiva=true)</div><div class="ttdoc">Inserta una noticia en la cola de prioridad según su impacto.</div><div class="ttdef"><b>Definition:</b> <a href="noticia_8h_source.html#l00080">noticia.h:80</a></div></div>
+<div class="ttc" id="astructEmpresa_html_a5dad5e57aee0b7e04844564418ceea06"><div class="ttname"><a href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">Empresa::nombre</a></div><div class="ttdeci">string nombre</div><div class="ttdoc">Nombre de la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00114">empresa.h:114</a></div></div>
+<div class="ttc" id="aclassABBEmpresas_html_a705d67b6d795dffea3edf70150e0288d"><div class="ttname"><a href="classABBEmpresas.html#a705d67b6d795dffea3edf70150e0288d">ABBEmpresas::buscarEmpresa</a></div><div class="ttdeci">Empresa * buscarEmpresa(const string &amp;ticker)</div><div class="ttdoc">Busca una empresa por ticker.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00312">empresa.h:312</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

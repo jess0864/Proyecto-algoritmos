@@ -1,5 +1,5 @@
 <map id="noticia.h" name="noticia.h">
-<area shape="rect" id="node1" title=" " alt="" coords="12,5,91,32"/>
+<area shape="rect" id="node1" title="Definición de la estructura Noticia y la clase ColaPrioridadNoticias para gestión de noticias financi..." alt="" coords="12,5,91,32"/>
 <area shape="rect" id="node2" href="$codigo_8cpp.html" title="Código base para un sistema de gestión de acciones y noticias financieras." alt="" coords="5,155,97,181"/>
-<area shape="rect" id="node3" href="$portafolio_8h.html" title=" " alt="" coords="47,80,144,107"/>
+<area shape="rect" id="node3" href="$portafolio_8h.html" title="Definición de la clase Portafolio y del vector dinámico personalizado MiVector." alt="" coords="47,80,144,107"/>
 </map>

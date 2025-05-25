@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="empresa_8h.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="empresa_8h.html" target="_top" xlink:title="Definición de estructuras y clases para la gestión de empresas y sus precios históricos.">
 <polygon fill="white" stroke="black" points="51,-56.5 51,-75.5 119,-75.5 119,-56.5 51,-56.5"/>
 <text text-anchor="middle" x="85" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">empresa.h</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="noticia_8h.html" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="noticia_8h.html" target="_top" xlink:title="Definición de la estructura Noticia y la clase ColaPrioridadNoticias para gestión de noticias financi...">
 <polygon fill="white" stroke="black" points="136.5,-112.5 136.5,-131.5 195.5,-131.5 195.5,-112.5 136.5,-112.5"/>
 <text text-anchor="middle" x="166" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">noticia.h</text>
 </a>
@@ -51,7 +51,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="portafolio_8h.html" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="portafolio_8h.html" target="_top" xlink:title="Definición de la clase Portafolio y del vector dinámico personalizado MiVector.">
 <polygon fill="white" stroke="black" points="58.5,-168.5 58.5,-187.5 131.5,-187.5 131.5,-168.5 58.5,-168.5"/>
 <text text-anchor="middle" x="95" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">portafolio.h</text>
 </a>
