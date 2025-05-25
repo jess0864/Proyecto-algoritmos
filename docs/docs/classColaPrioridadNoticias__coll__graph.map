@@ -1,0 +1,4 @@
+<map id="ColaPrioridadNoticias" name="ColaPrioridadNoticias">
+<area shape="rect" id="node1" title="Implementa una cola de prioridad para noticias, ordenadas por impacto." alt="" coords="5,219,204,501"/>
+<area shape="rect" id="node2" href="$structNoticia.html" title="Estructura que representa una noticia con impacto, título, descripción, sector afectado,..." alt="" coords="37,5,172,156"/>
+</map>

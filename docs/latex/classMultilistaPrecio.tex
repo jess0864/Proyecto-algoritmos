@@ -1,0 +1,224 @@
+\hypertarget{classMultilistaPrecio}{}\doxysection{Referencia de la Clase Multilista\+Precio}
+\label{classMultilistaPrecio}\index{MultilistaPrecio@{MultilistaPrecio}}
+
+
+Multilista para historial de precios de una acción.  
+
+
+
+
+{\ttfamily \#include $<$empresa.\+h$>$}
+
+
+
+Diagrama de colaboración para Multilista\+Precio\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classMultilistaPrecio__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMultilistaPrecio_a90ab8a61ae12056cda60c3dbd35762af}{agregar\+Precio}} (const string \&fecha, float precio)
+\begin{DoxyCompactList}\small\item\em Agrega un precio al historial (al inicio de la lista). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMultilistaPrecio_ac7a0d61efe51037e2f267e591c569ee2}{imprimir}} ()
+\begin{DoxyCompactList}\small\item\em Imprime el historial de precios por consola. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMultilistaPrecio_aff78bd08528c48ef92941da673871ad7}{Multilista\+Precio}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classMultilistaPrecio}{Multilista\+Precio}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classMultilistaPrecio_aab95a547304a1d3168a6c1916ea3b757}{promedio\+Movil}} (int dias)
+\begin{DoxyCompactList}\small\item\em Calcula el promedio móvil de los últimos \textquotesingle{}dias\textquotesingle{} precios. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structNodoPrecio}{Nodo\+Precio}} $\ast$ \mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}}
+\begin{DoxyCompactList}\small\item\em Puntero al primer nodo de la lista de precios. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Multilista para historial de precios de una acción. 
+
+Definición en la línea 45 del archivo empresa.\+h.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classMultilistaPrecio_aff78bd08528c48ef92941da673871ad7}\label{classMultilistaPrecio_aff78bd08528c48ef92941da673871ad7}} 
+\index{MultilistaPrecio@{MultilistaPrecio}!MultilistaPrecio@{MultilistaPrecio}}
+\index{MultilistaPrecio@{MultilistaPrecio}!MultilistaPrecio@{MultilistaPrecio}}
+\doxysubsubsection{\texorpdfstring{MultilistaPrecio()}{MultilistaPrecio()}}
+{\footnotesize\ttfamily Multilista\+Precio\+::\+Multilista\+Precio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de \mbox{\hyperlink{classMultilistaPrecio}{Multilista\+Precio}}. 
+
+
+
+Definición en la línea 53 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53 : \mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}}(\textcolor{keyword}{nullptr}) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classMultilistaPrecio_a90ab8a61ae12056cda60c3dbd35762af}\label{classMultilistaPrecio_a90ab8a61ae12056cda60c3dbd35762af}} 
+\index{MultilistaPrecio@{MultilistaPrecio}!agregarPrecio@{agregarPrecio}}
+\index{agregarPrecio@{agregarPrecio}!MultilistaPrecio@{MultilistaPrecio}}
+\doxysubsubsection{\texorpdfstring{agregarPrecio()}{agregarPrecio()}}
+{\footnotesize\ttfamily void Multilista\+Precio\+::agregar\+Precio (\begin{DoxyParamCaption}\item[{const string \&}]{fecha,  }\item[{float}]{precio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Agrega un precio al historial (al inicio de la lista). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fecha} & Fecha del precio. \\
+\hline
+{\em precio} & Precio de cierre. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 60 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60                                                           \{}
+\DoxyCodeLine{61         \mbox{\hyperlink{structNodoPrecio}{NodoPrecio}}* nuevo = \textcolor{keyword}{new} \mbox{\hyperlink{structNodoPrecio}{NodoPrecio}}(fecha, precio);}
+\DoxyCodeLine{62         nuevo-\/>\mbox{\hyperlink{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}{siguiente}} = \mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}};}
+\DoxyCodeLine{63         \mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}} = nuevo;}
+\DoxyCodeLine{64     \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a Nodo\+Precio\+::siguiente.
+
+
+
+Referenciado por A\+B\+B\+Empresas\+::agregar\+Precio() y A\+B\+B\+Empresas\+::inicializar\+Empresas().
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMultilistaPrecio_a90ab8a61ae12056cda60c3dbd35762af_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMultilistaPrecio_ac7a0d61efe51037e2f267e591c569ee2}\label{classMultilistaPrecio_ac7a0d61efe51037e2f267e591c569ee2}} 
+\index{MultilistaPrecio@{MultilistaPrecio}!imprimir@{imprimir}}
+\index{imprimir@{imprimir}!MultilistaPrecio@{MultilistaPrecio}}
+\doxysubsubsection{\texorpdfstring{imprimir()}{imprimir()}}
+{\footnotesize\ttfamily void Multilista\+Precio\+::imprimir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprime el historial de precios por consola. 
+
+
+
+Definición en la línea 86 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86                     \{}
+\DoxyCodeLine{87         \mbox{\hyperlink{structNodoPrecio}{NodoPrecio}}* actual = \mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}};}
+\DoxyCodeLine{88         \textcolor{keywordflow}{while} (actual) \{}
+\DoxyCodeLine{89             cout << actual-\/>\mbox{\hyperlink{structNodoPrecio_a2c529be99d1d2770e6e4d85e66357f1a}{fecha}} << \textcolor{stringliteral}{": "} << actual-\/>\mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precioCierre}} << \textcolor{stringliteral}{"  "};}
+\DoxyCodeLine{90             actual = actual-\/>\mbox{\hyperlink{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}{siguiente}};}
+\DoxyCodeLine{91         \}}
+\DoxyCodeLine{92         cout << endl;}
+\DoxyCodeLine{93     \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a Nodo\+Precio\+::fecha, Nodo\+Precio\+::precio\+Cierre y Nodo\+Precio\+::siguiente.
+
+\mbox{\Hypertarget{classMultilistaPrecio_aab95a547304a1d3168a6c1916ea3b757}\label{classMultilistaPrecio_aab95a547304a1d3168a6c1916ea3b757}} 
+\index{MultilistaPrecio@{MultilistaPrecio}!promedioMovil@{promedioMovil}}
+\index{promedioMovil@{promedioMovil}!MultilistaPrecio@{MultilistaPrecio}}
+\doxysubsubsection{\texorpdfstring{promedioMovil()}{promedioMovil()}}
+{\footnotesize\ttfamily float Multilista\+Precio\+::promedio\+Movil (\begin{DoxyParamCaption}\item[{int}]{dias }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula el promedio móvil de los últimos \textquotesingle{}dias\textquotesingle{} precios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em dias} & Número de días a considerar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Promedio móvil calculado. 
+\end{DoxyReturn}
+
+
+Definición en la línea 71 del archivo empresa.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71                                   \{}
+\DoxyCodeLine{72         \textcolor{keywordtype}{float} suma = 0;}
+\DoxyCodeLine{73         \textcolor{keywordtype}{int} cont = 0;}
+\DoxyCodeLine{74         \mbox{\hyperlink{structNodoPrecio}{NodoPrecio}}* actual = \mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}};}
+\DoxyCodeLine{75         \textcolor{keywordflow}{while} (actual \&\& cont < dias) \{}
+\DoxyCodeLine{76             suma += actual-\/>\mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precioCierre}};}
+\DoxyCodeLine{77             actual = actual-\/>\mbox{\hyperlink{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}{siguiente}};}
+\DoxyCodeLine{78             cont++;}
+\DoxyCodeLine{79         \}}
+\DoxyCodeLine{80         \textcolor{keywordflow}{return} (cont > 0) ? suma / cont : 0;}
+\DoxyCodeLine{81     \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a Nodo\+Precio\+::precio\+Cierre y Nodo\+Precio\+::siguiente.
+
+
+
+Referenciado por main() y Portafolio\+::recomendar\+Compra().
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMultilistaPrecio_aab95a547304a1d3168a6c1916ea3b757_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}\label{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}} 
+\index{MultilistaPrecio@{MultilistaPrecio}!cabeza@{cabeza}}
+\index{cabeza@{cabeza}!MultilistaPrecio@{MultilistaPrecio}}
+\doxysubsubsection{\texorpdfstring{cabeza}{cabeza}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNodoPrecio}{Nodo\+Precio}}$\ast$ Multilista\+Precio\+::cabeza}
+
+
+
+Puntero al primer nodo de la lista de precios. 
+
+
+
+Definición en la línea 48 del archivo empresa.\+h.
+
+
+
+Referenciado por A\+B\+B\+Empresas\+::destruir(), A\+B\+B\+Empresas\+::inicializar\+Empresas(), main(), mostrar\+Cambios\+Por\+Noticias\+Empresa() y Portafolio\+::recomendar\+Compra().
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{empresa_8h}{empresa.\+h}}\end{DoxyCompactItemize}

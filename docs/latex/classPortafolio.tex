@@ -1,0 +1,523 @@
+\hypertarget{classPortafolio}{}\doxysection{Referencia de la Clase Portafolio}
+\label{classPortafolio}\index{Portafolio@{Portafolio}}
+
+
+Clase \mbox{\hyperlink{classPortafolio}{Portafolio}} que usa una pila para almacenar activos.  
+
+
+
+
+{\ttfamily \#include $<$portafolio.\+h$>$}
+
+
+
+Diagrama de colaboración para Portafolio\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classPortafolio__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPortafolio_a0f318f5e76a14783e28f2661d894c369}{agregar\+Activo}} (const string \&activo)
+\begin{DoxyCompactList}\small\item\em Agrega un activo al portafolio (al tope de la pila). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPortafolio_a2a3d95a628382a88d45d666982538b4e}{eliminar\+Activo}} (const string \&activo)
+\begin{DoxyCompactList}\small\item\em Elimina un activo específico del portafolio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPortafolio_a89e48511af8ac261a2b18deb6d3ce460}{eliminar\+Ultimo\+Activo}} ()
+\begin{DoxyCompactList}\small\item\em Elimina el último activo agregado (pop). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPortafolio_a0fd1f6dd832435c9c7180a2701058748}{mostrar}} () const
+\begin{DoxyCompactList}\small\item\em Muestra el contenido del portafolio. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \mbox{\hyperlink{classPortafolio_a3f3249951cf442f25729fc3b0b3a891a}{obtener\+Activos}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve todos los activos del portafolio como vector sin usar push\+\_\+back. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPortafolio_af8bfef7dde343b4fe1fb483047865656}{ordenar\+Activos}} ()
+\begin{DoxyCompactList}\small\item\em Ordena los activos del portafolio en orden alfabético ascendente (A-\/Z). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPortafolio_a5e2574522ec84093d207a87ea9b38698}{Portafolio}} (string nombre)
+\begin{DoxyCompactList}\small\item\em Constructor que inicializa el portafolio con un nombre de usuario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPortafolio_ae6d06c70b6052cd798b31b002509e346}{recomendar\+Compra}} (const string \&ticker, \mbox{\hyperlink{classABBEmpresas}{A\+B\+B\+Empresas}} \&arbol, \mbox{\hyperlink{classColaPrioridadNoticias}{Cola\+Prioridad\+Noticias}} \&cola\+Noticias)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPila}{Pila}} \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}
+\item 
+string \mbox{\hyperlink{classPortafolio_aa659468bf4ebb80b475c4df2dcef36df}{nombre\+Usuario}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \mbox{\hyperlink{classPortafolio}{Portafolio}} que usa una pila para almacenar activos. 
+
+Definición en la línea 142 del archivo portafolio.\+h.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classPortafolio_a5e2574522ec84093d207a87ea9b38698}\label{classPortafolio_a5e2574522ec84093d207a87ea9b38698}} 
+\index{Portafolio@{Portafolio}!Portafolio@{Portafolio}}
+\index{Portafolio@{Portafolio}!Portafolio@{Portafolio}}
+\doxysubsubsection{\texorpdfstring{Portafolio()}{Portafolio()}}
+{\footnotesize\ttfamily Portafolio\+::\+Portafolio (\begin{DoxyParamCaption}\item[{string}]{nombre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor que inicializa el portafolio con un nombre de usuario. 
+
+
+
+Definición en la línea 151 del archivo portafolio.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{151 : \mbox{\hyperlink{classPortafolio_aa659468bf4ebb80b475c4df2dcef36df}{nombreUsuario}}(nombre) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classPortafolio_a0f318f5e76a14783e28f2661d894c369}\label{classPortafolio_a0f318f5e76a14783e28f2661d894c369}} 
+\index{Portafolio@{Portafolio}!agregarActivo@{agregarActivo}}
+\index{agregarActivo@{agregarActivo}!Portafolio@{Portafolio}}
+\doxysubsubsection{\texorpdfstring{agregarActivo()}{agregarActivo()}}
+{\footnotesize\ttfamily void Portafolio\+::agregar\+Activo (\begin{DoxyParamCaption}\item[{const string \&}]{activo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Agrega un activo al portafolio (al tope de la pila). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em activo} & Nombre del activo a agregar. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 158 del archivo portafolio.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158                                              \{}
+\DoxyCodeLine{159         \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_ab0e03bdc398980d2fa802648a2eb7d8f}{push}}(activo);}
+\DoxyCodeLine{160         cout << \textcolor{stringliteral}{"Activo '"} << activo << \textcolor{stringliteral}{"' agregado."} << endl;}
+\DoxyCodeLine{161     \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a Pila\+::push().
+
+
+
+Referenciado por main().
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classPortafolio_a0f318f5e76a14783e28f2661d894c369_cgraph}
+\end{center}
+\end{figure}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{classPortafolio_a0f318f5e76a14783e28f2661d894c369_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPortafolio_a2a3d95a628382a88d45d666982538b4e}\label{classPortafolio_a2a3d95a628382a88d45d666982538b4e}} 
+\index{Portafolio@{Portafolio}!eliminarActivo@{eliminarActivo}}
+\index{eliminarActivo@{eliminarActivo}!Portafolio@{Portafolio}}
+\doxysubsubsection{\texorpdfstring{eliminarActivo()}{eliminarActivo()}}
+{\footnotesize\ttfamily bool Portafolio\+::eliminar\+Activo (\begin{DoxyParamCaption}\item[{const string \&}]{activo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina un activo específico del portafolio. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em activo} & Nombre del activo a eliminar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se eliminó, false si no se encontró. 
+\end{DoxyReturn}
+
+
+Definición en la línea 181 del archivo portafolio.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{181                                               \{}
+\DoxyCodeLine{182         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a83f565e49638c5a19da1484aa3dc0d00}{eliminar}}(activo)) \{}
+\DoxyCodeLine{183             cout << \textcolor{stringliteral}{"Activo '"} << activo << \textcolor{stringliteral}{"' eliminado."} << endl;}
+\DoxyCodeLine{184             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{185         \}}
+\DoxyCodeLine{186         cout << \textcolor{stringliteral}{"Activo '"} << activo << \textcolor{stringliteral}{"' no encontrado."} << endl;}
+\DoxyCodeLine{187         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{188     \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a Pila\+::eliminar().
+
+
+
+Referenciado por main().
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPortafolio_a2a3d95a628382a88d45d666982538b4e_cgraph}
+\end{center}
+\end{figure}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classPortafolio_a2a3d95a628382a88d45d666982538b4e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPortafolio_a89e48511af8ac261a2b18deb6d3ce460}\label{classPortafolio_a89e48511af8ac261a2b18deb6d3ce460}} 
+\index{Portafolio@{Portafolio}!eliminarUltimoActivo@{eliminarUltimoActivo}}
+\index{eliminarUltimoActivo@{eliminarUltimoActivo}!Portafolio@{Portafolio}}
+\doxysubsubsection{\texorpdfstring{eliminarUltimoActivo()}{eliminarUltimoActivo()}}
+{\footnotesize\ttfamily void Portafolio\+::eliminar\+Ultimo\+Activo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina el último activo agregado (pop). 
+
+
+
+Definición en la línea 166 del archivo portafolio.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{166                                 \{}
+\DoxyCodeLine{167         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a15420d1c215037d91a6908f5b5533e8a}{isEmpty}}()) \{}
+\DoxyCodeLine{168             cout << \textcolor{stringliteral}{"Activo '"} << \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a4a411a01fdc6c1463a5010371d061f4e}{top}}() << \textcolor{stringliteral}{"' eliminado."} << endl;}
+\DoxyCodeLine{169             \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a81d09f97e002ddd279bf43b93b0cb372}{pop}}();}
+\DoxyCodeLine{170         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{171             cout << \textcolor{stringliteral}{"No hay activos para eliminar."} << endl;}
+\DoxyCodeLine{172         \}}
+\DoxyCodeLine{173     \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a Pila\+::is\+Empty(), Pila\+::pop() y Pila\+::top().
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classPortafolio_a89e48511af8ac261a2b18deb6d3ce460_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPortafolio_a0fd1f6dd832435c9c7180a2701058748}\label{classPortafolio_a0fd1f6dd832435c9c7180a2701058748}} 
+\index{Portafolio@{Portafolio}!mostrar@{mostrar}}
+\index{mostrar@{mostrar}!Portafolio@{Portafolio}}
+\doxysubsubsection{\texorpdfstring{mostrar()}{mostrar()}}
+{\footnotesize\ttfamily void Portafolio\+::mostrar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muestra el contenido del portafolio. 
+
+
+
+Definición en la línea 193 del archivo portafolio.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{193                          \{}
+\DoxyCodeLine{194         cout << \textcolor{stringliteral}{"Portafolio de "} << \mbox{\hyperlink{classPortafolio_aa659468bf4ebb80b475c4df2dcef36df}{nombreUsuario}} << \textcolor{stringliteral}{":\(\backslash\)n"};}
+\DoxyCodeLine{195         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a15420d1c215037d91a6908f5b5533e8a}{isEmpty}}())}
+\DoxyCodeLine{196             cout << \textcolor{stringliteral}{"(Vacío)\(\backslash\)n"};}
+\DoxyCodeLine{197         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{198             \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a1ce13b01a65f2971c233ebeff202268f}{imprimir}}();}
+\DoxyCodeLine{199     \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a Pila\+::imprimir() y Pila\+::is\+Empty().
+
+
+
+Referenciado por main().
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{classPortafolio_a0fd1f6dd832435c9c7180a2701058748_cgraph}
+\end{center}
+\end{figure}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{classPortafolio_a0fd1f6dd832435c9c7180a2701058748_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPortafolio_a3f3249951cf442f25729fc3b0b3a891a}\label{classPortafolio_a3f3249951cf442f25729fc3b0b3a891a}} 
+\index{Portafolio@{Portafolio}!obtenerActivos@{obtenerActivos}}
+\index{obtenerActivos@{obtenerActivos}!Portafolio@{Portafolio}}
+\doxysubsubsection{\texorpdfstring{obtenerActivos()}{obtenerActivos()}}
+{\footnotesize\ttfamily vector$<$string$>$ Portafolio\+::obtener\+Activos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve todos los activos del portafolio como vector sin usar push\+\_\+back. 
+
+\begin{DoxyReturn}{Devuelve}
+Vector de strings con los nombres de los activos. 
+\end{DoxyReturn}
+
+
+Definición en la línea 253 del archivo portafolio.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{253                                           \{}
+\DoxyCodeLine{254         \textcolor{comment}{// Contar cuántos nodos hay}}
+\DoxyCodeLine{255         \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{256         \mbox{\hyperlink{structNodo}{Nodo}}* actual = \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a3e63f57628fcef177e21ded6e9e0f0db}{cima}};}
+\DoxyCodeLine{257         \textcolor{keywordflow}{while} (actual != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{258             count++;}
+\DoxyCodeLine{259             actual = actual-\/>\mbox{\hyperlink{structNodo_a95d0647f3b261e8633fbcb626a0ee952}{siguiente}};}
+\DoxyCodeLine{260         \}}
+\DoxyCodeLine{261     }
+\DoxyCodeLine{262         \textcolor{comment}{// Crear vector del tamaño exacto}}
+\DoxyCodeLine{263         vector<string> v(count);}
+\DoxyCodeLine{264     }
+\DoxyCodeLine{265         \textcolor{comment}{// Llenar el vector manualmente}}
+\DoxyCodeLine{266         actual = \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a3e63f57628fcef177e21ded6e9e0f0db}{cima}};}
+\DoxyCodeLine{267         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < count; ++i) \{}
+\DoxyCodeLine{268             v[i] = actual-\/>\mbox{\hyperlink{structNodo_a38c804e948ad9c08ec4957d80858f6b0}{valor}};}
+\DoxyCodeLine{269             actual = actual-\/>\mbox{\hyperlink{structNodo_a95d0647f3b261e8633fbcb626a0ee952}{siguiente}};}
+\DoxyCodeLine{270         \}}
+\DoxyCodeLine{271     }
+\DoxyCodeLine{272         \textcolor{keywordflow}{return} v;}
+\DoxyCodeLine{273     \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a Pila\+::cima, Nodo\+::siguiente y Nodo\+::valor.
+
+
+
+Referenciado por main().
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classPortafolio_a3f3249951cf442f25729fc3b0b3a891a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPortafolio_af8bfef7dde343b4fe1fb483047865656}\label{classPortafolio_af8bfef7dde343b4fe1fb483047865656}} 
+\index{Portafolio@{Portafolio}!ordenarActivos@{ordenarActivos}}
+\index{ordenarActivos@{ordenarActivos}!Portafolio@{Portafolio}}
+\doxysubsubsection{\texorpdfstring{ordenarActivos()}{ordenarActivos()}}
+{\footnotesize\ttfamily void Portafolio\+::ordenar\+Activos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ordena los activos del portafolio en orden alfabético ascendente (A-\/Z). 
+
+Utiliza una pila auxiliar y manipulación directa de punteros para insertar los elementos en orden sin usar la función push(). 
+
+Definición en la línea 207 del archivo portafolio.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{207                           \{}
+\DoxyCodeLine{208         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a15420d1c215037d91a6908f5b5533e8a}{isEmpty}}()) \{}
+\DoxyCodeLine{209             cout << \textcolor{stringliteral}{"Nada que ordenar.\(\backslash\)n"};}
+\DoxyCodeLine{210             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{211         \}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213         \mbox{\hyperlink{classPila}{Pila}} pilaOrdenada;}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215         \textcolor{comment}{// Proceso de ordenamiento tipo inserción}}
+\DoxyCodeLine{216         \textcolor{keywordflow}{while} (!\mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a15420d1c215037d91a6908f5b5533e8a}{isEmpty}}()) \{}
+\DoxyCodeLine{217             \textcolor{keywordtype}{string} temp = \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a4a411a01fdc6c1463a5010371d061f4e}{top}}();}
+\DoxyCodeLine{218             \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a81d09f97e002ddd279bf43b93b0cb372}{pop}}();}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220             \textcolor{comment}{// Regresar los mayores a la pila original}}
+\DoxyCodeLine{221             \textcolor{keywordflow}{while} (!pilaOrdenada.\mbox{\hyperlink{classPila_a15420d1c215037d91a6908f5b5533e8a}{isEmpty}}() \&\& pilaOrdenada.\mbox{\hyperlink{classPila_a4a411a01fdc6c1463a5010371d061f4e}{top}}() > temp) \{}
+\DoxyCodeLine{222                 \mbox{\hyperlink{structNodo}{Nodo}}* mover = \textcolor{keyword}{new} \mbox{\hyperlink{structNodo}{Nodo}};}
+\DoxyCodeLine{223                 mover-\/>\mbox{\hyperlink{structNodo_a38c804e948ad9c08ec4957d80858f6b0}{valor}} = pilaOrdenada.\mbox{\hyperlink{classPila_a4a411a01fdc6c1463a5010371d061f4e}{top}}();}
+\DoxyCodeLine{224                 mover-\/>\mbox{\hyperlink{structNodo_a95d0647f3b261e8633fbcb626a0ee952}{siguiente}} = \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a3e63f57628fcef177e21ded6e9e0f0db}{cima}};}
+\DoxyCodeLine{225                 \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a3e63f57628fcef177e21ded6e9e0f0db}{cima}} = mover;}
+\DoxyCodeLine{226                 pilaOrdenada.\mbox{\hyperlink{classPila_a81d09f97e002ddd279bf43b93b0cb372}{pop}}();}
+\DoxyCodeLine{227             \}}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229             \textcolor{comment}{// Insertar temp ordenadamente sin push}}
+\DoxyCodeLine{230             \mbox{\hyperlink{structNodo}{Nodo}}* nuevo = \textcolor{keyword}{new} \mbox{\hyperlink{structNodo}{Nodo}};}
+\DoxyCodeLine{231             nuevo-\/>\mbox{\hyperlink{structNodo_a38c804e948ad9c08ec4957d80858f6b0}{valor}} = temp;}
+\DoxyCodeLine{232             nuevo-\/>\mbox{\hyperlink{structNodo_a95d0647f3b261e8633fbcb626a0ee952}{siguiente}} = pilaOrdenada.\mbox{\hyperlink{classPila_a3e63f57628fcef177e21ded6e9e0f0db}{cima}};}
+\DoxyCodeLine{233             pilaOrdenada.\mbox{\hyperlink{classPila_a3e63f57628fcef177e21ded6e9e0f0db}{cima}} = nuevo;}
+\DoxyCodeLine{234         \}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236         \textcolor{comment}{// Restaurar activos desde la pila ordenada}}
+\DoxyCodeLine{237         \textcolor{keywordflow}{while} (!pilaOrdenada.\mbox{\hyperlink{classPila_a15420d1c215037d91a6908f5b5533e8a}{isEmpty}}()) \{}
+\DoxyCodeLine{238             \mbox{\hyperlink{structNodo}{Nodo}}* mover = \textcolor{keyword}{new} \mbox{\hyperlink{structNodo}{Nodo}};}
+\DoxyCodeLine{239             mover-\/>\mbox{\hyperlink{structNodo_a38c804e948ad9c08ec4957d80858f6b0}{valor}} = pilaOrdenada.\mbox{\hyperlink{classPila_a4a411a01fdc6c1463a5010371d061f4e}{top}}();}
+\DoxyCodeLine{240             mover-\/>\mbox{\hyperlink{structNodo_a95d0647f3b261e8633fbcb626a0ee952}{siguiente}} = \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a3e63f57628fcef177e21ded6e9e0f0db}{cima}};}
+\DoxyCodeLine{241             \mbox{\hyperlink{classPortafolio_a46e88575489dcad3ecfd935eb829d698}{activos}}.\mbox{\hyperlink{classPila_a3e63f57628fcef177e21ded6e9e0f0db}{cima}} = mover;}
+\DoxyCodeLine{242             pilaOrdenada.\mbox{\hyperlink{classPila_a81d09f97e002ddd279bf43b93b0cb372}{pop}}();}
+\DoxyCodeLine{243         \}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245         cout << \textcolor{stringliteral}{"Activos ordenados alfabéticamente.\(\backslash\)n"};}
+\DoxyCodeLine{246     \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a Pila\+::cima, Pila\+::is\+Empty(), Pila\+::pop(), Nodo\+::siguiente, Pila\+::top() y Nodo\+::valor.
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classPortafolio_af8bfef7dde343b4fe1fb483047865656_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPortafolio_ae6d06c70b6052cd798b31b002509e346}\label{classPortafolio_ae6d06c70b6052cd798b31b002509e346}} 
+\index{Portafolio@{Portafolio}!recomendarCompra@{recomendarCompra}}
+\index{recomendarCompra@{recomendarCompra}!Portafolio@{Portafolio}}
+\doxysubsubsection{\texorpdfstring{recomendarCompra()}{recomendarCompra()}}
+{\footnotesize\ttfamily void Portafolio\+::recomendar\+Compra (\begin{DoxyParamCaption}\item[{const string \&}]{ticker,  }\item[{\mbox{\hyperlink{classABBEmpresas}{A\+B\+B\+Empresas}} \&}]{arbol,  }\item[{\mbox{\hyperlink{classColaPrioridadNoticias}{Cola\+Prioridad\+Noticias}} \&}]{cola\+Noticias }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea 278 del archivo portafolio.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{278                                                                                                          \{}
+\DoxyCodeLine{279         \mbox{\hyperlink{structEmpresa}{Empresa}}* emp = arbol.\mbox{\hyperlink{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}{buscarEmpresa}}(ticker);}
+\DoxyCodeLine{280         \textcolor{keywordflow}{if} (!emp) \{}
+\DoxyCodeLine{281             cout << \textcolor{stringliteral}{"No se encontró la empresa para el ticker '"} << ticker << \textcolor{stringliteral}{"'.\(\backslash\)n"};}
+\DoxyCodeLine{282             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{283         \}}
+\DoxyCodeLine{284         \textcolor{comment}{// 1. ¿Tendencia positiva? (precio actual > promedio últimos 5 días)}}
+\DoxyCodeLine{285         \textcolor{keywordtype}{float} prom5 = emp-\/>\mbox{\hyperlink{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}{historialPrecios}}.\mbox{\hyperlink{classMultilistaPrecio_aab95a547304a1d3168a6c1916ea3b757}{promedioMovil}}(5);}
+\DoxyCodeLine{286         \textcolor{keywordtype}{bool} tendenciaPositiva = emp-\/>\mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precioActual}} > prom5;}
+\DoxyCodeLine{287         cout << \textcolor{stringliteral}{"Tendencia positiva (precio actual \$"} << emp-\/>\mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precioActual}} << \textcolor{stringliteral}{" > promedio 5 días \$"} << prom5 << \textcolor{stringliteral}{"): "};}
+\DoxyCodeLine{288         cout << (tendenciaPositiva ? \textcolor{stringliteral}{"Sí"} : \textcolor{stringliteral}{"No"}) << endl;}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290         \textcolor{keywordflow}{if} (tendenciaPositiva) \{}
+\DoxyCodeLine{291             \textcolor{comment}{// 2. ¿Noticias positivas? (noticias recientes con impacto positivo y esPositiva)}}
+\DoxyCodeLine{292             \textcolor{keywordtype}{bool} noticiaPositiva = \textcolor{keyword}{false};}
+\DoxyCodeLine{293             vector<Noticia*> noticias;}
+\DoxyCodeLine{294             colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_a9c3a7f5944aa0f85f3ebf69c1db5eaf7}{obtenerNoticias}}(noticias);}
+\DoxyCodeLine{295             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} n : noticias) \{}
+\DoxyCodeLine{296                 \textcolor{keywordflow}{if} (n-\/>sectorAfectado == emp-\/>\mbox{\hyperlink{structEmpresa_ae3272a72f778485c20dab09320f94b86}{sector}} \&\& n-\/>impacto >= 6 \&\& n-\/>esPositiva) \{}
+\DoxyCodeLine{297                     noticiaPositiva = \textcolor{keyword}{true};}
+\DoxyCodeLine{298                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{299                 \}}
+\DoxyCodeLine{300             \}}
+\DoxyCodeLine{301             cout << \textcolor{stringliteral}{"¿Noticias positivas recientes en el sector? "} << (noticiaPositiva ? \textcolor{stringliteral}{"Sí"} : \textcolor{stringliteral}{"No"}) << endl;}
+\DoxyCodeLine{302             \textcolor{keywordflow}{if} (noticiaPositiva) \{}
+\DoxyCodeLine{303                 cout << \textcolor{stringliteral}{"→ Recomendación: COMPRAR\(\backslash\)n"};}
+\DoxyCodeLine{304             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{305                 cout << \textcolor{stringliteral}{"→ Recomendación: ESPERAR\(\backslash\)n"};}
+\DoxyCodeLine{306             \}}
+\DoxyCodeLine{307         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{308             \textcolor{comment}{// 3. ¿Volatilidad baja? (desviación estándar últimos 5 días < 3\%)}}
+\DoxyCodeLine{309             \textcolor{keywordtype}{float} precios[5];}
+\DoxyCodeLine{310             \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{311             \mbox{\hyperlink{structNodoPrecio}{NodoPrecio}}* p = emp-\/>\mbox{\hyperlink{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}{historialPrecios}}.\mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}};}
+\DoxyCodeLine{312             \textcolor{keywordflow}{while} (p \&\& count < 5) \{}
+\DoxyCodeLine{313                 precios[count++] = p-\/>\mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precioCierre}};}
+\DoxyCodeLine{314                 p = p-\/>\mbox{\hyperlink{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}{siguiente}};}
+\DoxyCodeLine{315             \}}
+\DoxyCodeLine{316             \textcolor{keywordtype}{float} media = 0;}
+\DoxyCodeLine{317             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < count; ++i) media += precios[i];}
+\DoxyCodeLine{318             \textcolor{keywordflow}{if} (count > 0) media /= count;}
+\DoxyCodeLine{319             \textcolor{keywordtype}{float} var = 0;}
+\DoxyCodeLine{320             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < count; ++i) var += (precios[i] -\/ media) * (precios[i] -\/ media);}
+\DoxyCodeLine{321             \textcolor{keywordtype}{float} desv = (count > 0) ? sqrt(var / count) : 0;}
+\DoxyCodeLine{322             \textcolor{keywordtype}{float} desvPorc = (media > 0) ? (desv / media) * 100.0f : 0;}
+\DoxyCodeLine{323             \textcolor{keywordtype}{bool} volatilidadBaja = desvPorc < 3.0f;}
+\DoxyCodeLine{324             cout << \textcolor{stringliteral}{"Volatilidad últimos 5 días: "} << desvPorc << \textcolor{stringliteral}{"\% ("} << (volatilidadBaja ? \textcolor{stringliteral}{"Baja"} : \textcolor{stringliteral}{"Alta"}) << \textcolor{stringliteral}{")\(\backslash\)n"};}
+\DoxyCodeLine{325             \textcolor{keywordflow}{if} (volatilidadBaja) \{}
+\DoxyCodeLine{326                 cout << \textcolor{stringliteral}{"→ Recomendación: COMPRAR\(\backslash\)n"};}
+\DoxyCodeLine{327             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{328                 cout << \textcolor{stringliteral}{"→ Recomendación: NO COMPRAR\(\backslash\)n"};}
+\DoxyCodeLine{329             \}}
+\DoxyCodeLine{330         \}}
+\DoxyCodeLine{331     \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a A\+B\+B\+Empresas\+::buscar\+Empresa(), Multilista\+Precio\+::cabeza, Empresa\+::historial\+Precios, Cola\+Prioridad\+Noticias\+::obtener\+Noticias(), Empresa\+::precio\+Actual, Nodo\+Precio\+::precio\+Cierre, Multilista\+Precio\+::promedio\+Movil(), Empresa\+::sector y Nodo\+Precio\+::siguiente.
+
+
+
+Referenciado por main().
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPortafolio_ae6d06c70b6052cd798b31b002509e346_cgraph}
+\end{center}
+\end{figure}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classPortafolio_ae6d06c70b6052cd798b31b002509e346_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classPortafolio_a46e88575489dcad3ecfd935eb829d698}\label{classPortafolio_a46e88575489dcad3ecfd935eb829d698}} 
+\index{Portafolio@{Portafolio}!activos@{activos}}
+\index{activos@{activos}!Portafolio@{Portafolio}}
+\doxysubsubsection{\texorpdfstring{activos}{activos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPila}{Pila}} Portafolio\+::activos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea 145 del archivo portafolio.\+h.
+
+\mbox{\Hypertarget{classPortafolio_aa659468bf4ebb80b475c4df2dcef36df}\label{classPortafolio_aa659468bf4ebb80b475c4df2dcef36df}} 
+\index{Portafolio@{Portafolio}!nombreUsuario@{nombreUsuario}}
+\index{nombreUsuario@{nombreUsuario}!Portafolio@{Portafolio}}
+\doxysubsubsection{\texorpdfstring{nombreUsuario}{nombreUsuario}}
+{\footnotesize\ttfamily string Portafolio\+::nombre\+Usuario\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea 144 del archivo portafolio.\+h.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portafolio_8h}{portafolio.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="empresa.h" name="empresa.h">
+<area shape="rect" id="node1" title="Define las estructuras y clases para la gestión de empresas y sus precios históricos." alt="" coords="77,5,167,32"/>
+<area shape="rect" id="node2" href="$noticia_8h.html" title="Define la estructura Noticia y la clase ColaPrioridadNoticias para la gestión de noticias financieras..." alt="" coords="83,80,161,107"/>
+<area shape="rect" id="node3" href="$portafolio_8h.html" title="Define la clase Portafolio y la estructura de pila para gestionar activos de usuario." alt="" coords="5,155,103,181"/>
+<area shape="rect" id="node4" href="$codigo_8cpp.html" title="Archivo principal que implementa el menú y la lógica de interacción del sistema de gestión de accione..." alt="" coords="95,229,187,256"/>
+</map>

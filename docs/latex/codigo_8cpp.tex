@@ -1,0 +1,716 @@
+\hypertarget{codigo_8cpp}{}\doxysection{Referencia del Archivo codigo.\+cpp}
+\label{codigo_8cpp}\index{codigo.cpp@{codigo.cpp}}
+
+
+Archivo principal que implementa el menú y la lógica de interacción del sistema de gestión de acciones y noticias financieras.  
+
+
+{\ttfamily \#include \char`\"{}empresa.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}noticia.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}portafolio.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$set$>$}\newline
+Dependencia gráfica adjunta para codigo.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{codigo_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{codigo_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Función principal del programa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{codigo_8cpp_a18fa8d8d51312c04f847fd499a5fca9b}{mostrar\+Menu\+Empresa}} ()
+\begin{DoxyCompactList}\small\item\em Muestra el submenú de opciones relacionadas con empresas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{codigo_8cpp_a05576b260508ff31b280741973565d40}{mostrar\+Menu\+Portafolio}} ()
+\begin{DoxyCompactList}\small\item\em Muestra el submenú de opciones relacionadas con el portafolio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{codigo_8cpp_a476b760037c5062b609f62bcf13f21ef}{mostrar\+Menu\+Principal}} ()
+\begin{DoxyCompactList}\small\item\em Muestra el menú principal para elegir entre opciones por empresa, sector o noticias. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{codigo_8cpp_a94581a9b3feac964bdced8cdc15e8484}{mostrar\+Menu\+Sector}} ()
+\begin{DoxyCompactList}\small\item\em Muestra el submenú de opciones relacionadas con sectores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{codigo_8cpp_a15ca712c518aa6cdc4fabc8b3fa84692}{mostrar\+Menu\+Simulacion}} ()
+\begin{DoxyCompactList}\small\item\em Muestra el submenú de opciones relacionadas con simulación y noticias financieras. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const vector$<$ string $>$ \mbox{\hyperlink{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}{S\+E\+C\+T\+O\+R\+E\+S\+\_\+\+E\+M\+P\+R\+E\+SA}}
+\begin{DoxyCompactList}\small\item\em Lista global de sectores consistente para todo el sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Archivo principal que implementa el menú y la lógica de interacción del sistema de gestión de acciones y noticias financieras. 
+
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{codigo_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{codigo_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{codigo.cpp@{codigo.cpp}!main@{main}}
+\index{main@{main}!codigo.cpp@{codigo.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Función principal del programa. 
+
+Controla el flujo del sistema de gestión de acciones, mostrando menús y ejecutando las opciones seleccionadas por el usuario.
+
+\begin{DoxyReturn}{Devuelve}
+0 al finalizar correctamente. 
+\end{DoxyReturn}
+$<$ Árbol binario de búsqueda que almacena todas las empresas.
+
+$<$ Cola de prioridad para noticias financieras
+
+Opciones relacionadas con empresas
+
+Buscar empresa por ticker y mostrar su información
+
+Imprimir todas las empresas en orden alfabético
+
+Imprimir empresas ordenadas por precio actual descendente
+
+Mostrar historial de precios de una empresa específica y calcular promedio móvil
+
+Buscar empresas cuyo precio actual está en un rango dado
+
+Mostrar la empresa con la acción más barata y más cara
+
+Opciones relacionadas con sectores
+
+Imprimir todas las empresas de un sector específico
+
+Mostrar el promedio del precio actual de las acciones por sector
+
+Opciones relacionadas con simulación y noticias financieras
+
+Definición en la línea 100 del archivo codigo.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100            \{}
+\DoxyCodeLine{101     \mbox{\hyperlink{classABBEmpresas}{ABBEmpresas}} arbol; }
+\DoxyCodeLine{102     \mbox{\hyperlink{classColaPrioridadNoticias}{ColaPrioridadNoticias}} colaNoticias; }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{comment}{// Relaciones ejemplo para recomendaciones}}
+\DoxyCodeLine{105     \textcolor{comment}{// grafo.agregarRelacion("AAPL", "NVDA");}}
+\DoxyCodeLine{106     \textcolor{comment}{// grafo.agregarRelacion("AAPL", "ADBE");}}
+\DoxyCodeLine{107     \textcolor{comment}{// grafo.agregarRelacion("GOOG", "AMZN");}}
+\DoxyCodeLine{108     \textcolor{comment}{// grafo.agregarRelacion("MSFT", "MSFT\_CLOUD\_PARTNER");}}
+\DoxyCodeLine{109     \textcolor{comment}{// grafo.agregarRelacion("AMZN", "NFLX");}}
+\DoxyCodeLine{110     \textcolor{comment}{// grafo.agregarRelacion("NVDA", "TSLA");}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{// -\/-\/-\/ Portafolio interactivo -\/-\/-\/}}
+\DoxyCodeLine{113     \textcolor{keywordtype}{string} nombreUsuario;}
+\DoxyCodeLine{114     cout << \textcolor{stringliteral}{"Ingrese su nombre: "};}
+\DoxyCodeLine{115     getline(cin, nombreUsuario);}
+\DoxyCodeLine{116     \textcolor{keywordtype}{float} presupuesto;}
+\DoxyCodeLine{117     cout << \textcolor{stringliteral}{"Ingrese su presupuesto inicial (\$): "};}
+\DoxyCodeLine{118     cin >> presupuesto;}
+\DoxyCodeLine{119     cin.ignore();}
+\DoxyCodeLine{120     \mbox{\hyperlink{classPortafolio}{Portafolio}} usuario(nombreUsuario);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{keywordtype}{int} opcionPrincipal;}
+\DoxyCodeLine{123     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{124         \mbox{\hyperlink{codigo_8cpp_a476b760037c5062b609f62bcf13f21ef}{mostrarMenuPrincipal}}();}
+\DoxyCodeLine{125         cin >> opcionPrincipal;}
+\DoxyCodeLine{126         cin.ignore();}
+\DoxyCodeLine{127         \textcolor{keywordflow}{if} (opcionPrincipal == 1) \{ }
+\DoxyCodeLine{129             \textcolor{keywordtype}{int} opcionEmpresa;}
+\DoxyCodeLine{130             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{131                 \mbox{\hyperlink{codigo_8cpp_a18fa8d8d51312c04f847fd499a5fca9b}{mostrarMenuEmpresa}}();}
+\DoxyCodeLine{132                 cin >> opcionEmpresa;}
+\DoxyCodeLine{133                 cin.ignore();}
+\DoxyCodeLine{134                 \textcolor{keywordflow}{if} (opcionEmpresa == 1) \{ }
+\DoxyCodeLine{136                     vector<Empresa*> lista = arbol.\mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{137                     cout << \textcolor{stringliteral}{"Empresas disponibles:\(\backslash\)n"};}
+\DoxyCodeLine{138                     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : lista) \{}
+\DoxyCodeLine{139                         cout << \textcolor{stringliteral}{"  "} << e-\/>ticker << \textcolor{stringliteral}{" -\/ "} << e-\/>nombre << endl;}
+\DoxyCodeLine{140                     \}}
+\DoxyCodeLine{141                     \textcolor{keywordtype}{string} ticker;}
+\DoxyCodeLine{142                     cout << \textcolor{stringliteral}{"Ticker: "}; getline(cin, ticker);}
+\DoxyCodeLine{143                     \textcolor{comment}{// Normalizar a mayúsculas}}
+\DoxyCodeLine{144                     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& c : ticker) c = toupper(c);}
+\DoxyCodeLine{145                     \mbox{\hyperlink{structEmpresa}{Empresa}}* emp = arbol.\mbox{\hyperlink{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}{buscarEmpresa}}(ticker);}
+\DoxyCodeLine{146                     arbol.\mbox{\hyperlink{classABBEmpresas_ae66f600b3457f3e6aeb09840d9188dcc}{imprimirEmpresa}}(emp);}
+\DoxyCodeLine{147                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionEmpresa == 2) \{ }
+\DoxyCodeLine{149                     arbol.\mbox{\hyperlink{classABBEmpresas_a66382212802e5ab39724152cb88a0912}{imprimirEmpresas}}();}
+\DoxyCodeLine{150                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionEmpresa == 3) \{ }
+\DoxyCodeLine{152                     arbol.\mbox{\hyperlink{classABBEmpresas_a5475778344348be4a823d4f35da3ab9d}{imprimirPorPrecio}}();}
+\DoxyCodeLine{153                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionEmpresa == 4) \{ }
+\DoxyCodeLine{155                     \textcolor{keywordtype}{string} ticker;}
+\DoxyCodeLine{156                     cout << \textcolor{stringliteral}{"Ticker: "}; getline(cin, ticker);}
+\DoxyCodeLine{157                     \mbox{\hyperlink{structEmpresa}{Empresa}}* emp = arbol.\mbox{\hyperlink{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}{buscarEmpresa}}(ticker);}
+\DoxyCodeLine{158                     \textcolor{keywordflow}{if} (emp) \{}
+\DoxyCodeLine{159                         cout << \textcolor{stringliteral}{"Historial de precios de "} << emp-\/>\mbox{\hyperlink{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}{nombre}} << \textcolor{stringliteral}{" ("} << emp-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}} << \textcolor{stringliteral}{"):\(\backslash\)n"};}
+\DoxyCodeLine{160                         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{161                         cout << \textcolor{stringliteral}{"   Fecha       | Precio de cierre\(\backslash\)n"};}
+\DoxyCodeLine{162                         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{163                         \mbox{\hyperlink{structNodoPrecio}{NodoPrecio}}* actual = emp-\/>\mbox{\hyperlink{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}{historialPrecios}}.\mbox{\hyperlink{classMultilistaPrecio_aa08135e68ab8c2c43016ded19e9d3698}{cabeza}};}
+\DoxyCodeLine{164                         vector<NodoPrecio*> historial;}
+\DoxyCodeLine{165                         \textcolor{keywordflow}{while} (actual) \{}
+\DoxyCodeLine{166                             historial.push\_back(actual);}
+\DoxyCodeLine{167                             actual = actual-\/>\mbox{\hyperlink{structNodoPrecio_a9f6cd7ab555db900b80edb3bcaf3fd84}{siguiente}};}
+\DoxyCodeLine{168                         \}}
+\DoxyCodeLine{169                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = historial.size() -\/ 1; i >= 0; -\/-\/i) \{}
+\DoxyCodeLine{170                             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} f = 0; f < 10 \&\& historial[i]-\/>fecha[f] != \textcolor{charliteral}{'\(\backslash\)0'}; ++f)}
+\DoxyCodeLine{171                                 cout << historial[i]-\/>fecha[f];}
+\DoxyCodeLine{172                             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} f = historial[i]-\/>fecha.size(); f < 12; ++f) cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{173                             cout << \textcolor{stringliteral}{"| "} << historial[i]-\/>\mbox{\hyperlink{structNodoPrecio_abda288453e6025dea732783b7b86f129}{precioCierre}} << endl;}
+\DoxyCodeLine{174                         \}}
+\DoxyCodeLine{175                         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{176                         \textcolor{keywordtype}{int} dias;}
+\DoxyCodeLine{177                         cout << \textcolor{stringliteral}{"¿Calcular promedio móvil? (Ingrese días o 0 para omitir): "};}
+\DoxyCodeLine{178                         cin >> dias;}
+\DoxyCodeLine{179                         cin.ignore();}
+\DoxyCodeLine{180                         \textcolor{keywordflow}{if} (dias > 0) \{}
+\DoxyCodeLine{181                             \textcolor{keywordtype}{float} prom = emp-\/>\mbox{\hyperlink{structEmpresa_a4b6b2e8d6da267313d12d1a53c8794f7}{historialPrecios}}.\mbox{\hyperlink{classMultilistaPrecio_aab95a547304a1d3168a6c1916ea3b757}{promedioMovil}}(dias);}
+\DoxyCodeLine{182                             cout << \textcolor{stringliteral}{"Promedio móvil de "} << dias << \textcolor{stringliteral}{" días: "} << prom << endl;}
+\DoxyCodeLine{183                         \}}
+\DoxyCodeLine{184                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{185                         cout << \textcolor{stringliteral}{"Empresa no encontrada.\(\backslash\)n"};}
+\DoxyCodeLine{186                     \}}
+\DoxyCodeLine{187                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionEmpresa == 5) \{ }
+\DoxyCodeLine{189                     \textcolor{keywordtype}{float} minPrecio, maxPrecio;}
+\DoxyCodeLine{190                     cout << \textcolor{stringliteral}{"Ingrese el precio mínimo: "}; cin >> minPrecio;}
+\DoxyCodeLine{191                     cout << \textcolor{stringliteral}{"Ingrese el precio máximo: "}; cin >> maxPrecio;}
+\DoxyCodeLine{192                     cin.ignore();}
+\DoxyCodeLine{193                     vector<Empresa*> resultado = arbol.\mbox{\hyperlink{classABBEmpresas_a69e48005487af9a9c02acb869e0a8e56}{buscarEmpresasPorRangoPrecio}}(minPrecio, maxPrecio);}
+\DoxyCodeLine{194                     arbol.\mbox{\hyperlink{classABBEmpresas_a66382212802e5ab39724152cb88a0912}{imprimirEmpresas}}(resultado);}
+\DoxyCodeLine{195                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionEmpresa == 6) \{ }
+\DoxyCodeLine{197                     \mbox{\hyperlink{structEmpresa}{Empresa}}* minEmp = arbol.\mbox{\hyperlink{classABBEmpresas_a77be3c43461441d10f9dd6f03d24604d}{obtenerEmpresaMasBarata}}();}
+\DoxyCodeLine{198                     \mbox{\hyperlink{structEmpresa}{Empresa}}* maxEmp = arbol.\mbox{\hyperlink{classABBEmpresas_a9773e3023fbdf2197242337670da6941}{obtenerEmpresaMasCara}}();}
+\DoxyCodeLine{199                     cout << \textcolor{stringliteral}{"\(\backslash\)nEmpresa con acción más barata:\(\backslash\)n"};}
+\DoxyCodeLine{200                     arbol.\mbox{\hyperlink{classABBEmpresas_ae66f600b3457f3e6aeb09840d9188dcc}{imprimirEmpresa}}(minEmp);}
+\DoxyCodeLine{201                     cout << \textcolor{stringliteral}{"\(\backslash\)nEmpresa con acción más cara:\(\backslash\)n"};}
+\DoxyCodeLine{202                     arbol.\mbox{\hyperlink{classABBEmpresas_ae66f600b3457f3e6aeb09840d9188dcc}{imprimirEmpresa}}(maxEmp);}
+\DoxyCodeLine{203                 \}}
+\DoxyCodeLine{204             \} \textcolor{keywordflow}{while} (opcionEmpresa != 0);}
+\DoxyCodeLine{205         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionPrincipal == 2) \{ }
+\DoxyCodeLine{207             \textcolor{keywordtype}{int} opcionSector;}
+\DoxyCodeLine{208             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{209                 \mbox{\hyperlink{codigo_8cpp_a94581a9b3feac964bdced8cdc15e8484}{mostrarMenuSector}}();}
+\DoxyCodeLine{210                 cin >> opcionSector;}
+\DoxyCodeLine{211                 cin.ignore();}
+\DoxyCodeLine{212                 \textcolor{keywordflow}{if} (opcionSector == 1) \{ }
+\DoxyCodeLine{214                     vector<Empresa*> lista = arbol.\mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{215                     vector<string> sectores;}
+\DoxyCodeLine{216                     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : lista) \{}
+\DoxyCodeLine{217                         \textcolor{keywordtype}{bool} existe = \textcolor{keyword}{false};}
+\DoxyCodeLine{218                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < sectores.size(); ++i) \{}
+\DoxyCodeLine{219                             \textcolor{keywordflow}{if} (sectores[i] == e-\/>sector) \{}
+\DoxyCodeLine{220                                 existe = \textcolor{keyword}{true};}
+\DoxyCodeLine{221                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{222                             \}}
+\DoxyCodeLine{223                         \}}
+\DoxyCodeLine{224                         \textcolor{keywordflow}{if} (!existe) sectores.push\_back(e-\/>sector);}
+\DoxyCodeLine{225                     \}}
+\DoxyCodeLine{226                     cout << \textcolor{stringliteral}{"Sectores disponibles:\(\backslash\)n"};}
+\DoxyCodeLine{227                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < sectores.size(); ++i) \{}
+\DoxyCodeLine{228                         cout << \textcolor{stringliteral}{"  -\/ "} << sectores[i] << endl;}
+\DoxyCodeLine{229                     \}}
+\DoxyCodeLine{230                     \textcolor{keywordtype}{string} sector;}
+\DoxyCodeLine{231                     cout << \textcolor{stringliteral}{"Sector: "}; getline(cin, sector);}
+\DoxyCodeLine{232                     arbol.\mbox{\hyperlink{classABBEmpresas_af19e68352e97995e93431e69aec215b5}{imprimirEmpresasPorSector}}(sector);}
+\DoxyCodeLine{233                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionSector == 2) \{ }
+\DoxyCodeLine{235                     vector<Empresa*> lista = arbol.\mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{236                     vector<string> sectores;}
+\DoxyCodeLine{237                     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : lista) \{}
+\DoxyCodeLine{238                         \textcolor{keywordtype}{bool} existe = \textcolor{keyword}{false};}
+\DoxyCodeLine{239                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < sectores.size(); ++i) \{}
+\DoxyCodeLine{240                             \textcolor{keywordflow}{if} (sectores[i] == e-\/>sector) \{}
+\DoxyCodeLine{241                                 existe = \textcolor{keyword}{true};}
+\DoxyCodeLine{242                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{243                             \}}
+\DoxyCodeLine{244                         \}}
+\DoxyCodeLine{245                         \textcolor{keywordflow}{if} (!existe) sectores.push\_back(e-\/>sector);}
+\DoxyCodeLine{246                     \}}
+\DoxyCodeLine{247                     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{248                     cout << \textcolor{stringliteral}{" Promedio del precio de acciones por sector\(\backslash\)n"};}
+\DoxyCodeLine{249                     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{250                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < sectores.size(); ++i) \{}
+\DoxyCodeLine{251                         \textcolor{keywordtype}{float} promedio = arbol.\mbox{\hyperlink{classABBEmpresas_a0c1aa570634d14b5cebac4cbb4ddd184}{promedioPrecioPorSector}}(sectores[i]);}
+\DoxyCodeLine{252                         cout << \textcolor{stringliteral}{" "} << sectores[i] << \textcolor{stringliteral}{": "} << promedio << endl;}
+\DoxyCodeLine{253                     \}}
+\DoxyCodeLine{254                     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{255                 \}}
+\DoxyCodeLine{256             \} \textcolor{keywordflow}{while} (opcionSector != 0);}
+\DoxyCodeLine{257         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionPrincipal == 3) \{}
+\DoxyCodeLine{259             \textcolor{keywordtype}{int} opcionSim;}
+\DoxyCodeLine{260             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{261                 \mbox{\hyperlink{codigo_8cpp_a15ca712c518aa6cdc4fabc8b3fa84692}{mostrarMenuSimulacion}}();}
+\DoxyCodeLine{262                 cin >> opcionSim;}
+\DoxyCodeLine{263                 cin.ignore();}
+\DoxyCodeLine{264                 \textcolor{keywordflow}{if} (opcionSim == 1) \{}
+\DoxyCodeLine{265                     \textcolor{comment}{// Insertar noticia manualmente y ajustar precios}}
+\DoxyCodeLine{266                     \textcolor{keywordtype}{int} impacto;}
+\DoxyCodeLine{267                     \textcolor{keywordtype}{string} titulo, descripcion, sector, fecha;}
+\DoxyCodeLine{268                     cout << \textcolor{stringliteral}{"Impacto (1-\/10): "}; cin >> impacto; cin.ignore();}
+\DoxyCodeLine{269                     cout << \textcolor{stringliteral}{"Título: "}; getline(cin, titulo);}
+\DoxyCodeLine{270                     cout << \textcolor{stringliteral}{"Descripción: "}; getline(cin, descripcion);}
+\DoxyCodeLine{271                     cout << \textcolor{stringliteral}{"Sectores disponibles:\(\backslash\)n"};}
+\DoxyCodeLine{272                     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& s : \mbox{\hyperlink{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}{SECTORES\_EMPRESA}}) \{}
+\DoxyCodeLine{273                         cout << \textcolor{stringliteral}{"  -\/ "} << s << endl;}
+\DoxyCodeLine{274                     \}}
+\DoxyCodeLine{275                     cout << \textcolor{stringliteral}{"Sector: "}; getline(cin, sector);}
+\DoxyCodeLine{276                     cout << \textcolor{stringliteral}{"Fecha (YYYY-\/MM-\/DD): "}; getline(cin, fecha);}
+\DoxyCodeLine{277                     colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_a7512fe71c5e0220566c7d0d95be9862e}{insertar}}(impacto, titulo, descripcion, sector, fecha);}
+\DoxyCodeLine{278                     arbol.\mbox{\hyperlink{classABBEmpresas_ae84bb76dc229040e7e343cafabb76383}{ajustarPreciosPorNoticia}}(sector, impacto, fecha);}
+\DoxyCodeLine{279                     cout << \textcolor{stringliteral}{"\(\backslash\)nNoticia generada y precios ajustados.\(\backslash\)n"};}
+\DoxyCodeLine{280                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionSim == 2) \{}
+\DoxyCodeLine{281                     \textcolor{comment}{// Generar noticias aleatorias y simular mercado}}
+\DoxyCodeLine{282                     \textcolor{keywordtype}{int} cantidad;}
+\DoxyCodeLine{283                     cout << \textcolor{stringliteral}{"Cantidad de noticias aleatorias a generar: "};}
+\DoxyCodeLine{284                     cin >> cantidad;}
+\DoxyCodeLine{285                     cin.ignore();}
+\DoxyCodeLine{286                     vector<string> titulos = \{}
+\DoxyCodeLine{287                         \textcolor{stringliteral}{"Caída del dólar"}, \textcolor{stringliteral}{"Nuevo impuesto"}, \textcolor{stringliteral}{"Reforma pensional"}, \textcolor{stringliteral}{"Crisis energética"},}
+\DoxyCodeLine{288                         \textcolor{stringliteral}{"Inversión extranjera"}, \textcolor{stringliteral}{"Caída de acciones tecnológicas"}, \textcolor{stringliteral}{"Sube el petróleo"},}
+\DoxyCodeLine{289                         \textcolor{stringliteral}{"Aumento del salario mínimo"}, \textcolor{stringliteral}{"Devaluación del peso"}, \textcolor{stringliteral}{"Acuerdo comercial firmado"}}
+\DoxyCodeLine{290                     \};}
+\DoxyCodeLine{291                     vector<string> descripciones = \{}
+\DoxyCodeLine{292                         \textcolor{stringliteral}{"Los mercados reaccionan ante la noticia."},}
+\DoxyCodeLine{293                         \textcolor{stringliteral}{"Expertos prevén cambios importantes en el comportamiento bursátil."},}
+\DoxyCodeLine{294                         \textcolor{stringliteral}{"Los sectores económicos muestran señales de volatilidad."},}
+\DoxyCodeLine{295                         \textcolor{stringliteral}{"Los analistas recomiendan cautela a los inversionistas."},}
+\DoxyCodeLine{296                         \textcolor{stringliteral}{"Impacto inmediato esperado en el mercado accionario."}}
+\DoxyCodeLine{297                     \};}
+\DoxyCodeLine{298                     cout << \textcolor{stringliteral}{"\(\backslash\)nNoticias generadas y ajustes aplicados:\(\backslash\)n"};}
+\DoxyCodeLine{299                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < cantidad; ++i) \{}
+\DoxyCodeLine{300                         \textcolor{keywordtype}{int} impacto = rand() \% 10 + 1;}
+\DoxyCodeLine{301                         \textcolor{keywordtype}{string} titulo = titulos[rand() \% titulos.size()];}
+\DoxyCodeLine{302                         \textcolor{keywordtype}{string} descripcion = descripciones[rand() \% descripciones.size()];}
+\DoxyCodeLine{303                         \textcolor{keywordtype}{string} sector = \mbox{\hyperlink{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}{SECTORES\_EMPRESA}}[rand() \% \mbox{\hyperlink{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}{SECTORES\_EMPRESA}}.size()];}
+\DoxyCodeLine{304                         \textcolor{keywordtype}{string} fecha = \mbox{\hyperlink{noticia_8h_a6370066b96779b15f4c092365be9553b}{generarFecha}}(i);}
+\DoxyCodeLine{305                         colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_a7512fe71c5e0220566c7d0d95be9862e}{insertar}}(impacto, titulo, descripcion, sector, fecha);}
+\DoxyCodeLine{306                         arbol.\mbox{\hyperlink{classABBEmpresas_ae84bb76dc229040e7e343cafabb76383}{ajustarPreciosPorNoticia}}(sector, impacto, fecha);}
+\DoxyCodeLine{307                         cout << \textcolor{stringliteral}{"  ["} << fecha << \textcolor{stringliteral}{"] (Impacto: "} << impacto << \textcolor{stringliteral}{") "} << titulo << \textcolor{stringliteral}{" -\/ "} << sector << endl;}
+\DoxyCodeLine{308                         \mbox{\hyperlink{noticia_8h_af7db67c9b2b44a23312346ae3cf2a20f}{mostrarAjusteSector}}(sector, \mbox{\hyperlink{noticia_8h_af24bef6e352d3ace928987de260bb7e6}{calcularPorcentajeAjuste}}(impacto));}
+\DoxyCodeLine{309                     \}}
+\DoxyCodeLine{310                     cout << \textcolor{stringliteral}{"Noticias aleatorias generadas y precios ajustados.\(\backslash\)n"};}
+\DoxyCodeLine{311                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionSim == 3) \{}
+\DoxyCodeLine{312                     \textcolor{comment}{// Mostrar noticias (elige orden)}}
+\DoxyCodeLine{313                     \textcolor{keywordtype}{int} subop;}
+\DoxyCodeLine{314                     cout << \textcolor{stringliteral}{"1. Por prioridad (impacto)\(\backslash\)n2. Por fecha\(\backslash\)nSeleccione: "};}
+\DoxyCodeLine{315                     cin >> subop; cin.ignore();}
+\DoxyCodeLine{316                     \textcolor{keywordflow}{if} (subop == 1) \{}
+\DoxyCodeLine{317                         colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_acf945e1aec8cf586d6b87382a1a9a9e2}{mostrar}}();}
+\DoxyCodeLine{318                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (subop == 2) \{}
+\DoxyCodeLine{319                         colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_a3811c333f31595938a583b600b35bad8}{ordenarPorFecha}}();}
+\DoxyCodeLine{320                         colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_acf945e1aec8cf586d6b87382a1a9a9e2}{mostrar}}();}
+\DoxyCodeLine{321                     \}}
+\DoxyCodeLine{322                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionSim == 4) \{}
+\DoxyCodeLine{323                     \textcolor{comment}{// Buscar noticias}}
+\DoxyCodeLine{324                     \textcolor{keywordtype}{int} subop;}
+\DoxyCodeLine{325                     cout << \textcolor{stringliteral}{"1. Por sector\(\backslash\)n2. Por palabra clave\(\backslash\)nSeleccione: "};}
+\DoxyCodeLine{326                     cin >> subop; cin.ignore();}
+\DoxyCodeLine{327                     \textcolor{keywordflow}{if} (subop == 1) \{}
+\DoxyCodeLine{328                         \textcolor{keywordtype}{string} sector;}
+\DoxyCodeLine{329                         cout << \textcolor{stringliteral}{"Sector: "}; getline(cin, sector);}
+\DoxyCodeLine{330                         colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_ab0f4086eabcc4d2f9935f9f64527aa7c}{buscarPorSector}}(sector);}
+\DoxyCodeLine{331                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (subop == 2) \{}
+\DoxyCodeLine{332                         \textcolor{keywordtype}{string} palabra;}
+\DoxyCodeLine{333                         cout << \textcolor{stringliteral}{"Palabra clave: "}; getline(cin, palabra);}
+\DoxyCodeLine{334                         colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_ab833342c4584745a79424087c99eb1e9}{buscarPorPalabraClave}}(palabra);}
+\DoxyCodeLine{335                     \}}
+\DoxyCodeLine{336                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionSim == 5) \{}
+\DoxyCodeLine{337                     \textcolor{comment}{// Estadísticas y alertas}}
+\DoxyCodeLine{338                     \textcolor{keywordtype}{float} promedio = colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_a3db4934bf16a4b593a39f23876a3f158}{promedioImpacto}}();}
+\DoxyCodeLine{339                     cout << \textcolor{stringliteral}{"Impacto promedio de las noticias: "} << promedio << endl;}
+\DoxyCodeLine{340                     \textcolor{keywordflow}{if} (colaNoticias.\mbox{\hyperlink{classColaPrioridadNoticias_afccedcf2a79e14243c3d685f2fcf9e5a}{hayAlertaDeCrisis}}()) \{}
+\DoxyCodeLine{341                         cout << \textcolor{stringliteral}{"ALERTA: Se detecta posible crisis. Hay múltiples noticias de alto impacto.\(\backslash\)n"};}
+\DoxyCodeLine{342                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{343                         cout << \textcolor{stringliteral}{"No hay señales de crisis por ahora.\(\backslash\)n"};}
+\DoxyCodeLine{344                     \}}
+\DoxyCodeLine{345                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionSim == 6) \{}
+\DoxyCodeLine{346                     \textcolor{comment}{// Mostrar cambios de acciones por noticias (todas las empresas)}}
+\DoxyCodeLine{347                     \mbox{\hyperlink{noticia_8h_a7242f8be6bf0222aa3c0397c220cd251}{mostrarImpactoNoticiasEnAcciones}}(arbol, colaNoticias);}
+\DoxyCodeLine{348                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionSim == 7) \{}
+\DoxyCodeLine{349                     \textcolor{comment}{// Mostrar cambios de una empresa por noticias}}
+\DoxyCodeLine{350                     \mbox{\hyperlink{noticia_8h_a80268dccce1ece0cbb6406c81d50baed}{mostrarCambiosPorNoticiasEmpresa}}(arbol, colaNoticias);}
+\DoxyCodeLine{351                 \}}
+\DoxyCodeLine{352             \} \textcolor{keywordflow}{while} (opcionSim != 0);}
+\DoxyCodeLine{353         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcionPrincipal == 4) \{}
+\DoxyCodeLine{354             \textcolor{comment}{// -\/-\/-\/ Menú de portafolio interactivo -\/-\/-\/}}
+\DoxyCodeLine{355             \textcolor{keywordtype}{int} opPort;}
+\DoxyCodeLine{356             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{357                 \mbox{\hyperlink{codigo_8cpp_a05576b260508ff31b280741973565d40}{mostrarMenuPortafolio}}();}
+\DoxyCodeLine{358                 cin >> opPort;}
+\DoxyCodeLine{359                 cin.ignore();}
+\DoxyCodeLine{360                 \textcolor{keywordflow}{if} (opPort == 1) \{}
+\DoxyCodeLine{361                     \textcolor{comment}{// Comprar acción}}
+\DoxyCodeLine{362                     arbol.\mbox{\hyperlink{classABBEmpresas_a66382212802e5ab39724152cb88a0912}{imprimirEmpresas}}();}
+\DoxyCodeLine{363                     \textcolor{keywordtype}{string} ticker;}
+\DoxyCodeLine{364                     cout << \textcolor{stringliteral}{"Ingrese el ticker de la empresa a comprar: "};}
+\DoxyCodeLine{365                     getline(cin, ticker);}
+\DoxyCodeLine{366                     \mbox{\hyperlink{structEmpresa}{Empresa}}* emp = arbol.\mbox{\hyperlink{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}{buscarEmpresa}}(ticker);}
+\DoxyCodeLine{367                     \textcolor{keywordflow}{if} (!emp) \{}
+\DoxyCodeLine{368                         cout << \textcolor{stringliteral}{"Empresa no encontrada.\(\backslash\)n"};}
+\DoxyCodeLine{369                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{370                     \}}
+\DoxyCodeLine{371                     cout << \textcolor{stringliteral}{"Precio actual de "} << emp-\/>\mbox{\hyperlink{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}{nombre}} << \textcolor{stringliteral}{" ("} << emp-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}} << \textcolor{stringliteral}{"): \$"} << emp-\/>\mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precioActual}} << endl;}
+\DoxyCodeLine{372                     cout << \textcolor{stringliteral}{"¿Cuántas acciones desea comprar?: "};}
+\DoxyCodeLine{373                     \textcolor{keywordtype}{int} cantidad;}
+\DoxyCodeLine{374                     cin >> cantidad;}
+\DoxyCodeLine{375                     cin.ignore();}
+\DoxyCodeLine{376                     \textcolor{keywordtype}{float} total = emp-\/>\mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precioActual}} * cantidad;}
+\DoxyCodeLine{377                     \textcolor{keywordflow}{if} (cantidad <= 0) \{}
+\DoxyCodeLine{378                         cout << \textcolor{stringliteral}{"Cantidad inválida.\(\backslash\)n"};}
+\DoxyCodeLine{379                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (total > presupuesto) \{}
+\DoxyCodeLine{380                         cout << \textcolor{stringliteral}{"No tiene suficiente presupuesto. Total requerido: \$"} << total << \textcolor{stringliteral}{", disponible: \$"} << presupuesto << endl;}
+\DoxyCodeLine{381                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{382                         presupuesto -\/= total;}
+\DoxyCodeLine{383                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < cantidad; ++i)}
+\DoxyCodeLine{384                             usuario.agregarActivo(emp-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}});}
+\DoxyCodeLine{385                         cout << \textcolor{stringliteral}{"Compra realizada. Presupuesto restante: \$"} << presupuesto << endl;}
+\DoxyCodeLine{386                     \}}
+\DoxyCodeLine{387                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opPort == 2) \{}
+\DoxyCodeLine{388                     \textcolor{comment}{// Vender acción}}
+\DoxyCodeLine{389                     usuario.mostrar();}
+\DoxyCodeLine{390                     \textcolor{keywordtype}{string} ticker;}
+\DoxyCodeLine{391                     cout << \textcolor{stringliteral}{"Ingrese el ticker de la acción a vender: "};}
+\DoxyCodeLine{392                     getline(cin, ticker);}
+\DoxyCodeLine{393                     \mbox{\hyperlink{structEmpresa}{Empresa}}* emp = arbol.\mbox{\hyperlink{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}{buscarEmpresa}}(ticker);}
+\DoxyCodeLine{394                     \textcolor{keywordflow}{if} (!emp) \{}
+\DoxyCodeLine{395                         cout << \textcolor{stringliteral}{"Empresa no encontrada.\(\backslash\)n"};}
+\DoxyCodeLine{396                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{397                     \}}
+\DoxyCodeLine{398                     cout << \textcolor{stringliteral}{"¿Cuántas acciones desea vender?: "};}
+\DoxyCodeLine{399                     \textcolor{keywordtype}{int} cantidad;}
+\DoxyCodeLine{400                     cin >> cantidad;}
+\DoxyCodeLine{401                     cin.ignore();}
+\DoxyCodeLine{402                     \textcolor{keywordtype}{int} enPortafolio = 0;}
+\DoxyCodeLine{403                     vector<string> activos = usuario.obtenerActivos();}
+\DoxyCodeLine{404                     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& act : activos)}
+\DoxyCodeLine{405                         \textcolor{keywordflow}{if} (act == ticker) enPortafolio++;}
+\DoxyCodeLine{406                     \textcolor{keywordflow}{if} (cantidad <= 0 || cantidad > enPortafolio) \{}
+\DoxyCodeLine{407                         cout << \textcolor{stringliteral}{"Cantidad inválida. Usted posee "} << enPortafolio << \textcolor{stringliteral}{" acciones de "} << ticker << \textcolor{stringliteral}{".\(\backslash\)n"};}
+\DoxyCodeLine{408                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{409                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < cantidad; ++i)}
+\DoxyCodeLine{410                             usuario.eliminarActivo(ticker);}
+\DoxyCodeLine{411                         \textcolor{keywordtype}{float} total = emp-\/>\mbox{\hyperlink{structEmpresa_a8c9b36929b5a7fde45c9b5cf87f7f3a4}{precioActual}} * cantidad;}
+\DoxyCodeLine{412                         presupuesto += total;}
+\DoxyCodeLine{413                         cout << \textcolor{stringliteral}{"Venta realizada. Presupuesto actual: \$"} << presupuesto << endl;}
+\DoxyCodeLine{414                     \}}
+\DoxyCodeLine{415                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opPort == 3) \{}
+\DoxyCodeLine{416                     \textcolor{comment}{// Ver portafolio}}
+\DoxyCodeLine{417                     usuario.mostrar();}
+\DoxyCodeLine{418                     cout << \textcolor{stringliteral}{"Presupuesto disponible: \$"} << presupuesto << endl;}
+\DoxyCodeLine{419                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opPort == 4) \{}
+\DoxyCodeLine{420                     \textcolor{comment}{// Recomendaciones de inversión con opciones avanzadas}}
+\DoxyCodeLine{421                     \textcolor{keywordtype}{int} subop;}
+\DoxyCodeLine{422                     cout << \textcolor{stringliteral}{"\(\backslash\)n=== Recomendaciones de inversión ===\(\backslash\)n"};}
+\DoxyCodeLine{423                     cout << \textcolor{stringliteral}{" 1. Ver todas las recomendaciones\(\backslash\)n"};}
+\DoxyCodeLine{424                     cout << \textcolor{stringliteral}{" 2. Ver recomendaciones por sector\(\backslash\)n"};}
+\DoxyCodeLine{425                     cout << \textcolor{stringliteral}{" 3. Ver recomendación para una acción específica\(\backslash\)n"};}
+\DoxyCodeLine{426                     cout << \textcolor{stringliteral}{"Seleccione una opción: "};}
+\DoxyCodeLine{427                     cin >> subop;}
+\DoxyCodeLine{428                     cin.ignore();}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430                     vector<Empresa*> todas = arbol.\mbox{\hyperlink{classABBEmpresas_a6ccc64afaf894799cf66b3e46db34674}{obtenerEmpresasOrdenadas}}();}
+\DoxyCodeLine{431                     vector<string> activos = usuario.obtenerActivos();}
+\DoxyCodeLine{432                     set<string> yaPosee(activos.begin(), activos.end());}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434                     \textcolor{keywordflow}{if} (subop == 1) \{}
+\DoxyCodeLine{435                         \textcolor{comment}{// Todas las recomendaciones}}
+\DoxyCodeLine{436                         \textcolor{keywordtype}{bool} alguna = \textcolor{keyword}{false};}
+\DoxyCodeLine{437                         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : todas) \{}
+\DoxyCodeLine{438                             \textcolor{keywordflow}{if} (yaPosee.find(e-\/>ticker) == yaPosee.end()) \{}
+\DoxyCodeLine{439                                 cout << \textcolor{stringliteral}{"-\/ "} << e-\/>ticker << \textcolor{stringliteral}{" ("} << e-\/>nombre << \textcolor{stringliteral}{")\(\backslash\)n"};}
+\DoxyCodeLine{440                                 usuario.recomendarCompra(e-\/>ticker, arbol, colaNoticias);}
+\DoxyCodeLine{441                                 alguna = \textcolor{keyword}{true};}
+\DoxyCodeLine{442                             \}}
+\DoxyCodeLine{443                         \}}
+\DoxyCodeLine{444                         \textcolor{keywordflow}{if} (!alguna) \{}
+\DoxyCodeLine{445                             cout << \textcolor{stringliteral}{"(No hay nuevas recomendaciones basadas en el portafolio actual)\(\backslash\)n"};}
+\DoxyCodeLine{446                         \}}
+\DoxyCodeLine{447                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (subop == 2) \{}
+\DoxyCodeLine{448                         \textcolor{comment}{// Recomendaciones por sector}}
+\DoxyCodeLine{449                         cout << \textcolor{stringliteral}{"Sectores disponibles:\(\backslash\)n"};}
+\DoxyCodeLine{450                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \mbox{\hyperlink{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}{SECTORES\_EMPRESA}}.size(); ++i) \{}
+\DoxyCodeLine{451                             cout << \textcolor{stringliteral}{"  "} << (i+1) << \textcolor{stringliteral}{". "} << \mbox{\hyperlink{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}{SECTORES\_EMPRESA}}[i] << endl;}
+\DoxyCodeLine{452                         \}}
+\DoxyCodeLine{453                         cout << \textcolor{stringliteral}{"Seleccione el número del sector: "};}
+\DoxyCodeLine{454                         \textcolor{keywordtype}{int} idxSector;}
+\DoxyCodeLine{455                         cin >> idxSector;}
+\DoxyCodeLine{456                         cin.ignore();}
+\DoxyCodeLine{457                         \textcolor{keywordflow}{if} (idxSector < 1 || idxSector > (\textcolor{keywordtype}{int})\mbox{\hyperlink{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}{SECTORES\_EMPRESA}}.size()) \{}
+\DoxyCodeLine{458                             cout << \textcolor{stringliteral}{"Sector inválido.\(\backslash\)n"};}
+\DoxyCodeLine{459                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{460                             \textcolor{keywordtype}{string} sectorSel = \mbox{\hyperlink{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}{SECTORES\_EMPRESA}}[idxSector-\/1];}
+\DoxyCodeLine{461                             \textcolor{keywordtype}{bool} alguna = \textcolor{keyword}{false};}
+\DoxyCodeLine{462                             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e : todas) \{}
+\DoxyCodeLine{463                                 \textcolor{keywordflow}{if} (yaPosee.find(e-\/>ticker) == yaPosee.end() \&\& e-\/>sector == sectorSel) \{}
+\DoxyCodeLine{464                                     cout << \textcolor{stringliteral}{"-\/ "} << e-\/>ticker << \textcolor{stringliteral}{" ("} << e-\/>nombre << \textcolor{stringliteral}{")\(\backslash\)n"};}
+\DoxyCodeLine{465                                     usuario.recomendarCompra(e-\/>ticker, arbol, colaNoticias);}
+\DoxyCodeLine{466                                     alguna = \textcolor{keyword}{true};}
+\DoxyCodeLine{467                                 \}}
+\DoxyCodeLine{468                             \}}
+\DoxyCodeLine{469                             \textcolor{keywordflow}{if} (!alguna) \{}
+\DoxyCodeLine{470                                 cout << \textcolor{stringliteral}{"(No hay recomendaciones para ese sector o ya posee todas las acciones)\(\backslash\)n"};}
+\DoxyCodeLine{471                             \}}
+\DoxyCodeLine{472                         \}}
+\DoxyCodeLine{473                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (subop == 3) \{}
+\DoxyCodeLine{474                         \textcolor{comment}{// Recomendación para una acción específica}}
+\DoxyCodeLine{475                         cout << \textcolor{stringliteral}{"Ingrese el ticker de la acción a analizar: "};}
+\DoxyCodeLine{476                         \textcolor{keywordtype}{string} ticker;}
+\DoxyCodeLine{477                         getline(cin, ticker);}
+\DoxyCodeLine{478                         \mbox{\hyperlink{structEmpresa}{Empresa}}* emp = arbol.\mbox{\hyperlink{classABBEmpresas_a705d67b6d795dffea3edf70150e0288d}{buscarEmpresa}}(ticker);}
+\DoxyCodeLine{479                         \textcolor{keywordflow}{if} (!emp) \{}
+\DoxyCodeLine{480                             cout << \textcolor{stringliteral}{"Empresa no encontrada.\(\backslash\)n"};}
+\DoxyCodeLine{481                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (yaPosee.find(ticker) != yaPosee.end()) \{}
+\DoxyCodeLine{482                             cout << \textcolor{stringliteral}{"Ya posee esta acción en su portafolio.\(\backslash\)n"};}
+\DoxyCodeLine{483                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{484                             cout << \textcolor{stringliteral}{"-\/ "} << emp-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}} << \textcolor{stringliteral}{" ("} << emp-\/>\mbox{\hyperlink{structEmpresa_a5dad5e57aee0b7e04844564418ceea06}{nombre}} << \textcolor{stringliteral}{")\(\backslash\)n"};}
+\DoxyCodeLine{485                             usuario.recomendarCompra(emp-\/>\mbox{\hyperlink{structEmpresa_a913af3d925c9dcf18bb762ef8df46c70}{ticker}}, arbol, colaNoticias);}
+\DoxyCodeLine{486                         \}}
+\DoxyCodeLine{487                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{488                         cout << \textcolor{stringliteral}{"Opción inválida.\(\backslash\)n"};}
+\DoxyCodeLine{489                     \}}
+\DoxyCodeLine{490                 \}}
+\DoxyCodeLine{491             \} \textcolor{keywordflow}{while} (opPort != 0);}
+\DoxyCodeLine{492         \}}
+\DoxyCodeLine{493     \} \textcolor{keywordflow}{while} (opcionPrincipal != 0);}
+\DoxyCodeLine{494     cout << \textcolor{stringliteral}{"Saliendo...\(\backslash\)n"};}
+\DoxyCodeLine{495     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{496 \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a Portafolio\+::agregar\+Activo(), A\+B\+B\+Empresas\+::ajustar\+Precios\+Por\+Noticia(), A\+B\+B\+Empresas\+::buscar\+Empresa(), A\+B\+B\+Empresas\+::buscar\+Empresas\+Por\+Rango\+Precio(), Cola\+Prioridad\+Noticias\+::buscar\+Por\+Palabra\+Clave(), Cola\+Prioridad\+Noticias\+::buscar\+Por\+Sector(), Multilista\+Precio\+::cabeza, calcular\+Porcentaje\+Ajuste(), Portafolio\+::eliminar\+Activo(), generar\+Fecha(), Cola\+Prioridad\+Noticias\+::hay\+Alerta\+De\+Crisis(), Empresa\+::historial\+Precios, A\+B\+B\+Empresas\+::imprimir\+Empresa(), A\+B\+B\+Empresas\+::imprimir\+Empresas(), A\+B\+B\+Empresas\+::imprimir\+Empresas\+Por\+Sector(), A\+B\+B\+Empresas\+::imprimir\+Por\+Precio(), Cola\+Prioridad\+Noticias\+::insertar(), Cola\+Prioridad\+Noticias\+::mostrar(), Portafolio\+::mostrar(), mostrar\+Ajuste\+Sector(), mostrar\+Cambios\+Por\+Noticias\+Empresa(), mostrar\+Impacto\+Noticias\+En\+Acciones(), mostrar\+Menu\+Empresa(), mostrar\+Menu\+Portafolio(), mostrar\+Menu\+Principal(), mostrar\+Menu\+Sector(), mostrar\+Menu\+Simulacion(), Empresa\+::nombre, Portafolio\+::obtener\+Activos(), A\+B\+B\+Empresas\+::obtener\+Empresa\+Mas\+Barata(), A\+B\+B\+Empresas\+::obtener\+Empresa\+Mas\+Cara(), A\+B\+B\+Empresas\+::obtener\+Empresas\+Ordenadas(), Cola\+Prioridad\+Noticias\+::ordenar\+Por\+Fecha(), Empresa\+::precio\+Actual, Nodo\+Precio\+::precio\+Cierre, Cola\+Prioridad\+Noticias\+::promedio\+Impacto(), Multilista\+Precio\+::promedio\+Movil(), A\+B\+B\+Empresas\+::promedio\+Precio\+Por\+Sector(), Portafolio\+::recomendar\+Compra(), S\+E\+C\+T\+O\+R\+E\+S\+\_\+\+E\+M\+P\+R\+E\+SA, Nodo\+Precio\+::siguiente y Empresa\+::ticker.
+
+Gráfico de llamadas para esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{codigo_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{codigo_8cpp_a18fa8d8d51312c04f847fd499a5fca9b}\label{codigo_8cpp_a18fa8d8d51312c04f847fd499a5fca9b}} 
+\index{codigo.cpp@{codigo.cpp}!mostrarMenuEmpresa@{mostrarMenuEmpresa}}
+\index{mostrarMenuEmpresa@{mostrarMenuEmpresa}!codigo.cpp@{codigo.cpp}}
+\doxysubsubsection{\texorpdfstring{mostrarMenuEmpresa()}{mostrarMenuEmpresa()}}
+{\footnotesize\ttfamily void mostrar\+Menu\+Empresa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra el submenú de opciones relacionadas con empresas. 
+
+Permite al usuario buscar empresas, imprimir listados, ver historial, calcular promedios y buscar por rango de precio. 
+
+Definición en la línea 33 del archivo codigo.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33                           \{}
+\DoxyCodeLine{34     cout << \textcolor{stringliteral}{"\(\backslash\)n-\/-\/-\/-\/-\/-\/ CONSULTAS DE EMPRESAS -\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{35     cout << \textcolor{stringliteral}{" 1. Buscar empresa por ticker\(\backslash\)n"};}
+\DoxyCodeLine{36     cout << \textcolor{stringliteral}{" 2. Listar empresas (alfabético)\(\backslash\)n"};}
+\DoxyCodeLine{37     cout << \textcolor{stringliteral}{" 3. Listar empresas (por precio descendente)\(\backslash\)n"};}
+\DoxyCodeLine{38     cout << \textcolor{stringliteral}{" 4. Historial y promedio móvil de precios\(\backslash\)n"};}
+\DoxyCodeLine{39     cout << \textcolor{stringliteral}{" 5. Buscar empresas por rango de precio\(\backslash\)n"};}
+\DoxyCodeLine{40     cout << \textcolor{stringliteral}{" 6. Empresa con acción más barata/cara\(\backslash\)n"};}
+\DoxyCodeLine{41     cout << \textcolor{stringliteral}{" 0. Volver al menú principal\(\backslash\)n"};}
+\DoxyCodeLine{42     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{43     cout << \textcolor{stringliteral}{"Seleccione una opción: "};}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}
+
+
+Referenciado por main().
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{codigo_8cpp_a18fa8d8d51312c04f847fd499a5fca9b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{codigo_8cpp_a05576b260508ff31b280741973565d40}\label{codigo_8cpp_a05576b260508ff31b280741973565d40}} 
+\index{codigo.cpp@{codigo.cpp}!mostrarMenuPortafolio@{mostrarMenuPortafolio}}
+\index{mostrarMenuPortafolio@{mostrarMenuPortafolio}!codigo.cpp@{codigo.cpp}}
+\doxysubsubsection{\texorpdfstring{mostrarMenuPortafolio()}{mostrarMenuPortafolio()}}
+{\footnotesize\ttfamily void mostrar\+Menu\+Portafolio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra el submenú de opciones relacionadas con el portafolio. 
+
+
+
+Definición en la línea 82 del archivo codigo.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                              \{}
+\DoxyCodeLine{83     cout << \textcolor{stringliteral}{"\(\backslash\)n-\/-\/-\/-\/-\/-\/ GESTIÓN DE PORTAFOLIO -\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{84     cout << \textcolor{stringliteral}{" 1. Comprar acción\(\backslash\)n"};}
+\DoxyCodeLine{85     cout << \textcolor{stringliteral}{" 2. Vender acción\(\backslash\)n"};}
+\DoxyCodeLine{86     cout << \textcolor{stringliteral}{" 3. Ver portafolio\(\backslash\)n"};}
+\DoxyCodeLine{87     cout << \textcolor{stringliteral}{" 4. Ver recomendaciones de inversión\(\backslash\)n"};}
+\DoxyCodeLine{88     cout << \textcolor{stringliteral}{" 0. Volver al menú principal\(\backslash\)n"};}
+\DoxyCodeLine{89     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{90     cout << \textcolor{stringliteral}{"Seleccione una opción: "};}
+\DoxyCodeLine{91 \}}
+
+\end{DoxyCode}
+
+
+Referenciado por main().
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{codigo_8cpp_a05576b260508ff31b280741973565d40_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{codigo_8cpp_a476b760037c5062b609f62bcf13f21ef}\label{codigo_8cpp_a476b760037c5062b609f62bcf13f21ef}} 
+\index{codigo.cpp@{codigo.cpp}!mostrarMenuPrincipal@{mostrarMenuPrincipal}}
+\index{mostrarMenuPrincipal@{mostrarMenuPrincipal}!codigo.cpp@{codigo.cpp}}
+\doxysubsubsection{\texorpdfstring{mostrarMenuPrincipal()}{mostrarMenuPrincipal()}}
+{\footnotesize\ttfamily void mostrar\+Menu\+Principal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra el menú principal para elegir entre opciones por empresa, sector o noticias. 
+
+
+
+Definición en la línea 17 del archivo codigo.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                             \{}
+\DoxyCodeLine{18     cout << \textcolor{stringliteral}{"\(\backslash\)n================ MENÚ PRINCIPAL ================\(\backslash\)n"};}
+\DoxyCodeLine{19     cout << \textcolor{stringliteral}{" 1. Consultas de empresas\(\backslash\)n"};}
+\DoxyCodeLine{20     cout << \textcolor{stringliteral}{" 2. Consultas por sector\(\backslash\)n"};}
+\DoxyCodeLine{21     cout << \textcolor{stringliteral}{" 3. Simulación y noticias\(\backslash\)n"};}
+\DoxyCodeLine{22     cout << \textcolor{stringliteral}{" 4. Gestión de portafolio\(\backslash\)n"}; \textcolor{comment}{// <-\/-\/ Agregado}}
+\DoxyCodeLine{23     cout << \textcolor{stringliteral}{" 0. Salir\(\backslash\)n"};}
+\DoxyCodeLine{24     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{25     cout << \textcolor{stringliteral}{"Seleccione una opción: "};}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+
+
+Referenciado por main().
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{codigo_8cpp_a476b760037c5062b609f62bcf13f21ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{codigo_8cpp_a94581a9b3feac964bdced8cdc15e8484}\label{codigo_8cpp_a94581a9b3feac964bdced8cdc15e8484}} 
+\index{codigo.cpp@{codigo.cpp}!mostrarMenuSector@{mostrarMenuSector}}
+\index{mostrarMenuSector@{mostrarMenuSector}!codigo.cpp@{codigo.cpp}}
+\doxysubsubsection{\texorpdfstring{mostrarMenuSector()}{mostrarMenuSector()}}
+{\footnotesize\ttfamily void mostrar\+Menu\+Sector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra el submenú de opciones relacionadas con sectores. 
+
+Permite al usuario imprimir empresas por sector y ver promedios de precios por sector. 
+
+Definición en la línea 51 del archivo codigo.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51                          \{}
+\DoxyCodeLine{52     cout << \textcolor{stringliteral}{"\(\backslash\)n-\/-\/-\/-\/-\/-\/ CONSULTAS POR SECTOR -\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{53     cout << \textcolor{stringliteral}{" 1. Listar empresas por sector\(\backslash\)n"};}
+\DoxyCodeLine{54     cout << \textcolor{stringliteral}{" 2. Promedio de precios por sector\(\backslash\)n"};}
+\DoxyCodeLine{55     cout << \textcolor{stringliteral}{" 0. Volver al menú principal\(\backslash\)n"};}
+\DoxyCodeLine{56     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{57     cout << \textcolor{stringliteral}{"Seleccione una opción: "};}
+\DoxyCodeLine{58 \}}
+
+\end{DoxyCode}
+
+
+Referenciado por main().
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{codigo_8cpp_a94581a9b3feac964bdced8cdc15e8484_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{codigo_8cpp_a15ca712c518aa6cdc4fabc8b3fa84692}\label{codigo_8cpp_a15ca712c518aa6cdc4fabc8b3fa84692}} 
+\index{codigo.cpp@{codigo.cpp}!mostrarMenuSimulacion@{mostrarMenuSimulacion}}
+\index{mostrarMenuSimulacion@{mostrarMenuSimulacion}!codigo.cpp@{codigo.cpp}}
+\doxysubsubsection{\texorpdfstring{mostrarMenuSimulacion()}{mostrarMenuSimulacion()}}
+{\footnotesize\ttfamily void mostrar\+Menu\+Simulacion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra el submenú de opciones relacionadas con simulación y noticias financieras. 
+
+Permite al usuario gestionar noticias financieras, incluyendo inserción, búsqueda, ordenamiento y análisis. 
+
+Definición en la línea 65 del archivo codigo.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65                              \{}
+\DoxyCodeLine{66     cout << \textcolor{stringliteral}{"\(\backslash\)n-\/-\/-\/-\/-\/-\/ SIMULACIÓN Y NOTICIAS -\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{67     cout << \textcolor{stringliteral}{" 1. Insertar noticia manualmente y ajustar precios\(\backslash\)n"};}
+\DoxyCodeLine{68     cout << \textcolor{stringliteral}{" 2. Generar noticias aleatorias y simular mercado\(\backslash\)n"};}
+\DoxyCodeLine{69     cout << \textcolor{stringliteral}{" 3. Mostrar noticias (por prioridad o fecha)\(\backslash\)n"};}
+\DoxyCodeLine{70     cout << \textcolor{stringliteral}{" 4. Buscar noticias (por sector o palabra clave)\(\backslash\)n"};}
+\DoxyCodeLine{71     cout << \textcolor{stringliteral}{" 5. Estadísticas y alertas de noticias\(\backslash\)n"};}
+\DoxyCodeLine{72     cout << \textcolor{stringliteral}{" 6. Ver cambios de todas las empresas dadas las noticias\(\backslash\)n"};}
+\DoxyCodeLine{73     cout << \textcolor{stringliteral}{" 7. Ver cambios de una empresa en específico dadas las noticias\(\backslash\)n"};}
+\DoxyCodeLine{74     cout << \textcolor{stringliteral}{" 0. Volver al menú principal\(\backslash\)n"};}
+\DoxyCodeLine{75     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{76     cout << \textcolor{stringliteral}{"Seleccione una opción: "};}
+\DoxyCodeLine{77 \}}
+
+\end{DoxyCode}
+
+
+Referenciado por main().
+
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{codigo_8cpp_a15ca712c518aa6cdc4fabc8b3fa84692_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentación de las variables}
+\mbox{\Hypertarget{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}\label{codigo_8cpp_aea5748407935beef97b8efa9a40fd3ef}} 
+\index{codigo.cpp@{codigo.cpp}!SECTORES\_EMPRESA@{SECTORES\_EMPRESA}}
+\index{SECTORES\_EMPRESA@{SECTORES\_EMPRESA}!codigo.cpp@{codigo.cpp}}
+\doxysubsubsection{\texorpdfstring{SECTORES\_EMPRESA}{SECTORES\_EMPRESA}}
+{\footnotesize\ttfamily const vector$<$string$>$ S\+E\+C\+T\+O\+R\+E\+S\+\_\+\+E\+M\+P\+R\+E\+SA}
+
+
+
+Lista global de sectores consistente para todo el sistema. 
+
+
+
+Definición en la línea 17 del archivo empresa.\+h.
+
+
+
+Referenciado por generar\+Noticias\+Aleatorias(), A\+B\+B\+Empresas\+::inicializar\+Empresas() y main().
+

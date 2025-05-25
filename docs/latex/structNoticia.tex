@@ -1,0 +1,221 @@
+\hypertarget{structNoticia}{}\doxysection{Referencia de la Estructura Noticia}
+\label{structNoticia}\index{Noticia@{Noticia}}
+
+
+Estructura que representa una noticia con impacto, título, descripción, sector afectado, fecha y si es positiva o negativa.  
+
+
+
+
+{\ttfamily \#include $<$noticia.\+h$>$}
+
+
+
+Diagrama de colaboración para Noticia\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{structNoticia__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structNoticia_a751e9be7bda618927eb748d8ede38e57}{Noticia}} (int imp, string t, string d, string s, string f, bool positiva)
+\begin{DoxyCompactList}\small\item\em Constructor de la estructura \mbox{\hyperlink{structNoticia}{Noticia}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{structNoticia_a641007a549d8a8f5a799801e6bec7db0}{descripcion}}
+\begin{DoxyCompactList}\small\item\em Descripción de la noticia. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structNoticia_adae8c8f663fc5664fe285c052b3d8d41}{es\+Positiva}}
+\begin{DoxyCompactList}\small\item\em Indica si la noticia es positiva (true) o negativa (false) \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{structNoticia_a615fd29fcff3eec9102a3fb3cff6b776}{fecha}}
+\begin{DoxyCompactList}\small\item\em Fecha en formato \char`\"{}\+Y\+Y\+Y\+Y-\/\+M\+M-\/\+D\+D\char`\"{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structNoticia_a8facfc9b897e0dea262c4290af7f7b27}{impacto}}
+\begin{DoxyCompactList}\small\item\em Nivel de impacto de 1 a 10. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{structNoticia_a20d721fb5360d21aec690b392889d73b}{sector\+Afectado}}
+\begin{DoxyCompactList}\small\item\em Sector afectado por la noticia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structNoticia}{Noticia}} $\ast$ \mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}}
+\begin{DoxyCompactList}\small\item\em Puntero a la siguiente noticia en la lista. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{structNoticia_ad16f6edde856e5a87ffcd9ae8cf8bb25}{titulo}}
+\begin{DoxyCompactList}\small\item\em Título de la noticia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que representa una noticia con impacto, título, descripción, sector afectado, fecha y si es positiva o negativa. 
+
+Definición en la línea 21 del archivo noticia.\+h.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{structNoticia_a751e9be7bda618927eb748d8ede38e57}\label{structNoticia_a751e9be7bda618927eb748d8ede38e57}} 
+\index{Noticia@{Noticia}!Noticia@{Noticia}}
+\index{Noticia@{Noticia}!Noticia@{Noticia}}
+\doxysubsubsection{\texorpdfstring{Noticia()}{Noticia()}}
+{\footnotesize\ttfamily Noticia\+::\+Noticia (\begin{DoxyParamCaption}\item[{int}]{imp,  }\item[{string}]{t,  }\item[{string}]{d,  }\item[{string}]{s,  }\item[{string}]{f,  }\item[{bool}]{positiva }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la estructura \mbox{\hyperlink{structNoticia}{Noticia}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em imp} & Nivel de impacto de la noticia. \\
+\hline
+{\em t} & Título de la noticia. \\
+\hline
+{\em d} & Descripción de la noticia. \\
+\hline
+{\em s} & Sector afectado. \\
+\hline
+{\em f} & Fecha de la noticia. \\
+\hline
+{\em positiva} & true si la noticia es positiva, false si es negativa. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 39 del archivo noticia.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39                                                                             \{}
+\DoxyCodeLine{40         \mbox{\hyperlink{structNoticia_a8facfc9b897e0dea262c4290af7f7b27}{impacto}} = imp;}
+\DoxyCodeLine{41         \mbox{\hyperlink{structNoticia_ad16f6edde856e5a87ffcd9ae8cf8bb25}{titulo}} = t;}
+\DoxyCodeLine{42         \mbox{\hyperlink{structNoticia_a641007a549d8a8f5a799801e6bec7db0}{descripcion}} = d;}
+\DoxyCodeLine{43         \mbox{\hyperlink{structNoticia_a20d721fb5360d21aec690b392889d73b}{sectorAfectado}} = s;}
+\DoxyCodeLine{44         \mbox{\hyperlink{structNoticia_a615fd29fcff3eec9102a3fb3cff6b776}{fecha}} = f;}
+\DoxyCodeLine{45         \mbox{\hyperlink{structNoticia_adae8c8f663fc5664fe285c052b3d8d41}{esPositiva}} = positiva;}
+\DoxyCodeLine{46         \mbox{\hyperlink{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}{siguiente}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{47     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{structNoticia_a641007a549d8a8f5a799801e6bec7db0}\label{structNoticia_a641007a549d8a8f5a799801e6bec7db0}} 
+\index{Noticia@{Noticia}!descripcion@{descripcion}}
+\index{descripcion@{descripcion}!Noticia@{Noticia}}
+\doxysubsubsection{\texorpdfstring{descripcion}{descripcion}}
+{\footnotesize\ttfamily string Noticia\+::descripcion}
+
+
+
+Descripción de la noticia. 
+
+
+
+Definición en la línea 24 del archivo noticia.\+h.
+
+\mbox{\Hypertarget{structNoticia_adae8c8f663fc5664fe285c052b3d8d41}\label{structNoticia_adae8c8f663fc5664fe285c052b3d8d41}} 
+\index{Noticia@{Noticia}!esPositiva@{esPositiva}}
+\index{esPositiva@{esPositiva}!Noticia@{Noticia}}
+\doxysubsubsection{\texorpdfstring{esPositiva}{esPositiva}}
+{\footnotesize\ttfamily bool Noticia\+::es\+Positiva}
+
+
+
+Indica si la noticia es positiva (true) o negativa (false) 
+
+
+
+Definición en la línea 27 del archivo noticia.\+h.
+
+\mbox{\Hypertarget{structNoticia_a615fd29fcff3eec9102a3fb3cff6b776}\label{structNoticia_a615fd29fcff3eec9102a3fb3cff6b776}} 
+\index{Noticia@{Noticia}!fecha@{fecha}}
+\index{fecha@{fecha}!Noticia@{Noticia}}
+\doxysubsubsection{\texorpdfstring{fecha}{fecha}}
+{\footnotesize\ttfamily string Noticia\+::fecha}
+
+
+
+Fecha en formato \char`\"{}\+Y\+Y\+Y\+Y-\/\+M\+M-\/\+D\+D\char`\"{}. 
+
+
+
+Definición en la línea 26 del archivo noticia.\+h.
+
+
+
+Referenciado por Cola\+Prioridad\+Noticias\+::fusionar() y Cola\+Prioridad\+Noticias\+::mostrar().
+
+\mbox{\Hypertarget{structNoticia_a8facfc9b897e0dea262c4290af7f7b27}\label{structNoticia_a8facfc9b897e0dea262c4290af7f7b27}} 
+\index{Noticia@{Noticia}!impacto@{impacto}}
+\index{impacto@{impacto}!Noticia@{Noticia}}
+\doxysubsubsection{\texorpdfstring{impacto}{impacto}}
+{\footnotesize\ttfamily int Noticia\+::impacto}
+
+
+
+Nivel de impacto de 1 a 10. 
+
+
+
+Definición en la línea 22 del archivo noticia.\+h.
+
+
+
+Referenciado por Cola\+Prioridad\+Noticias\+::buscar\+Por\+Sector(), Cola\+Prioridad\+Noticias\+::hay\+Alerta\+De\+Crisis(), Cola\+Prioridad\+Noticias\+::insertar(), Cola\+Prioridad\+Noticias\+::mostrar() y Cola\+Prioridad\+Noticias\+::promedio\+Impacto().
+
+\mbox{\Hypertarget{structNoticia_a20d721fb5360d21aec690b392889d73b}\label{structNoticia_a20d721fb5360d21aec690b392889d73b}} 
+\index{Noticia@{Noticia}!sectorAfectado@{sectorAfectado}}
+\index{sectorAfectado@{sectorAfectado}!Noticia@{Noticia}}
+\doxysubsubsection{\texorpdfstring{sectorAfectado}{sectorAfectado}}
+{\footnotesize\ttfamily string Noticia\+::sector\+Afectado}
+
+
+
+Sector afectado por la noticia. 
+
+
+
+Definición en la línea 25 del archivo noticia.\+h.
+
+
+
+Referenciado por Cola\+Prioridad\+Noticias\+::buscar\+Por\+Palabra\+Clave(), Cola\+Prioridad\+Noticias\+::buscar\+Por\+Sector() y Cola\+Prioridad\+Noticias\+::mostrar().
+
+\mbox{\Hypertarget{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}\label{structNoticia_a1b0fe10aa990444b89fa8703ef5ad977}} 
+\index{Noticia@{Noticia}!siguiente@{siguiente}}
+\index{siguiente@{siguiente}!Noticia@{Noticia}}
+\doxysubsubsection{\texorpdfstring{siguiente}{siguiente}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNoticia}{Noticia}}$\ast$ Noticia\+::siguiente}
+
+
+
+Puntero a la siguiente noticia en la lista. 
+
+
+
+Definición en la línea 28 del archivo noticia.\+h.
+
+
+
+Referenciado por Cola\+Prioridad\+Noticias\+::buscar\+Por\+Palabra\+Clave(), Cola\+Prioridad\+Noticias\+::buscar\+Por\+Sector(), Cola\+Prioridad\+Noticias\+::dividir(), Cola\+Prioridad\+Noticias\+::extraer(), Cola\+Prioridad\+Noticias\+::fusionar(), Cola\+Prioridad\+Noticias\+::hay\+Alerta\+De\+Crisis(), Cola\+Prioridad\+Noticias\+::insertar(), Cola\+Prioridad\+Noticias\+::merge\+Sort(), Cola\+Prioridad\+Noticias\+::mostrar(), Cola\+Prioridad\+Noticias\+::obtener\+Noticias() y Cola\+Prioridad\+Noticias\+::promedio\+Impacto().
+
+\mbox{\Hypertarget{structNoticia_ad16f6edde856e5a87ffcd9ae8cf8bb25}\label{structNoticia_ad16f6edde856e5a87ffcd9ae8cf8bb25}} 
+\index{Noticia@{Noticia}!titulo@{titulo}}
+\index{titulo@{titulo}!Noticia@{Noticia}}
+\doxysubsubsection{\texorpdfstring{titulo}{titulo}}
+{\footnotesize\ttfamily string Noticia\+::titulo}
+
+
+
+Título de la noticia. 
+
+
+
+Definición en la línea 23 del archivo noticia.\+h.
+
+
+
+Referenciado por Cola\+Prioridad\+Noticias\+::buscar\+Por\+Palabra\+Clave(), Cola\+Prioridad\+Noticias\+::buscar\+Por\+Sector() y Cola\+Prioridad\+Noticias\+::mostrar().
+
+
+
+La documentación para esta estructura fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{noticia_8h}{noticia.\+h}}\end{DoxyCompactItemize}
