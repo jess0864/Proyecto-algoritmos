@@ -1,12 +1,9 @@
-/**
- * @file codigo.cpp
- * @brief Archivo principal que implementa el menú y la lógica de interacción del sistema de gestión de acciones y noticias financieras.
- */
+// Código base para un sistema de gestión de acciones y noticias financieras
 
 #include "empresa.h"
 #include "noticia.h"
 #include "portafolio.h"
-#include <set> // Para evitar duplicados en recomendaciones
+#include <set> // <-- Agrega esto para usar std::set
 
 // Añade declaración externa para los sectores de empresa.h
 extern const vector<string> SECTORES_EMPRESA;
@@ -140,8 +137,6 @@ int main() {
                     }
                     string ticker;
                     cout << "Ticker: "; getline(cin, ticker);
-                    // Normalizar a mayúsculas
-                    for (auto& c : ticker) c = toupper(c);
                     Empresa* emp = arbol.buscarEmpresa(ticker);
                     arbol.imprimirEmpresa(emp);
                 } else if (opcionEmpresa == 2) { 

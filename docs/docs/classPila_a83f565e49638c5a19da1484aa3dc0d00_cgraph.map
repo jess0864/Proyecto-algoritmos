@@ -1,7 +1,0 @@
-<map id="Pila::eliminar" name="Pila::eliminar">
-<area shape="rect" id="node1" title="Elimina la primera aparición de un valor específico." alt="" coords="5,81,113,108"/>
-<area shape="rect" id="node2" href="$classPila.html#a15420d1c215037d91a6908f5b5533e8a" title="Verifica si la pila está vacía." alt="" coords="161,5,268,32"/>
-<area shape="rect" id="node3" href="$classPila.html#a81d09f97e002ddd279bf43b93b0cb372" title="Elimina el elemento en la cima de la pila." alt="" coords="175,56,254,83"/>
-<area shape="rect" id="node4" href="$classPila.html#ab0e03bdc398980d2fa802648a2eb7d8f" title="Agrega un nuevo elemento a la cima de la pila." alt="" coords="172,107,257,133"/>
-<area shape="rect" id="node5" href="$classPila.html#a4a411a01fdc6c1463a5010371d061f4e" title="Devuelve el elemento en la cima de la pila sin eliminarlo." alt="" coords="177,157,252,184"/>
-</map>

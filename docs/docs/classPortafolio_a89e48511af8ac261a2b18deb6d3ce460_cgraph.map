@@ -1,6 +1,0 @@
-<map id="Portafolio::eliminarUltimoActivo" name="Portafolio::eliminarUltimoActivo">
-<area shape="rect" id="node1" title="Elimina el último activo agregado (pop)." alt="" coords="5,49,196,90"/>
-<area shape="rect" id="node2" href="$classPila.html#a15420d1c215037d91a6908f5b5533e8a" title="Verifica si la pila está vacía." alt="" coords="244,5,351,32"/>
-<area shape="rect" id="node3" href="$classPila.html#a81d09f97e002ddd279bf43b93b0cb372" title="Elimina el elemento en la cima de la pila." alt="" coords="258,56,337,83"/>
-<area shape="rect" id="node4" href="$classPila.html#a4a411a01fdc6c1463a5010371d061f4e" title="Devuelve el elemento en la cima de la pila sin eliminarlo." alt="" coords="260,107,335,133"/>
-</map>

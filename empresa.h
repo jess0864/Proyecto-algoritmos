@@ -1,8 +1,3 @@
-/**
- * @file empresa.h
- * @brief Define las estructuras y clases para la gestión de empresas y sus precios históricos.
- */
-
 #ifndef EMPRESA_H
 #define EMPRESA_H
 
@@ -13,13 +8,12 @@
 #include <ctime>
 using namespace std;
 
-/// Lista global de sectores consistente para todo el sistema
+// Lista global de sectores consistente para todo el sistema
 const vector<string> SECTORES_EMPRESA = {
     "Tecnología", "Finanzas", "Salud", "Consumo", "Energía", "Industrial", "Telecomunicaciones", "Materiales"
 };
 
 /**
- * @struct NodoPrecio
  * @brief Nodo para la multilista de precios históricos de una acción.
  */
 struct NodoPrecio {
@@ -39,7 +33,6 @@ struct NodoPrecio {
 };
 
 /**
- * @class MultilistaPrecio
  * @brief Multilista para historial de precios de una acción.
  */
 class MultilistaPrecio {
@@ -94,7 +87,6 @@ public:
 };
 
 /**
- * @struct Empresa
  * @brief Nodo de ABB que representa una empresa.
  */
 struct Empresa {
@@ -126,7 +118,6 @@ struct Empresa {
 };
 
 /**
- * @class ABBEmpresas
  * @brief Árbol binario de búsqueda (ABB) para gestionar empresas.
  */
 class ABBEmpresas {
@@ -222,24 +213,42 @@ private:
             string sector = SECTORES_EMPRESA[rand() % SECTORES_EMPRESA.size()];
             insertarEmpresa(tickers[i], nombres[i], sector, precio);
 
-            // Generar historial de precios solo para el último mes: 2025-05-01 a 2025-05-26
+            // Generar historial de precios desde 2025-01-01 hasta 2025-05-26
             Empresa* emp = buscarEmpresa(tickers[i]);
-            int year = 2025, month = 5, day = 1;
+            int year = 2025, month = 1, day = 1;
             float precioHist = precio;
             while (!(year == 2025 && month == 5 && day == 27)) { // hasta el 26 inclusive
+                // Construir la fecha manualmente sin sprintf
                 string fecha = "";
+                // Año
                 fecha += "2025-";
+                // Mes
                 if (month < 10) fecha += "0";
                 fecha += to_string(month) + "-";
+                // Día
                 if (day < 10) fecha += "0";
                 fecha += to_string(day);
 
+                // Variar el precio histórico aleatoriamente
                 float variacion = ((rand() % 2001) - 1000) / 100.0f; // -10.00 a +10.00
                 precioHist = max(1.0f, precioHist + variacion);
                 emp->historialPrecios.agregarPrecio(fecha, precioHist);
 
+                // Avanzar al siguiente día
                 day++;
-                if (day > 26) break; // Solo hasta el 26 de mayo
+                int diasMes;
+                if (month == 2) diasMes = 28;
+                else if (month == 4 || month == 6 || month == 9 || month == 11) diasMes = 30;
+                else diasMes = 31;
+                if (day > diasMes) {
+                    day = 1;
+                    month++;
+                }
+                if (month > 12) {
+                    month = 1;
+                    year++;
+                }
+                if (year == 2025 && month == 5 && day == 27) break; // detener después del 26
             }
             // Actualizar precio actual al último histórico
             if (emp->historialPrecios.cabeza)

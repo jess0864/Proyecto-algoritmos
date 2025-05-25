@@ -1,183 +1,182 @@
-/**
- * @file portafolio.h
- * @brief Define la clase Portafolio y la estructura de pila para gestionar activos de usuario.
- */
-
 #ifndef PORTAFOLIO_H
 #define PORTAFOLIO_H
 
 #include <iostream>
 #include <string>
-#include <cstdlib>
-#include <ctime>
-#include <vector>
-#include <cmath>
+#include <cmath> // <-- Agrega esto para usar sqrt
 #include "empresa.h"
 #include "noticia.h"
-
 using namespace std;
 
+// ===============================
+// Clase MiVector integrada
+// ===============================
 /**
- * @brief Nodo simple para la implementación de una pila.
+ * @brief Clase plantilla que implementa un vector dinámico personalizado.
+ * 
+ * Permite agregar, eliminar, ordenar y acceder a elementos de forma similar a std::vector,
+ * pero con implementación propia para entender el funcionamiento interno de estructuras dinámicas.
  */
-struct Nodo {
-    string valor;
-    Nodo* siguiente;
-};
-
-/**
- * @brief Implementación de una pila LIFO con nodos enlazados.
- */
-class Pila {
+template <typename T>
+class MiVector {
 private:
-    Nodo* cima;
+    T* datos;          ///< Puntero al arreglo dinámico que almacena los elementos.
+    int capacidad;     ///< Capacidad máxima actual del arreglo.
+    int cantidad;      ///< Número actual de elementos en el arreglo.
 
 public:
-    friend class Portafolio;
-
     /**
-     * @brief Constructor que inicializa la pila como vacía.
-     */
-    Pila() : cima(nullptr) {}
-
-    /**
-     * @brief Agrega un nuevo elemento a la cima de la pila.
+     * @brief Constructor por defecto.
      * 
-     * @param x Elemento a insertar.
+     * Inicializa el vector con una capacidad inicial de 2.
      */
-    void push(const string& x) {
-        Nodo* nuevoNodo = new Nodo;
-        nuevoNodo->valor = x;
-        nuevoNodo->siguiente = cima;
-        cima = nuevoNodo;
+    MiVector() {
+        capacidad = 2;
+        cantidad = 0;
+        datos = new T[capacidad];
     }
 
     /**
-     * @brief Devuelve el elemento en la cima de la pila sin eliminarlo.
+     * @brief Destructor.
      * 
-     * @return Elemento en la cima o mensaje de error si está vacía.
+     * Libera la memoria asignada dinámicamente al vector.
      */
-    string top() const {
-        if (cima == nullptr) {
-            cerr << "Error: La pila está vacía.\n";
-            return "";
+    ~MiVector() {
+        delete[] datos;
+    }
+    
+    /**
+     * @brief Inserta y elimina elementos del vector personalizado.
+     *
+     * Estas funciones implementan operaciones personalizadas similares a push y pop
+     * en un vector dinámico. Permiten gestionar la inserción y eliminación de elementos
+     * para comprender y controlar directamente cómo se maneja la memoria y el crecimiento
+     * dinámico del arreglo.
+     *
+     * - miPush(const T& valor): Agrega un nuevo elemento al final del vector. Si el vector 
+     *   ha alcanzado su capacidad máxima, se duplica su tamaño para permitir más inserciones.
+     * - miPop(): Elimina el último elemento del vector si no está vacío. Si el vector está vacío,
+     *   se muestra un mensaje de error por consola.
+     *
+     * Estas funciones ayudan a profundizar en el funcionamiento interno de las estructuras
+     * dinámicas y a completar el código de forma educativa.
+     */
+
+ 
+    void miPush(const T& valor) {
+        if (cantidad == capacidad) {
+            capacidad *= 2;
+            T* nuevo = new T[capacidad];
+            for (int i = 0; i < cantidad; ++i)
+                nuevo[i] = datos[i];
+            delete[] datos;
+            datos = nuevo;
         }
-        return cima->valor;
+        datos[cantidad++] = valor;
+    }
+
+    
+    void miPop() {
+        if (cantidad > 0)
+            cantidad--;
+        else
+            cout << "Error: vector vacío.\n";
     }
 
     /**
-     * @brief Elimina el elemento en la cima de la pila.
-     */
-    void pop() {
-        if (cima == nullptr) {
-            cerr << "Error: No se puede hacer pop en una pila vacía.\n";
-            return;
-        }
-        Nodo* temp = cima;
-        cima = cima->siguiente;
-        delete temp;
-    }
-
-    /**
-     * @brief Verifica si la pila está vacía.
+     * @brief Elimina la primera aparición de un valor en el vector.
      * 
-     * @return true si está vacía, false en caso contrario.
-     */
-    bool isEmpty() const {
-        return cima == nullptr;
-    }
-
-    /**
-     * @brief Muestra el contenido completo de la pila.
-     */
-    void imprimir() const {
-        Nodo* actual = cima;
-        while (actual != nullptr) {
-            cout << "- " << actual->valor << '\n';
-            actual = actual->siguiente;
-        }
-    }
-
-    /**
-     * @brief Elimina la primera aparición de un valor específico.
+     * Reorganiza los elementos restantes para llenar el hueco.
      * 
-     * @param objetivo Valor a eliminar.
-     * @return true si se eliminó, false si no se encontró.
+     * @param valor Elemento a eliminar.
+     * @return true si se eliminó exitosamente, false si no se encontró.
      */
-    bool eliminar(const string& objetivo) {
-        Pila auxiliar;
-        bool encontrado = false;
-
-        while (!isEmpty()) {
-            if (top() == objetivo) {
-                pop();
-                encontrado = true;
-                break;
+    bool eliminar(const T& valor) {
+        for (int i = 0; i < cantidad; ++i) {
+            if (datos[i] == valor) {
+                for (int j = i; j < cantidad - 1; ++j)
+                    datos[j] = datos[j + 1];
+                cantidad--;
+                return true;
             }
-            auxiliar.push(top());
-            pop();
         }
-
-        while (!auxiliar.isEmpty()) {
-            push(auxiliar.top());
-            auxiliar.pop();
-        }
-
-        return encontrado;
+        return false;
     }
 
     /**
-     * @brief Destructor que libera la memoria de todos los nodos.
+     * @brief Ordena los elementos del vector en orden ascendente.
+     * 
+     * Utiliza el algoritmo de burbuja (Bubble Sort).
      */
-    ~Pila() {
-        while (cima != nullptr) {
-            pop();
-        }
+    void ordenar() {
+        for (int i = 0; i < cantidad - 1; ++i)
+            for (int j = 0; j < cantidad - i - 1; ++j)
+                if (datos[j] > datos[j + 1])
+                    swap(datos[j], datos[j + 1]);
     }
+
+    /**
+     * @brief Obtiene el número actual de elementos en el vector.
+     * 
+     * @return Cantidad de elementos almacenados.
+     */
+    int size() const { return cantidad; }
+
+    /**
+     * @brief Verifica si el vector está vacío.
+     * 
+     * @return true si no hay elementos, false en caso contrario.
+     */
+    bool empty() const { return cantidad == 0; }
+
+    /**
+     * @brief Acceso por índice con posibilidad de modificación.
+     * 
+     * @param index Índice del elemento a acceder.
+     * @return Referencia al elemento solicitado.
+     */
+    T& operator[](int index) { return datos[index]; }
+
+    /**
+     * @brief Acceso por índice para lectura (constante).
+     * 
+     * @param index Índice del elemento a acceder.
+     * @return Referencia constante al elemento solicitado.
+     */
+    const T& operator[](int index) const { return datos[index]; }
 };
 
-/**
- * @brief Clase Portafolio que usa una pila para almacenar activos.
- */
+// ===============================
+// Clase Portafolio usando MiVector
+// Mi vector es donde se agregan y se eliminan elementos, inversiones
+// ===============================
 class Portafolio {
 private:
     string nombreUsuario;
-    Pila activos;
+    MiVector<string> activos;
 
 public:
-    /**
-     * @brief Constructor que inicializa el portafolio con un nombre de usuario.
-     */
     Portafolio(string nombre) : nombreUsuario(nombre) {}
 
-    /**
-     * @brief Agrega un activo al portafolio (al tope de la pila).
-     * 
-     * @param activo Nombre del activo a agregar.
-     */
     void agregarActivo(const string& activo) {
-        activos.push(activo);
+        activos.miPush(activo);
         cout << "Activo '" << activo << "' agregado." << endl;
     }
 
-    /**
-     * @brief Elimina el último activo agregado (pop).
-     */
-    void eliminarUltimoActivo() {
-        if (!activos.isEmpty()) {
-            cout << "Activo '" << activos.top() << "' eliminado." << endl;
-            activos.pop();
-        } else {
-            cout << "No hay activos para eliminar." << endl;
-        }
+    bool tieneActivo(const string& activo) const {
+        for (int i = 0; i < activos.size(); ++i)
+            if (activos[i] == activo) return true;
+        return false;
     }
 
-    /**
-     * @brief Elimina un activo específico del portafolio.
-     * 
-     * @param activo Nombre del activo a eliminar.
-     * @return true si se eliminó, false si no se encontró.
-     */
+    void mostrar() const {
+        cout << "Portafolio de " << nombreUsuario << ":\n";
+        if (activos.empty()) cout << "(Vacío)\n";
+        else
+            for (int i = 0; i < activos.size(); ++i)
+                cout << "- " << activos[i] << '\n';
+    }
+
     bool eliminarActivo(const string& activo) {
         if (activos.eliminar(activo)) {
             cout << "Activo '" << activo << "' eliminado." << endl;
@@ -187,91 +186,21 @@ public:
         return false;
     }
 
-    /**
-     * @brief Muestra el contenido del portafolio.
-     */
-    void mostrar() const {
-        cout << "Portafolio de " << nombreUsuario << ":\n";
-        if (activos.isEmpty())
-            cout << "(Vacío)\n";
-        else
-            activos.imprimir();
-    }
-
-    /**
-     * @brief Ordena los activos del portafolio en orden alfabético ascendente (A-Z).
-     *
-     * Utiliza una pila auxiliar y manipulación directa de punteros para
-     * insertar los elementos en orden sin usar la función push().
-     */
     void ordenarActivos() {
-        if (activos.isEmpty()) {
-            cout << "Nada que ordenar.\n";
-            return;
+        if (activos.empty()) cout << "Nada que ordenar.\n";
+        else {
+            activos.ordenar();
+            cout << "Activos ordenados.\n";
         }
-
-        Pila pilaOrdenada;
-
-        // Proceso de ordenamiento tipo inserción
-        while (!activos.isEmpty()) {
-            string temp = activos.top();
-            activos.pop();
-
-            // Regresar los mayores a la pila original
-            while (!pilaOrdenada.isEmpty() && pilaOrdenada.top() > temp) {
-                Nodo* mover = new Nodo;
-                mover->valor = pilaOrdenada.top();
-                mover->siguiente = activos.cima;
-                activos.cima = mover;
-                pilaOrdenada.pop();
-            }
-
-            // Insertar temp ordenadamente sin push
-            Nodo* nuevo = new Nodo;
-            nuevo->valor = temp;
-            nuevo->siguiente = pilaOrdenada.cima;
-            pilaOrdenada.cima = nuevo;
-        }
-
-        // Restaurar activos desde la pila ordenada
-        while (!pilaOrdenada.isEmpty()) {
-            Nodo* mover = new Nodo;
-            mover->valor = pilaOrdenada.top();
-            mover->siguiente = activos.cima;
-            activos.cima = mover;
-            pilaOrdenada.pop();
-        }
-
-        cout << "Activos ordenados alfabéticamente.\n";
     }
 
-    /**
-     * @brief Devuelve todos los activos del portafolio como vector sin usar push_back.
-     * 
-     * @return Vector de strings con los nombres de los activos.
-     */
+    // Nuevo método para obtener los activos como vector<string>
     vector<string> obtenerActivos() const {
-        // Contar cuántos nodos hay
-        int count = 0;
-        Nodo* actual = activos.cima;
-        while (actual != nullptr) {
-            count++;
-            actual = actual->siguiente;
-        }
-    
-        // Crear vector del tamaño exacto
-        vector<string> v(count);
-    
-        // Llenar el vector manualmente
-        actual = activos.cima;
-        for (int i = 0; i < count; ++i) {
-            v[i] = actual->valor;
-            actual = actual->siguiente;
-        }
-    
+        vector<string> v;
+        for (int i = 0; i < activos.size(); ++i)
+            v.push_back(activos[i]);
         return v;
     }
-
 
     // Árbol de decisión para recomendar compra de un activo
     // Usa tendencia de precios históricos y noticias del sector
@@ -330,6 +259,5 @@ public:
         }
     }
 };
-
 
 #endif

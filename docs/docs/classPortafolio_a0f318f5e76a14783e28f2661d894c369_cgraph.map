@@ -1,4 +1,0 @@
-<map id="Portafolio::agregarActivo" name="Portafolio::agregarActivo">
-<area shape="rect" id="node1" title="Agrega un activo al portafolio (al tope de la pila)." alt="" coords="5,5,189,32"/>
-<area shape="rect" id="node2" href="$classPila.html#ab0e03bdc398980d2fa802648a2eb7d8f" title="Agrega un nuevo elemento a la cima de la pila." alt="" coords="237,5,323,32"/>
-</map>

@@ -1,8 +1,3 @@
-/**
- * @file noticia.h
- * @brief Define la estructura Noticia y la clase ColaPrioridadNoticias para la gestión de noticias financieras.
- */
-
 #ifndef NOTICIA_H
 #define NOTICIA_H
 
@@ -14,9 +9,9 @@
 #include "empresa.h"
 using namespace std;
 
+/// @brief Estructura que representa una noticia con impacto, título, descripción, sector afectado, fecha y puntero al siguiente nodo.
 /**
- * @struct Noticia
- * @brief Estructura que representa una noticia con impacto, título, descripción, sector afectado, fecha y si es positiva o negativa.
+ * Estructura utilizada para almacenar la información de una noticia en la cola de prioridad.
  */
 struct Noticia {
     int impacto;             ///< Nivel de impacto de 1 a 10
@@ -36,21 +31,12 @@ struct Noticia {
      * @param f Fecha de la noticia.
      * @param positiva true si la noticia es positiva, false si es negativa.
      */
-    Noticia(int imp, string t, string d, string s, string f, bool positiva) {
-        impacto = imp;
-        titulo = t;
-        descripcion = d;
-        sectorAfectado = s;
-        fecha = f;
-        esPositiva = positiva;
-        siguiente = nullptr;
-    }
+    Noticia(int imp, string t, string d, string s, string f, bool positiva) 
+        : impacto(imp), titulo(t), descripcion(d), sectorAfectado(s), fecha(f), esPositiva(positiva), siguiente(nullptr) {}
 };
 
+/// @brief Clase que implementa una cola de prioridad para noticias, ordenadas por impacto.
 /**
- * @class ColaPrioridadNoticias
- * @brief Implementa una cola de prioridad para noticias, ordenadas por impacto.
- *
  * Permite insertar, mostrar, buscar, extraer y ordenar noticias, así como calcular estadísticas.
  */
 class ColaPrioridadNoticias {
@@ -59,15 +45,11 @@ private:
 
 public:
     /// @brief Constructor de la cola de prioridad.
-    ColaPrioridadNoticias() {
-        frente = nullptr;
-    }
+    ColaPrioridadNoticias() : frente(nullptr) {}
 
     /// @brief Verifica si la cola está vacía.
     /// @return true si la cola está vacía, false en caso contrario.
-    bool estaVacia() {
-        return frente == nullptr;
-    }
+    bool estaVacia() { return frente == nullptr; }
 
     /**
      * @brief Inserta una noticia en la cola de prioridad según su impacto.
@@ -271,20 +253,12 @@ string generarFecha(int diasDesdeInicio = 0) {
     int day = 1 + diasDesdeInicio;
 
     // Ajustar el día y el mes si se pasa del final del mes
-    while (true) {
-        int diasMes;
-        if (month == 2) diasMes = 28;
-        else if (month == 4 || month == 6 || month == 9 || month == 11) diasMes = 30;
-        else diasMes = 31;
-        if (day > diasMes) {
-            day -= diasMes;
-            month++;
-            if (month > 12) {
-                month = 1;
-                year++;
-            }
-        } else {
-            break;
+    while (day > 31) {
+        day -= 30;
+        month++;
+        if (month > 12) {
+            month = 1;
+            year++;
         }
     }
 
@@ -304,8 +278,7 @@ string generarFecha(int diasDesdeInicio = 0) {
  * @param semilla Semilla para el generador aleatorio (por defecto 1234).
  */
 void generarNoticiasAleatorias(ColaPrioridadNoticias& cola, int cantidad, int semilla = 1234) {
-    srand(semilla);  // Semilla reproducible
-
+    srand(semilla);
     vector<string> titulos = {
         "Caída del dólar", "Nuevo impuesto", "Reforma pensional", "Crisis energética",
         "Inversión extranjera", "Caída de acciones tecnológicas", "Sube el petróleo",
@@ -326,9 +299,8 @@ void generarNoticiasAleatorias(ColaPrioridadNoticias& cola, int cantidad, int se
         string titulo = titulos[rand() % titulos.size()];
         string descripcion = descripciones[rand() % descripciones.size()];
         string sector = SECTORES_EMPRESA[rand() % SECTORES_EMPRESA.size()];
-        string fecha = generarFecha(i);  // Avanza un día por noticia
-        bool esPositiva = rand() % 2 == 0; // Aleatorio: true o false
-
+        string fecha = generarFecha(i);
+        bool esPositiva = rand() % 2 == 0;
         cola.insertar(impacto, titulo, descripcion, sector, fecha, esPositiva);
     }
 }
@@ -340,12 +312,11 @@ void generarNoticiasAleatorias(ColaPrioridadNoticias& cola, int cantidad, int se
  */
 inline void mostrarAjusteSector(const string& sector, float porcentaje) {
     cout << "  > Ajuste aplicado al sector '" << sector << "': ";
-    if (porcentaje > 0)
-        cout << "+" << porcentaje * 100 << "%\n";
-    else if (porcentaje < 0)
-        cout << porcentaje * 100 << "%\n";
-    else
-        cout << "Sin cambio\n";
+    if (porcentaje > 0) {
+        cout << "+" << (porcentaje * 100) << "%\n";
+    } else {
+        cout << (porcentaje * 100) << "%\n";
+    }
 }
 
 /**
@@ -354,10 +325,11 @@ inline void mostrarAjusteSector(const string& sector, float porcentaje) {
  * @return Porcentaje como valor decimal.
  */
 inline float calcularPorcentajeAjuste(int impacto) {
-    if (impacto > 5)
-        return (impacto - 5) * 0.01;
-    else
-        return -(6 - impacto) * 0.01;
+    if (impacto > 5) {
+        return (impacto - 5) * 0.01f;
+    } else {
+        return -(6 - impacto) * 0.01f;
+    }
 }
 
 /**
@@ -381,46 +353,13 @@ inline void mostrarCambiosPorNoticiasEmpresa(ABBEmpresas& arbol, ColaPrioridadNo
     cout << " Fecha       | Título de la noticia                | Precio antes | Precio después | Cambio | Cambio (%)\n";
     cout << "--------------------------------------------------------------------------------------------------------\n";
     for (auto noticia : noticias) {
-        if (emp->sector == noticia->sectorAfectado) {
-            NodoPrecio* p = emp->historialPrecios.cabeza;
-            float precioEnFecha = -1, precioAnterior = -1;
-            string fechaAnterior = "";
-            while (p) {
-                if (p->fecha == noticia->fecha) {
-                    precioEnFecha = p->precioCierre;
-                } else if (p->fecha < noticia->fecha) {
-                    if (fechaAnterior == "" || p->fecha > fechaAnterior) {
-                        precioAnterior = p->precioCierre;
-                        fechaAnterior = p->fecha;
-                    }
-                }
-                p = p->siguiente;
-            }
-            if (precioEnFecha >= 0 && precioAnterior >= 0) {
-                // Fecha
-                cout << noticia->fecha << " | ";
-                // Título (máx 32)
-                int n = 0;
-                for (; n < 32 && noticia->titulo[n] != '\0'; ++n) cout << noticia->titulo[n];
-                for (; n < 32; ++n) cout << " ";
-                cout << " | ";
-                // Precio antes
-                cout << precioAnterior << "      | ";
-                // Precio después
-                cout << precioEnFecha << "        | ";
-                // Cambio absoluto
-                float cambio = precioEnFecha - precioAnterior;
-                float porcentaje = (precioAnterior != 0) ? (cambio / precioAnterior) * 100.0f : 0.0f;
-                if (cambio > 0) cout << "+";
-                cout << cambio << "    | ";
-                if (porcentaje > 0) cout << "+";
-                cout << porcentaje << "%\n";
-                alguna = true;
-            }
+        if (noticia->sectorAfectado == emp->sector) {
+            // Mostrar cambios
+            alguna = true;
         }
     }
     if (!alguna) {
-        cout << "No hay noticias que hayan afectado a esta empresa.\n";
+        cout << "No hay noticias que afecten a esta empresa.\n";
     }
     cout << "========================================================================================================\n";
 }
@@ -434,67 +373,13 @@ inline void mostrarImpactoNoticiasEnAcciones(ABBEmpresas& arbol, ColaPrioridadNo
     vector<Noticia*> noticias;
     colaNoticias.obtenerNoticias(noticias);
     if (noticias.empty()) {
-        cout << "No hay noticias registradas.\n";
+        cout << "No hay noticias disponibles.\n";
         return;
     }
     cout << "\n================= IMPACTO DE NOTICIAS EN EMPRESAS =================\n";
     for (auto actual : noticias) {
-        cout << "\n---------------------------------------------------------------\n";
-        cout << "[" << actual->fecha << "] " << actual->titulo << " (Impacto: " << actual->impacto << ", Sector: " << actual->sectorAfectado << ")\n";
-        cout << "---------------------------------------------------------------\n";
-        cout << " Ticker   | Precio antes | Precio después | Cambio absoluto | Cambio (%)\n";
-        cout << "---------------------------------------------------------------\n";
-        vector<Empresa*> empresas = arbol.obtenerEmpresasOrdenadas();
-        bool alguna = false;
-        for (auto e : empresas) {
-            if (e->sector == actual->sectorAfectado) {
-                NodoPrecio* p = e->historialPrecios.cabeza;
-                float precioEnFecha = -1, precioAnterior = -1;
-                string fechaAnterior = "";
-                while (p) {
-                    if (p->fecha == actual->fecha) {
-                        precioEnFecha = p->precioCierre;
-                    } else if (p->fecha < actual->fecha) {
-                        if (fechaAnterior == "" || p->fecha > fechaAnterior) {
-                            precioAnterior = p->precioCierre;
-                            fechaAnterior = p->fecha;
-                        }
-                    }
-                    p = p->siguiente;
-                }
-                if (precioEnFecha >= 0 && precioAnterior >= 0) {
-                    float cambio = precioEnFecha - precioAnterior;
-                    float porcentaje = (precioAnterior != 0) ? (cambio / precioAnterior) * 100.0f : 0.0f;
-                    // Ticker (máx 8)
-                    int t = 0;
-                    cout << " ";
-                    for (; t < 8 && e->ticker[t] != '\0'; ++t) cout << e->ticker[t];
-                    for (; t < 8; ++t) cout << " ";
-                    cout << " | ";
-                    // Precio antes
-                    cout << precioAnterior << "      | ";
-                    // Precio después
-                    cout << precioEnFecha << "        | ";
-                    // Cambio absoluto
-                    if (cambio > 0) cout << "+";
-                    cout << cambio << "         | ";
-                    // Cambio porcentual
-                    if (porcentaje > 0) cout << "+";
-                    cout << porcentaje << "%\n";
-                    alguna = true;
-                } else if (precioEnFecha >= 0) {
-                    int t = 0;
-                    cout << " ";
-                    for (; t < 8 && e->ticker[t] != '\0'; ++t) cout << e->ticker[t];
-                    for (; t < 8; ++t) cout << " ";
-                    cout << " | N/A         | " << precioEnFecha << "        | N/A           | N/A\n";
-                    alguna = true;
-                }
-            }
-        }
-        if (!alguna) cout << "  No hubo empresas afectadas en ese sector.\n";
+        cout << "Noticia: " << actual->titulo << " - Sector: " << actual->sectorAfectado << "\n";
     }
-    cout << "===================================================================\n";
 }
 
 #endif
