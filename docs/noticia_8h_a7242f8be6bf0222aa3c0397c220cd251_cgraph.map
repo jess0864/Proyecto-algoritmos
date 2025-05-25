@@ -1,4 +1,5 @@
 <map id="mostrarImpactoNoticiasEnAcciones" name="mostrarImpactoNoticiasEnAcciones">
-<area shape="rect" id="node1" title="Muestra el impacto de las noticias en las acciones de las empresas." alt="" coords="5,5,200,47"/>
-<area shape="rect" id="node2" href="$classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7" title="Llena un vector con punteros a todas las noticias en la cola (en orden actual)." alt="" coords="248,5,411,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,200,80"/>
+<area shape="rect" id="node2" href="$classABBEmpresas.html#a6ccc64afaf894799cf66b3e46db34674" title="Devuelve una lista ordenada de empresas (inorden)." alt="" coords="248,5,483,47"/>
+<area shape="rect" id="node3" href="$classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7" title="Llena un vector con punteros a todas las noticias en la cola (en orden actual)." alt="" coords="284,71,447,112"/>
 </map>

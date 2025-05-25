@@ -1,42 +1,42 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title="Función principal del programa." alt="" coords="5,967,60,993"/>
+<area shape="rect" id="node1" title="Función principal del programa." alt="" coords="5,955,60,981"/>
 <area shape="rect" id="node2" href="$classPortafolio.html#a0f318f5e76a14783e28f2661d894c369" title="Agrega un activo al portafolio." alt="" coords="137,5,321,32"/>
 <area shape="rect" id="node4" href="$classABBEmpresas.html#ae84bb76dc229040e7e343cafabb76383" title="Ajusta los precios de las empresas de un sector según el impacto de una noticia." alt="" coords="122,57,335,98"/>
-<area shape="rect" id="node5" href="$classABBEmpresas.html#a705d67b6d795dffea3edf70150e0288d" title="Busca una empresa por ticker." alt="" coords="397,181,619,208"/>
-<area shape="rect" id="node6" href="$classABBEmpresas.html#a69e48005487af9a9c02acb869e0a8e56" title="Devuelve una lista de empresas cuyo precio actual está en el rango [minPrecio, maxPrecio]." alt="" coords="115,409,343,450"/>
-<area shape="rect" id="node7" href="$classColaPrioridadNoticias.html#ab833342c4584745a79424087c99eb1e9" title="Busca y muestra noticias cuyo título contiene una palabra clave." alt="" coords="139,474,318,515"/>
-<area shape="rect" id="node8" href="$classColaPrioridadNoticias.html#ab0f4086eabcc4d2f9935f9f64527aa7c" title="Busca y muestra noticias que pertenecen a un sector específico." alt="" coords="147,539,310,581"/>
-<area shape="rect" id="node9" href="$noticia_8h.html#af24bef6e352d3ace928987de260bb7e6" title="Calcula el porcentaje de ajuste según el impacto." alt="" coords="137,605,320,632"/>
-<area shape="rect" id="node10" href="$classPortafolio.html#a2a3d95a628382a88d45d666982538b4e" title="Elimina un activo del portafolio." alt="" coords="135,656,323,683"/>
-<area shape="rect" id="node12" href="$noticia_8h.html#a6370066b96779b15f4c092365be9553b" title="Genera un string de fecha con formato &quot;YYYY&#45;MM&#45;DD&quot; a partir de un número de días desde el inicio." alt="" coords="173,707,284,733"/>
-<area shape="rect" id="node13" href="$classColaPrioridadNoticias.html#afccedcf2a79e14243c3d685f2fcf9e5a" title="Detecta si hay una alerta de crisis (3 o más noticias con impacto &gt;= 8)." alt="" coords="147,758,310,799"/>
-<area shape="rect" id="node14" href="$classABBEmpresas.html#ae66f600b3457f3e6aeb09840d9188dcc" title="Imprime la información de una empresa en formato de tabla." alt="" coords="111,824,346,851"/>
-<area shape="rect" id="node15" href="$classABBEmpresas.html#a66382212802e5ab39724152cb88a0912" title="Imprime todas las empresas y su precio actual por consola." alt="" coords="108,875,349,901"/>
-<area shape="rect" id="node16" href="$classABBEmpresas.html#af19e68352e97995e93431e69aec215b5" title="Imprime todas las empresas de un sector específico." alt="" coords="108,926,349,967"/>
-<area shape="rect" id="node17" href="$classABBEmpresas.html#a5475778344348be4a823d4f35da3ab9d" title="Imprime empresas ordenadas por precio actual (de mayor a menor)." alt="" coords="129,991,328,1033"/>
-<area shape="rect" id="node18" href="$classColaPrioridadNoticias.html#a7512fe71c5e0220566c7d0d95be9862e" title="Inserta una noticia en la cola de prioridad según su impacto." alt="" coords="147,1057,310,1098"/>
-<area shape="rect" id="node19" href="$classColaPrioridadNoticias.html#acf945e1aec8cf586d6b87382a1a9a9e2" title="Muestra todas las noticias en la cola, en orden de prioridad." alt="" coords="147,1122,310,1163"/>
-<area shape="rect" id="node20" href="$classPortafolio.html#a0fd1f6dd832435c9c7180a2701058748" title="Muestra todos los activos del portafolio por consola." alt="" coords="157,1188,301,1215"/>
-<area shape="rect" id="node23" href="$noticia_8h.html#af7db67c9b2b44a23312346ae3cf2a20f" title="Muestra el ajuste aplicado a los precios de un sector." alt="" coords="151,1289,306,1316"/>
+<area shape="rect" id="node5" href="$classABBEmpresas.html#a705d67b6d795dffea3edf70150e0288d" title="Busca una empresa por ticker." alt="" coords="404,175,625,201"/>
+<area shape="rect" id="node6" href="$classABBEmpresas.html#a69e48005487af9a9c02acb869e0a8e56" title="Devuelve una lista de empresas cuyo precio actual está en el rango [minPrecio, maxPrecio]." alt="" coords="115,459,343,501"/>
+<area shape="rect" id="node7" href="$classColaPrioridadNoticias.html#ab833342c4584745a79424087c99eb1e9" title="Busca y muestra noticias cuyo título contiene una palabra clave." alt="" coords="139,525,318,566"/>
+<area shape="rect" id="node8" href="$classColaPrioridadNoticias.html#ab0f4086eabcc4d2f9935f9f64527aa7c" title="Busca y muestra noticias que pertenecen a un sector específico." alt="" coords="147,590,310,631"/>
+<area shape="rect" id="node9" href="$noticia_8h.html#af24bef6e352d3ace928987de260bb7e6" title="Calcula el porcentaje de ajuste según el impacto." alt="" coords="137,656,320,683"/>
+<area shape="rect" id="node10" href="$classPortafolio.html#a2a3d95a628382a88d45d666982538b4e" title="Elimina un activo del portafolio." alt="" coords="135,707,323,733"/>
+<area shape="rect" id="node12" href="$noticia_8h.html#a6370066b96779b15f4c092365be9553b" title="Genera un string de fecha con formato &quot;YYYY&#45;MM&#45;DD&quot; a partir de un número de días desde el inicio." alt="" coords="173,757,284,784"/>
+<area shape="rect" id="node13" href="$classColaPrioridadNoticias.html#afccedcf2a79e14243c3d685f2fcf9e5a" title="Detecta si hay una alerta de crisis (3 o más noticias con impacto &gt;= 8)." alt="" coords="147,809,310,850"/>
+<area shape="rect" id="node14" href="$classABBEmpresas.html#ae66f600b3457f3e6aeb09840d9188dcc" title="Imprime la información de una empresa en formato de tabla." alt="" coords="111,875,346,901"/>
+<area shape="rect" id="node15" href="$classABBEmpresas.html#a66382212802e5ab39724152cb88a0912" title="Imprime todas las empresas y su precio actual por consola." alt="" coords="108,925,349,952"/>
+<area shape="rect" id="node16" href="$classABBEmpresas.html#af19e68352e97995e93431e69aec215b5" title="Imprime todas las empresas de un sector específico." alt="" coords="108,977,349,1018"/>
+<area shape="rect" id="node17" href="$classABBEmpresas.html#a5475778344348be4a823d4f35da3ab9d" title="Imprime empresas ordenadas por precio actual (de mayor a menor)." alt="" coords="129,1042,328,1083"/>
+<area shape="rect" id="node18" href="$classColaPrioridadNoticias.html#a7512fe71c5e0220566c7d0d95be9862e" title="Inserta una noticia en la cola de prioridad según su impacto." alt="" coords="147,1107,310,1149"/>
+<area shape="rect" id="node19" href="$classColaPrioridadNoticias.html#acf945e1aec8cf586d6b87382a1a9a9e2" title="Muestra todas las noticias en la cola, en orden de prioridad." alt="" coords="147,1173,310,1214"/>
+<area shape="rect" id="node20" href="$classPortafolio.html#a0fd1f6dd832435c9c7180a2701058748" title="Muestra todos los activos del portafolio por consola." alt="" coords="157,1239,301,1265"/>
+<area shape="rect" id="node23" href="$noticia_8h.html#af7db67c9b2b44a23312346ae3cf2a20f" title="Muestra el ajuste aplicado a los precios de un sector." alt="" coords="151,1340,306,1367"/>
 <area shape="rect" id="node24" href="$noticia_8h.html#a80268dccce1ece0cbb6406c81d50baed" title="Muestra los cambios de precio de una empresa por cada noticia que la afectó, mostrando el precio ante..." alt="" coords="127,174,331,215"/>
-<area shape="rect" id="node26" href="$noticia_8h.html#a7242f8be6bf0222aa3c0397c220cd251" title="Muestra el impacto de las noticias en las acciones de las empresas." alt="" coords="131,291,326,333"/>
-<area shape="rect" id="node27" href="$codigo_8cpp.html#a18fa8d8d51312c04f847fd499a5fca9b" title="Muestra el submenú de opciones relacionadas con empresas." alt="" coords="145,1340,312,1367"/>
-<area shape="rect" id="node28" href="$codigo_8cpp.html#a05576b260508ff31b280741973565d40" title="Muestra el submenú de opciones relacionadas con el portafolio." alt="" coords="143,1391,315,1417"/>
-<area shape="rect" id="node29" href="$codigo_8cpp.html#a476b760037c5062b609f62bcf13f21ef" title="Muestra el menú principal para elegir entre opciones por empresa, sector, noticias o portafolio." alt="" coords="146,1441,311,1468"/>
-<area shape="rect" id="node30" href="$codigo_8cpp.html#a94581a9b3feac964bdced8cdc15e8484" title="Muestra el submenú de opciones relacionadas con sectores." alt="" coords="153,1492,304,1519"/>
-<area shape="rect" id="node31" href="$codigo_8cpp.html#a15ca712c518aa6cdc4fabc8b3fa84692" title="Muestra el submenú de opciones relacionadas con simulación y noticias financieras." alt="" coords="138,1543,319,1569"/>
-<area shape="rect" id="node32" href="$classPortafolio.html#a3f3249951cf442f25729fc3b0b3a891a" title="Obtiene los activos del portafolio como un std::vector&lt;string&gt;." alt="" coords="133,1239,324,1265"/>
-<area shape="rect" id="node33" href="$classABBEmpresas.html#a77be3c43461441d10f9dd6f03d24604d" title="Devuelve la empresa con el precio actual más bajo." alt="" coords="115,1594,343,1635"/>
-<area shape="rect" id="node34" href="$classABBEmpresas.html#a9773e3023fbdf2197242337670da6941" title="Devuelve la empresa con el precio actual más alto." alt="" coords="115,1659,343,1701"/>
-<area shape="rect" id="node35" href="$classABBEmpresas.html#a6ccc64afaf894799cf66b3e46db34674" title="Devuelve una lista ordenada de empresas (inorden)." alt="" coords="111,1725,346,1766"/>
-<area shape="rect" id="node36" href="$classColaPrioridadNoticias.html#a3811c333f31595938a583b600b35bad8" title="Ordena toda la cola de noticias cronológicamente por fecha." alt="" coords="147,1790,310,1831"/>
-<area shape="rect" id="node37" href="$classColaPrioridadNoticias.html#a3db4934bf16a4b593a39f23876a3f158" title="Calcula el promedio del impacto de todas las noticias en la cola." alt="" coords="147,1855,310,1897"/>
-<area shape="rect" id="node38" href="$classMultilistaPrecio.html#aab95a547304a1d3168a6c1916ea3b757" title="Calcula el promedio móvil de los últimos &#39;dias&#39; precios." alt="" coords="411,325,605,366"/>
-<area shape="rect" id="node39" href="$classABBEmpresas.html#a0c1aa570634d14b5cebac4cbb4ddd184" title="Calcula el promedio del precio actual de las empresas de un sector." alt="" coords="117,1921,340,1962"/>
+<area shape="rect" id="node26" href="$noticia_8h.html#a7242f8be6bf0222aa3c0397c220cd251" title=" " alt="" coords="131,342,326,383"/>
+<area shape="rect" id="node27" href="$classABBEmpresas.html#a6ccc64afaf894799cf66b3e46db34674" title="Devuelve una lista ordenada de empresas (inorden)." alt="" coords="397,382,632,423"/>
+<area shape="rect" id="node28" href="$codigo_8cpp.html#a18fa8d8d51312c04f847fd499a5fca9b" title="Muestra el submenú de opciones relacionadas con empresas." alt="" coords="145,1391,312,1417"/>
+<area shape="rect" id="node29" href="$codigo_8cpp.html#a05576b260508ff31b280741973565d40" title="Muestra el submenú de opciones relacionadas con el portafolio." alt="" coords="143,1441,315,1468"/>
+<area shape="rect" id="node30" href="$codigo_8cpp.html#a476b760037c5062b609f62bcf13f21ef" title="Muestra el menú principal para elegir entre opciones por empresa, sector, noticias o portafolio." alt="" coords="146,1492,311,1519"/>
+<area shape="rect" id="node31" href="$codigo_8cpp.html#a94581a9b3feac964bdced8cdc15e8484" title="Muestra el submenú de opciones relacionadas con sectores." alt="" coords="153,1543,304,1569"/>
+<area shape="rect" id="node32" href="$codigo_8cpp.html#a15ca712c518aa6cdc4fabc8b3fa84692" title="Muestra el submenú de opciones relacionadas con simulación y noticias financieras." alt="" coords="138,1593,319,1620"/>
+<area shape="rect" id="node33" href="$classPortafolio.html#a3f3249951cf442f25729fc3b0b3a891a" title="Obtiene los activos del portafolio como un std::vector&lt;string&gt;." alt="" coords="133,1289,324,1316"/>
+<area shape="rect" id="node34" href="$classABBEmpresas.html#a77be3c43461441d10f9dd6f03d24604d" title="Devuelve la empresa con el precio actual más bajo." alt="" coords="115,1645,343,1686"/>
+<area shape="rect" id="node35" href="$classABBEmpresas.html#a9773e3023fbdf2197242337670da6941" title="Devuelve la empresa con el precio actual más alto." alt="" coords="115,1710,343,1751"/>
+<area shape="rect" id="node36" href="$classColaPrioridadNoticias.html#a3811c333f31595938a583b600b35bad8" title="Ordena toda la cola de noticias cronológicamente por fecha." alt="" coords="147,1775,310,1817"/>
+<area shape="rect" id="node37" href="$classColaPrioridadNoticias.html#a3db4934bf16a4b593a39f23876a3f158" title="Calcula el promedio del impacto de todas las noticias en la cola." alt="" coords="147,1841,310,1882"/>
+<area shape="rect" id="node38" href="$classMultilistaPrecio.html#aab95a547304a1d3168a6c1916ea3b757" title="Calcula el promedio móvil de los últimos &#39;dias&#39; precios." alt="" coords="418,291,611,333"/>
+<area shape="rect" id="node39" href="$classABBEmpresas.html#a0c1aa570634d14b5cebac4cbb4ddd184" title="Calcula el promedio del precio actual de las empresas de un sector." alt="" coords="117,1906,340,1947"/>
 <area shape="rect" id="node40" href="$classPortafolio.html#ae6d06c70b6052cd798b31b002509e346" title="Árbol de decisión para recomendar la compra de un activo." alt="" coords="117,240,340,267"/>
-<area shape="rect" id="node3" href="$classMiVector.html#acd4c2f3badca90de19b0eaa48b2c2d6e" title="Inserta un elemento al final del vector." alt="" coords="441,5,575,32"/>
-<area shape="rect" id="node11" href="$classMiVector.html#af28ef16044a6e46deb3febec8d1bae30" title="Elimina la primera aparición de un valor en el vector." alt="" coords="437,656,579,683"/>
-<area shape="rect" id="node21" href="$classMiVector.html#a8d8f602691e396c144d450d7c88ed400" title="Verifica si el vector está vacío." alt="" coords="443,1188,573,1215"/>
-<area shape="rect" id="node22" href="$classMiVector.html#a6f89e927eee8c75d0e2209cb2c6a7b74" title="Obtiene el número actual de elementos en el vector." alt="" coords="451,1239,565,1265"/>
-<area shape="rect" id="node25" href="$classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7" title="Llena un vector con punteros a todas las noticias en la cola (en orden actual)." alt="" coords="427,233,589,274"/>
+<area shape="rect" id="node3" href="$classMiVector.html#acd4c2f3badca90de19b0eaa48b2c2d6e" title="Inserta un elemento al final del vector." alt="" coords="447,5,582,32"/>
+<area shape="rect" id="node11" href="$classMiVector.html#af28ef16044a6e46deb3febec8d1bae30" title="Elimina la primera aparición de un valor en el vector." alt="" coords="444,707,585,733"/>
+<area shape="rect" id="node21" href="$classMiVector.html#a8d8f602691e396c144d450d7c88ed400" title="Verifica si el vector está vacío." alt="" coords="450,1239,579,1265"/>
+<area shape="rect" id="node22" href="$classMiVector.html#a6f89e927eee8c75d0e2209cb2c6a7b74" title="Obtiene el número actual de elementos en el vector." alt="" coords="458,1289,571,1316"/>
+<area shape="rect" id="node25" href="$classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7" title="Llena un vector con punteros a todas las noticias en la cola (en orden actual)." alt="" coords="433,226,596,267"/>
 </map>
