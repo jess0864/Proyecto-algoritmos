@@ -381,12 +381,46 @@ inline void mostrarCambiosPorNoticiasEmpresa(ABBEmpresas& arbol, ColaPrioridadNo
     vector<Noticia*> noticias;
     colaNoticias.obtenerNoticias(noticias);
     bool alguna = false;
+    // Obtener precio base (más antiguo del historial)
+    float precio = emp->precioActual;
+    NodoPrecio* nodo = emp->historialPrecios.cabeza;
+    while (nodo && nodo->siguiente) nodo = nodo->siguiente;
+    if (nodo) precio = nodo->precioCierre;
+
+    // Ordenar noticias por fecha (burbuja simple)
+    for (size_t i = 0; i < noticias.size(); ++i) {
+        for (size_t j = i + 1; j < noticias.size(); ++j) {
+            if (noticias[j]->fecha < noticias[i]->fecha) {
+                Noticia* tmp = noticias[i];
+                noticias[i] = noticias[j];
+                noticias[j] = tmp;
+            }
+        }
+    }
+
     cout << "\n================= CAMBIOS DE " << emp->nombre << " (" << emp->ticker << ") POR NOTICIAS =================\n";
     cout << " Fecha       | Título de la noticia                | Precio antes | Precio después | Cambio | Cambio (%)\n";
     cout << "--------------------------------------------------------------------------------------------------------\n";
-    for (auto noticia : noticias) {
+    for (size_t idx = 0; idx < noticias.size(); ++idx) {
+        Noticia* noticia = noticias[idx];
         if (noticia->sectorAfectado == emp->sector) {
-            // Mostrar cambios
+            float porcentaje = 0.0f;
+            if (noticia->impacto > 5)
+                porcentaje = (noticia->impacto - 5) * 0.01f;
+            else
+                porcentaje = -(6 - noticia->impacto) * 0.01f;
+            if (!noticia->esPositiva) porcentaje = -porcentaje;
+            float precioAntes = precio;
+            float precioDespues = precioAntes * (1.0f + porcentaje);
+            float cambio = precioDespues - precioAntes;
+            float cambioPorc = (precioAntes == 0) ? 0 : (cambio / precioAntes) * 100.0f;
+            cout << " " << noticia->fecha << " | ";
+            cout.width(32); cout << left << noticia->titulo.substr(0, 32) << " | ";
+            cout.width(11); cout << right << (int)(precioAntes * 100) / 100.0f << " | ";
+            cout.width(13); cout << right << (int)(precioDespues * 100) / 100.0f << " | ";
+            cout.width(7); cout << right << (int)(cambio * 100) / 100.0f << " | ";
+            cout.width(9); cout << right << (int)(cambioPorc * 100) / 100.0f << "%\n";
+            precio = precioDespues;
             alguna = true;
         }
     }
@@ -396,11 +430,6 @@ inline void mostrarCambiosPorNoticiasEmpresa(ABBEmpresas& arbol, ColaPrioridadNo
     cout << "========================================================================================================\n";
 }
 
-/**
- * @brief Muestra el impacto de las noticias en las acciones de las empresas.
- * @param arbol Árbol binario de búsqueda de empresas.
- * @param colaNoticias Cola de prioridad de noticias.
- */
 inline void mostrarImpactoNoticiasEnAcciones(ABBEmpresas& arbol, ColaPrioridadNoticias& colaNoticias) {
     vector<Noticia*> noticias;
     colaNoticias.obtenerNoticias(noticias);
@@ -408,9 +437,57 @@ inline void mostrarImpactoNoticiasEnAcciones(ABBEmpresas& arbol, ColaPrioridadNo
         cout << "No hay noticias disponibles.\n";
         return;
     }
+    // Ordenar noticias por fecha (burbuja simple)
+    for (size_t i = 0; i < noticias.size(); ++i) {
+        for (size_t j = i + 1; j < noticias.size(); ++j) {
+            if (noticias[j]->fecha < noticias[i]->fecha) {
+                Noticia* tmp = noticias[i];
+                noticias[i] = noticias[j];
+                noticias[j] = tmp;
+            }
+        }
+    }
+
     cout << "\n================= IMPACTO DE NOTICIAS EN EMPRESAS =================\n";
-    for (auto actual : noticias) {
-        cout << "Noticia: " << actual->titulo << " - Sector: " << actual->sectorAfectado << "\n";
+    vector<Empresa*> empresas = arbol.obtenerEmpresasOrdenadas();
+    for (size_t eidx = 0; eidx < empresas.size(); ++eidx) {
+        Empresa* emp = empresas[eidx];
+        float precio = emp->precioActual;
+        NodoPrecio* nodo = emp->historialPrecios.cabeza;
+        while (nodo && nodo->siguiente) nodo = nodo->siguiente;
+        if (nodo) precio = nodo->precioCierre;
+        bool alguna = false;
+        for (size_t nidx = 0; nidx < noticias.size(); ++nidx) {
+            Noticia* noticia = noticias[nidx];
+            if (noticia->sectorAfectado == emp->sector) {
+                float porcentaje = 0.0f;
+                if (noticia->impacto > 5)
+                    porcentaje = (noticia->impacto - 5) * 0.01f;
+                else
+                    porcentaje = -(6 - noticia->impacto) * 0.01f;
+                if (!noticia->esPositiva) porcentaje = -porcentaje;
+                float precioAntes = precio;
+                float precioDespues = precioAntes * (1.0f + porcentaje);
+                float cambio = precioDespues - precioAntes;
+                float cambioPorc = (precioAntes == 0) ? 0 : (cambio / precioAntes) * 100.0f;
+                if (!alguna) {
+                    cout << "\nEmpresa: " << emp->nombre << " (" << emp->ticker << ") - Sector: " << emp->sector << endl;
+                    cout << " Fecha       | Título de la noticia                | Precio antes | Precio después | Cambio | Cambio (%)\n";
+                    cout << "--------------------------------------------------------------------------------------------------------\n";
+                    alguna = true;
+                }
+                cout << " " << noticia->fecha << " | ";
+                cout.width(32); cout << left << noticia->titulo.substr(0, 32) << " | ";
+                cout.width(11); cout << right << (int)(precioAntes * 100) / 100.0f << " | ";
+                cout.width(13); cout << right << (int)(precioDespues * 100) / 100.0f << " | ";
+                cout.width(7); cout << right << (int)(cambio * 100) / 100.0f << " | ";
+                cout.width(9); cout << right << (int)(cambioPorc * 100) / 100.0f << "%\n";
+                precio = precioDespues;
+            }
+        }
+        if (alguna) {
+            cout << "========================================================================================================\n";
+        }
     }
 }
 
