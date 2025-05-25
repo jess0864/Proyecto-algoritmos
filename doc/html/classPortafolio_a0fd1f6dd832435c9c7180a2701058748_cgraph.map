@@ -1,0 +1,5 @@
+<map id="Portafolio::mostrar" name="Portafolio::mostrar">
+<area shape="rect" id="node1" title="Muestra el contenido del portafolio." alt="" coords="5,31,149,57"/>
+<area shape="rect" id="node2" href="$classPila.html#a1ce13b01a65f2971c233ebeff202268f" title="Muestra el contenido completo de la pila." alt="" coords="197,5,308,32"/>
+<area shape="rect" id="node3" href="$classPila.html#a15420d1c215037d91a6908f5b5533e8a" title="Verifica si la pila está vacía." alt="" coords="199,56,306,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Portafolio" name="Portafolio">
+<area shape="rect" id="node1" title="Clase Portafolio que usa una pila para almacenar activos." alt="" coords="5,388,192,568"/>
+<area shape="rect" id="node2" href="$classPila.html" title="Implementación de una pila LIFO con nodos enlazados." alt="" coords="47,145,150,325"/>
+<area shape="rect" id="node3" href="$structNodo.html" title="Nodo simple para la implementación de una pila." alt="" coords="63,5,134,83"/>
+</map>

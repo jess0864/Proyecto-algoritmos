@@ -1,0 +1,9 @@
+<map id="Pila::isEmpty" name="Pila::isEmpty">
+<area shape="rect" id="node1" title="Verifica si la pila está vacía." alt="" coords="583,93,689,120"/>
+<area shape="rect" id="node2" href="$classPila.html#a83f565e49638c5a19da1484aa3dc0d00" title="Elimina la primera aparición de un valor específico." alt="" coords="385,5,493,32"/>
+<area shape="rect" id="node5" href="$classPortafolio.html#a89e48511af8ac261a2b18deb6d3ce460" title="Elimina el último activo agregado (pop)." alt="" coords="344,57,535,98"/>
+<area shape="rect" id="node6" href="$classPortafolio.html#a0fd1f6dd832435c9c7180a2701058748" title="Muestra el contenido del portafolio." alt="" coords="130,89,274,116"/>
+<area shape="rect" id="node7" href="$classPortafolio.html#af8bfef7dde343b4fe1fb483047865656" title="Ordena los activos del portafolio en orden alfabético ascendente (A&#45;Z)." alt="" coords="344,173,535,200"/>
+<area shape="rect" id="node3" href="$classPortafolio.html#a2a3d95a628382a88d45d666982538b4e" title="Elimina un activo específico del portafolio." alt="" coords="108,23,296,49"/>
+<area shape="rect" id="node4" href="$codigo_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Función principal del programa." alt="" coords="5,64,60,91"/>
+</map>

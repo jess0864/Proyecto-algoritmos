@@ -1,0 +1,7 @@
+<map id="Pila::push" name="Pila::push">
+<area shape="rect" id="node1" title="Agrega un nuevo elemento a la cima de la pila." alt="" coords="500,31,585,57"/>
+<area shape="rect" id="node2" href="$classPortafolio.html#a0f318f5e76a14783e28f2661d894c369" title="Agrega un activo al portafolio (al tope de la pila)." alt="" coords="110,5,294,32"/>
+<area shape="rect" id="node4" href="$classPila.html#a83f565e49638c5a19da1484aa3dc0d00" title="Elimina la primera aparición de un valor específico." alt="" coords="344,56,452,83"/>
+<area shape="rect" id="node3" href="$codigo_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Función principal del programa." alt="" coords="5,31,60,57"/>
+<area shape="rect" id="node5" href="$classPortafolio.html#a2a3d95a628382a88d45d666982538b4e" title="Elimina un activo específico del portafolio." alt="" coords="108,56,296,83"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="Pila::top" name="Pila::top">
+<area shape="rect" id="node1" title="Devuelve el elemento en la cima de la pila sin eliminarlo." alt="" coords="583,64,657,91"/>
+<area shape="rect" id="node2" href="$classPila.html#a83f565e49638c5a19da1484aa3dc0d00" title="Elimina la primera aparición de un valor específico." alt="" coords="385,5,493,32"/>
+<area shape="rect" id="node5" href="$classPortafolio.html#a89e48511af8ac261a2b18deb6d3ce460" title="Elimina el último activo agregado (pop)." alt="" coords="344,57,535,98"/>
+<area shape="rect" id="node6" href="$classPortafolio.html#af8bfef7dde343b4fe1fb483047865656" title="Ordena los activos del portafolio en orden alfabético ascendente (A&#45;Z)." alt="" coords="344,123,535,149"/>
+<area shape="rect" id="node3" href="$classPortafolio.html#a2a3d95a628382a88d45d666982538b4e" title="Elimina un activo específico del portafolio." alt="" coords="108,5,296,32"/>
+<area shape="rect" id="node4" href="$codigo_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Función principal del programa." alt="" coords="5,5,60,32"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="portafolio.h" name="portafolio.h">
+<area shape="rect" id="node1" title="Define la clase Portafolio y la estructura de pila para gestionar activos de usuario." alt="" coords="193,5,290,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,229,85,256"/>
+<area shape="rect" id="node3" title=" " alt="" coords="113,229,172,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="398,229,463,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="315,229,373,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="197,229,259,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="553,80,615,107"/>
+<area shape="rect" id="node8" href="$empresa_8h.html" title="Define las estructuras y clases para la gestión de empresas y sus precios históricos." alt="" coords="235,155,325,181"/>
+<area shape="rect" id="node9" href="$noticia_8h.html" title="Define la estructura Noticia y la clase ColaPrioridadNoticias para la gestión de noticias financieras..." alt="" coords="163,80,242,107"/>
+</map>
