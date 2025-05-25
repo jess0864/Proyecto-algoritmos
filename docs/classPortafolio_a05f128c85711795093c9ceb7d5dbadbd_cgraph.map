@@ -1,4 +1,4 @@
 <map id="Portafolio::tieneActivo" name="Portafolio::tieneActivo">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node1" title="Verifica si el portafolio contiene un activo específico." alt="" coords="5,5,172,32"/>
 <area shape="rect" id="node2" href="$classMiVector.html#a6f89e927eee8c75d0e2209cb2c6a7b74" title="Obtiene el número actual de elementos en el vector." alt="" coords="220,5,333,32"/>
 </map>

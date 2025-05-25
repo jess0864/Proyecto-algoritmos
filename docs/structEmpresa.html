@@ -135,8 +135,9 @@ Atributos públicos</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Nodo de ABB que representa una empresa. </p>
+<p>Contiene información relevante de la empresa y enlaces para el árbol binario de búsqueda. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00092">92</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00101">101</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 </div><h2 class="groupheader">Documentación del constructor y destructor</h2>
 <a id="a1a133a0eca382652cdca4e428e3a4ac6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a133a0eca382652cdca4e428e3a4ac6">&#9670;&nbsp;</a></span>Empresa()</h2>
@@ -195,9 +196,9 @@ Atributos públicos</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00115">115</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        : <a class="code" href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">ticker</a>(t), <a class="code" href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">nombre</a>(n), <a class="code" href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">sector</a>(s), <a class="code" href="structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4">precioActual</a>(p),</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;          <a class="code" href="structEmpresa.html#a48ab557576b7f6d7a8e5bb70933b3cfd">izquierda</a>(<span class="keyword">nullptr</span>), <a class="code" href="structEmpresa.html#ac1821208ba636f7c14e02da48c9f73d3">derecha</a>(<span class="keyword">nullptr</span>) {}</div>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00124">124</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        : <a class="code" href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">ticker</a>(t), <a class="code" href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">nombre</a>(n), <a class="code" href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">sector</a>(s), <a class="code" href="structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4">precioActual</a>(p),</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;          <a class="code" href="structEmpresa.html#a48ab557576b7f6d7a8e5bb70933b3cfd">izquierda</a>(<span class="keyword">nullptr</span>), <a class="code" href="structEmpresa.html#ac1821208ba636f7c14e02da48c9f73d3">derecha</a>(<span class="keyword">nullptr</span>) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -216,9 +217,9 @@ Atributos públicos</h2></td></tr>
 
 <p>Puntero al hijo derecho en el ABB. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00106">106</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00115">115</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00150">ABBEmpresas::buscar()</a>, <a class="el" href="empresa_8h_source.html#l00176">ABBEmpresas::destruir()</a>, <a class="el" href="empresa_8h_source.html#l00165">ABBEmpresas::inorden()</a> y <a class="el" href="empresa_8h_source.html#l00134">ABBEmpresas::insertar()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00162">ABBEmpresas::buscar()</a>, <a class="el" href="empresa_8h_source.html#l00188">ABBEmpresas::destruir()</a>, <a class="el" href="empresa_8h_source.html#l00177">ABBEmpresas::inorden()</a> y <a class="el" href="empresa_8h_source.html#l00146">ABBEmpresas::insertar()</a>.</p>
 
 </div>
 </div>
@@ -236,9 +237,9 @@ Atributos públicos</h2></td></tr>
 
 <p>Historial de precios de la acción. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00102">102</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00111">111</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00301">ABBEmpresas::agregarPrecio()</a>, <a class="el" href="empresa_8h_source.html#l00176">ABBEmpresas::destruir()</a>, <a class="el" href="empresa_8h_source.html#l00193">ABBEmpresas::inicializarEmpresas()</a>, <a class="el" href="codigo_8cpp_source.html#l00097">main()</a> y <a class="el" href="portafolio_8h_source.html#l00207">Portafolio::recomendarCompra()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00313">ABBEmpresas::agregarPrecio()</a>, <a class="el" href="empresa_8h_source.html#l00188">ABBEmpresas::destruir()</a>, <a class="el" href="empresa_8h_source.html#l00205">ABBEmpresas::inicializarEmpresas()</a>, <a class="el" href="codigo_8cpp_source.html#l00103">main()</a> y <a class="el" href="portafolio_8h_source.html#l00245">Portafolio::recomendarCompra()</a>.</p>
 
 </div>
 </div>
@@ -256,9 +257,9 @@ Atributos públicos</h2></td></tr>
 
 <p>Puntero al hijo izquierdo en el ABB. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00104">104</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00113">113</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00150">ABBEmpresas::buscar()</a>, <a class="el" href="empresa_8h_source.html#l00176">ABBEmpresas::destruir()</a>, <a class="el" href="empresa_8h_source.html#l00165">ABBEmpresas::inorden()</a> y <a class="el" href="empresa_8h_source.html#l00134">ABBEmpresas::insertar()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00162">ABBEmpresas::buscar()</a>, <a class="el" href="empresa_8h_source.html#l00188">ABBEmpresas::destruir()</a>, <a class="el" href="empresa_8h_source.html#l00177">ABBEmpresas::inorden()</a> y <a class="el" href="empresa_8h_source.html#l00146">ABBEmpresas::insertar()</a>.</p>
 
 </div>
 </div>
@@ -276,9 +277,9 @@ Atributos públicos</h2></td></tr>
 
 <p>Nombre de la empresa. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00096">96</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00105">105</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00519">ABBEmpresas::imprimirEmpresa()</a>, <a class="el" href="codigo_8cpp_source.html#l00097">main()</a> y <a class="el" href="noticia_8h_source.html#l00340">mostrarCambiosPorNoticiasEmpresa()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00531">ABBEmpresas::imprimirEmpresa()</a>, <a class="el" href="codigo_8cpp_source.html#l00103">main()</a> y <a class="el" href="noticia_8h_source.html#l00363">mostrarCambiosPorNoticiasEmpresa()</a>.</p>
 
 </div>
 </div>
@@ -296,9 +297,9 @@ Atributos públicos</h2></td></tr>
 
 <p>Precio actual de la acción. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00100">100</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00109">109</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00301">ABBEmpresas::agregarPrecio()</a>, <a class="el" href="empresa_8h_source.html#l00519">ABBEmpresas::imprimirEmpresa()</a>, <a class="el" href="empresa_8h_source.html#l00193">ABBEmpresas::inicializarEmpresas()</a>, <a class="el" href="codigo_8cpp_source.html#l00097">main()</a>, <a class="el" href="empresa_8h_source.html#l00487">ABBEmpresas::obtenerEmpresaMasCara()</a> y <a class="el" href="portafolio_8h_source.html#l00207">Portafolio::recomendarCompra()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00313">ABBEmpresas::agregarPrecio()</a>, <a class="el" href="empresa_8h_source.html#l00531">ABBEmpresas::imprimirEmpresa()</a>, <a class="el" href="empresa_8h_source.html#l00205">ABBEmpresas::inicializarEmpresas()</a>, <a class="el" href="codigo_8cpp_source.html#l00103">main()</a>, <a class="el" href="empresa_8h_source.html#l00499">ABBEmpresas::obtenerEmpresaMasCara()</a> y <a class="el" href="portafolio_8h_source.html#l00245">Portafolio::recomendarCompra()</a>.</p>
 
 </div>
 </div>
@@ -316,9 +317,9 @@ Atributos públicos</h2></td></tr>
 
 <p>Sector al que pertenece la empresa. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00098">98</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00107">107</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00519">ABBEmpresas::imprimirEmpresa()</a>, <a class="el" href="noticia_8h_source.html#l00340">mostrarCambiosPorNoticiasEmpresa()</a> y <a class="el" href="portafolio_8h_source.html#l00207">Portafolio::recomendarCompra()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00531">ABBEmpresas::imprimirEmpresa()</a>, <a class="el" href="noticia_8h_source.html#l00363">mostrarCambiosPorNoticiasEmpresa()</a> y <a class="el" href="portafolio_8h_source.html#l00245">Portafolio::recomendarCompra()</a>.</p>
 
 </div>
 </div>
@@ -336,9 +337,9 @@ Atributos públicos</h2></td></tr>
 
 <p>Ticker de la empresa (clave única) </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00094">94</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00103">103</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00150">ABBEmpresas::buscar()</a>, <a class="el" href="empresa_8h_source.html#l00519">ABBEmpresas::imprimirEmpresa()</a>, <a class="el" href="empresa_8h_source.html#l00134">ABBEmpresas::insertar()</a>, <a class="el" href="codigo_8cpp_source.html#l00097">main()</a> y <a class="el" href="noticia_8h_source.html#l00340">mostrarCambiosPorNoticiasEmpresa()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00162">ABBEmpresas::buscar()</a>, <a class="el" href="empresa_8h_source.html#l00531">ABBEmpresas::imprimirEmpresa()</a>, <a class="el" href="empresa_8h_source.html#l00146">ABBEmpresas::insertar()</a>, <a class="el" href="codigo_8cpp_source.html#l00103">main()</a> y <a class="el" href="noticia_8h_source.html#l00363">mostrarCambiosPorNoticiasEmpresa()</a>.</p>
 
 </div>
 </div>
@@ -347,12 +348,12 @@ Atributos públicos</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructEmpresa_html_ae3272a72f778485c20dab09320f94b86"><div class="ttname"><a href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">Empresa::sector</a></div><div class="ttdeci">string sector</div><div class="ttdoc">Sector al que pertenece la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00098">empresa.h:98</a></div></div>
-<div class="ttc" id="astructEmpresa_html_ac1821208ba636f7c14e02da48c9f73d3"><div class="ttname"><a href="structEmpresa.html#ac1821208ba636f7c14e02da48c9f73d3">Empresa::derecha</a></div><div class="ttdeci">Empresa * derecha</div><div class="ttdoc">Puntero al hijo derecho en el ABB.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00106">empresa.h:106</a></div></div>
-<div class="ttc" id="astructEmpresa_html_a913af3d925c9dcf18bb762ef8df46c70"><div class="ttname"><a href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">Empresa::ticker</a></div><div class="ttdeci">string ticker</div><div class="ttdoc">Ticker de la empresa (clave única)</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00094">empresa.h:94</a></div></div>
-<div class="ttc" id="astructEmpresa_html_a48ab557576b7f6d7a8e5bb70933b3cfd"><div class="ttname"><a href="structEmpresa.html#a48ab557576b7f6d7a8e5bb70933b3cfd">Empresa::izquierda</a></div><div class="ttdeci">Empresa * izquierda</div><div class="ttdoc">Puntero al hijo izquierdo en el ABB.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00104">empresa.h:104</a></div></div>
-<div class="ttc" id="astructEmpresa_html_a8c9b36929b5a7fde45c9b5cf87f7f3a4"><div class="ttname"><a href="structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4">Empresa::precioActual</a></div><div class="ttdeci">float precioActual</div><div class="ttdoc">Precio actual de la acción.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00100">empresa.h:100</a></div></div>
-<div class="ttc" id="astructEmpresa_html_a5dad5e57aee0b7e04844564418ceea06"><div class="ttname"><a href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">Empresa::nombre</a></div><div class="ttdeci">string nombre</div><div class="ttdoc">Nombre de la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00096">empresa.h:96</a></div></div>
+<div class="ttc" id="astructEmpresa_html_ae3272a72f778485c20dab09320f94b86"><div class="ttname"><a href="structEmpresa.html#ae3272a72f778485c20dab09320f94b86">Empresa::sector</a></div><div class="ttdeci">string sector</div><div class="ttdoc">Sector al que pertenece la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00107">empresa.h:107</a></div></div>
+<div class="ttc" id="astructEmpresa_html_ac1821208ba636f7c14e02da48c9f73d3"><div class="ttname"><a href="structEmpresa.html#ac1821208ba636f7c14e02da48c9f73d3">Empresa::derecha</a></div><div class="ttdeci">Empresa * derecha</div><div class="ttdoc">Puntero al hijo derecho en el ABB.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00115">empresa.h:115</a></div></div>
+<div class="ttc" id="astructEmpresa_html_a913af3d925c9dcf18bb762ef8df46c70"><div class="ttname"><a href="structEmpresa.html#a913af3d925c9dcf18bb762ef8df46c70">Empresa::ticker</a></div><div class="ttdeci">string ticker</div><div class="ttdoc">Ticker de la empresa (clave única)</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00103">empresa.h:103</a></div></div>
+<div class="ttc" id="astructEmpresa_html_a48ab557576b7f6d7a8e5bb70933b3cfd"><div class="ttname"><a href="structEmpresa.html#a48ab557576b7f6d7a8e5bb70933b3cfd">Empresa::izquierda</a></div><div class="ttdeci">Empresa * izquierda</div><div class="ttdoc">Puntero al hijo izquierdo en el ABB.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00113">empresa.h:113</a></div></div>
+<div class="ttc" id="astructEmpresa_html_a8c9b36929b5a7fde45c9b5cf87f7f3a4"><div class="ttname"><a href="structEmpresa.html#a8c9b36929b5a7fde45c9b5cf87f7f3a4">Empresa::precioActual</a></div><div class="ttdeci">float precioActual</div><div class="ttdoc">Precio actual de la acción.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00109">empresa.h:109</a></div></div>
+<div class="ttc" id="astructEmpresa_html_a5dad5e57aee0b7e04844564418ceea06"><div class="ttname"><a href="structEmpresa.html#a5dad5e57aee0b7e04844564418ceea06">Empresa::nombre</a></div><div class="ttdeci">string nombre</div><div class="ttdoc">Nombre de la empresa.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00105">empresa.h:105</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

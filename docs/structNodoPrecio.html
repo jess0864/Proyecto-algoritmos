@@ -123,8 +123,9 @@ Atributos públicos</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Nodo para la multilista de precios históricos de una acción. </p>
+<p>Cada nodo almacena la fecha y el precio de cierre de una acción, así como un puntero al siguiente nodo. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00019">19</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00022">22</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 </div><h2 class="groupheader">Documentación del constructor y destructor</h2>
 <a id="abe8d2234060868de750a115e3f3d34d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe8d2234060868de750a115e3f3d34d5">&#9670;&nbsp;</a></span>NodoPrecio()</h2>
@@ -169,8 +170,8 @@ Atributos públicos</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00032">32</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;: <a class="code" href="structNodoPrecio.html#a2c529be99d1d2770e6e4d85e66357f1a">fecha</a>(f), <a class="code" href="structNodoPrecio.html#abda288453e6025dea732783b7b86f129">precioCierre</a>(p), <a class="code" href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">siguiente</a>(<span class="keyword">nullptr</span>) {}</div>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00035">35</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;: <a class="code" href="structNodoPrecio.html#a2c529be99d1d2770e6e4d85e66357f1a">fecha</a>(f), <a class="code" href="structNodoPrecio.html#abda288453e6025dea732783b7b86f129">precioCierre</a>(p), <a class="code" href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">siguiente</a>(<span class="keyword">nullptr</span>) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -189,9 +190,9 @@ Atributos públicos</h2></td></tr>
 
 <p>Fecha del precio histórico (formato AAAA-MM-DD) </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00021">21</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00024">24</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00079">MultilistaPrecio::imprimir()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00085">MultilistaPrecio::imprimir()</a>.</p>
 
 </div>
 </div>
@@ -209,9 +210,9 @@ Atributos públicos</h2></td></tr>
 
 <p>Precio de cierre en la fecha dada. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00023">23</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00026">26</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00079">MultilistaPrecio::imprimir()</a>, <a class="el" href="empresa_8h_source.html#l00193">ABBEmpresas::inicializarEmpresas()</a>, <a class="el" href="codigo_8cpp_source.html#l00097">main()</a>, <a class="el" href="empresa_8h_source.html#l00064">MultilistaPrecio::promedioMovil()</a> y <a class="el" href="portafolio_8h_source.html#l00207">Portafolio::recomendarCompra()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00085">MultilistaPrecio::imprimir()</a>, <a class="el" href="empresa_8h_source.html#l00205">ABBEmpresas::inicializarEmpresas()</a>, <a class="el" href="codigo_8cpp_source.html#l00103">main()</a>, <a class="el" href="empresa_8h_source.html#l00070">MultilistaPrecio::promedioMovil()</a> y <a class="el" href="portafolio_8h_source.html#l00245">Portafolio::recomendarCompra()</a>.</p>
 
 </div>
 </div>
@@ -229,9 +230,9 @@ Atributos públicos</h2></td></tr>
 
 <p>Puntero al siguiente nodo en la lista. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00025">25</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00028">28</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00053">MultilistaPrecio::agregarPrecio()</a>, <a class="el" href="empresa_8h_source.html#l00176">ABBEmpresas::destruir()</a>, <a class="el" href="empresa_8h_source.html#l00079">MultilistaPrecio::imprimir()</a>, <a class="el" href="codigo_8cpp_source.html#l00097">main()</a>, <a class="el" href="empresa_8h_source.html#l00064">MultilistaPrecio::promedioMovil()</a> y <a class="el" href="portafolio_8h_source.html#l00207">Portafolio::recomendarCompra()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00059">MultilistaPrecio::agregarPrecio()</a>, <a class="el" href="empresa_8h_source.html#l00188">ABBEmpresas::destruir()</a>, <a class="el" href="empresa_8h_source.html#l00085">MultilistaPrecio::imprimir()</a>, <a class="el" href="codigo_8cpp_source.html#l00103">main()</a>, <a class="el" href="empresa_8h_source.html#l00070">MultilistaPrecio::promedioMovil()</a> y <a class="el" href="portafolio_8h_source.html#l00245">Portafolio::recomendarCompra()</a>.</p>
 
 </div>
 </div>
@@ -240,9 +241,9 @@ Atributos públicos</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructNodoPrecio_html_abda288453e6025dea732783b7b86f129"><div class="ttname"><a href="structNodoPrecio.html#abda288453e6025dea732783b7b86f129">NodoPrecio::precioCierre</a></div><div class="ttdeci">float precioCierre</div><div class="ttdoc">Precio de cierre en la fecha dada.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00023">empresa.h:23</a></div></div>
-<div class="ttc" id="astructNodoPrecio_html_a9f6cd7ab555db900b80edb3bcaf3fd84"><div class="ttname"><a href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">NodoPrecio::siguiente</a></div><div class="ttdeci">NodoPrecio * siguiente</div><div class="ttdoc">Puntero al siguiente nodo en la lista.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00025">empresa.h:25</a></div></div>
-<div class="ttc" id="astructNodoPrecio_html_a2c529be99d1d2770e6e4d85e66357f1a"><div class="ttname"><a href="structNodoPrecio.html#a2c529be99d1d2770e6e4d85e66357f1a">NodoPrecio::fecha</a></div><div class="ttdeci">string fecha</div><div class="ttdoc">Fecha del precio histórico (formato AAAA-MM-DD)</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00021">empresa.h:21</a></div></div>
+<div class="ttc" id="astructNodoPrecio_html_abda288453e6025dea732783b7b86f129"><div class="ttname"><a href="structNodoPrecio.html#abda288453e6025dea732783b7b86f129">NodoPrecio::precioCierre</a></div><div class="ttdeci">float precioCierre</div><div class="ttdoc">Precio de cierre en la fecha dada.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00026">empresa.h:26</a></div></div>
+<div class="ttc" id="astructNodoPrecio_html_a9f6cd7ab555db900b80edb3bcaf3fd84"><div class="ttname"><a href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">NodoPrecio::siguiente</a></div><div class="ttdeci">NodoPrecio * siguiente</div><div class="ttdoc">Puntero al siguiente nodo en la lista.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00028">empresa.h:28</a></div></div>
+<div class="ttc" id="astructNodoPrecio_html_a2c529be99d1d2770e6e4d85e66357f1a"><div class="ttname"><a href="structNodoPrecio.html#a2c529be99d1d2770e6e4d85e66357f1a">NodoPrecio::fecha</a></div><div class="ttdeci">string fecha</div><div class="ttdoc">Fecha del precio histórico (formato AAAA-MM-DD)</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00024">empresa.h:24</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

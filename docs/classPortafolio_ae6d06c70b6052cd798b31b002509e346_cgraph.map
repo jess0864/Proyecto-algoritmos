@@ -1,5 +1,5 @@
 <map id="Portafolio::recomendarCompra" name="Portafolio::recomendarCompra">
-<area shape="rect" id="node1" title=" " alt="" coords="5,64,228,91"/>
+<area shape="rect" id="node1" title="Árbol de decisión para recomendar la compra de un activo." alt="" coords="5,64,228,91"/>
 <area shape="rect" id="node2" href="$classABBEmpresas.html#a705d67b6d795dffea3edf70150e0288d" title="Busca una empresa por ticker." alt="" coords="276,5,497,32"/>
 <area shape="rect" id="node3" href="$classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7" title="Llena un vector con punteros a todas las noticias en la cola (en orden actual)." alt="" coords="305,57,468,98"/>
 <area shape="rect" id="node4" href="$classMultilistaPrecio.html#aab95a547304a1d3168a6c1916ea3b757" title="Calcula el promedio móvil de los últimos &#39;dias&#39; precios." alt="" coords="290,122,483,163"/>

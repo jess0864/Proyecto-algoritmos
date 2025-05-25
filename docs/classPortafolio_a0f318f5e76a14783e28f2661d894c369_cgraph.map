@@ -1,4 +1,4 @@
 <map id="Portafolio::agregarActivo" name="Portafolio::agregarActivo">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,189,32"/>
-<area shape="rect" id="node2" href="$classMiVector.html#acd4c2f3badca90de19b0eaa48b2c2d6e" title="Inserta y elimina elementos del vector personalizado." alt="" coords="237,5,372,32"/>
+<area shape="rect" id="node1" title="Agrega un activo al portafolio." alt="" coords="5,5,189,32"/>
+<area shape="rect" id="node2" href="$classMiVector.html#acd4c2f3badca90de19b0eaa48b2c2d6e" title="Inserta un elemento al final del vector." alt="" coords="237,5,372,32"/>
 </map>

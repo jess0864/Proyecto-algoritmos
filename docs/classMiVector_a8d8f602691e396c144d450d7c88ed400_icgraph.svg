@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classPortafolio.html#a0fd1f6dd832435c9c7180a2701058748" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classPortafolio.html#a0fd1f6dd832435c9c7180a2701058748" target="_top" xlink:title="Muestra todos los activos del portafolio por consola.">
 <polygon fill="white" stroke="black" points="94.5,-38.5 94.5,-57.5 202.5,-57.5 202.5,-38.5 94.5,-38.5"/>
 <text text-anchor="middle" x="148.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">Portafolio::mostrar</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classPortafolio.html#af8bfef7dde343b4fe1fb483047865656" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classPortafolio.html#af8bfef7dde343b4fe1fb483047865656" target="_top" xlink:title="Ordena los activos del portafolio en orden ascendente.">
 <polygon fill="white" stroke="black" points="77,-0.5 77,-19.5 220,-19.5 220,-0.5 77,-0.5"/>
 <text text-anchor="middle" x="148.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Portafolio::ordenarActivos</text>
 </a>

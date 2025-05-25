@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Inserta y elimina elementos del vector personalizado.">
+<g id="a_node1"><a xlink:title="Inserta un elemento al final del vector.">
 <polygon fill="#bfbfbf" stroke="black" points="251,-0.5 251,-19.5 352,-19.5 352,-0.5 251,-0.5"/>
 <text text-anchor="middle" x="301.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">MiVector::miPush</text>
 </a>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classPortafolio.html#a0f318f5e76a14783e28f2661d894c369" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classPortafolio.html#a0f318f5e76a14783e28f2661d894c369" target="_top" xlink:title="Agrega un activo al portafolio.">
 <polygon fill="white" stroke="black" points="77,-0.5 77,-19.5 215,-19.5 215,-0.5 77,-0.5"/>
 <text text-anchor="middle" x="146" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Portafolio::agregarActivo</text>
 </a>

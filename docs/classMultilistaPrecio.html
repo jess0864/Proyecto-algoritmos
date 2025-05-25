@@ -126,8 +126,9 @@ Atributos públicos</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Multilista para historial de precios de una acción. </p>
+<p>Permite agregar precios históricos, calcular promedios móviles y mostrar el historial. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00038">38</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00044">44</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 </div><h2 class="groupheader">Documentación del constructor y destructor</h2>
 <a id="aff78bd08528c48ef92941da673871ad7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aff78bd08528c48ef92941da673871ad7">&#9670;&nbsp;</a></span>MultilistaPrecio()</h2>
@@ -154,8 +155,8 @@ Atributos públicos</h2></td></tr>
 
 <p>Constructor de <a class="el" href="classMultilistaPrecio.html" title="Multilista para historial de precios de una acción.">MultilistaPrecio</a>. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00046">46</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;: <a class="code" href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">cabeza</a>(<span class="keyword">nullptr</span>) {}</div>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00052">52</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;: <a class="code" href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">cabeza</a>(<span class="keyword">nullptr</span>) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -203,16 +204,16 @@ Atributos públicos</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00053">53</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                          {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="structNodoPrecio.html">NodoPrecio</a>* nuevo = <span class="keyword">new</span> <a class="code" href="structNodoPrecio.html">NodoPrecio</a>(fecha, precio);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        nuevo-&gt;<a class="code" href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">siguiente</a> = <a class="code" href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">cabeza</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">cabeza</a> = nuevo;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00059">59</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                          {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="structNodoPrecio.html">NodoPrecio</a>* nuevo = <span class="keyword">new</span> <a class="code" href="structNodoPrecio.html">NodoPrecio</a>(fecha, precio);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        nuevo-&gt;<a class="code" href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">siguiente</a> = <a class="code" href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">cabeza</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">cabeza</a> = nuevo;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Hace referencia a <a class="el" href="empresa_8h_source.html#l00025">NodoPrecio::siguiente</a>.</p>
+<p class="reference">Hace referencia a <a class="el" href="empresa_8h_source.html#l00028">NodoPrecio::siguiente</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00301">ABBEmpresas::agregarPrecio()</a> y <a class="el" href="empresa_8h_source.html#l00193">ABBEmpresas::inicializarEmpresas()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00313">ABBEmpresas::agregarPrecio()</a> y <a class="el" href="empresa_8h_source.html#l00205">ABBEmpresas::inicializarEmpresas()</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Gráfico de llamadas a esta función:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -249,17 +250,17 @@ Atributos públicos</h2></td></tr>
 
 <p>Imprime el historial de precios por consola. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00079">79</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="structNodoPrecio.html">NodoPrecio</a>* actual = <a class="code" href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">cabeza</a>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">while</span> (actual) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            cout &lt;&lt; actual-&gt;<a class="code" href="structNodoPrecio.html#a2c529be99d1d2770e6e4d85e66357f1a">fecha</a> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; actual-&gt;<a class="code" href="structNodoPrecio.html#abda288453e6025dea732783b7b86f129">precioCierre</a> &lt;&lt; <span class="stringliteral">&quot;  &quot;</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            actual = actual-&gt;<a class="code" href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">siguiente</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        cout &lt;&lt; endl;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00085">85</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="structNodoPrecio.html">NodoPrecio</a>* actual = <a class="code" href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">cabeza</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">while</span> (actual) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            cout &lt;&lt; actual-&gt;<a class="code" href="structNodoPrecio.html#a2c529be99d1d2770e6e4d85e66357f1a">fecha</a> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; actual-&gt;<a class="code" href="structNodoPrecio.html#abda288453e6025dea732783b7b86f129">precioCierre</a> &lt;&lt; <span class="stringliteral">&quot;  &quot;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            actual = actual-&gt;<a class="code" href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">siguiente</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Hace referencia a <a class="el" href="empresa_8h_source.html#l00021">NodoPrecio::fecha</a>, <a class="el" href="empresa_8h_source.html#l00023">NodoPrecio::precioCierre</a> y <a class="el" href="empresa_8h_source.html#l00025">NodoPrecio::siguiente</a>.</p>
+<p class="reference">Hace referencia a <a class="el" href="empresa_8h_source.html#l00024">NodoPrecio::fecha</a>, <a class="el" href="empresa_8h_source.html#l00026">NodoPrecio::precioCierre</a> y <a class="el" href="empresa_8h_source.html#l00028">NodoPrecio::siguiente</a>.</p>
 
 </div>
 </div>
@@ -296,22 +297,22 @@ Atributos públicos</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>Promedio móvil calculado. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00064">64</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                  {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">float</span> suma = 0;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">int</span> cont = 0;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="structNodoPrecio.html">NodoPrecio</a>* actual = <a class="code" href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">cabeza</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">while</span> (actual &amp;&amp; cont &lt; dias) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            suma += actual-&gt;<a class="code" href="structNodoPrecio.html#abda288453e6025dea732783b7b86f129">precioCierre</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            actual = actual-&gt;<a class="code" href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">siguiente</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            cont++;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> (cont &gt; 0) ? suma / cont : 0;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00070">70</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                  {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">float</span> suma = 0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">int</span> cont = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="structNodoPrecio.html">NodoPrecio</a>* actual = <a class="code" href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">cabeza</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">while</span> (actual &amp;&amp; cont &lt; dias) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            suma += actual-&gt;<a class="code" href="structNodoPrecio.html#abda288453e6025dea732783b7b86f129">precioCierre</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            actual = actual-&gt;<a class="code" href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">siguiente</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            cont++;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> (cont &gt; 0) ? suma / cont : 0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Hace referencia a <a class="el" href="empresa_8h_source.html#l00023">NodoPrecio::precioCierre</a> y <a class="el" href="empresa_8h_source.html#l00025">NodoPrecio::siguiente</a>.</p>
+<p class="reference">Hace referencia a <a class="el" href="empresa_8h_source.html#l00026">NodoPrecio::precioCierre</a> y <a class="el" href="empresa_8h_source.html#l00028">NodoPrecio::siguiente</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="codigo_8cpp_source.html#l00097">main()</a> y <a class="el" href="portafolio_8h_source.html#l00207">Portafolio::recomendarCompra()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="codigo_8cpp_source.html#l00103">main()</a> y <a class="el" href="portafolio_8h_source.html#l00245">Portafolio::recomendarCompra()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Gráfico de llamadas a esta función:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -338,9 +339,9 @@ Atributos públicos</h2></td></tr>
 
 <p>Puntero al primer nodo de la lista de precios. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00041">41</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="empresa_8h_source.html#l00047">47</a> del archivo <a class="el" href="empresa_8h_source.html">empresa.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00176">ABBEmpresas::destruir()</a>, <a class="el" href="empresa_8h_source.html#l00193">ABBEmpresas::inicializarEmpresas()</a>, <a class="el" href="codigo_8cpp_source.html#l00097">main()</a> y <a class="el" href="portafolio_8h_source.html#l00207">Portafolio::recomendarCompra()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="empresa_8h_source.html#l00188">ABBEmpresas::destruir()</a>, <a class="el" href="empresa_8h_source.html#l00205">ABBEmpresas::inicializarEmpresas()</a>, <a class="el" href="codigo_8cpp_source.html#l00103">main()</a> y <a class="el" href="portafolio_8h_source.html#l00245">Portafolio::recomendarCompra()</a>.</p>
 
 </div>
 </div>
@@ -349,11 +350,11 @@ Atributos públicos</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassMultilistaPrecio_html_aa08135e68ab8c2c43016ded19e9d3698"><div class="ttname"><a href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">MultilistaPrecio::cabeza</a></div><div class="ttdeci">NodoPrecio * cabeza</div><div class="ttdoc">Puntero al primer nodo de la lista de precios.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00041">empresa.h:41</a></div></div>
-<div class="ttc" id="astructNodoPrecio_html_abda288453e6025dea732783b7b86f129"><div class="ttname"><a href="structNodoPrecio.html#abda288453e6025dea732783b7b86f129">NodoPrecio::precioCierre</a></div><div class="ttdeci">float precioCierre</div><div class="ttdoc">Precio de cierre en la fecha dada.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00023">empresa.h:23</a></div></div>
-<div class="ttc" id="astructNodoPrecio_html_a9f6cd7ab555db900b80edb3bcaf3fd84"><div class="ttname"><a href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">NodoPrecio::siguiente</a></div><div class="ttdeci">NodoPrecio * siguiente</div><div class="ttdoc">Puntero al siguiente nodo en la lista.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00025">empresa.h:25</a></div></div>
-<div class="ttc" id="astructNodoPrecio_html"><div class="ttname"><a href="structNodoPrecio.html">NodoPrecio</a></div><div class="ttdoc">Nodo para la multilista de precios históricos de una acción.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00019">empresa.h:19</a></div></div>
-<div class="ttc" id="astructNodoPrecio_html_a2c529be99d1d2770e6e4d85e66357f1a"><div class="ttname"><a href="structNodoPrecio.html#a2c529be99d1d2770e6e4d85e66357f1a">NodoPrecio::fecha</a></div><div class="ttdeci">string fecha</div><div class="ttdoc">Fecha del precio histórico (formato AAAA-MM-DD)</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00021">empresa.h:21</a></div></div>
+<div class="ttc" id="aclassMultilistaPrecio_html_aa08135e68ab8c2c43016ded19e9d3698"><div class="ttname"><a href="classMultilistaPrecio.html#aa08135e68ab8c2c43016ded19e9d3698">MultilistaPrecio::cabeza</a></div><div class="ttdeci">NodoPrecio * cabeza</div><div class="ttdoc">Puntero al primer nodo de la lista de precios.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00047">empresa.h:47</a></div></div>
+<div class="ttc" id="astructNodoPrecio_html_abda288453e6025dea732783b7b86f129"><div class="ttname"><a href="structNodoPrecio.html#abda288453e6025dea732783b7b86f129">NodoPrecio::precioCierre</a></div><div class="ttdeci">float precioCierre</div><div class="ttdoc">Precio de cierre en la fecha dada.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00026">empresa.h:26</a></div></div>
+<div class="ttc" id="astructNodoPrecio_html_a9f6cd7ab555db900b80edb3bcaf3fd84"><div class="ttname"><a href="structNodoPrecio.html#a9f6cd7ab555db900b80edb3bcaf3fd84">NodoPrecio::siguiente</a></div><div class="ttdeci">NodoPrecio * siguiente</div><div class="ttdoc">Puntero al siguiente nodo en la lista.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00028">empresa.h:28</a></div></div>
+<div class="ttc" id="astructNodoPrecio_html"><div class="ttname"><a href="structNodoPrecio.html">NodoPrecio</a></div><div class="ttdoc">Nodo para la multilista de precios históricos de una acción.</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00022">empresa.h:22</a></div></div>
+<div class="ttc" id="astructNodoPrecio_html_a2c529be99d1d2770e6e4d85e66357f1a"><div class="ttname"><a href="structNodoPrecio.html#a2c529be99d1d2770e6e4d85e66357f1a">NodoPrecio::fecha</a></div><div class="ttdeci">string fecha</div><div class="ttdoc">Fecha del precio histórico (formato AAAA-MM-DD)</div><div class="ttdef"><b>Definition:</b> <a href="empresa_8h_source.html#l00024">empresa.h:24</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
