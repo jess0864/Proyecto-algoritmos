@@ -1,0 +1,5 @@
+<map id="generarNoticiasAleatorias" name="generarNoticiasAleatorias">
+<area shape="rect" id="node1" title="Genera noticias aleatorias y las inserta en la cola de prioridad." alt="" coords="5,35,196,61"/>
+<area shape="rect" id="node2" href="$noticia_8h.html#a6370066b96779b15f4c092365be9553b" title="Genera un string de fecha con formato &quot;YYYY&#45;MM&#45;DD&quot; a partir de un número de días desde el inicio." alt="" coords="270,5,381,32"/>
+<area shape="rect" id="node3" href="$classColaPrioridadNoticias.html#a7512fe71c5e0220566c7d0d95be9862e" title="Inserta una noticia en la cola de prioridad según su impacto." alt="" coords="244,57,407,98"/>
+</map>

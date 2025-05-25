@@ -1,0 +1,5 @@
+<map id="mostrarCambiosPorNoticiasEmpresa" name="mostrarCambiosPorNoticiasEmpresa">
+<area shape="rect" id="node1" title="Muestra los cambios de precio de una empresa por cada noticia que la afectó, mostrando el precio ante..." alt="" coords="5,27,209,69"/>
+<area shape="rect" id="node2" href="$classABBEmpresas.html#a705d67b6d795dffea3edf70150e0288d" title="Busca una empresa por ticker." alt="" coords="257,5,479,32"/>
+<area shape="rect" id="node3" href="$classColaPrioridadNoticias.html#a9c3a7f5944aa0f85f3ebf69c1db5eaf7" title="Llena un vector con punteros a todas las noticias en la cola (en orden actual)." alt="" coords="287,57,449,98"/>
+</map>

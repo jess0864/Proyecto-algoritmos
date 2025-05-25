@@ -1,0 +1,704 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Simulador de Bolsa e Inteligencia de Inversión: Referencia de la plantilla de la Clase MiVector&lt; T &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Simulador de Bolsa e Inteligencia de Inversión
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classMiVector.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="classMiVector-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la plantilla de la Clase MiVector&lt; T &gt;</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase plantilla que implementa un vector dinámico personalizado.  
+ <a href="classMiVector.html#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="portafolio_8h_source.html">portafolio.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Diagrama de colaboración para MiVector&lt; T &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMiVector__coll__graph.svg" width="128" height="250"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:af28ef16044a6e46deb3febec8d1bae30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#af28ef16044a6e46deb3febec8d1bae30">eliminar</a> (const T &amp;valor)</td></tr>
+<tr class="memdesc:af28ef16044a6e46deb3febec8d1bae30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina la primera aparición de un valor en el vector.  <a href="classMiVector.html#af28ef16044a6e46deb3febec8d1bae30">Más...</a><br /></td></tr>
+<tr class="separator:af28ef16044a6e46deb3febec8d1bae30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d8f602691e396c144d450d7c88ed400"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#a8d8f602691e396c144d450d7c88ed400">empty</a> () const</td></tr>
+<tr class="memdesc:a8d8f602691e396c144d450d7c88ed400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si el vector está vacío.  <a href="classMiVector.html#a8d8f602691e396c144d450d7c88ed400">Más...</a><br /></td></tr>
+<tr class="separator:a8d8f602691e396c144d450d7c88ed400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17c46d3f20857ebc0e88fc011149794e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#a17c46d3f20857ebc0e88fc011149794e">miPop</a> ()</td></tr>
+<tr class="separator:a17c46d3f20857ebc0e88fc011149794e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4c2f3badca90de19b0eaa48b2c2d6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#acd4c2f3badca90de19b0eaa48b2c2d6e">miPush</a> (const T &amp;valor)</td></tr>
+<tr class="memdesc:acd4c2f3badca90de19b0eaa48b2c2d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserta y elimina elementos del vector personalizado.  <a href="classMiVector.html#acd4c2f3badca90de19b0eaa48b2c2d6e">Más...</a><br /></td></tr>
+<tr class="separator:acd4c2f3badca90de19b0eaa48b2c2d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cdea590f0519519edd692948528659b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#a8cdea590f0519519edd692948528659b">MiVector</a> ()</td></tr>
+<tr class="memdesc:a8cdea590f0519519edd692948528659b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor por defecto.  <a href="classMiVector.html#a8cdea590f0519519edd692948528659b">Más...</a><br /></td></tr>
+<tr class="separator:a8cdea590f0519519edd692948528659b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a716fffc2c6de853ce510269f96e19d9a"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#a716fffc2c6de853ce510269f96e19d9a">operator[]</a> (int index)</td></tr>
+<tr class="memdesc:a716fffc2c6de853ce510269f96e19d9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acceso por índice con posibilidad de modificación.  <a href="classMiVector.html#a716fffc2c6de853ce510269f96e19d9a">Más...</a><br /></td></tr>
+<tr class="separator:a716fffc2c6de853ce510269f96e19d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3733c9990a5c6b1903404f525ce83999"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#a3733c9990a5c6b1903404f525ce83999">operator[]</a> (int index) const</td></tr>
+<tr class="memdesc:a3733c9990a5c6b1903404f525ce83999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acceso por índice para lectura (constante).  <a href="classMiVector.html#a3733c9990a5c6b1903404f525ce83999">Más...</a><br /></td></tr>
+<tr class="separator:a3733c9990a5c6b1903404f525ce83999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3170173acdc2bb5c256ce8d84020ac5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#a3170173acdc2bb5c256ce8d84020ac5a">ordenar</a> ()</td></tr>
+<tr class="memdesc:a3170173acdc2bb5c256ce8d84020ac5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordena los elementos del vector en orden ascendente.  <a href="classMiVector.html#a3170173acdc2bb5c256ce8d84020ac5a">Más...</a><br /></td></tr>
+<tr class="separator:a3170173acdc2bb5c256ce8d84020ac5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f89e927eee8c75d0e2209cb2c6a7b74"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#a6f89e927eee8c75d0e2209cb2c6a7b74">size</a> () const</td></tr>
+<tr class="memdesc:a6f89e927eee8c75d0e2209cb2c6a7b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el número actual de elementos en el vector.  <a href="classMiVector.html#a6f89e927eee8c75d0e2209cb2c6a7b74">Más...</a><br /></td></tr>
+<tr class="separator:a6f89e927eee8c75d0e2209cb2c6a7b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eb5523faf66a64df66de47db442c34e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#a9eb5523faf66a64df66de47db442c34e">~MiVector</a> ()</td></tr>
+<tr class="memdesc:a9eb5523faf66a64df66de47db442c34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="classMiVector.html#a9eb5523faf66a64df66de47db442c34e">Más...</a><br /></td></tr>
+<tr class="separator:a9eb5523faf66a64df66de47db442c34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a29042e264545ced270253a696f2924bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a></td></tr>
+<tr class="memdesc:a29042e264545ced270253a696f2924bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número actual de elementos en el arreglo.  <a href="classMiVector.html#a29042e264545ced270253a696f2924bf">Más...</a><br /></td></tr>
+<tr class="separator:a29042e264545ced270253a696f2924bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a89b61815d6891f77cfe5df5e594936"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#a0a89b61815d6891f77cfe5df5e594936">capacidad</a></td></tr>
+<tr class="memdesc:a0a89b61815d6891f77cfe5df5e594936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capacidad máxima actual del arreglo.  <a href="classMiVector.html#a0a89b61815d6891f77cfe5df5e594936">Más...</a><br /></td></tr>
+<tr class="separator:a0a89b61815d6891f77cfe5df5e594936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16bbb6723e3812e33ac88c60c9e01ec0"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a></td></tr>
+<tr class="memdesc:a16bbb6723e3812e33ac88c60c9e01ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puntero al arreglo dinámico que almacena los elementos.  <a href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">Más...</a><br /></td></tr>
+<tr class="separator:a16bbb6723e3812e33ac88c60c9e01ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+class MiVector&lt; T &gt;</h3>
+
+<p>Clase plantilla que implementa un vector dinámico personalizado. </p>
+<p>Permite agregar, eliminar, ordenar y acceder a elementos de forma similar a std::vector, pero con implementación propia para entender el funcionamiento interno de estructuras dinámicas. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00021">21</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a id="a8cdea590f0519519edd692948528659b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cdea590f0519519edd692948528659b">&#9670;&nbsp;</a></span>MiVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::<a class="el" href="classMiVector.html">MiVector</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor por defecto. </p>
+<p>Inicializa el vector con una capacidad inicial de 2. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00033">33</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;               {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classMiVector.html#a0a89b61815d6891f77cfe5df5e594936">capacidad</a> = 2;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a> = 0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a> = <span class="keyword">new</span> T[<a class="code" href="classMiVector.html#a0a89b61815d6891f77cfe5df5e594936">capacidad</a>];</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9eb5523faf66a64df66de47db442c34e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eb5523faf66a64df66de47db442c34e">&#9670;&nbsp;</a></span>~MiVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::~<a class="el" href="classMiVector.html">MiVector</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+<p>Libera la memoria asignada dinámicamente al vector. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00044">44</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">delete</span>[] <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="af28ef16044a6e46deb3febec8d1bae30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af28ef16044a6e46deb3febec8d1bae30">&#9670;&nbsp;</a></span>eliminar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::eliminar </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>valor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Elimina la primera aparición de un valor en el vector. </p>
+<p>Reorganiza los elementos restantes para llenar el hueco.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valor</td><td>Elemento a eliminar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true si se eliminó exitosamente, false si no se encontró. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00094">94</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                  {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a>; ++i) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>[i] == valor) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i; j &lt; <a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a> - 1; ++j)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>[j] = <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>[j + 1];</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a>--;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="portafolio_8h_source.html#l00180">Portafolio::eliminarActivo()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Gráfico de llamadas a esta función:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMiVector_af28ef16044a6e46deb3febec8d1bae30_icgraph.svg" width="491" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8d8f602691e396c144d450d7c88ed400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8f602691e396c144d450d7c88ed400">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica si el vector está vacío. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>true si no hay elementos, false en caso contrario. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00130">130</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a> == 0; }</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="portafolio_8h_source.html#l00172">Portafolio::mostrar()</a> y <a class="el" href="portafolio_8h_source.html#l00189">Portafolio::ordenarActivos()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Gráfico de llamadas a esta función:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMiVector_a8d8f602691e396c144d450d7c88ed400_icgraph.svg" width="482" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a17c46d3f20857ebc0e88fc011149794e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17c46d3f20857ebc0e88fc011149794e">&#9670;&nbsp;</a></span>miPop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::miPop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00079">79</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                 {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a> &gt; 0)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a>--;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;Error: vector vacío.\n&quot;</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acd4c2f3badca90de19b0eaa48b2c2d6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd4c2f3badca90de19b0eaa48b2c2d6e">&#9670;&nbsp;</a></span>miPush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::miPush </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>valor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserta y elimina elementos del vector personalizado. </p>
+<p>Estas funciones implementan operaciones personalizadas similares a push y pop en un vector dinámico. Permiten gestionar la inserción y eliminación de elementos para comprender y controlar directamente cómo se maneja la memoria y el crecimiento dinámico del arreglo.</p>
+<ul>
+<li><a class="el" href="classMiVector.html#acd4c2f3badca90de19b0eaa48b2c2d6e" title="Inserta y elimina elementos del vector personalizado.">miPush(const T&amp; valor)</a>: Agrega un nuevo elemento al final del vector. Si el vector ha alcanzado su capacidad máxima, se duplica su tamaño para permitir más inserciones.</li>
+<li><a class="el" href="classMiVector.html#a17c46d3f20857ebc0e88fc011149794e">miPop()</a>: Elimina el último elemento del vector si no está vacío. Si el vector está vacío, se muestra un mensaje de error por consola.</li>
+</ul>
+<p>Estas funciones ayudan a profundizar en el funcionamiento interno de las estructuras dinámicas y a completar el código de forma educativa. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00066">66</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a> == <a class="code" href="classMiVector.html#a0a89b61815d6891f77cfe5df5e594936">capacidad</a>) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="classMiVector.html#a0a89b61815d6891f77cfe5df5e594936">capacidad</a> *= 2;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            T* nuevo = <span class="keyword">new</span> T[<a class="code" href="classMiVector.html#a0a89b61815d6891f77cfe5df5e594936">capacidad</a>];</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a>; ++i)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                nuevo[i] = <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>[i];</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keyword">delete</span>[] <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a> = nuevo;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>[<a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a>++] = valor;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="portafolio_8h_source.html#l00161">Portafolio::agregarActivo()</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Gráfico de llamadas a esta función:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMiVector_acd4c2f3badca90de19b0eaa48b2c2d6e_icgraph.svg" width="480" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a716fffc2c6de853ce510269f96e19d9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a716fffc2c6de853ce510269f96e19d9a">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T&amp; <a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Acceso por índice con posibilidad de modificación. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Índice del elemento a acceder. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Referencia al elemento solicitado. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00138">138</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>[index]; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3733c9990a5c6b1903404f525ce83999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3733c9990a5c6b1903404f525ce83999">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T&amp; <a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Acceso por índice para lectura (constante). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Índice del elemento a acceder. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Referencia constante al elemento solicitado. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00146">146</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>[index]; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3170173acdc2bb5c256ce8d84020ac5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3170173acdc2bb5c256ce8d84020ac5a">&#9670;&nbsp;</a></span>ordenar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::ordenar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ordena los elementos del vector en orden ascendente. </p>
+<p>Utiliza el algoritmo de burbuja (Bubble Sort). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00111">111</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                   {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a> - 1; ++i)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a> - i - 1; ++j)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>[j] &gt; <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>[j + 1])</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    swap(<a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>[j], <a class="code" href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">datos</a>[j + 1]);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="portafolio_8h_source.html#l00189">Portafolio::ordenarActivos()</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Gráfico de llamadas a esta función:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMiVector_a3170173acdc2bb5c256ce8d84020ac5a_icgraph.svg" width="387" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6f89e927eee8c75d0e2209cb2c6a7b74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f89e927eee8c75d0e2209cb2c6a7b74">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene el número actual de elementos en el vector. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Cantidad de elementos almacenados. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00123">123</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMiVector.html#a29042e264545ced270253a696f2924bf">cantidad</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="portafolio_8h_source.html#l00172">Portafolio::mostrar()</a>, <a class="el" href="portafolio_8h_source.html#l00198">Portafolio::obtenerActivos()</a> y <a class="el" href="portafolio_8h_source.html#l00166">Portafolio::tieneActivo()</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Gráfico de llamadas a esta función:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMiVector_a6f89e927eee8c75d0e2209cb2c6a7b74_icgraph.svg" width="466" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a id="a29042e264545ced270253a696f2924bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29042e264545ced270253a696f2924bf">&#9670;&nbsp;</a></span>cantidad</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::cantidad</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Número actual de elementos en el arreglo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00025">25</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a89b61815d6891f77cfe5df5e594936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a89b61815d6891f77cfe5df5e594936">&#9670;&nbsp;</a></span>capacidad</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::capacidad</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Capacidad máxima actual del arreglo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00024">24</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+
+</div>
+</div>
+<a id="a16bbb6723e3812e33ac88c60c9e01ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16bbb6723e3812e33ac88c60c9e01ec0">&#9670;&nbsp;</a></span>datos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="classMiVector.html">MiVector</a>&lt; T &gt;::datos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Puntero al arreglo dinámico que almacena los elementos. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="portafolio_8h_source.html#l00023">23</a> del archivo <a class="el" href="portafolio_8h_source.html">portafolio.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li><a class="el" href="portafolio_8h_source.html">portafolio.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassMiVector_html_a29042e264545ced270253a696f2924bf"><div class="ttname"><a href="classMiVector.html#a29042e264545ced270253a696f2924bf">MiVector::cantidad</a></div><div class="ttdeci">int cantidad</div><div class="ttdoc">Número actual de elementos en el arreglo.</div><div class="ttdef"><b>Definition:</b> <a href="portafolio_8h_source.html#l00025">portafolio.h:25</a></div></div>
+<div class="ttc" id="aclassMiVector_html_a0a89b61815d6891f77cfe5df5e594936"><div class="ttname"><a href="classMiVector.html#a0a89b61815d6891f77cfe5df5e594936">MiVector::capacidad</a></div><div class="ttdeci">int capacidad</div><div class="ttdoc">Capacidad máxima actual del arreglo.</div><div class="ttdef"><b>Definition:</b> <a href="portafolio_8h_source.html#l00024">portafolio.h:24</a></div></div>
+<div class="ttc" id="aclassMiVector_html_a16bbb6723e3812e33ac88c60c9e01ec0"><div class="ttname"><a href="classMiVector.html#a16bbb6723e3812e33ac88c60c9e01ec0">MiVector::datos</a></div><div class="ttdeci">T * datos</div><div class="ttdoc">Puntero al arreglo dinámico que almacena los elementos.</div><div class="ttdef"><b>Definition:</b> <a href="portafolio_8h_source.html#l00023">portafolio.h:23</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMiVector.html">MiVector</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
