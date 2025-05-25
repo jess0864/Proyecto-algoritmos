@@ -17,7 +17,7 @@ La documentación técnica del proyecto —generada automáticamente con **Doxyg
 Proyecto desarrollado para la asignatura **Algoritmos y Estructuras de Datos**  
 📍 Universidad del Rosario
 
-- 🎓 **Jessica Alejandra Gil-Peyes**  
+- 🎓 **Jessica Alejandra Gil-Teyes**  
 - 🎓 **Isabella Borda**  
 - 🎓 **Samuel Blanco**
 
