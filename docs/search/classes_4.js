@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nodoprecio_106',['NodoPrecio',['../structNodoPrecio.html',1,'']]],
-  ['noticia_107',['Noticia',['../structNoticia.html',1,'']]]
+  ['nodoprecio_108',['NodoPrecio',['../structNodoPrecio.html',1,'']]],
+  ['noticia_109',['Noticia',['../structNoticia.html',1,'']]]
 ];
