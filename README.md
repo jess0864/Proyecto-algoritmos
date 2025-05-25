@@ -8,7 +8,7 @@ Este proyecto implementa un sistema de simulación bursátil en C++ que permite 
 
 [![Ver Documentación](https://img.shields.io/badge/Doxygen-Documentación-blue)](https://jess0864.github.io/Proyecto-algoritmos/index.html)
 
-La documentación técnica del proyecto —generada automáticamente con **Doxygen**— está disponible públicamente en el enlace anterior. Allí encontrarás descripciones detalladas de las clases, estructuras de datos y algoritmos, junto con diagramas interactivos que ilustran el funcionamiento del sistema.
+La documentación técnica del proyecto —generada automáticamente con **Doxygen** — está disponible públicamente en el enlace anterior. Allí encontrarás descripciones detalladas de las clases, estructuras de datos y algoritmos, junto con diagramas interactivos que ilustran el funcionamiento del sistema.
 
 ---
 
@@ -17,7 +17,7 @@ La documentación técnica del proyecto —generada automáticamente con **Doxyg
 Proyecto desarrollado para la asignatura **Algoritmos y Estructuras de Datos**  
 📍 Universidad del Rosario
 
-- 🎓 **Jessica Alejandra Gil-Teyes**  
+- 🎓 **Jessica Alejandra Gil-Tellez**  
 - 🎓 **Isabella Borda**  
 - 🎓 **Samuel Blanco**
 
